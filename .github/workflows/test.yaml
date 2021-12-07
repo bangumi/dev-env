@@ -1,0 +1,23 @@
+name: Test
+
+on: [push,  pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - run: docker-compose up -d
+
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+
+      - name: wait mysql ready
+        run: bash ./wait_mysql_ready.sh
+
+      - run: python test.py
+
+      - run: docker-compose logs
+        if: '${{ failure() }}'

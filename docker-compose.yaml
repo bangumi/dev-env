@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:5.7.33
+    ports:
+      - '3306:3306'
+    restart: unless-stopped
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      # pre-start mysql script
+      - ./sql/schema/bangumi_crt.sql:/docker-entrypoint-initdb.d/01.sql
+      - ./sql/data/data_chii_person_fields.sql:/docker-entrypoint-initdb.d/50.sql
+      - ./sql/data/data_chii_characters.sql:/docker-entrypoint-initdb.d/51.sql
+      - ./sql/data/data_chii_crt_subject_index.sql:/docker-entrypoint-initdb.d/52.sql
+      - ./sql/data/data_chii_person_cs_index.sql:/docker-entrypoint-initdb.d/53.sql
+      - ./sql/data/data_chii_persons.sql:/docker-entrypoint-initdb.d/54.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: bangumi
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+  redis:
+    image: redis:alpine
+    command: redis-server --requirepass "redis-pass"
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
