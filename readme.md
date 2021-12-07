@@ -2,6 +2,8 @@
 
 基于 docker 和 docker-compose
 
+本仓库仅用于快速配置bangumi的开发环境，不包含任何bangumi的代码。
+
 ## QuickStart
 
 ```bash
