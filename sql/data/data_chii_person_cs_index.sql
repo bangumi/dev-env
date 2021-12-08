@@ -25,9 +25,9 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `chii_person_cs_index` (`prsn_type`, `prsn_id`, `prsn_position`, `subject_id`, `subject_type_id`, `summary`, `prsn_appear_eps`) VALUES
-('prsn', 1, 34, 25834, 2, '', ''),
-('prsn', 1, 34, 1263, 2, '', ''),
-('prsn', 1, 33, 1263, 2, '', ''),
+('prsn', 1, 34, 1, 2, '', ''),
+('prsn', 1, 34, 2, 2, '', ''),
+('prsn', 1, 33, 3, 2, '', ''),
 ('prsn', 1, 34, 1264, 2, '', ''),
 ('prsn', 1, 33, 220187, 2, '', ''),
 ('prsn', 1, 3001, 12105, 3, '', ''),
@@ -332,8 +332,8 @@ INSERT INTO `chii_person_cs_index` (`prsn_type`, `prsn_id`, `prsn_position`, `su
 ('prsn', 2, 3, 8379, 2, '', ''),
 ('prsn', 2, 3, 10407, 2, '', ''),
 ('prsn', 2, 2001, 25259, 1, '', ''),
-('prsn', 2, 3, 2732, 2, '', ''),
-('prsn', 2, 3, 30494, 2, '', ''),
+('prsn', 2, 3, 4, 2, '', ''),
+('prsn', 2, 3, 5, 2, '', ''),
 ('prsn', 2, 3, 98936, 2, '', ''),
 ('prsn', 2, 3, 53927, 2, '', ''),
 ('prsn', 2, 3, 37291, 2, '', ''),
