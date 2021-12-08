@@ -15,6 +15,9 @@ services:
       - ./sql/data/data_chii_crt_subject_index.sql:/docker-entrypoint-initdb.d/52.sql
       - ./sql/data/data_chii_person_cs_index.sql:/docker-entrypoint-initdb.d/53.sql
       - ./sql/data/data_chii_persons.sql:/docker-entrypoint-initdb.d/54.sql
+
+      - ./sql/schema/20211208_bangumi_subject.sql:/docker-entrypoint-initdb.d/60.sql
+
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: bangumi
