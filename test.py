@@ -17,7 +17,10 @@ Expected_Tables = {
     'chii_person_fields',
     'chii_person_relationship',
     'chii_persons',
-
+    'chii_subjects',
+    'chii_subject_alias',
+    'chii_subject_fields',
+    'chii_subject_relations',
 }
 
 # 打开数据库连接
@@ -47,6 +50,6 @@ with db.cursor() as cursor:
     for table in data:
         if table[1] == container_config['MYSQL_DATABASE']:
             tables.add(table[2])
-    assert Expected_Tables == tables, f"missing tables, {Expected_Tables - table} in database"
+    assert Expected_Tables == tables, f"missing tables, {Expected_Tables - tables} in database"
 
 db.close()
