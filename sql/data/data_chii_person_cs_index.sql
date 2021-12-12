@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 
 INSERT INTO `chii_person_cs_index` (`prsn_type`, `prsn_id`, `prsn_position`, `subject_id`, `subject_type_id`, `summary`, `prsn_appear_eps`) VALUES
 ('prsn', 1, 1001, 4, 4, '', ''),
-('prsn', 1, 1002, 5, 4, '', ''),
+('prsn', 1, 1002, 500, 4, '', ''),
 ('prsn', 1, 1003, 6, 4, '', ''),
 ('prsn', 1, 34, 19, 2, '', ''),
 ('prsn', 1, 33, 220187, 2, '', ''),
