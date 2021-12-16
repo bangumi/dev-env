@@ -17,6 +17,7 @@ services:
       - ./sql/data/data_chii_persons.sql:/docker-entrypoint-initdb.d/54.sql
       - ./sql/data/data_persons_2.sql:/docker-entrypoint-initdb.d/55.sql
       - ./sql/data/data_characters_2.sql:/docker-entrypoint-initdb.d/56.sql
+      - ./sql/data/crt_cast_index.sql:/docker-entrypoint-initdb.d/57.sql
 
       - ./sql/schema/20211208_bangumi_subject.sql:/docker-entrypoint-initdb.d/60.sql
 
