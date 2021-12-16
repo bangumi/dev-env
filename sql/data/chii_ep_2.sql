@@ -35,7 +35,45 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-16 18:07:46
+-- Dump completed
+-- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
+--
+-- Host: 192.168.201.71    Database: bangumi
+-- ------------------------------------------------------
+-- Server version	5.7.33-0ubuntu0.16.04.1-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `chii_subjects`
+--
+-- WHERE:  field_volumes >= 7 LIMIT 3
+
+LOCK TABLES `chii_subjects` WRITE;
+/*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
+REPLACE INTO `chii_subjects` VALUES (495,1,'×××HOLiC','×××HOLiC','',1,1217657840,'35/05/495_Ovvsp.jpg',1001,'{{Infobox animanga/Manga\r\n|中文名= ×××HOLiC\r\n|别名={\r\n[次元魔女]\r\n[XXXHOLIC]\r\n[xxxHOLiC]\r\n[沉迷女儿香]\r\n[×××HOLiC·笼]\r\n[xxxholic笼]\r\n[四月一日灵异事件簿]\r\n[四月一日奇妙事件薄]\r\n}\r\n|出版社={\r\n[jp|講談社]\r\n[tw|東立]\r\n}\r\n|价格= \r\n|其他出版社= \r\n|连载杂志={\r\n[週刊ヤングマガジン（2003年 - 2010年）]\r\n[別冊少年マガジン（2010年 - 2011年）]\r\n}\r\n|发售日= \r\n|册数= 19\r\n|页数= \r\n|话数= 213\r\n|ISBN= \r\n|其他= \r\n|开始= 2003年13号(週刊ヤングマガジン)\r\n|结束= 2011年3月号(別冊少年マガジン)\r\n}}','      四月一日君尋進入了別名為次元魔女並自稱為壹原侑子所擁有的能夠實現任何願望的店。侑子說只要四月一日能付出對等的代價，就可以幫助四月一日實現－「可以讓你看不見妖怪，而且，讓妖怪不受你的血所吸引」的願望。因此四月一日答應侑子的條件，侑子便讓四月一日在其店中打工作為代價，直到時數足以實現願望。\r\n\r\n      “這世上有許多不可思議的事，不管是再古怪、再稀奇的事，一旦沒有人、一旦沒有人看見、一旦與人無關的話，就只不過是現象，瞬間即逝的事...，只有，人類...才是這世上最神秘又不可思議的生物────”\r\n\r\n      “世界上有許多不可思議的事，那家店也是其中之一。那裏是能夠實現願望的店，自行停止時間的店主繼承，經手秘密委託的地點。那家店確實存在，可是不對所有生物開放。有緣時，只有有緣的生物能夠...得知、造訪、見到閉門不出的店主。”','CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。',19,213,158,477,82,44,15,1,0,'',0,0,0),(497,1,'ちょびっツ','人形电脑天使心','',1,1217658146,'73/80/497_7mGTv.jpg',1001,'{{Infobox animanga/Manga\r\n|中文名= 人形电脑天使心\r\n|别名={\r\n[en|Chobits]\r\n}\r\n|出版社= 講談社、台灣東販、天下出版\r\n|价格= \r\n|其他出版社= \r\n|连载杂志= 週刊ヤングマガジン\r\n|发售日= \r\n|册数= 8\r\n|页数= \r\n|话数= 88\r\n|ISBN= \r\n|其他= \r\n|作者= CLAMP\r\n|开始= 2000年第43号\r\n|结束= 2002年第48号\r\n}}','　　故事講述重考生本須和秀樹，身無分文隻身來到東京卻想擁有一部價格昂貴的人形電腦。\r\n　　於東京，人形電腦是非常普及的家電。\r\n　　他心想「如果可在垃圾堆中撿到一部便好了」，卻如他所願在東京的一晚撿到一部人形電腦……\r\n\r\n　　本作从2000年9月至2002年10月间于日本讲谈社《周刊Young Magazine》连载。共88话。单行本全8卷。\r\n　　作品的特征之一，就是并未出现CLAMP作品中有着象征性存在的“东京铁塔”。本作与《天使领域》存在人物关联。','CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。',8,88,107,520,18,19,7,1,0,'r',0,0,0),(499,1,'文学少女','文学少女','',1,1217658999,'3c/f1/499_QyAUf.jpg',1002,'{{Infobox animanga/Novel\r\n|中文名= 文学少女\r\n|别名={\r\n[Book Girl]\r\n}\r\n|出版社= エンターブレイン、尖端出版，人民文学出版社，上海文艺出版社\r\n|价格= \r\n|连载杂志= FB Online（短篇部分）\r\n|发售日= \r\n|册数= 16\r\n|页数= \r\n|话数= \r\n|ISBN= \r\n|其他= \r\n|作者= 野村美月\r\n|插图= 竹岡美穂\r\n|开始= 2006-04-28\r\n|结束= 2011-04-30\r\n}}','《文学少女》系列小说，长篇每卷皆以一部实际存在的经典小说为主线文本，推动剧情前进。故事围绕圣条学园文艺社社长天野远子和社员井上心叶的事件与解谜。小说基本上以井上心叶的第一人称进行，但不时穿插“第二某人”的第一人称口白心境（粗体字），是故事黑幕的重要提示。','野村美月是日本轻小说作家，福冈县出生，东洋大学文学部毕业，2001年出道成为作家。\r\n受《清秀佳人》、《小妇人》等少女小说影响颇深，写作主题偏向粉红色的青春喜剧。2006年，野村美月欲摆脱昔日风格，以能表现严肃、温馨又哀伤的气氛为目标，创作以文学名著贯穿全局的《文学少女》系列，获得之前未有的高度评价。\r\n\r\n竹冈美穗（7月1日 - ）是日本的插画家。东京出身。 第九回コバルトイラスト大赏得奖后，以插画家的身分出道。 小说家竹冈叶月的姊姊。',16,0,752,2282,501,166,54,1,0,'w',0,0,0);
+/*!40000 ALTER TABLE `chii_subjects` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed
 -- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
 -- Host: 192.168.201.71    Database: bangumi
@@ -56,7 +94,7 @@ UNLOCK TABLES;
 --
 -- Dumping data for table `chii_episodes`
 --
--- WHERE:  ep_subject_id = 253
+-- WHERE:  ep_subject_id IN (253, 495, 497, 499)
 
 LOCK TABLES `chii_episodes` WRITE;
 /*!40000 ALTER TABLE `chii_episodes` DISABLE KEYS */;
@@ -73,7 +111,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-16 18:07:46
+-- Dump completed
 -- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
 -- Host: 192.168.201.71    Database: bangumi
@@ -111,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-16 18:07:46
+-- Dump completed
