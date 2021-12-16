@@ -15,6 +15,7 @@ services:
       - ./sql/data/data_chii_crt_subject_index.sql:/docker-entrypoint-initdb.d/52.sql
       - ./sql/data/data_chii_person_cs_index.sql:/docker-entrypoint-initdb.d/53.sql
       - ./sql/data/data_chii_persons.sql:/docker-entrypoint-initdb.d/54.sql
+      - ./sql/data/data_chii_persons_2.sql:/docker-entrypoint-initdb.d/55.sql
 
       - ./sql/schema/20211208_bangumi_subject.sql:/docker-entrypoint-initdb.d/60.sql
 
@@ -26,6 +27,7 @@ services:
 
       - ./sql/schema/chii_episodes.sql:/docker-entrypoint-initdb.d/65.sql
       - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/66.sql
+      - ./sql/data/data_episodes_2.sql:/docker-entrypoint-initdb.d/67.sql
 
 
     environment:
