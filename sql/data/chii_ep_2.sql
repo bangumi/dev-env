@@ -1,8 +1,3 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,11 +9,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `chii_subjects`
---
--- WHERE:  subject_id = 253
 
 LOCK TABLES `chii_subjects` WRITE;
 /*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
@@ -35,12 +25,6 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -52,11 +36,6 @@ UNLOCK TABLES;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `chii_subjects`
---
--- WHERE:  field_volumes >= 7 LIMIT 3
 
 LOCK TABLES `chii_subjects` WRITE;
 /*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
@@ -73,12 +52,6 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -90,11 +63,6 @@ UNLOCK TABLES;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `chii_episodes`
---
--- WHERE:  ep_subject_id IN (253, 495, 497, 499)
 
 LOCK TABLES `chii_episodes` WRITE;
 /*!40000 ALTER TABLE `chii_episodes` DISABLE KEYS */;
@@ -111,12 +79,6 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -128,11 +90,6 @@ UNLOCK TABLES;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `chii_subject_fields`
---
--- WHERE:  field_sid = 253
 
 LOCK TABLES `chii_subject_fields` WRITE;
 /*!40000 ALTER TABLE `chii_subject_fields` DISABLE KEYS */;
@@ -149,4 +106,3 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
