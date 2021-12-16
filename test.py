@@ -11,6 +11,7 @@ Expected_Tables = {
     'chii_characters',
     'chii_crt_cast_index',
     'chii_crt_subject_index',
+    'chii_episodes',
     'chii_person_alias',
     'chii_person_collects',
     'chii_person_cs_index',
