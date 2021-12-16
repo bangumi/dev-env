@@ -35,7 +35,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-16 17:33:17
+-- Dump completed on 2021-12-16 18:07:46
 -- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
 -- Host: 192.168.201.71    Database: bangumi
@@ -73,4 +73,42 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-16 17:33:17
+-- Dump completed on 2021-12-16 18:07:46
+-- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
+--
+-- Host: 192.168.201.71    Database: bangumi
+-- ------------------------------------------------------
+-- Server version	5.7.33-0ubuntu0.16.04.1-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `chii_subject_fields`
+--
+-- WHERE:  field_sid = 253
+
+LOCK TABLES `chii_subject_fields` WRITE;
+/*!40000 ALTER TABLE `chii_subject_fields` DISABLE KEYS */;
+REPLACE INTO `chii_subject_fields` VALUES (253,2,'a:30:{i:0;a:2:{s:8:\"tag_name\";s:15:\"渡边信一郎\";s:6:\"result\";s:4:\"2920\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"菅野洋子\";s:6:\"result\";s:4:\"2662\";}i:2;a:2:{s:8:\"tag_name\";s:12:\"星际牛仔\";s:6:\"result\";s:4:\"1960\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"经典\";s:6:\"result\";s:4:\"1539\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:4:\"1420\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"SUNRISE\";s:6:\"result\";s:4:\"1354\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"神作\";s:6:\"result\";s:3:\"999\";}i:7;a:2:{s:8:\"tag_name\";s:9:\"神配乐\";s:6:\"result\";s:3:\"956\";}i:8;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"772\";}i:9;a:2:{s:8:\"tag_name\";s:11:\"CowboyBebop\";s:6:\"result\";s:3:\"714\";}i:10;a:2:{s:8:\"tag_name\";s:4:\"1998\";s:6:\"result\";s:3:\"687\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:3:\"494\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"cowboy\";s:6:\"result\";s:3:\"475\";}i:13;a:2:{s:8:\"tag_name\";s:9:\"林原惠\";s:6:\"result\";s:3:\"462\";}i:14;a:2:{s:8:\"tag_name\";s:12:\"山寺宏一\";s:6:\"result\";s:3:\"235\";}i:15;a:2:{s:8:\"tag_name\";s:12:\"1998年10月\";s:6:\"result\";s:2:\"94\";}i:16;a:2:{s:8:\"tag_name\";s:15:\"渡辺信一郎\";s:6:\"result\";s:2:\"52\";}i:17;a:2:{s:8:\"tag_name\";s:5:\"BONES\";s:6:\"result\";s:2:\"49\";}i:18;a:2:{s:8:\"tag_name\";s:9:\"公路片\";s:6:\"result\";s:2:\"46\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"浪漫\";s:6:\"result\";s:2:\"45\";}i:20;a:2:{s:8:\"tag_name\";s:12:\"信本敬子\";s:6:\"result\";s:2:\"34\";}i:21;a:2:{s:8:\"tag_name\";s:15:\"菅野よう子\";s:6:\"result\";s:2:\"33\";}i:22;a:2:{s:8:\"tag_name\";s:7:\"1998年\";s:6:\"result\";s:2:\"32\";}i:23;a:2:{s:8:\"tag_name\";s:5:\"Bebop\";s:6:\"result\";s:2:\"26\";}i:24;a:2:{s:8:\"tag_name\";s:12:\"川元利浩\";s:6:\"result\";s:2:\"26\";}i:25;a:2:{s:8:\"tag_name\";s:3:\"神\";s:6:\"result\";s:2:\"23\";}i:26;a:2:{s:8:\"tag_name\";s:12:\"林原惠美\";s:6:\"result\";s:2:\"22\";}i:27;a:2:{s:8:\"tag_name\";s:6:\"日本\";s:6:\"result\";s:2:\"22\";}i:28;a:2:{s:8:\"tag_name\";s:6:\"音乐\";s:6:\"result\";s:2:\"22\";}i:29;a:2:{s:8:\"tag_name\";s:2:\"SF\";s:6:\"result\";s:2:\"20\";}}',38,10,4,10,47,130,386,1308,2893,4415,0,1,1998,10,5,'1998-10-23',0);
+/*!40000 ALTER TABLE `chii_subject_fields` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-12-16 18:07:46
