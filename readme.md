@@ -16,7 +16,9 @@ mysql容器的内置数据位于 [./sql](https://github.com/bangumi/dev-env/tree
 
 如果你不使用 docker 或者 docker-compose，也可以下载并导入 <https://bangumi.github.io/dev-env/dist.sql> 文件，此文件包含了本仓库的所有 sql 文件。
 
-墙内可以访问: jsdelivr 镜像网址 https://cdn.jsdelivr.net/gh/bangumi/dev-env@gh-pages/dist.sql
+墙内可以访问 jsdelivr 镜像网址 https://cdn.jsdelivr.net/gh/bangumi/dev-env@gh-pages/dist.sql
+
+此 SQL 不支持多次运行。如果运行失败请删除旧数据库中所有表后重试。
 
 ## 更新
 
