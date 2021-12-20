@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `chii_ep_revisions` (
   `ep_rev_id` mediumint(8) unsigned NOT NULL,
-  `rev_sid` mediumint(8) unsigned NOT NULL,
+  `rev_sid` mediumint(8) unsigned NOT NULL, # subject_id
   `rev_eids` varchar(255) NOT NULL,
   `rev_ep_infobox` mediumtext NOT NULL,
   `rev_creator` mediumint(8) unsigned NOT NULL,

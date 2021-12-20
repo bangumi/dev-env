@@ -31,12 +31,16 @@ services:
       - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/66.sql
       - ./sql/data/chii_ep_2.sql:/docker-entrypoint-initdb.d/67.sql
 
+      # 编辑历史
       - ./sql/schema/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/70.sql
       - ./sql/schema/chii_rev_history.sql:/docker-entrypoint-initdb.d/71.sql
+      - ./sql/schema/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/72.sql
+      - ./sql/data/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/73.sql
+      - ./sql/data/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/74.sql
+      - ./sql/data/rev_history.sql:/docker-entrypoint-initdb.d/75.sql
 
       - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/80.sql
       - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/90.sql
-      - ./sql/schema/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/91.sql
 
     environment:
       MYSQL_ROOT_PASSWORD: secret
