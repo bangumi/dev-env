@@ -7,6 +7,7 @@ services:
       - '3306:3306'
     restart: unless-stopped
     volumes:
+      # mysql的容器在启动的时候会按字符串顺序加载 /docker-entrypoint-initdb.d/ 文件夹内的sql文件
       - ./data/mysql:/var/lib/mysql
       # pre-start mysql script
       - ./sql/schema/bangumi_crt.sql:/docker-entrypoint-initdb.d/01.sql
@@ -29,6 +30,13 @@ services:
       - ./sql/schema/chii_episodes.sql:/docker-entrypoint-initdb.d/65.sql
       - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/66.sql
       - ./sql/data/chii_ep_2.sql:/docker-entrypoint-initdb.d/67.sql
+
+      - ./sql/schema/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/70.sql
+      - ./sql/schema/chii_rev_history.sql:/docker-entrypoint-initdb.d/71.sql
+
+      - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/80.sql
+      - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/90.sql
+      - ./sql/schema/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/91.sql
 
     environment:
       MYSQL_ROOT_PASSWORD: secret
