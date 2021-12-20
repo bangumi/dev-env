@@ -14,4 +14,4 @@ docker-compose up -d
 
 mysql容器的内置数据位于 [./sql](https://github.com/bangumi/dev-env/tree/master/sql) 文件夹内，
 
-也可以在你的 mysql 数据库中导入 <https://bangumi.github.io/dev-env/dist.sql> 文件，包含了本仓库的所有 sql 文件。
+如果你不使用docker 或者 docker-compose，也可以下载并导入 <https://bangumi.github.io/dev-env/dist.sql> 文件，此文件包含了本仓库的所有 sql 文件。
