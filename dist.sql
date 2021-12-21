@@ -3312,4 +3312,4 @@ VALUES (382951,
 
 
 INSERT INTO chii.chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope)
-VALUES ('a development access token', 'test client id', '382951', '2030-12-21 20:07:51', null);
+VALUES ('a_development_access_token', 'test_client_id', '382951', '2021-12-21 14:16:28', null);
