@@ -41,6 +41,7 @@ services:
 
       - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/80.sql
       - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/90.sql
+      - ./sql/data/chii_user_treehole.sql:/docker-entrypoint-initdb.d/99.sql
 
     environment:
       MYSQL_ROOT_PASSWORD: secret
