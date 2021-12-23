@@ -11,6 +11,12 @@ services:
       - ./data/mysql:/var/lib/mysql
       # pre-start mysql script
       - ./sql/schema/bangumi_crt.sql:/docker-entrypoint-initdb.d/01.sql
+
+      - ./sql/schema/chii_usergroup.sql:/docker-entrypoint-initdb.d/10.sql
+      - ./sql/schema/chii_subject_topics.sql:/docker-entrypoint-initdb.d/11.sql
+      - ./sql/schema/chii_group_topics.sql:/docker-entrypoint-initdb.d/12.sql
+      - ./sql/schema/bangumi_cmt_pst.sql:/docker-entrypoint-initdb.d/13.sql
+      -
       - ./sql/data/data_chii_person_fields.sql:/docker-entrypoint-initdb.d/50.sql
       - ./sql/data/data_chii_characters.sql:/docker-entrypoint-initdb.d/51.sql
       - ./sql/data/data_chii_crt_subject_index.sql:/docker-entrypoint-initdb.d/52.sql
