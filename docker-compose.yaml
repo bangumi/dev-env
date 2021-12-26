@@ -17,8 +17,8 @@ services:
       - ./sql/schema/chii_group_topics.sql:/docker-entrypoint-initdb.d/12.sql
       - ./sql/schema/bangumi_cmt_pst.sql:/docker-entrypoint-initdb.d/13.sql
       - ./sql/data/chii_usergroup.sql:/docker-entrypoint-initdb.d/14.sql
-      - ./sql/data/chii_subject_topics.sql:/docker-entrypoint-initdb.d/14.sql
-      - ./sql/data/chii_subject_posts.sql:/docker-entrypoint-initdb.d/15.sql
+      - ./sql/data/chii_subject_topics.sql:/docker-entrypoint-initdb.d/15.sql
+      - ./sql/data/chii_subject_posts.sql:/docker-entrypoint-initdb.d/16.sql
 
       - ./sql/data/data_chii_person_fields.sql:/docker-entrypoint-initdb.d/50.sql
       - ./sql/data/data_chii_characters.sql:/docker-entrypoint-initdb.d/51.sql
