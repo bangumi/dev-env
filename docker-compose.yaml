@@ -37,9 +37,9 @@ services:
       - ./sql/data/chii_subjects.sql:/docker-entrypoint-initdb.d/64.sql
       - ./sql/data/subject_2.sql:/docker-entrypoint-initdb.d/65.sql
 
-      - ./sql/schema/chii_episodes.sql:/docker-entrypoint-initdb.d/65.sql
-      - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/66.sql
-      - ./sql/data/chii_ep_2.sql:/docker-entrypoint-initdb.d/67.sql
+      - ./sql/schema/chii_episodes.sql:/docker-entrypoint-initdb.d/66.sql
+      - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/67.sql
+      - ./sql/data/chii_ep_2.sql:/docker-entrypoint-initdb.d/68.sql
 
       # 编辑历史
       - ./sql/schema/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/70.sql
