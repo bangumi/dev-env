@@ -17,6 +17,8 @@ services:
       - ./sql/schema/chii_group_topics.sql:/docker-entrypoint-initdb.d/12.sql
       - ./sql/schema/bangumi_cmt_pst.sql:/docker-entrypoint-initdb.d/13.sql
       - ./sql/data/chii_usergroup.sql:/docker-entrypoint-initdb.d/14.sql
+      - ./sql/data/chii_subject_topics.sql:/docker-entrypoint-initdb.d/14.sql
+      - ./sql/data/chii_subject_posts.sql:/docker-entrypoint-initdb.d/15.sql
 
       - ./sql/data/data_chii_person_fields.sql:/docker-entrypoint-initdb.d/50.sql
       - ./sql/data/data_chii_characters.sql:/docker-entrypoint-initdb.d/51.sql
@@ -33,6 +35,7 @@ services:
       - ./sql/data/chii_subject_relations.sql:/docker-entrypoint-initdb.d/62.sql
       - ./sql/data/chii_subject_relations_vice_versa.sql:/docker-entrypoint-initdb.d/63.sql
       - ./sql/data/chii_subjects.sql:/docker-entrypoint-initdb.d/64.sql
+      - ./sql/data/subject_2.sql:/docker-entrypoint-initdb.d/65.sql
 
       - ./sql/schema/chii_episodes.sql:/docker-entrypoint-initdb.d/65.sql
       - ./sql/data/data_episodes.sql:/docker-entrypoint-initdb.d/66.sql
@@ -45,6 +48,7 @@ services:
       - ./sql/data/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/73.sql
       - ./sql/data/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/74.sql
       - ./sql/data/rev_history.sql:/docker-entrypoint-initdb.d/75.sql
+      - ./sql/data/sandbox_subject_with_ep_history.sql:/docker-entrypoint-initdb.d/76.sql
 
       - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/80.sql
       - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/90.sql
