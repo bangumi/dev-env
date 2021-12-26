@@ -11,14 +11,15 @@ services:
       - ./data/mysql:/var/lib/mysql
       # pre-start mysql script
       - ./sql/schema/bangumi_crt.sql:/docker-entrypoint-initdb.d/01.sql
-
       - ./sql/schema/chii_usergroup.sql:/docker-entrypoint-initdb.d/10.sql
       - ./sql/schema/chii_subject_topics.sql:/docker-entrypoint-initdb.d/11.sql
       - ./sql/schema/chii_group_topics.sql:/docker-entrypoint-initdb.d/12.sql
       - ./sql/schema/bangumi_cmt_pst.sql:/docker-entrypoint-initdb.d/13.sql
-      - ./sql/data/chii_usergroup.sql:/docker-entrypoint-initdb.d/14.sql
-      - ./sql/data/chii_subject_topics.sql:/docker-entrypoint-initdb.d/15.sql
-      - ./sql/data/chii_subject_posts.sql:/docker-entrypoint-initdb.d/16.sql
+      - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/14.sql
+      - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/15.sql
+      - ./sql/schema/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/16.sql
+      - ./sql/schema/chii_rev_history.sql:/docker-entrypoint-initdb.d/17.sql
+      - ./sql/schema/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/18.sql
 
       - ./sql/data/data_chii_person_fields.sql:/docker-entrypoint-initdb.d/50.sql
       - ./sql/data/data_chii_characters.sql:/docker-entrypoint-initdb.d/51.sql
@@ -42,16 +43,15 @@ services:
       - ./sql/data/chii_ep_2.sql:/docker-entrypoint-initdb.d/68.sql
 
       # 编辑历史
-      - ./sql/schema/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/70.sql
-      - ./sql/schema/chii_rev_history.sql:/docker-entrypoint-initdb.d/71.sql
-      - ./sql/schema/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/72.sql
+
       - ./sql/data/chii_ep_revisions.sql:/docker-entrypoint-initdb.d/73.sql
       - ./sql/data/chii_subject_revisions.sql:/docker-entrypoint-initdb.d/74.sql
       - ./sql/data/rev_history.sql:/docker-entrypoint-initdb.d/75.sql
       - ./sql/data/sandbox_subject_with_ep_history.sql:/docker-entrypoint-initdb.d/76.sql
+      - ./sql/data/chii_usergroup.sql:/docker-entrypoint-initdb.d/77.sql
+      - ./sql/data/chii_subject_topics.sql:/docker-entrypoint-initdb.d/78.sql
+      - ./sql/data/chii_subject_posts.sql:/docker-entrypoint-initdb.d/79.sql
 
-      - ./sql/schema/chii_members.sql:/docker-entrypoint-initdb.d/80.sql
-      - ./sql/schema/chii_oauth_access_tokens.sql:/docker-entrypoint-initdb.d/90.sql
       - ./sql/data/chii_user_treehole.sql:/docker-entrypoint-initdb.d/99.sql
 
     environment:
