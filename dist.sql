@@ -654,7 +654,581 @@ ALTER TABLE `chii_subject_posts`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-INSERT INTO chii_usergroup (usr_grp_id, usr_grp_name, usr_grp_perm, usr_grp_dateline) VALUES (10, '普通用户', 'a:14:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";}', 1304011366);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+CREATE TABLE IF NOT EXISTS chii_memberfields
+(
+    uid       mediumint unsigned       default 0  not null primary key,
+    site      varchar(75) charset utf8 default '' not null,
+    location  varchar(30) charset utf8 default '' not null,
+    bio       text charset utf8                   not null,
+    privacy   mediumtext charset utf8             not null,
+    blocklist mediumtext charset utf8             not null
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_members`
+--
+
+CREATE TABLE IF NOT EXISTS chii_members
+(
+    uid          mediumint unsigned auto_increment primary key,
+    username     char(15) charset utf8 default '' not null,
+    nickname     varchar(30)                      not null,
+    avatar       varchar(255) charset utf8        not null,
+    groupid      smallint(6) unsigned  default 0  not null, # 用户权限组
+    regdate      int unsigned          default 0  not null, # 注册日期
+    lastvisit    int unsigned          default 0  not null, # 最后访问
+    lastactivity int unsigned          default 0  not null, # 最后活动
+    lastpost     int unsigned          default 0  not null, # 最后发帖
+    dateformat   char(10) charset utf8 default '' not null, # 没用
+    timeformat   tinyint(1)            default 0  not null, # 没用
+    timeoffset   char(4) charset utf8  default '' not null, # 没用
+    newpm        tinyint(1)            default 0  not null,
+    new_notify   smallint(6) unsigned  default 0  not null comment '新提醒',
+    sign         varchar(255) charset utf8        not null,
+    constraint username unique (username)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 19, 2021 at 09:15 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_oauth_access_tokens`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens` (
+  `access_token` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `client_id` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `expires` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `scope` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_oauth_access_tokens`
+--
+ALTER TABLE `chii_oauth_access_tokens`
+  ADD PRIMARY KEY (`access_token`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 17, 2021 at 05:51 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subject_revisions`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subject_revisions` (
+  `rev_id` mediumint(8) unsigned NOT NULL,
+  `rev_type` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '修订类型',
+  `rev_subject_id` mediumint(8) unsigned NOT NULL,
+  `rev_type_id` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `rev_creator` mediumint(8) unsigned NOT NULL,
+  `rev_dateline` int(10) unsigned NOT NULL DEFAULT '0',
+  `rev_name` varchar(80) NOT NULL,
+  `rev_name_cn` varchar(80) NOT NULL,
+  `rev_field_infobox` mediumtext NOT NULL,
+  `rev_field_summary` mediumtext NOT NULL,
+  `rev_vote_field` mediumtext NOT NULL,
+  `rev_field_eps` mediumint(8) unsigned NOT NULL,
+  `rev_edit_summary` varchar(200) NOT NULL,
+  `rev_platform` smallint(6) unsigned NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_subject_revisions`
+--
+ALTER TABLE `chii_subject_revisions`
+  ADD PRIMARY KEY (`rev_id`),
+  ADD KEY `rev_subject_id` (`rev_subject_id`,`rev_creator`),
+  ADD KEY `rev_type` (`rev_type`),
+  ADD KEY `rev_dateline` (`rev_dateline`),
+  ADD KEY `rev_creator` (`rev_creator`,`rev_id`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_subject_revisions`
+--
+ALTER TABLE `chii_subject_revisions`
+  MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 17, 2021 at 05:52 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_rev_history`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_rev_history` (
+  `rev_id` mediumint(8) unsigned NOT NULL,
+  `rev_type` tinyint(3) unsigned NOT NULL COMMENT '条目，角色，人物',
+  `rev_mid` mediumint(8) unsigned NOT NULL COMMENT '对应条目，人物的ID',
+  `rev_text_id` mediumint(9) unsigned NOT NULL,
+  `rev_dateline` int(10) unsigned NOT NULL,
+  `rev_creator` mediumint(8) unsigned NOT NULL,
+  `rev_edit_summary` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_rev_text`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_rev_text` (
+  `rev_text_id` mediumint(9) unsigned NOT NULL,
+  `rev_text` mediumblob NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_rev_history`
+--
+ALTER TABLE `chii_rev_history`
+  ADD PRIMARY KEY (`rev_id`),
+  ADD KEY `rev_crt_id` (`rev_type`,`rev_mid`),
+  ADD KEY `rev_crt_creator` (`rev_creator`),
+  ADD KEY `rev_id` (`rev_id`,`rev_type`,`rev_creator`);
+
+--
+-- Indexes for table `chii_rev_text`
+--
+ALTER TABLE `chii_rev_text`
+  ADD PRIMARY KEY (`rev_text_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_rev_history`
+--
+ALTER TABLE `chii_rev_history`
+  MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `chii_rev_text`
+--
+ALTER TABLE `chii_rev_text`
+  MODIFY `rev_text_id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 17, 2021 at 05:51 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_ep_revisions`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_ep_revisions` (
+  `ep_rev_id` mediumint(8) unsigned NOT NULL,
+  `rev_sid` mediumint(8) unsigned NOT NULL, # subject_id
+  `rev_eids` varchar(255) NOT NULL,
+  `rev_ep_infobox` mediumtext NOT NULL,
+  `rev_creator` mediumint(8) unsigned NOT NULL,
+  `rev_version` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `rev_dateline` int(10) unsigned NOT NULL,
+  `rev_edit_summary` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_ep_revisions`
+--
+ALTER TABLE `chii_ep_revisions`
+  ADD PRIMARY KEY (`ep_rev_id`),
+  ADD KEY `rev_sid` (`rev_sid`,`rev_creator`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_ep_revisions`
+--
+ALTER TABLE `chii_ep_revisions`
+  MODIFY `ep_rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 08, 2021 at 06:49 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subjects`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subjects` (
+  `subject_id` mediumint(8) unsigned NOT NULL,
+  `subject_type_id` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `subject_name` varchar(80) NOT NULL,
+  `subject_name_cn` varchar(80) NOT NULL,
+  `subject_uid` varchar(20) NOT NULL COMMENT 'isbn / imdb',
+  `subject_creator` mediumint(8) unsigned NOT NULL,
+  `subject_dateline` int(10) unsigned NOT NULL DEFAULT '0',
+  `subject_image` varchar(255) NOT NULL,
+  `subject_platform` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `field_infobox` mediumtext NOT NULL,
+  `field_summary` mediumtext NOT NULL COMMENT 'summary',
+  `field_5` mediumtext NOT NULL COMMENT 'author summary',
+  `field_volumes` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '卷数',
+  `field_eps` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `subject_wish` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `subject_collect` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `subject_doing` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `subject_on_hold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '搁置人数',
+  `subject_dropped` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '抛弃人数',
+  `subject_series` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `subject_series_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `subject_idx_cn` varchar(1) NOT NULL,
+  `subject_airtime` tinyint(1) unsigned NOT NULL,
+  `subject_nsfw` tinyint(1) NOT NULL,
+  `subject_ban` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subject_alias`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subject_alias` (
+  `subject_id` int(10) unsigned NOT NULL,
+  `alias_name` varchar(255) NOT NULL,
+  `subject_type_id` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '所属条目的类型',
+  `alias_type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是别名还是条目名',
+  `alias_key` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subject_fields`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subject_fields` (
+  `field_sid` mediumint(8) unsigned NOT NULL,
+  `field_tid` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `field_tags` mediumtext NOT NULL,
+  `field_rate_1` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_2` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_3` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_4` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_5` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_6` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_7` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_8` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_9` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_rate_10` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `field_airtime` tinyint(1) unsigned NOT NULL,
+  `field_rank` int(10) unsigned NOT NULL DEFAULT '0',
+  `field_year` year(4) NOT NULL COMMENT '放送年份',
+  `field_mon` tinyint(2) NOT NULL COMMENT '放送月份',
+  `field_week_day` tinyint(1) NOT NULL COMMENT '放送日(星期X)',
+  `field_date` date NOT NULL COMMENT '放送日期',
+  `field_redirect` mediumint(8) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subject_relations`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subject_relations` (
+  `rlt_subject_id` mediumint(8) unsigned NOT NULL COMMENT '关联主 ID',
+  `rlt_subject_type_id` tinyint(3) unsigned NOT NULL,
+  `rlt_relation_type` smallint(5) unsigned NOT NULL COMMENT '关联类型',
+  `rlt_related_subject_id` mediumint(8) unsigned NOT NULL COMMENT '关联目标 ID',
+  `rlt_related_subject_type_id` tinyint(3) unsigned NOT NULL COMMENT '关联目标类型',
+  `rlt_vice_versa` tinyint(1) unsigned NOT NULL,
+  `rlt_order` tinyint(3) unsigned NOT NULL COMMENT '关联排序'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='条目关联表';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_subjects`
+--
+ALTER TABLE `chii_subjects`
+  ADD PRIMARY KEY (`subject_id`),
+  ADD KEY `subject_name_cn` (`subject_name_cn`),
+  ADD KEY `subject_platform` (`subject_platform`),
+  ADD KEY `subject_creator` (`subject_creator`),
+  ADD KEY `subject_series` (`subject_series`),
+  ADD KEY `subject_series_entry` (`subject_series_entry`),
+  ADD KEY `subject_airtime` (`subject_airtime`),
+  ADD KEY `subject_ban` (`subject_ban`),
+  ADD KEY `subject_idx_cn` (`subject_idx_cn`,`subject_type_id`),
+  ADD KEY `subject_type_id` (`subject_type_id`),
+  ADD KEY `subject_name` (`subject_name`),
+  ADD KEY `order_by_name` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`,`subject_name`) USING BTREE,
+  ADD KEY `browser` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`) USING BTREE,
+  ADD KEY `subject_nsfw` (`subject_nsfw`);
+
+--
+-- Indexes for table `chii_subject_alias`
+--
+ALTER TABLE `chii_subject_alias`
+  ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `chii_subject_fields`
+--
+ALTER TABLE `chii_subject_fields`
+  ADD PRIMARY KEY (`field_sid`),
+  ADD KEY `sort_id` (`field_tid`),
+  ADD KEY `subject_airtime` (`field_airtime`),
+  ADD KEY `field_rank` (`field_rank`),
+  ADD KEY `field_date` (`field_date`),
+  ADD KEY `field_year_mon` (`field_year`,`field_mon`),
+  ADD KEY `field_year` (`field_year`),
+  ADD KEY `query_date` (`field_sid`,`field_date`);
+
+--
+-- Indexes for table `chii_subject_relations`
+--
+ALTER TABLE `chii_subject_relations`
+  ADD UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`,`rlt_related_subject_id`,`rlt_vice_versa`),
+  ADD KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`,`rlt_order`),
+  ADD KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
+  ADD KEY `rlt_relation_type` (`rlt_relation_type`,`rlt_subject_id`,`rlt_related_subject_id`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_subjects`
+--
+ALTER TABLE `chii_subjects`
+  MODIFY `subject_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `chii_subject_fields`
+--
+ALTER TABLE `chii_subject_fields`
+  MODIFY `field_sid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 16, 2021 at 04:28 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_episodes`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_episodes` (
+  `ep_id` mediumint(8) unsigned NOT NULL,
+  `ep_subject_id` mediumint(8) unsigned NOT NULL,
+  `ep_sort` float unsigned NOT NULL DEFAULT '0',
+  `ep_type` tinyint(1) unsigned NOT NULL,
+  `ep_disc` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '碟片数',
+  `ep_name` varchar(80) NOT NULL,
+  `ep_name_cn` varchar(80) NOT NULL,
+  `ep_rate` tinyint(3) NOT NULL,
+  `ep_duration` varchar(80) NOT NULL,
+  `ep_airdate` varchar(80) NOT NULL,
+  `ep_online` mediumtext NOT NULL,
+  `ep_comment` mediumint(8) unsigned NOT NULL,
+  `ep_resources` mediumint(8) unsigned NOT NULL,
+  `ep_desc` mediumtext NOT NULL,
+  `ep_dateline` int(10) unsigned NOT NULL,
+  `ep_lastpost` int(10) unsigned NOT NULL,
+  `ep_lock` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `ep_ban` tinyint(3) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_episodes`
+--
+ALTER TABLE `chii_episodes`
+  ADD PRIMARY KEY (`ep_id`),
+  ADD KEY `ep_sort` (`ep_sort`),
+  ADD KEY `ep_disc` (`ep_disc`),
+  ADD KEY `ep_subject_id` (`ep_subject_id`),
+  ADD KEY `ep_lastpost` (`ep_lastpost`),
+  ADD KEY `ep_ban` (`ep_ban`),
+  ADD KEY `ep_subject_id_2` (`ep_subject_id`,`ep_ban`,`ep_sort`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_episodes`
+--
+ALTER TABLE `chii_episodes`
+  MODIFY `ep_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 -- phpMyAdmin SQL Dump
 -- version 4.4.15.1
 -- http://www.phpmyadmin.net
@@ -2219,189 +2793,6 @@ UNLOCK TABLES;
 -- http://www.phpmyadmin.net
 --
 -- Host: 192.168.201.71
--- Generation Time: Dec 08, 2021 at 06:49 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subjects`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subjects` (
-  `subject_id` mediumint(8) unsigned NOT NULL,
-  `subject_type_id` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `subject_name` varchar(80) NOT NULL,
-  `subject_name_cn` varchar(80) NOT NULL,
-  `subject_uid` varchar(20) NOT NULL COMMENT 'isbn / imdb',
-  `subject_creator` mediumint(8) unsigned NOT NULL,
-  `subject_dateline` int(10) unsigned NOT NULL DEFAULT '0',
-  `subject_image` varchar(255) NOT NULL,
-  `subject_platform` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `field_infobox` mediumtext NOT NULL,
-  `field_summary` mediumtext NOT NULL COMMENT 'summary',
-  `field_5` mediumtext NOT NULL COMMENT 'author summary',
-  `field_volumes` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '卷数',
-  `field_eps` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `subject_wish` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `subject_collect` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `subject_doing` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `subject_on_hold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '搁置人数',
-  `subject_dropped` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '抛弃人数',
-  `subject_series` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `subject_series_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `subject_idx_cn` varchar(1) NOT NULL,
-  `subject_airtime` tinyint(1) unsigned NOT NULL,
-  `subject_nsfw` tinyint(1) NOT NULL,
-  `subject_ban` tinyint(1) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_alias`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subject_alias` (
-  `subject_id` int(10) unsigned NOT NULL,
-  `alias_name` varchar(255) NOT NULL,
-  `subject_type_id` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '所属条目的类型',
-  `alias_type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是别名还是条目名',
-  `alias_key` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_fields`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subject_fields` (
-  `field_sid` mediumint(8) unsigned NOT NULL,
-  `field_tid` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `field_tags` mediumtext NOT NULL,
-  `field_rate_1` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_2` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_3` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_4` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_5` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_6` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_7` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_8` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_9` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_rate_10` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `field_airtime` tinyint(1) unsigned NOT NULL,
-  `field_rank` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_year` year(4) NOT NULL COMMENT '放送年份',
-  `field_mon` tinyint(2) NOT NULL COMMENT '放送月份',
-  `field_week_day` tinyint(1) NOT NULL COMMENT '放送日(星期X)',
-  `field_date` date NOT NULL COMMENT '放送日期',
-  `field_redirect` mediumint(8) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_relations`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subject_relations` (
-  `rlt_subject_id` mediumint(8) unsigned NOT NULL COMMENT '关联主 ID',
-  `rlt_subject_type_id` tinyint(3) unsigned NOT NULL,
-  `rlt_relation_type` smallint(5) unsigned NOT NULL COMMENT '关联类型',
-  `rlt_related_subject_id` mediumint(8) unsigned NOT NULL COMMENT '关联目标 ID',
-  `rlt_related_subject_type_id` tinyint(3) unsigned NOT NULL COMMENT '关联目标类型',
-  `rlt_vice_versa` tinyint(1) unsigned NOT NULL,
-  `rlt_order` tinyint(3) unsigned NOT NULL COMMENT '关联排序'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='条目关联表';
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_subjects`
---
-ALTER TABLE `chii_subjects`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `subject_name_cn` (`subject_name_cn`),
-  ADD KEY `subject_platform` (`subject_platform`),
-  ADD KEY `subject_creator` (`subject_creator`),
-  ADD KEY `subject_series` (`subject_series`),
-  ADD KEY `subject_series_entry` (`subject_series_entry`),
-  ADD KEY `subject_airtime` (`subject_airtime`),
-  ADD KEY `subject_ban` (`subject_ban`),
-  ADD KEY `subject_idx_cn` (`subject_idx_cn`,`subject_type_id`),
-  ADD KEY `subject_type_id` (`subject_type_id`),
-  ADD KEY `subject_name` (`subject_name`),
-  ADD KEY `order_by_name` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`,`subject_name`) USING BTREE,
-  ADD KEY `browser` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`) USING BTREE,
-  ADD KEY `subject_nsfw` (`subject_nsfw`);
-
---
--- Indexes for table `chii_subject_alias`
---
-ALTER TABLE `chii_subject_alias`
-  ADD KEY `subject_id` (`subject_id`);
-
---
--- Indexes for table `chii_subject_fields`
---
-ALTER TABLE `chii_subject_fields`
-  ADD PRIMARY KEY (`field_sid`),
-  ADD KEY `sort_id` (`field_tid`),
-  ADD KEY `subject_airtime` (`field_airtime`),
-  ADD KEY `field_rank` (`field_rank`),
-  ADD KEY `field_date` (`field_date`),
-  ADD KEY `field_year_mon` (`field_year`,`field_mon`),
-  ADD KEY `field_year` (`field_year`),
-  ADD KEY `query_date` (`field_sid`,`field_date`);
-
---
--- Indexes for table `chii_subject_relations`
---
-ALTER TABLE `chii_subject_relations`
-  ADD UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`,`rlt_related_subject_id`,`rlt_vice_versa`),
-  ADD KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`,`rlt_order`),
-  ADD KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
-  ADD KEY `rlt_relation_type` (`rlt_relation_type`,`rlt_subject_id`,`rlt_related_subject_id`) USING BTREE;
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chii_subjects`
---
-ALTER TABLE `chii_subjects`
-  MODIFY `subject_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_subject_fields`
---
-ALTER TABLE `chii_subject_fields`
-  MODIFY `field_sid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
 -- Generation Time: Dec 08, 2021 at 06:55 AM
 -- Server version: 5.7.33-0ubuntu0.16.04.1-log
 -- PHP Version: 5.5.9-1ubuntu4.29
@@ -2779,83 +3170,114 @@ INSERT INTO `chii_subjects` (`subject_id`, `subject_type_id`, `subject_name`, `s
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 16, 2021 at 04:28 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_subjects` WRITE;
+/*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
+REPLACE INTO `chii_subjects` VALUES (253,2,'カウボーイビバップ','星际牛仔','tt0213338',85,1217549729,'c2/4c/253_t3XWb.jpg',1,'{{Infobox animanga/TVAnime\r\n|中文名= 星际牛仔\r\n|别名={\r\n[Cowboy Bebop]\r\n[宇宙牛仔]\r\n[赏金猎人]\r\n[太空牛仔]\r\n[恶男杰特]\r\n}\r\n|话数= 26\r\n|放送开始= 1998年10月23日\r\n|放送星期= 星期五\r\n|官方网站= http://www.cowboybebop.org/；http://www.cowboy-bebop.net/index.html\r\n|播放电视台= WOWOW、テレビ東京\r\n|其他电视台= \r\n|播放结束= 1999年4月23日\r\n|其他= \r\n|Copyright= \r\n|原作= 矢立肇\r\n|导演= 渡辺信一郎\r\n|脚本= 渡辺信一郎、稲荷昭彦、横手美智子、信本敬子、村井さだゆき、佐藤大、山口亮太\r\n|分镜= 渡辺信一郎、本郷みつる、飯田馬之介、都留稔幸、山内重保、森邦宏、赤根和樹、佐藤順一、武井良幸、山口祐司、佐藤育郎、岡村天斎\r\n|演出= 山田弘和、森邦宏、武井良幸、佐藤育郎\r\n|音乐= シートベルツ、菅野よう子\r\n|人物设定= 川元利浩\r\n|分镜构图= 入江泰浩\r\n|系列构成= 信本敬子\r\n|作画监督= しんぼたくろう、中田栄治、本橋秀之、菅野宏紀、逢坂浩司、小森高博、竹内浩志、川元利浩、後藤雅巳\r\n|机械设定= 山根公利\r\n|摄影监督= 大神洋一\r\n|原画= 逢坂浩司、中田栄治、後藤雅巳、小森高博、杉浦幸次、中村豊、伊藤嘉之、斎藤恒徳、鴨川浩、伊藤岳史、横山彰利、星和伸、大塚健、宮田忠明、吉田徹、川元利浩、菅野宏紀、橋本誠一、富岡隆司、井上英紀、岡真里子、津野田勝敏、入江泰浩、佐藤千春、高橋しんや、伊東伸高、高山朋浩\r\n|主题歌编曲= 菅野よう子\r\n|主题歌作曲= 菅野よう子\r\n|企画= サンライズ\r\n|制作管理= 鳥羽聡\r\n|设定= 鳥羽聡、河森正治、佐藤大\r\n|音响监督= 小林克良\r\n|特效= 長谷川敏生\r\n|制片人= 南雅彦\r\n|制作助手= BONES\r\n|动画制作= サンライズ\r\n|テレビ東京版={\r\n[1998年4月3日 - 1998年6月26日]\r\n[全12话+总集篇]\r\n}\r\n}}','       2021年，随着超光速航行技术的实现，人类得以在太阳系范围内方便的自由移动，但是由于设计上的失误，这种技术引发了月球的爆炸，无数的月球碎片被吸引向地球，造成了空前绝后的大灾难。存活下来的人类逃离地球，并开始在太阳系各地建立家园。由于这次灾难，国家、政府等权利机构都极为不稳定、治安问题也成为了一个难题。为了在人力资源不足的情况下抓捕罪犯，有些组织开始允许个人抓捕通缉的罪犯并换取奖金，“赏金猎人”这个职业也就由此诞生了。\r\n\r\n       史派克（Spike）和杰特（Jet）是驾驶飞船Bebop号在宇宙中以捉拿逃犯获取奖金为生的赏金猎人。两人在星际间的旅程中，结识了身负巨债、嗜财如命的美女菲（Faye）和电脑神童艾德（Ed），并收养了拥有高智商的数据狗爱因（Ein）。从此，四人一狗游荡在广阔之宇宙之中，在自己与他人的生活中经历著种种悲欢离合，也寻找著各自的过去。','',0,26,4293,11307,1472,700,115,0,0,'x',0,0,0),(2585,2,'とある科学の超電磁砲','某科学的超电磁炮','',2627,1252804850,'36/e7/2585_pn2eP.jpg',1,'{{Infobox animanga/TVAnime\r\n|中文名= 某科学的超电磁炮\r\n|别名={\r\n[科学超电磁炮]\r\n[科学的超电磁炮]\r\n[en|Toaru Kagaku no Railgun]\r\n}\r\n|话数= 24\r\n|放送开始= 2009年10月2日\r\n|放送星期= 星期五\r\n|官方网站= http://toaru-project.com/railgun/\r\n|播放电视台= TOKYO MX\r\n|其他电视台= テレ玉 / チバテレビ /  MBS  /  tvk  /  AT-X  /  CBC\r\n|播放结束= 2010年3月19日\r\n|其他= \r\n|Copyright= ©鎌池和馬／冬川基／アスキー・メディアワークス／PROJECT-RAILGUN\r\n|原作= 鎌池和馬＋冬川基（電撃コミックス／アスキー・メディアワークス刊）\r\n|导演= 長井龍雪\r\n|人物原案= はいむらきよたか(灰村キヨタカ)\r\n|人物设定= 田中雄一\r\n|系列构成= 水上清資\r\n|美术监督= 黒田友範\r\n|色彩设计= 安藤智美\r\n|摄影监督= 福世晋吾\r\n|剪辑= 西山茂（REAL-T）\r\n|音响监督= 明田川仁\r\n|音乐= I\'ve sound ／井内舞子\r\n|动画制作= J.C.STAFF\r\n|製作= PROJECT-RAILGUN(ジェネオン・ユニバーサル・エンタテイメント[NBCユニバーサル・エンターテイメント]、アスキー・メディアワークス、J.C.STAFF、AT-X、ムービック)\r\n|企画= 川村明廣、鈴木一智、阿部倫久、三上康博、太布尚弘\r\n|制片人= 中山信宏、峯健司、三木一馬、藤田敏、金庭こず恵；动画制片人：柏田真一郎；川瀬浩平、松倉友二、梅澤淳（制片）\r\n}}','故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力分为LV0至LV5。\r\n\r\n主角御坂美琴是学园都市中仅七位LV5（超能力者）的其中一人，排行第三。她是拥有操纵电击能力的“电击使”，站在电击能力的顶峰，因而被称为“超电磁炮”。\r\n\r\n本作不但通过美琴的视角来描绘学园都市的平常而不平凡的日常生活，也叙述了学园都市秘密进行非人道性质的实验，从而使大家对于本作及本篇《魔法禁书目录》的背景（世界观）的认识也慢慢变得清楚。','',0,24,727,15012,563,539,312,0,0,'m',0,0,0),(211567,2,'3月のライオン 第2シリーズ','3月的狮子 第二季','',63167,1489848627,'5c/49/211567_pGm5Q.jpg',1,'{{Infobox animanga/TVAnime\r\n|中文名= 3月的狮子 第二季\r\n|别名={\r\n[三月的狮子 第二季]\r\n[三月的狮子 2期]\r\n}\r\n|话数= 22\r\n|放送开始= 2017年10月14日\r\n|放送星期= 星期六\r\n|官方网站= http://3lion-anime.com\r\n|播放电视台= NHK総合\r\n|其他电视台= \r\n|播放结束= 2018年3月31日\r\n|其他= \r\n|Copyright= © 羽海野チカ・白泉社／「3月のライオン」アニメ製作委員会\r\n|原作= 羽海野チカ（白泉社 ヤングアニマル連載）\r\n|导演= 新房昭之\r\n|人物设定= 杉山延寛\r\n|系列构成= 新房昭之、東冨耶子\r\n|作画监督= 杉山延寛、潮月一也\r\n|製作= 「3月のライオン」アニメ製作委員会\r\n}}','这是有关各式各样的人们取回什么的温馨故事，同时也是有关斗争的故事。主人公桐山零，幼时因为意外事故失去了家人，是一个背负着沉重的孤独的17岁将棋棋士。独自居住在东京旧市镇桐山零遇见了明里、日向、桃三姐妹，少年桐山零因此发生了改变。','',0,22,2191,5823,566,303,78,0,0,'3',0,0,0),(315957,3,'原神-风与牧歌之城 City of Winds and Idylls','风与牧歌之城','',8202,1601273894,'db/c8/315957_8hX0e.jpg',0,'{{Infobox Album\r\n|中文名= 风与牧歌之城\r\n|别名={\r\n[《原神》公测纪念OST-蒙德篇]\r\n}\r\n|版本特性= Digital\r\n|发售日期= 2020-09-28\r\n|价格= \r\n|播放时长= \r\n|录音= \r\n|碟片数量= 3\r\n|厂牌= miHoYo\r\n|作曲= 陈致逸\r\n|艺术家= 陈致逸\r\n}}','《原神》公测纪念OST-蒙德篇专辑《风与牧歌之城 City of Winds and Idylls》正式上线，专辑分为《风与牧歌之城 City of Winds and Idylls》、《蒲公英的国度 the Horizon of Dandelion》与《蒙德战记 Saga of the West Wind》3张分碟，共收录63首由陈致逸@HOYO-MiX为《原神》蒙德地区创作的原声音乐。','',0,0,2,91,9,0,5,0,0,'f',0,0,0);
+/*!40000 ALTER TABLE `chii_subjects` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Database: `bangumi`
---
+LOCK TABLES `chii_subjects` WRITE;
+/*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
+REPLACE INTO `chii_subjects` VALUES (495,1,'×××HOLiC','×××HOLiC','',1,1217657840,'35/05/495_Ovvsp.jpg',1001,'{{Infobox animanga/Manga\r\n|中文名= ×××HOLiC\r\n|别名={\r\n[次元魔女]\r\n[XXXHOLIC]\r\n[xxxHOLiC]\r\n[沉迷女儿香]\r\n[×××HOLiC·笼]\r\n[xxxholic笼]\r\n[四月一日灵异事件簿]\r\n[四月一日奇妙事件薄]\r\n}\r\n|出版社={\r\n[jp|講談社]\r\n[tw|東立]\r\n}\r\n|价格= \r\n|其他出版社= \r\n|连载杂志={\r\n[週刊ヤングマガジン（2003年 - 2010年）]\r\n[別冊少年マガジン（2010年 - 2011年）]\r\n}\r\n|发售日= \r\n|册数= 19\r\n|页数= \r\n|话数= 213\r\n|ISBN= \r\n|其他= \r\n|开始= 2003年13号(週刊ヤングマガジン)\r\n|结束= 2011年3月号(別冊少年マガジン)\r\n}}','      四月一日君尋進入了別名為次元魔女並自稱為壹原侑子所擁有的能夠實現任何願望的店。侑子說只要四月一日能付出對等的代價，就可以幫助四月一日實現－「可以讓你看不見妖怪，而且，讓妖怪不受你的血所吸引」的願望。因此四月一日答應侑子的條件，侑子便讓四月一日在其店中打工作為代價，直到時數足以實現願望。\r\n\r\n      “這世上有許多不可思議的事，不管是再古怪、再稀奇的事，一旦沒有人、一旦沒有人看見、一旦與人無關的話，就只不過是現象，瞬間即逝的事...，只有，人類...才是這世上最神秘又不可思議的生物────”\r\n\r\n      “世界上有許多不可思議的事，那家店也是其中之一。那裏是能夠實現願望的店，自行停止時間的店主繼承，經手秘密委託的地點。那家店確實存在，可是不對所有生物開放。有緣時，只有有緣的生物能夠...得知、造訪、見到閉門不出的店主。”','CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。',19,213,159,477,82,44,15,1,0,'',0,0,0),(497,1,'ちょびっツ','人形电脑天使心','',1,1217658146,'73/80/497_7mGTv.jpg',1001,'{{Infobox animanga/Manga\r\n|中文名= 人形电脑天使心\r\n|别名={\r\n[en|Chobits]\r\n}\r\n|出版社= 講談社、台灣東販、天下出版\r\n|价格= \r\n|其他出版社= \r\n|连载杂志= 週刊ヤングマガジン\r\n|发售日= \r\n|册数= 8\r\n|页数= \r\n|话数= 88\r\n|ISBN= \r\n|其他= \r\n|作者= CLAMP\r\n|开始= 2000年第43号\r\n|结束= 2002年第48号\r\n}}','　　故事講述重考生本須和秀樹，身無分文隻身來到東京卻想擁有一部價格昂貴的人形電腦。\r\n　　於東京，人形電腦是非常普及的家電。\r\n　　他心想「如果可在垃圾堆中撿到一部便好了」，卻如他所願在東京的一晚撿到一部人形電腦……\r\n\r\n　　本作从2000年9月至2002年10月间于日本讲谈社《周刊Young Magazine》连载。共88话。单行本全8卷。\r\n　　作品的特征之一，就是并未出现CLAMP作品中有着象征性存在的“东京铁塔”。本作与《天使领域》存在人物关联。','CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。',8,88,107,521,19,19,7,1,0,'r',0,0,0),(499,1,'文学少女','文学少女','',1,1217658999,'3c/f1/499_QyAUf.jpg',1002,'{{Infobox animanga/Novel\r\n|中文名= 文学少女\r\n|别名={\r\n[Book Girl]\r\n}\r\n|出版社= エンターブレイン、尖端出版，人民文学出版社，上海文艺出版社\r\n|价格= \r\n|连载杂志= FB Online（短篇部分）\r\n|发售日= \r\n|册数= 16\r\n|页数= \r\n|话数= \r\n|ISBN= \r\n|其他= \r\n|作者= 野村美月\r\n|插图= 竹岡美穂\r\n|开始= 2006-04-28\r\n|结束= 2011-04-30\r\n}}','《文学少女》系列小说，长篇每卷皆以一部实际存在的经典小说为主线文本，推动剧情前进。故事围绕圣条学园文艺社社长天野远子和社员井上心叶的事件与解谜。小说基本上以井上心叶的第一人称进行，但不时穿插“第二某人”的第一人称口白心境（粗体字），是故事黑幕的重要提示。','野村美月是日本轻小说作家，福冈县出生，东洋大学文学部毕业，2001年出道成为作家。\r\n受《清秀佳人》、《小妇人》等少女小说影响颇深，写作主题偏向粉红色的青春喜剧。2006年，野村美月欲摆脱昔日风格，以能表现严肃、温馨又哀伤的气氛为目标，创作以文学名著贯穿全局的《文学少女》系列，获得之前未有的高度评价。\r\n\r\n竹冈美穗（7月1日 - ）是日本的插画家。东京出身。 第九回コバルトイラスト大赏得奖后，以插画家的身分出道。 小说家竹冈叶月的姊姊。',16,0,752,2285,500,167,54,1,0,'w',0,0,0);
+/*!40000 ALTER TABLE `chii_subjects` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_episodes`
---
-
-CREATE TABLE IF NOT EXISTS `chii_episodes` (
-  `ep_id` mediumint(8) unsigned NOT NULL,
-  `ep_subject_id` mediumint(8) unsigned NOT NULL,
-  `ep_sort` float unsigned NOT NULL DEFAULT '0',
-  `ep_type` tinyint(1) unsigned NOT NULL,
-  `ep_disc` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '碟片数',
-  `ep_name` varchar(80) NOT NULL,
-  `ep_name_cn` varchar(80) NOT NULL,
-  `ep_rate` tinyint(3) NOT NULL,
-  `ep_duration` varchar(80) NOT NULL,
-  `ep_airdate` varchar(80) NOT NULL,
-  `ep_online` mediumtext NOT NULL,
-  `ep_comment` mediumint(8) unsigned NOT NULL,
-  `ep_resources` mediumint(8) unsigned NOT NULL,
-  `ep_desc` mediumtext NOT NULL,
-  `ep_dateline` int(10) unsigned NOT NULL,
-  `ep_lastpost` int(10) unsigned NOT NULL,
-  `ep_lock` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `ep_ban` tinyint(3) unsigned NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_episodes`
---
-ALTER TABLE `chii_episodes`
-  ADD PRIMARY KEY (`ep_id`),
-  ADD KEY `ep_sort` (`ep_sort`),
-  ADD KEY `ep_disc` (`ep_disc`),
-  ADD KEY `ep_subject_id` (`ep_subject_id`),
-  ADD KEY `ep_lastpost` (`ep_lastpost`),
-  ADD KEY `ep_ban` (`ep_ban`),
-  ADD KEY `ep_subject_id_2` (`ep_subject_id`,`ep_ban`,`ep_sort`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chii_episodes`
---
-ALTER TABLE `chii_episodes`
-  MODIFY `ep_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_episodes` WRITE;
+/*!40000 ALTER TABLE `chii_episodes` DISABLE KEYS */;
+REPLACE INTO `chii_episodes` VALUES (519,253,1,0,0,'アステロイド・ブルース Asteroid Blues','小行星蓝调',0,'00:24:43','1998-10-23','a:7:{i:0;s:47:\"http://v.youku.com/v_show/id_XMTA4OTQyOTY=.html\";i:1;s:38:\"http://player.56.com/v_NTExMjI2MDM.swf\";i:2;s:40:\"http://www.tudou.com/v/u_252U0EERY/v.swf\";i:3;s:42:\"http://www.letv.com/ptv/vplay/1305391.html\";i:4;s:60:\"http://6.cn/player.swf?flag=0&amp;vid=hkiNB/npqSwGyGFBcXBzmg\";i:5;s:39:\"http://www.bilibili.com/video/av488321/\";i:6;s:3:\"...\";}',66,0,'脚本：信本敬子  絵コンテ：渡辺信一郎  演出：武井良幸  作画監督：川元利浩  メカ作画監督：佐野浩敏\r\n\r\n賞金首のアシモフを追うスパイクとジェット。アシモフは敵対する組織から非合法の目薬ドラッグ“ブラッディアイ”を盗み出していた。アシモフは恋人のカテリーナと共に、ブラッディアイを売り捌こうと売人のバーテンの店を訪れるが……\r\n\r\nドラッグを使用した時にアシモフが見るモノトーン調な映像やトリップ感覚を、デジタル処理で巧みに表現！',1218302619,1638731153,1,0),(7027,253,2,0,0,'野良犬のストラット Stray Dog Strut','野狗阔步',0,'00:22:17','1998-04-03','a:2:{i:0;s:40:\"http://www.tudou.com/v/Q31p9pbfa8A/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765568&amp;yid=XNTEwNDc1OTU2&amp;external=bangumi\";}',38,0,'脚本：横手美智子  絵コンテ：渡辺信一郎  演出：佐藤育郎  作画監督：竹内浩志\r\n\r\n賞金首は格闘家の連続ペット窃盗犯。なぜかスパイクたちだけでなく、動物研究所もその男の行方を追っていた……。一匹の犬を巡ってチャイナタウンで巻き起こる大騒動！\r\n\r\n第1話から一転、コミカルタッチで描かれたビバップ号の愛犬となるアインの登場秘話。音楽の使われ方も素晴らしく、スパイクのブルース・リーに関するウンチクも冴える！\r\n\r\n注：标题取自 Stray Cats 的单曲 Stray Cat Strut 。',1245507149,1629024287,1,0),(7028,253,3,0,0,'ホンキィ・トンク・ウィメン Honky Tonk Women','酒馆女郎',0,'00:24:42','1998-04-10','a:2:{i:0;s:40:\"http://www.tudou.com/v/bm3yKoPYCOg/v.swf\";i:1;s:39:\"http://www.bilibili.tv/video/av488321/#\";}',42,0,'脚本：山口亮太/信本敬子  絵コンテ：赤根和樹  演出：森邦宏  作画監督：本橋秀之  メカ作画監督：後藤雅巳\r\n\r\n一攫千金を狙ってカジノにやって来たスパイクとジェット。人違いから裏取引に巻き込まれたスパイクたちは、手にした一枚のチップをネタにカジノのオーナー、ゴードンから大金をせしめようとするが……\r\n\r\n女イカサマ師・フェイの初登場話。愛機レッドテイルを自在に操り、転んでもタダでは起きないフェイの胡散臭い魅力が爆発のエピソードです！\r\n\r\n注：标题取自 The Rolling Stones 的同名歌曲。',1245507198,1637555376,1,0),(7029,253,4,0,0,'ゲイトウェイ・シャッフル Gateway Shuffle','网关曳步舞',0,'00:24:41','1998-11-13','a:2:{i:0;s:40:\"http://www.tudou.com/v/OUB9XiOHnwM/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765571&amp;yid=XNTEwNDc1OTYw&amp;external=bangumi\";}',43,0,'脚本：村井さだゆき  絵コンテ：武井良幸  演出：武井良幸  作画監督：しんぼたくろう  メカ作画監督：後藤雅巳\r\n\r\n過激な環境保護団体「スペース・ウォリアーズ」の女リーダー、トゥインクルを捕えたスパイクだが、換金しようとした矢先、彼女の賞金が突然取り消されてしまった。渋々トゥインクルを解放するスパイク。だが、トゥインクルは報復のため位相差空間内からウイルスミサイルを発射するのだった……\r\n\r\n迫り来るミサイルとスパイクの競走は手に汗握る！\r\n\r\n注：曳步舞（Shuffle），由于发源地是澳大利亚墨尔本，故也被叫做墨尔本曳步舞（MelbourneShuffle），早期为了区分 Shuffle 这个词的多元性才加了地区的前缀，目前大多直接用 Shuffle 。曳步舞动作简洁、快速有力、节奏感强，是一种自由度很高、个性十足的舞步。结合本集内容将标题选择了这个中译。',1245507226,1632746318,1,0),(7030,253,5,0,0,'堕天使たちのバラッド Ballad Of Fallen Angels','堕天使们的抒情曲',0,'00:24:01','1998-11-20','a:2:{i:0;s:40:\"http://www.tudou.com/v/tHm4Q56CrjI/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765572&amp;yid=XNTEwNDc1OTY4&amp;external=bangumi\";}',92,0,'脚本：横手美智子  絵コンテ：渡辺信一郎  演出：渡辺哲哉  作画監督：川元利浩  メカ作画監督：後藤雅巳\r\n\r\nスパイクがレッド・ドラゴンの構成員だった頃の恩人、マオに高額の賞金がかけられた。だがそれは、スパイク抹殺のための罠だった……。マオを殺し、罠を仕掛けたのはかつての相棒、ビシャス。今、二人の対決が幕を開ける！\r\n\r\nスパイク生涯の宿敵ビシャスが初登場。オペラとハードアクションが絶妙にマッチしたクールでスタイリッシュな一本だ！',1245507250,1640337661,1,0),(7031,253,6,0,0,'恶魔を怜れむ歌 Sympathy For The Devil','给恶魔的哀怜之歌',0,'00:24:42','1998-11-27','a:2:{i:0;s:40:\"http://www.tudou.com/v/NdJexUdDqMI/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765573&amp;yid=XNTEwNDc1OTcy&amp;external=bangumi\";}',54,0,'脚本：信本敬子  絵コンテ：岡村天斎  演出：佐藤育郎  作画監督：竹内浩志  メカ作画監督：後藤雅巳\r\n\r\nスパイクたちが追う賞金首のジラフが何者かに殺された。調査を開始したスパイクは、ジラフが探していたゼブラという車椅子の男に辿り着く。だが、そこで口を開いたのはゼブラに付き添っていた少年のウェンだった……少年に隠された秘密とは？\r\n\r\nスパイクが天才少年ブルースハーピストの謎に迫る！オカルトチックなSF感溢れる奇妙な物語。\r\n\r\n注：标题取自 The Rolling Stones 的同名歌曲。',1245507269,1636558342,1,0),(7032,253,7,0,0,'ヘヴィ・メタル・クイーン Heavy Metal Queen','重金属皇后',0,'00:24:42','1998-04-17','a:2:{i:0;s:40:\"http://www.tudou.com/v/Z1edXjWyL14/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765574&amp;yid=XNTEwNDc1OTc2&amp;external=bangumi\";}',50,0,'脚本：横手美智子  絵コンテ：岡村天斎  演出：森邦宏  作画監督：本橋秀之  メカ作画監督：後藤雅巳\r\n\r\n爆発物のスペシャリストで賞金首のデッカーを追っている最中、スパイクは女トラッカーのVTと出会う。一方、賞金を一人占めしようと別行動でデッカーを探していたフェイは、一度は発見するが取り逃がしてしまう。それを知ったVTは、トラック仲間からの情報でデッカーが乗った機体の追跡を開始するが……\r\n\r\n全編に流れるヘヴィ・メタルが痛快！',1245507294,1640348298,1,0),(7033,253,8,0,0,'ワルツ・フォー・ヴィーナス Waltz For Venus','金星华尔兹',0,'00:24:35','1998-04-24','a:2:{i:0;s:40:\"http://www.tudou.com/v/4plGLX4Ba08/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765575&amp;yid=XNTEwNDc1OTky&amp;external=bangumi\";}',45,0,'脚本：横手美智子  絵コンテ：武井良幸  演出：武井良幸  作画監督：しんぼたくろう  メカ作画監督：後藤雅巳\r\n\r\n金星病で視力を失った妹ステラのため、自分の所属するピカロ一味から、金星病の薬草「グレイアッシュ」を持ち逃げした青年ロコ。その逃走中、スパイクと出会ったロコは、薬草をスパイクに託し、姿を消してしまう。数日後、ロコに指定された場所に向かったスパイクを待っていたのは……\r\n\r\n最後に流れるオルゴールの音色が静かに哀しみを強調する。',1245507313,1639368639,1,0),(7034,253,9,0,0,'ジャミング・ウィズ・エドワードJamming With Edward','与艾德华竞飙',0,'00:24:33','1998-05-01','a:2:{i:0;s:40:\"http://www.tudou.com/v/gJPNk8rxR_s/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765576&amp;yid=XNTEwNDc1OTg4&amp;external=bangumi\";}',60,0,'脚本：佐藤大  絵コンテ：渡辺信一郎  演出：佐藤育郎  作画監督：小森高博  メカ作画監督：後藤雅巳\r\n\r\n地表に人工衛星を使って落書きをしたハッカーを追って地球に来たスパイクたち。それを知ったエドは、兼ねてから興味を持っていたスパイクたちの手助けをしようと犯人を追うが……\r\n\r\n天才ハッカー、エドの初登場話。地表に絵を描いた衛星をハッキングしたり、ビバップ号をラジコン飛行機のように操ったりと、彼女の悪戯心が遺憾なく発揮されている！\r\n\r\n注：标题取自 The Rolling Stones 的三位成员与 Nicky Hopkins 、 Ry Cooder 在1972年发行的专辑名。',1245507350,1629129420,1,0),(7035,253,10,0,0,'ガニメデ慕情 Ganymede Elegy','木卫三挽歌',0,'00:24:41','1998-05-08','a:2:{i:0;s:40:\"http://www.tudou.com/v/0EuWbemfv28/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765577&amp;yid=XNTEwNDc1OTg0&amp;external=bangumi\";}',68,0,'脚本：稲荷昭彦  絵コンテ：山口祐司  演出：山田弘和  作画監督：逢坂浩司  メカ作画監督：後藤雅巳\r\n\r\nある日突然、自分のもとから去って行った、かつての恋人アリサのことを昔馴染みから聞かされたジェットは、一人で故郷ガニメデに向かう。ガニメデに到着し、アリサと再会したジェットだったが、アリサには新たな恋人リントがいた。だが、リントは賞金首だったのだ……\r\n\r\n様々な音楽がモチーフとなる「ビバップ」だが、今回はズバリ“演歌”です！',1245507371,1636884301,1,0),(7036,253,11,0,0,'闇夜のヘヴィ・ロック Toys In The Attic','阁楼上的玩具',0,'00:24:41','1998-05-15','a:2:{i:0;s:40:\"http://www.tudou.com/v/FHUgg8yVwNY/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765578&amp;yid=XNTEwNDc1OTk2&amp;external=bangumi\";}',82,0,'脚本：横手美智子  絵コンテ：森邦宏  演出：森邦宏  作画監督：しんぼたくろう  メカ作画監督：後藤雅巳\r\n\r\nビバップ号の船内でジェットが何かに首筋を刺され、そのまま気絶してしまった。真相の究明に乗り出すスパイクだが、病名はおろか刺した生物の見当すらつかない。そうこうしている内に、続いてフェイ、アインも襲われ、床に伏せてしまうのだった……\r\n\r\n映画「エイリアン」シリーズを彷彿させるビバップ号を舞台にした密室サスペンス・パロディー！\r\n\r\n注：标题取自美国摇滚乐队 Aerosmith 的同名专辑。',1245507402,1639329856,1,0),(7037,253,12,0,0,'ジュピター・ジャズ（前编） Jupiter Jazz (PART 1)','木星爵士乐（前篇）',0,'00:24:41','1998-05-22','a:2:{i:0;s:40:\"http://www.tudou.com/v/7x2WOUhOV9k/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765579&amp;yid=XNTEwNDc2MDAw&amp;external=bangumi\";}',39,0,'脚本：信本敬子  絵コンテ：岡村天斎  演出：武井良幸  作画監督：川元利浩  メカ作画監督：後藤雅巳\r\n\r\n目薬ドラッグ「レッド・アイ」の取引に、木星の衛星カリストへ向かうビシャス。その頃、ビバップ号の金庫の中身を持ち逃げしたフェイを追っていたスパイクたちは、ジュリアという名前にぶち当たる。女の名に顔色を変えたスパイクは、ジェットの制止を振り切りカリストに向かう。その頃、フェイはグレンと名乗る不思議な青年に出会っていた……',1245507419,1637122117,1,0),(7038,253,13,0,0,'ジュピター・ジャズ（后编） Jupiter Jazz (PART 2)','木星爵士乐（后篇）',0,'00:24:41','1998-05-29','a:2:{i:0;s:40:\"http://www.tudou.com/v/-Ddsjlf5X5E/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765581&amp;yid=XNTEwNDc2MDA0&amp;external=bangumi\";}',53,0,'脚本：信本敬子  絵コンテ：岡村天斎  演出：佐藤育郎  作画監督：小森高博  メカ作画監督：後藤雅巳\r\n\r\nビシャスと再会したスパイクは、かつての弟分リンの銃撃の前に倒れ、グレンはフェイにビシャスとの壮絶な過去を告げる。そして、グレンはビシャスに復讐するため罠を仕掛ける。そこに復活したスパイクも加わり、ビシャス、グレン、スパイクによる三つ巴の空中戦が始まった！\r\n\r\n名曲「SPACE LION」が流れるエンディングが渋くて超カッコ良いぞ！',1245507441,1637122264,1,0),(7039,253,14,0,0,'ボヘミアン・ラプソディ Bohemian Rhapsody','波西米亚狂想曲',0,'00:24:41','1998-06-05','a:2:{i:0;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765580&amp;yid=XNTEwNDc2MDA4&amp;external=bangumi\";i:1;s:47:\"http://www.tudou.com/programs/view/yxOKL03hgaU/\";}',43,0,'脚本：佐藤大  絵コンテ：都留稔幸  演出：山田弘和  作画監督：しんぼたくろう  メカ作画監督：後藤雅巳\r\n\r\n次々と起こる位相差空間ゲートのハッキング事件。スパイクたちもその実行犯は捕えるものの、彼らを操る首謀者の姿が見えてこない。唯一の手がかりは実行犯が持っていたチェスの駒のみであった。だが、その駒の仕掛けに気付いたエドは、チェスのネット対戦を始め、黒幕の“チェスマスター・ヘックス”の存在を突き止める。果たして、その正体とは？\r\n\r\n注：标题取自 Queen 的同名歌曲。',1245507458,1637209324,1,0),(7040,253,15,0,0,'マイ・ファニー・ヴァレンタイン My Funny Valentine','我可爱的情人',0,'00:24:41','1998-06-12','a:1:{i:0;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765582&amp;yid=XNTEwNDc2MDEy&amp;external=bangumi\";}',52,0,'脚本：信本敬子  絵コンテ：岡村天斎  演出：森邦宏  作画監督：逢坂浩司  メカ作画監督：後藤雅巳\r\n\r\nある日、フェイはアインに自分の過去のことを呟く。三年前にコールドスリープから目覚めたフェイ。だが、フェイはコールドスリープ以前の記憶を失っていた。その上、手術代など合わせて三億ウーロンの借金も背負ってしまう。そんなフェイを支えていたのが担当の弁護士ウィットニーだった……\r\n\r\nフェイの秘められた過去が垣間見られるエピソード！\r\n\r\n注：标题取自 Chet Baker 的同名歌曲。',1245507529,1637897682,1,0),(7041,253,16,0,0,'ブラック・ドッグ・セレナーデ Black Dog Serenade','黑犬小夜曲',0,'00:24:41','1999-02-12','a:2:{i:0;s:40:\"http://www.tudou.com/v/HpClY0AFJb8/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765583&amp;yid=XNTEwNDc1NzEy&amp;external=bangumi\";}',37,0,'脚本：横手美智子  絵コンテ：山内重保  演出：佐藤育郎  作画監督：竹内浩志  メカ作画監督：後藤雅巳\r\n\r\n冥王星へ向かう囚人輸送宇宙船の内部で、囚人たちによる反乱が発生した。その中には、昔、ジェットの左腕を奪った殺し屋ウダイがいた。かつての同僚ファドからその情報を聞いたジェットは、ファドと共に包囲網を突破して行方不明となった宇宙船の追跡を開始するが……\r\n\r\nジェットが“ブラック・ドッグ”と呼ばれていた警官時代の過去が描かれる。',1245507559,1638792827,1,0),(7042,253,17,0,0,'マッシュルーム・サンバ Mushroom Samba','蘑菇桑巴',0,'00:24:18','1999-02-19','a:2:{i:0;s:40:\"http://www.tudou.com/v/zrPgavNwQs0/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765584&amp;yid=XNTEwNDc2MjQ4&amp;external=bangumi\";}',59,0,'脚本：横手美智子/渡辺信一郎  絵コンテ：渡辺信一郎  演出：森邦宏  作画監督：しんぼたくろう/中田栄治  メカ作画監督：後藤雅巳\r\n\r\n一文無しで、宇宙を漂流していたビバップ号は当て逃げに遭い、木星の衛星イオに不時着してしまう。近くの町に食料を調達に出かけたエドとアインは、一人の不思議な老人に出会う。その老人からキノコを貰ったエドは、腹を減らしたビバップ号の面々にお裾分け。すると、めくるめくトリップの世界が彼らを待っていた……\r\n\r\nエドとアインの魅力全開！',1245507613,1632281102,1,0),(7043,253,18,0,0,'スピーク・ライク・ア・チャイルド Speak Like a Child','童言童语',0,'00:24:42','1998-06-19','a:2:{i:0;s:40:\"http://www.tudou.com/v/pN8kDInaWX8/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765586&amp;yid=XNTEwNDc1NzE2&amp;external=bangumi\";}',116,0,'脚本：稲荷昭彦/河森正治/吉永亜矢  絵コンテ：佐藤順一  演出：武井良幸  作画監督：菅野宏紀  メカ作画監督：後藤雅巳\r\n\r\nビバップ号にある日、フェイ宛の小包が届く。借金取りからの物だと勘違いしたフェイは、中身も見ないで逃走。スパイクが残された小包を開けると、一本のベータテープが出てきた。その筋のマニアに売ろうとして諦めたスパイクとジェットがその中身を再生すると、そこには少女時代のフェイの映像が映っていた……。「フレー、フレー、あたし！」。',1245507643,1638538575,1,0),(7044,253,19,0,0,'ワイルド・ホーセス Wild Horses','野马',0,'00:24:29','1999-03-05','a:2:{i:0;s:40:\"http://www.tudou.com/v/EeGfXNG-o5Y/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765595&amp;yid=XNTEwNDc1NzIw&amp;external=bangumi\";}',37,0,'脚本：稲荷昭彦  絵コンテ：飯田馬之介  演出：山田弘和  作画監督：逢坂浩司  メカ作画監督：後藤雅巳\r\n\r\nスパイクは久し振りに愛機ソードフィッシュIIをオーバーホールしてもらうため、凄腕メカニック、ドゥーハンのいる地球を訪れていた。修復が終わったソードフィッシュIIで早速、宇宙海賊スターシップ・パイレーツを追うスパイクだが、突如制御力を失い地球へと落下し始める！　スパイクの運命は？\r\n\r\nメカデザイナー・山根公利の趣味が炸裂した一本。',1245507687,1639366528,1,0),(7045,253,20,0,0,'道化師の鎮魂歌 Pierrot Le Fou','小丑的安魂曲',0,'00:24:40','1999-03-12','a:3:{i:0;s:47:\"http://v.youku.com/v_show/id_XMjg2NDk1MjEy.html\";i:1;s:40:\"http://www.tudou.com/v/9AypItnwnYY/v.swf\";i:2;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130765585&amp;yid=XNTEwNDc2MzA4&amp;external=bangumi\";}',103,0,'脚本：村井さだゆき  絵コンテ：武井良幸  演出：武井良幸  作画監督：小森高博  メカ作画監督：後藤雅巳\r\n\r\nある夜、スパイクは警察の高官が暗殺されるのを目撃した。暗殺者は、マッドピエロこと東風（トンプウ）。その姿を見て生き延びた者はいないという伝説の殺し屋だった。目撃したことで東風の襲撃を受けるスパイク。その場は何とか逃げ延びたものの、東風はどこまでも追って来るのだった……。\r\n\r\n本気になったスパイクのキレのあるアクションが最高！',1245507706,1639728343,1,0),(7046,253,21,0,0,'ブギ・ウギ・フンシェイ Boogie Woogie Feng Shui','布吉伍吉风水',0,'00:24:40','1999-03-19','a:2:{i:0;s:40:\"http://www.tudou.com/v/aMjXwypBI2s/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766707&amp;yid=XNTEwNDc1NzI0&amp;external=bangumi\";}',44,0,'脚本：村井さだゆき/渡辺信一郎  絵コンテ：潮乱太  演出：佐藤育郎  作画監督：竹内浩志  メカ作画監督：後藤雅巳\r\n\r\n古い友人のパオよりジェットに届いた一通のメール。文面には「案山より聖獣を見いだせ。我、四神相応に有り」という謎の言葉。疑問に思い、パオを探していたジェットは、パオが位相差空間内に閉じこめられていることを知る。そしてパオの孫娘メイファを付け狙う刺客の影。それは秘密のエネルギーを秘めた「太陽石」を巡る戦いの始まりだった……。\r\n\r\n注：ブギ・ウギ（Boogie Woogie）低音连奏爵士乐，是爵士乐中的一种钢琴奏法。',1245507728,1639295016,1,0),(7047,253,22,0,0,'カウボーイ・ファンク Cowboy Funk','牛仔放克',0,'00:24:41','1999-03-26','a:2:{i:0;s:40:\"http://www.tudou.com/v/tOucNYXO5WE/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766702&amp;yid=XNTEwNDc1NzI4&amp;external=bangumi\";}',80,0,'脚本：信本敬子  絵コンテ：岡村天斎  演出：森邦宏  作画監督：川元利浩  メカ作画監督：後藤雅巳\r\n\r\nヌイグルミに爆弾を仕掛けて世を騒がす爆弾魔テディ・ボマーを追うスパイクたちは、後一歩のところでスパイクを犯人と勘違いしたカウボーイ姿の賞金稼ぎ、アンディの妨害を受ける。それがスパイクの長い長いホンキィトンクな日々の始まりだった……。\r\n\r\nシリーズ中屈指のキャラ、アンディ登場。ある意味一番「ビバップ」らしい最高に笑えるエピソード！',1245507773,1639543480,1,0),(7048,253,23,0,0,'ブレイン・スクラッチ Brain Scratch','大脑划痕',0,'00:24:40','1999-04-02','a:3:{i:0;s:40:\"http://www.tudou.com/v/cmGeW2KONLo/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766703&amp;yid=XNTEwNDc1NzMy&amp;external=bangumi\";i:2;s:59:\"http://www.tudou.com/albumplay/7N-t2tvbwh0/kDQH5MLkfsI.html\";}',67,0,'脚本：佐藤大  絵コンテ：武井良幸  演出：武井良幸  作画監督：竹内浩志  メカ作画監督：後藤雅巳\r\n\r\nネット上に存在する謎の宗教団体・電子移民財団スクラッチ。その信者が次々に行方不明になり、教祖のロンデスに多額の賞金がかけられた。早速、抜け駆けするフェイ。しかし、ロンデスの正体は知れず、スクラッチの本部で賞金稼ぎたちの屍を目の当たりにする。フェイからの連絡にスパイクたちは渋々調査を始めるが……。\r\n\r\n退廃的なムードが全編を覆う。',1245507793,1639298677,1,0),(7049,253,24,0,0,'ハード・ラック・ウーマン Hard Luck Woman','不走运的女人',0,'00:24:37','1999-04-09','a:2:{i:0;s:40:\"http://www.tudou.com/v/Vmt41OXnYnA/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766705&amp;yid=XNTEwNDc1NzM2&amp;external=bangumi\";}',129,0,'脚本：横手美智子  絵コンテ：岡村天斎  演出：山田弘和  作画監督：菅野宏紀  メカ作画監督：後藤雅巳\r\n\r\nかつて自分に宛てて送ったビデオレターが告げる、なくしてしまった過去。思い出せぬ記憶。その中にマーライオンの像が映っていることに気付いたフェイは、その像のある場所を知っているらしいエドと共に地球に向かった。立ち寄った修道院で明らかになるエドの父の消息とマーライオンの場所。そして、フェイは自分を知る老女に出会うのだった……。',1245507816,1639794126,1,0),(7050,253,25,0,0,'ザ・リアル・フォークブルース（前編）','The Real Folk Blues (PART 1)',0,'24m','1999-04-16','a:2:{i:0;s:40:\"http://www.tudou.com/v/8oOtPxk9rFQ/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766706&amp;yid=XNTEwNDc1NzQ0&amp;external=bangumi\";}',21,0,'脚本：信本敬子   分镜：渡边信一郎   演出：佐藤育郎',1245507842,1636146470,1,0),(7051,253,26,0,0,'ザ・リアル・フォークブルース（後編）','The Real Folk Blues (PART 2)',0,'24m','1999-04-23','a:2:{i:0;s:40:\"http://www.tudou.com/v/FBCdLYkuHPQ/v.swf\";i:1;s:88:\"http://dp.tudou.com/nplayer.swf?iid=130766708&amp;yid=XNTEwNDc1NzQ4&amp;external=bangumi\";}',79,0,'脚本：信本敬子   分镜：渡边信一郎   演出：武井良幸',1245507880,1636154430,1,0),(46037,253,0,1,0,'よせあつめブルース','Mish-Mash Blues',0,'24m','1998-06-26','a:4:{i:0;s:38:\"http://player.56.com/v_NTEwOTY2Mzc.swf\";i:1;s:47:\"http://www.tudou.com/programs/view/qTQc_CnWUyk/\";i:2;s:60:\"http://video.baidu.com/s?f=0&amp;n=1&amp;word=cowboy%20bebop\";i:3;s:90:\"http://www.tudou.com/v/uASQyyeab-8/&amp;rpid=2802833&amp;resourceId=2802833_04_05_99/v.swf\";}',23,0,'Cowboy Bebop东京电视台首轮放映中的最后一集，由零散内容剪辑而成。\r\n本集使用了日本HIP HOP小组SHAKKAZOMBIE的曲子而没有出现菅野的音乐。角色们也都自顾自地、没完没了地说着富有哲理的台词。此后都没有再放映过，并且之后发行的各种版本的录像带里也都没有收录。\r\n官网的FAQ中制作方称是由于制作进度原因匆忙剪辑而成的，实际上，是由于当时严格的审查制度(3D龙事件)使得BEBOP被减掉一半，制作人为了发泄不满而制作的通过动画角色的嘴对东京电视台进行猛烈讽刺的「特别篇」。',1281436548,1617774916,1,0),(103232,253,1,2,0,'Tank!','',0,'第0话 - 第26话','1998-06-26','',3,0,'',1307792985,1617774944,1,0),(103233,253,1,3,0,'THE REAL FOLK BLUES','',0,'第0话 - 第12话, 第14话 - 第25话','1998-06-26','',0,0,'',1307793012,0,1,0),(103234,253,2,3,0,'SPACE LION','',0,'第13话','1998-05-29','',0,0,'',1307793290,0,1,0),(103235,253,3,3,0,'BLUE','',0,'第26话','1999-04-23','',3,0,'',1307793418,1617774973,1,0),(744206,211567,23,0,0,'西陽／ラムネ','夕阳 / 柠檬酸片',0,'00:25:00','2017-10-14','',91,0,'東京の下町・六月町に一人で暮らす桐山零は、高校生にしてプロの将棋棋士。放課後理科クラブと将棋部を合体させた「将科部」では、零は、部員たちに将棋を教えたり、ラムネの手作りを教わったりと順調に活動していく。学校の中にできたあたたかな居場所に喜びをかみしめる零。ラムネを手に、もうひとつのあたたかな居場所、川本家へと向かう。\r\n\r\n脚本：木澤行人  絵コンテ・演出：大谷肇\r\n作画監督：杉山延寛　潮月一也    片山みゆき　たかおかきいち　清水勝祐',1503284904,1639750751,0,0),(744207,211567,24,0,0,'混沌／隈倉','混沌 / 隈仓',0,'00:25:00','2017-10-21','',78,0,'将棋会館を訪れた零は、二海堂たち棋士仲間とともに、宗谷と隈倉による名人戦最終局の中継を見ていた。同じ部屋にいた先輩棋士に島田をからかうような発言をされた零と二海堂は苦々しい思いをこらえるが、そこへ現れた後藤が棋士たちに対し怒りをあらわにする。義姉・香子を苦しめる後藤の振る舞いに複雑な思いを抱く零。そして、歴戦の棋士・柳原から「混沌（こんとん）」と表される、名人戦の勝負の行方は？\r\n\r\n脚本：木澤行人  絵コンテ：川畑喬  演出：吉澤翠\r\n作画監督：片山みゆき　山崎敦子　西澤真也　浅井昭人　たかおかきいち　斉藤和也　清水勝祐',1503284904,1639764789,0,0),(744208,211567,25,0,0,'六月／てんとう虫の木①','六月 / 瓢虫所在之树①',0,'00:25:00','2017-10-28','',64,0,'対局の昼食休憩中、なんとしても新人戦の決勝で零と対局すると息巻く二海堂は、将来名人となった自分を妄想し熱く語る。そんな二海堂をクールに眺めていた零だったが、自分でも気付いていなかった心の内を二海堂に指摘され、たいへん動揺する。一方その頃川本家では、相米二とあかり・ひなた・モモが、三日月堂の夏の新作和菓子を相談していた。モモの斬新なアイデアも飛び出す中、いつも明るいひなたが元気のない様子で……。\r\n\r\n脚本：木澤行人  絵コンテ：黒沢守  演出：三上喜子\r\n作画監督：杉山延寛　潮月一也　菊池聡延　北原章雄',1503284904,1638207892,0,0),(744209,211567,26,0,0,'てんとう虫の木②／てんとう虫の木③／想い','瓢虫所在之树② / 瓢虫所在之树③ / 思念',0,'00:25:00','2017-11-04','',134,0,'小学校からひなたと仲のよかった佐倉ちほが、中学３年のクラスでいじめの標的になってしまった。見て見ぬふりをする同級生ばかりの中、ひなたはちほに声をかけていっしょにご飯を食べ、担任の先生にいじめを訴えようと提案する。しかし、ちほは激しくなる一方のいじめから学校に来られなくなり、ついには転校してしまう……。\r\n\r\n脚本：木澤行人  絵コンテ：黒沢守  演出：岡田堅二朗\r\n作画監督：野道佳代　馬場一樹　西川千尋　松浦力　浅井昭人　藤本真由',1503284904,1639808605,0,0),(744210,211567,27,0,0,'想い／告白','思念(承前) / 告白',0,'00:25:00','2017-11-11','',46,0,'いじめについて元担任の林田に相談する零。林田は様々な例を挙げ、「いじめられている本人がどんな解決を望んでいるかをちゃんと聞くことが大事」とアドバイスする。そして零は自分にできることを必死に考えた結果、解決に必要な経費を対局料から捻出しようと思い至り、これまでにないほど熱い思いで対局へ向かう！（でも、電卓を持って川本家に飛び込まんとする零の熱意はちょっとズレてる？！）\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：長友孝和\r\n作画監督：片山みゆき　山崎敦子　たかおかきいち　清水勝祐',1503284904,1639844153,0,0),(744211,211567,28,0,0,'小さな世界／手紙','小小的世界 / 信件',0,'00:25:00','2017-11-18','',74,0,'川本家を訪れた零は、ひなたに学校でのことを話してもらう。誰がどのくらい大きな声で笑っていいのか、教室でどのくらい自由に振る舞っていいのか、まるで決められているようなクラスの空気について、ぽつぽつと話すひなた。\r\nそんなある日の昼休み、教室にいるひなたを、憧れの野球部エース・高橋がキャッチボールに誘う。高橋は零からひなたのことを聞き、教室から連れ出そうとしてくれるのだった。\r\n\r\n脚本：木澤行人  絵コンテ：吉澤翠  演出：吉澤翠\r\n作画監督：佐藤義久　代見裕美　金正男　細田沙織　清水勝祐',1503284904,1639847448,0,0),(744212,211567,29,0,0,'梅雨の始まり／蜂谷','梅雨的开始 / 蜂谷',0,'00:25:00','2017-11-25','',37,0,'担任から「どうしてそう協調性がないの？」と言われ、怒りから鼻血を出し自宅の居間で横になるひなた。川本家を訪れた零は、恥ずかしがって顔を隠すひなたを彼なりの優しさで気遣う。そしてあかりと買い物に出た帰り、妹のことで不安そうな彼女に思わず大声で「ぼくもいます！」と宣言する。\r\nそんな中迎えた新人戦の準決勝。零の相手は“東のイライラ王子”こと蜂谷すばる。個性的な棋士・蜂谷を前に、零の戦いの行方は？\r\n\r\n脚本：木澤行人  絵コンテ：川畑喬  演出：川崎ゆたか\r\n作画監督：野道佳代　浅井昭人　清水勝祐　若月愛子　斉藤和也',1503284904,1616207064,0,0),(744213,211567,30,0,0,'真昼の月／冒険者たち','正午的月亮 / 冒险者们',0,'00:25:00','2017-12-02','',60,0,'ひなたたちの力になりたいともがく零は、林田から「お前にできることをひとつずつやるしかない」と諭される。その言葉を胸に、零は対局で順調に勝ちつづける。\r\n一方、ともに新人戦を勝ち進んで決勝で対局しようと零にアツく語っていた二海堂は、準決勝で山崎順慶五段と対局中に倒れ、敗れていた。二海堂が入院したことを知った零は、これまで聞くことができなかった彼の事情を教えてほしいと、島田にうったえる。\r\n\r\n脚本：木澤行人  絵コンテ：大石美絵  演出：宮西哲也  演出協力：大谷肇\r\n作画監督：たかおかきいち　伊藤良明　山崎敦子　梅下麻奈未　若月愛子　浅井昭人　清水勝祐　藤本真由　岩崎たいすけ',1503284904,1616123273,0,0),(744214,211567,31,0,0,'王国①／王国②','王国① / 王国②',0,'00:25:00','2017-12-09','',51,0,'京都への修学旅行の前日、川本家で零や家族と夕食をとっていたひなたは、胃の痛みから食事を残してしまう。無理して行かなくてもいいと言うあかりだったが、ひなたは後悔しないために行くと強い意志をみせる。その言葉にはっとする零。\r\nそして零は、ひなたの修学旅行と時を同じくして、大阪で山崎順慶五段との新人戦決勝に臨むのだった。\r\n\r\n脚本：木澤行人  絵コンテ：岡田堅二朗  演出：三上喜子\r\n作画監督：秋葉徹　渥美智也　清水勝祐　宮嶋仁志',1503284904,1639911548,0,0),(744215,211567,32,0,0,'銀色の羽根／川景色','银色的羽毛 / 河边景色',0,'00:25:00','2017-12-16','',68,0,'山崎順慶はプロ棋士になって６年の春、２つ目の降級点をとってしまう。そして将棋と同等に心血を注いできた鳩（はと）レースの世界では、愛情と手間をかけて育ててきた鳩の「銀」がレースから戻らない……。\r\n努力し続けるしかない将棋の世界で、ひるむことなくその身を投げ打つ二海堂との新人戦準決勝、山崎は何が何でも勝ちたいという思いで彼の前に立った。\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：角地拓大\r\n作画監督：北原章雄　岡野力也　金正男\r\n作画監督補佐：斎藤和也　清水勝祐',1503284904,1639914004,0,0),(744216,211567,33,0,0,'陽のあたる場所／小さな世界','沐浴阳光的地方 / 小小的世界',0,'00:25:00','2017-12-23','',46,0,'新人王となった零は神宮寺会長から呼び出され、宗谷名人との記念対局を大々的に行うと聞かされる。幼い頃から雲の上の存在だった宗谷との対局に動揺する零だが、神宮寺から「頼りにしてる」と励ましの言葉をかけられる。学校では将科部の面々からもお祝いされ、人々の温かさを零は噛みしめる。一方島田は、長らく棋匠として君臨する老棋士・柳原への挑戦権をとるべく、櫻井岳人七段との対局を迎えていた。\r\n\r\n脚本：木澤行人  絵コンテ：川畑喬  演出：吉澤翠\r\n作画監督：宮嶋仁志　秋葉徹　清水勝祐　たかおかきいち　野道佳代',1503284904,1639936389,0,0),(744217,211567,34,0,0,'黒い霧／光','黑色的雾 / 光',0,'00:25:00','2018-01-06','',111,0,'修学旅行から戻って以来、ひなたのクラスでは高城たちによる担任への嫌がらせが始まり、担任は心労から倒れ入院してしまう。新しく担任となった学年主任の国分は、ひなたと高城の保護者それぞれと三者面談を行うことを決め、問題解決に向けて動き出す。\r\nひなたから事情を聞いたあかりは、仕事を放り出して面談に行こうとする相米二を説得し、ひなたと共に面談に向かう。しかし、２人は高城とその母に遭遇してしまう。\r\n\r\n脚本：木澤行人  絵コンテ：大谷肇  演出：大谷肇\r\n作画監督：若月愛子　山崎敦子　片山みゆき　藤本真由　浅井昭人　斎藤和也　野道佳代',1503284904,1640353192,0,0),(744218,211567,35,0,0,'小さな手のひら／日向','小小的手心 / 日向',0,'00:25:00','2018-01-13','',63,0,'国分によるクラスへの介入により、いじめ問題は解決に向かう。クラス全員の前で形ばかりの謝罪をした高城だったが、国分はそんな彼女と粘り強く対話を続けるのだった。\r\nそして、友人たちと以前のように笑い合えるようになったひなたの元に、いじめのため転校したちほから初めての手紙が届く。\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：長友孝和\r\n作画監督：北原章雄　佐藤義久　桜井このみ　柴田和子　奥野浩行　島袋智和　劉雲留　兼高里圭　斎藤和也　清水勝祐',1503284904,1640353078,0,0),(744219,211567,36,0,0,'流れていくもの／白い嵐①','流走之物 / 白色暴风雨①',0,'00:25:00','2018-01-20','',65,0,'島田と柳原による棋匠戦一局目は柳原の勝利となった。しかし、２人の顔合わせには今ひとつ華がない……。神宮寺会長は、時期を同じくして行われる宗谷と零の記念対局に集客の期待をかける。矢面に立つことが苦手な宗谷と零のことを島田は案じる。\r\n盛岡での対局前日。零は、宗谷との初めての対局に向けての緊張をかかえながら、記念対局の前夜祭に出席する。\r\n\r\n脚本：木澤行人  絵コンテ：大石美絵  演出：宮西哲也\r\n作画監督：山崎敦子　浅井昭人　片山みゆき　若月愛子　藤本真由　斎藤和也　野道佳代　清水勝祐',1503284904,1639980931,0,0),(744220,211567,37,0,0,'白い嵐②／白い嵐③／白い嵐④','白色暴风雨② / 白色暴风雨③ / 白色暴风雨④',0,'00:25:00','2018-01-27','',55,0,'零と、現役最強の棋士・宗谷名人との記念対局が始まった。力の差は歴然だが、名人相手に食い下がる零の将棋に、控え室で対局を見ている関係者の議論も盛り上がる。しかし中盤で敗着の一手を指してしまう零。が、零は決してあきらめず最善手を探して指し続ける。果たして勝負の行方は？\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：三上喜子\r\n作画監督：清水勝祐　たかおかきいち　片山みゆき　若月愛子　野道佳代　浅井昭人　藤本真由　山崎敦子',1503284904,1639982905,0,0),(744221,211567,38,0,0,'白い嵐④(承前)／白い嵐⑤／再始動','白色暴风雨④ / 白色暴风雨⑤ / 再启动',0,'00:25:00','2018-02-03','',58,0,'盛岡での記念対局からの帰り道、台風のため仙台で足止めを食らった零と宗谷。宿泊先を見つけて一息ついた零は、神宮寺からの電話で、「将棋の鬼」とも言われる天才・宗谷の秘密を知らされる。零は、東京に戻った後、対局を反芻しながら宗谷の過去の棋譜を追いかけるのだった。\r\n一方、入院していた二海堂は退院し、玉将戦の1次予選から復帰を果たす。\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：川﨑ゆたか\r\n作画監督：金正男　杉田葉子　猿渡聖加　宇都木勇　安孝貞\r\n\r\n※注：因电视台节目安排，第39话的播放时间调整到3月3日。详细信息可在官网查看。',1503284904,1623301159,0,0),(744222,211567,39,0,0,'焼野が原①／焼野が原②','被烧光的原野① / 被烧光的原野②',0,'00:25:00','2018-03-03','',43,0,'零と二海堂が大盤解説をまかされた、柳原と島田の棋匠戦最終局。\r\n棋匠の座に長く君臨する柳原だけあって、前夜祭の会場ではほとんどの記者や関係者が旧知の仲。挑戦者である島田はその圧倒的なアウェイ感に気圧されながらも、何がなんでも初タイトルを獲ると意気込む。\r\n\r\n脚本：木澤行人  絵コンテ：大石美絵  演出：角地拓大\r\n作画監督：西澤真也　秋葉徹　宮嶋仁志　河島久美子\r\n\r\n※注：因为电视台节目安排，第39话的播放时间调整到3月3日。详细信息可在官网查看。',1503284904,1616066799,0,0),(744223,211567,40,0,0,'焼野が原③／焼野が原④','被烧光的原野③ / 被烧光的原野④',0,'00:25:00','2018-03-10','',77,0,'最年長A級棋士・柳原の永世称号がかかった棋匠戦最終局。終盤に差しかかり、対局は島田優勢に傾く。\r\n将棋の道を断念し引退した仲間たちから柳原に託されてきた数限りない「たすき」。その重圧にがんじがらめになりながら、柳原は焼け野が原を進む思いで指し続ける。\r\n\r\n脚本：木澤行人  絵コンテ：川畑喬  演出：大谷肇\r\n作画監督：清水勝祐　浅井昭人　若月愛子　片山みゆき　山崎敦子　たかおかきいち　藤本真由',1503284904,1640068992,0,0),(744224,211567,41,0,0,'ここにいること／夏休み①','就在这里 / 暑假①',0,'00:25:00','2018-03-17','',43,0,'三月町の夏祭りに出店した三日月堂は、あかりとひなたのアイデアで“冷やし白玉シロップ”を販売する。その中には、いじめのため転校したひなたの友人・ちほが作った梅シロップを使ったものもあった。\r\n夏休みに入ってすぐ、ひなたはちほに会いに行っていた。ちほは、楽しそうな笑顔も見せながらも、今もいじめで受けた心の傷を抱えていた。ひなたは、梅シロップをみんながおいしそうに食べる写真を送ろう、そしてまた会いに行こう、と思うのだった。\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：橋本能理子\r\n作画監督：高野やよい　香田知樹　石川奨士　久松沙紀',1503284904,1640145948,0,0),(744225,211567,42,0,0,'夏休み②／あたらしい年','暑假② / 新的一年',0,'00:25:00','2018-03-24','',47,0,'夏休み中のひなたは新しいお菓子のアイデアが次々と浮かぶ一方、学校の勉強や高校受験に対して前向きになれないでいた。 零はそんなひなたを、モモ、あかりとともに、自分の通う駒橋高校での流しそうめんに誘う。ひなたは、野口たち将科部の面々や林田たちとふれあううちに、駒橋高校に進学することを考え始める。\r\n\r\n脚本：木澤行人  絵コンテ：大石美絵  演出：宮西哲也　川﨑ゆたか\r\n作画監督：清水勝祐　綾部美穂　斎藤和也　北原章雄　伏見裕美　岡野力也　佐藤義久　金正男',1503284904,1640323092,0,0),(744226,211567,43,0,0,'経る時／春が来る','经历 / 春天来了',0,'00:25:00','2018-03-31','',32,0,'高校受験を控え必死で勉強に取り組むひなたは、憧れの同級生・高橋が遠方に進学することを知りショックを受ける。いつまでも身近にいると思っていた人々が離れていく…。落ち込んだひなたは入試直前にして熱を出してしまう。 そんな中迎えた試験の日。ひなたは、迎えに来た零とともに受験会場に向かった。\r\n\r\n脚本：木澤行人  絵コンテ：佐伯昭志  演出：三上喜子\r\n作画監督：野道佳代　藤本真由　浅井昭人　たかおかきいち　山崎敦子　清水勝祐　若月愛子',1503284904,1640327443,0,0),(744227,211567,44,0,0,'もう一つの家／三月町の子','另一个家 / 三月町的孩子',0,'00:25:00','2018-03-31','',82,0,'みんなでもんじゃ焼きを食べに行こう。中学を卒業したひなたと高橋を、零が誘った。遠く高知の高校に進学する高橋と話す場を作ってくれた零に感謝するひなた。自分たちはどこにいても三月町の子だと、思いを新たにする。\r\nそして高橋が三月町を発つ日。ひなたは、桜まつりに賑わう三日月堂で忙しく立ち働くのだった。\r\n\r\n脚本：木澤行人  絵コンテ：大谷肇  演出：大谷肇　岡田堅二朗\r\n作画監督：杉山延寛　片山みゆき　若月愛子　山崎敦子　たかおかきいち　野道佳代　浅井昭人　藤本真由　清水勝祐',1503284904,1640330419,0,0),(980030,315957,1,0,1,'Twilight Serenity (Genshin Impact Main Theme Var.)','宁静的黄昏',0,'01:41','','',0,0,'',1601274156,0,0,0),(980031,315957,2,0,1,'Legend of the Wind','风的传说',0,'01:26','','',0,0,'',1601274156,0,0,0),(980032,315957,3,0,1,'The City Favored By Wind','风所爱之城',0,'01:03','','',0,0,'',1601274156,0,0,0),(980033,315957,4,0,1,'Bustling Afternoon of Mondstadt','蒙德城繁忙的午后',0,'01:48','','',0,0,'',1601274156,0,0,0),(980034,315957,5,0,1,'Dusk in Mondstadt','蒙德的黄昏',0,'01:48','','',0,0,'',1601274156,0,0,0),(980035,315957,6,0,1,'Mondstadt Starlit','星光下的蒙德',0,'01:00','','',0,0,'',1601274156,0,0,0),(980036,315957,7,0,1,'Moonlight in Mondstadt','蒙德的月光',0,'00:49','','',0,0,'',1601274156,0,0,0),(980037,315957,8,0,1,'Another Day in Mondstadt','蒙德的又一日',0,'00:52','','',0,0,'',1601274156,0,0,0),(980038,315957,9,0,1,'Windborne Hymn','风带来的圣歌',0,'01:48','','',0,0,'',1601274156,0,0,0),(980039,315957,10,0,1,'Knights of Favonius','西风骑士团',0,'01:15','','',0,0,'',1601274156,0,0,0),(980040,315957,11,0,1,'Angel\'s Share','天使的馈赠',0,'01:53','','',0,0,'',1601274156,0,0,0),(980041,315957,12,0,1,'Silhouette and Silk Steps','剪影与蹑步',0,'01:31','','',0,0,'',1601274156,0,0,0),(980042,315957,13,0,1,'Perilous Path','危险的小径',0,'02:19','','',0,0,'',1601274156,0,0,0),(980043,315957,14,0,1,'Say My Name','直面',0,'01:51','','',0,0,'',1601274156,0,0,0),(980044,315957,15,0,1,'Welp, Didn\'t Expect That','呃，这可没想到…',0,'01:22','','',0,0,'',1601274156,0,0,0),(980045,315957,16,0,1,'An Interesting Labour','有趣的挑战',0,'01:26','','',0,0,'',1601274156,0,0,0),(980046,315957,17,0,1,'Make Haste, Partner','速度加快',0,'01:28','','',0,0,'',1601274156,0,0,0),(980047,315957,18,0,1,'A Happy Day','开心的一天',0,'00:28','','',0,0,'',1601274156,0,0,0),(980048,315957,19,0,1,'Reunion in the Whispering Woods','低语森林的重逢',0,'00:37','','',0,0,'',1601274156,0,0,0),(980049,315957,1,0,2,'Beckoning (Genshin Impact Main Theme Var.)','情不自禁',0,'01:42','','',0,0,'',1601274156,0,0,0),(980050,315957,2,0,2,'Hence, Begins the Journey','旅途的开始',0,'01:14','','',0,0,'',1601274156,0,0,0),(980051,315957,3,0,2,'Dawn Winery Theme','晨曦酒庄',0,'01:07','','',0,0,'',1601274156,0,0,0),(980052,315957,4,0,2,'Before Dawn, at the Winery','破晓前的流光',0,'01:09','','',0,0,'',1601274156,0,0,0),(980053,315957,5,0,2,'A Familiar Sight and Leisure','见惯的风景',0,'01:07','','',0,0,'',1601274156,0,0,0),(980054,315957,6,0,2,'Cold Night','饰金的夜色',0,'01:07','','',0,0,'',1601274156,0,0,0),(980055,315957,7,0,2,'Whispering Plain','平原的低语',0,'01:10','','',0,0,'',1601274165,0,0,0),(980056,315957,8,0,2,'Statue of the Seven','七天神像',0,'01:24','','',0,0,'',1601274165,0,0,0),(980057,315957,9,0,2,'Acquaintance (Statue of the Seven)','命运的初识',0,'00:21','','',0,0,'',1601274165,0,0,0),(980058,315957,10,0,2,'Stealing Words of the Moon','月亮处盗来的歌',0,'01:24','','',0,0,'',1601274165,0,0,0),(980059,315957,11,0,2,'Wayfarer\'s Peace','旅人的暂歇',0,'01:28','','',0,0,'',1601274165,0,0,0),(980060,315957,12,0,2,'Wind-Washed Mountains','风洗的群山',0,'00:41','','',0,0,'',1601274165,0,0,0),(980061,315957,13,0,2,'Wayward Souls','不散的魂灵',0,'01:05','','',0,0,'',1601274165,0,0,0),(980062,315957,20,0,1,'Startled','震惊',0,'00:29','','',0,0,'',1601274165,0,0,0),(980063,315957,21,0,1,'Meeting Amber','初遇安柏',0,'00:13','','',0,0,'',1601274165,0,0,0),(980064,315957,22,0,1,'Storm Befalls','风暴降临',0,'01:05','','',0,0,'',1601274165,0,0,0),(980065,315957,23,0,1,'Slight Distress','淡淡的不安',0,'02:21','','',0,0,'',1601274165,0,0,0),(980066,315957,24,0,1,'Tender Strength','同伴的力量',0,'01:22','','',0,0,'',1601274165,0,0,0),(980067,315957,25,0,1,'Imminent Triumph','将至的凯歌',0,'01:00','','',0,0,'',1601274165,0,0,0),(980068,315957,1,0,3,'Photon of Fluctuation','光辉的涨落',0,'03:14','','',0,0,'',1601274165,0,0,0),(980069,315957,2,0,3,'His Resolution','解决之道',0,'04:43','','',0,0,'',1601274165,0,0,0),(980070,315957,14,0,2,'Reminiscence (Genshin Impact Main Theme Var.)','追忆',0,'01:35','','',0,0,'',1601274165,0,0,0),(980071,315957,15,0,2,'Restless Blazing Sun','烈日之残响',0,'01:35','','',0,0,'',1601274165,0,0,0),(980072,315957,16,0,2,'Remembrance (Genshin Impact Main Theme Var.)','一段回忆',0,'01:22','','',0,0,'',1601274165,0,0,0),(980073,315957,17,0,2,'The Horizon','地平',0,'01:12','','',0,0,'',1601274165,0,0,0),(980074,315957,18,0,2,'Awaiting for the Future','静候未来',0,'01:25','','',0,0,'',1601274165,0,0,0),(980075,315957,19,0,2,'Moonlit Wilderness','月照的荒野',0,'01:16','','',0,0,'',1601274165,0,0,0),(980076,315957,20,0,2,'A New Day with Hope','希望的新一天',0,'01:43','','',0,0,'',1601274165,0,0,0),(980077,315957,21,0,2,'Journey of Hope (Genshin Impact Main Theme Var.)','希望之旅',0,'01:21','','',0,0,'',1601274165,0,0,0),(980078,315957,22,0,2,'Forlorn Child of Archaic Winds (Dvalin\'s Nest)','万古之风的弃儿',0,'03:19','','',0,0,'',1601274165,0,0,0),(980079,315957,23,0,2,'Forsken Child of Ancient Times (Dvalin\'s Nest)','太古时光的遗孤',0,'02:55','','',0,0,'',1601274165,0,0,0),(980080,315957,24,0,2,'Midday Prospects','午日的眺望',0,'01:38','','',0,0,'',1601274165,0,0,0),(980081,315957,25,0,2,'Dwelling in the Past','久住往昔',0,'01:41','','',0,0,'',1601274171,0,0,0),(980082,315957,26,0,2,'Eternal Anamnesis (Genshin Impact Main Theme Var.)','永恒的回忆',0,'01:59','','',0,0,'',1601274171,0,0,0),(980083,315957,3,0,3,'Rhythm from Ancient Times','亘古的韵律',0,'03:40','','',0,0,'',1601274171,0,0,0),(980084,315957,4,0,3,'Endless Echoes','无尽的回响',0,'04:12','','',0,0,'',1601274171,0,0,0),(980085,315957,5,0,3,'Charge! Fearless Warriors','冲啊！无畏的勇士',0,'03:58','','',0,0,'',1601274171,0,0,0),(980086,315957,6,0,3,'Beats of Water Drops','水滴的节拍',0,'04:03','','',0,0,'',1601274171,0,0,0),(980087,315957,7,0,3,'Magic Intrigues','魔导的深秘',0,'03:50','','',0,0,'',1601274171,0,0,0),(980088,315957,8,0,3,'Against All Odds','无数的逆境',0,'05:21','','',0,0,'',1601274171,0,0,0),(980089,315957,9,0,3,'Perpetual Motion of Wind','不休的风航',0,'03:32','','',0,0,'',1601274171,0,0,0),(980090,315957,10,0,3,'Riders of the Wind, Onward','乘风前行',0,'03:06','','',0,0,'',1601274171,0,0,0),(980091,315957,11,0,3,'Whirl of Boreal Wind','冰风回荡',0,'03:11','','',0,0,'',1601274171,0,0,0),(980092,315957,12,0,3,'Symphony of Boreal Wind','冰封交响曲',0,'04:51','','',0,0,'',1601274171,0,0,0);
+/*!40000 ALTER TABLE `chii_episodes` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_subject_fields` WRITE;
+/*!40000 ALTER TABLE `chii_subject_fields` DISABLE KEYS */;
+REPLACE INTO `chii_subject_fields` VALUES (253,2,'a:30:{i:0;a:2:{s:8:\"tag_name\";s:15:\"渡边信一郎\";s:6:\"result\";s:4:\"2929\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"菅野洋子\";s:6:\"result\";s:4:\"2669\";}i:2;a:2:{s:8:\"tag_name\";s:12:\"星际牛仔\";s:6:\"result\";s:4:\"1966\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"经典\";s:6:\"result\";s:4:\"1545\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:4:\"1427\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"SUNRISE\";s:6:\"result\";s:4:\"1356\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"神作\";s:6:\"result\";s:4:\"1004\";}i:7;a:2:{s:8:\"tag_name\";s:9:\"神配乐\";s:6:\"result\";s:3:\"961\";}i:8;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"775\";}i:9;a:2:{s:8:\"tag_name\";s:11:\"CowboyBebop\";s:6:\"result\";s:3:\"715\";}i:10;a:2:{s:8:\"tag_name\";s:4:\"1998\";s:6:\"result\";s:3:\"689\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:3:\"495\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"cowboy\";s:6:\"result\";s:3:\"475\";}i:13;a:2:{s:8:\"tag_name\";s:9:\"林原惠\";s:6:\"result\";s:3:\"462\";}i:14;a:2:{s:8:\"tag_name\";s:12:\"山寺宏一\";s:6:\"result\";s:3:\"235\";}i:15;a:2:{s:8:\"tag_name\";s:12:\"1998年10月\";s:6:\"result\";s:2:\"94\";}i:16;a:2:{s:8:\"tag_name\";s:15:\"渡辺信一郎\";s:6:\"result\";s:2:\"52\";}i:17;a:2:{s:8:\"tag_name\";s:5:\"BONES\";s:6:\"result\";s:2:\"49\";}i:18;a:2:{s:8:\"tag_name\";s:9:\"公路片\";s:6:\"result\";s:2:\"46\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"浪漫\";s:6:\"result\";s:2:\"45\";}i:20;a:2:{s:8:\"tag_name\";s:12:\"信本敬子\";s:6:\"result\";s:2:\"34\";}i:21;a:2:{s:8:\"tag_name\";s:15:\"菅野よう子\";s:6:\"result\";s:2:\"33\";}i:22;a:2:{s:8:\"tag_name\";s:7:\"1998年\";s:6:\"result\";s:2:\"32\";}i:23;a:2:{s:8:\"tag_name\";s:12:\"川元利浩\";s:6:\"result\";s:2:\"26\";}i:24;a:2:{s:8:\"tag_name\";s:5:\"Bebop\";s:6:\"result\";s:2:\"26\";}i:25;a:2:{s:8:\"tag_name\";s:3:\"神\";s:6:\"result\";s:2:\"23\";}i:26;a:2:{s:8:\"tag_name\";s:6:\"日本\";s:6:\"result\";s:2:\"22\";}i:27;a:2:{s:8:\"tag_name\";s:12:\"林原惠美\";s:6:\"result\";s:2:\"22\";}i:28;a:2:{s:8:\"tag_name\";s:6:\"音乐\";s:6:\"result\";s:2:\"22\";}i:29;a:2:{s:8:\"tag_name\";s:2:\"SF\";s:6:\"result\";s:2:\"20\";}}',38,10,4,10,47,131,389,1315,2916,4430,0,1,1998,10,5,'1998-10-23',0),(2585,2,'a:30:{i:0;a:2:{s:8:\"tag_name\";s:6:\"炮姐\";s:6:\"result\";s:4:\"1956\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"超电磁炮\";s:6:\"result\";s:4:\"1756\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"J.C.STAFF\";s:6:\"result\";s:4:\"1746\";}i:3;a:2:{s:8:\"tag_name\";s:12:\"御坂美琴\";s:6:\"result\";s:4:\"1367\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"百合\";s:6:\"result\";s:4:\"1240\";}i:5;a:2:{s:8:\"tag_name\";s:12:\"2009年10月\";s:6:\"result\";s:3:\"917\";}i:6;a:2:{s:8:\"tag_name\";s:8:\"bilibili\";s:6:\"result\";s:3:\"795\";}i:7;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"709\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"黑子\";s:6:\"result\";s:3:\"702\";}i:9;a:2:{s:8:\"tag_name\";s:18:\"科学超电磁炮\";s:6:\"result\";s:3:\"621\";}i:10;a:2:{s:8:\"tag_name\";s:18:\"魔法禁书目录\";s:6:\"result\";s:3:\"518\";}i:11;a:2:{s:8:\"tag_name\";s:4:\"2009\";s:6:\"result\";s:3:\"409\";}i:12;a:2:{s:8:\"tag_name\";s:9:\"漫画改\";s:6:\"result\";s:3:\"288\";}i:13;a:2:{s:8:\"tag_name\";s:9:\"傲娇娘\";s:6:\"result\";s:3:\"280\";}i:14;a:2:{s:8:\"tag_name\";s:6:\"校园\";s:6:\"result\";s:3:\"156\";}i:15;a:2:{s:8:\"tag_name\";s:6:\"战斗\";s:6:\"result\";s:3:\"144\";}i:16;a:2:{s:8:\"tag_name\";s:12:\"长井龙雪\";s:6:\"result\";s:3:\"123\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"漫改\";s:6:\"result\";s:3:\"110\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"姐控\";s:6:\"result\";s:3:\"107\";}i:19;a:2:{s:8:\"tag_name\";s:12:\"轻小说改\";s:6:\"result\";s:2:\"93\";}i:20;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:2:\"82\";}i:21;a:2:{s:8:\"tag_name\";s:9:\"超能力\";s:6:\"result\";s:2:\"73\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"日常\";s:6:\"result\";s:2:\"58\";}i:23;a:2:{s:8:\"tag_name\";s:6:\"奇幻\";s:6:\"result\";s:2:\"54\";}i:24;a:2:{s:8:\"tag_name\";s:12:\"豊崎愛生\";s:6:\"result\";s:2:\"53\";}i:25;a:2:{s:8:\"tag_name\";s:12:\"長井龍雪\";s:6:\"result\";s:2:\"47\";}i:26;a:2:{s:8:\"tag_name\";s:24:\"某科学的超电磁炮\";s:6:\"result\";s:2:\"47\";}i:27;a:2:{s:8:\"tag_name\";N;s:6:\"result\";s:2:\"42\";}i:28;a:2:{s:8:\"tag_name\";s:12:\"佐藤利奈\";s:6:\"result\";s:2:\"38\";}i:29;a:2:{s:8:\"tag_name\";s:12:\"新井里美\";s:6:\"result\";s:2:\"34\";}}',20,9,18,56,287,1198,3423,4162,987,535,5,802,2009,10,5,'2009-10-02',0),(211567,2,'a:30:{i:0;a:2:{s:8:\"tag_name\";s:12:\"新房昭之\";s:6:\"result\";s:4:\"1480\";}i:1;a:2:{s:8:\"tag_name\";s:5:\"SHAFT\";s:6:\"result\";s:4:\"1079\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"治愈\";s:6:\"result\";s:3:\"833\";}i:3;a:2:{s:8:\"tag_name\";s:13:\"3月的狮子\";s:6:\"result\";s:3:\"600\";}i:4;a:2:{s:8:\"tag_name\";s:12:\"2017年10月\";s:6:\"result\";s:3:\"587\";}i:5;a:2:{s:8:\"tag_name\";s:15:\"羽海野千花\";s:6:\"result\";s:3:\"558\";}i:6;a:2:{s:8:\"tag_name\";s:9:\"漫画改\";s:6:\"result\";s:3:\"552\";}i:7;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"446\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"漫改\";s:6:\"result\";s:3:\"276\";}i:9;a:2:{s:8:\"tag_name\";s:4:\"2017\";s:6:\"result\";s:3:\"253\";}i:10;a:2:{s:8:\"tag_name\";s:12:\"花泽香菜\";s:6:\"result\";s:3:\"164\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"续作\";s:6:\"result\";s:3:\"151\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"将棋\";s:6:\"result\";s:3:\"144\";}i:13;a:2:{s:8:\"tag_name\";s:9:\"沙发套\";s:6:\"result\";s:2:\"57\";}i:14;a:2:{s:8:\"tag_name\";s:6:\"新房\";s:6:\"result\";s:2:\"37\";}i:15;a:2:{s:8:\"tag_name\";s:6:\"日常\";s:6:\"result\";s:2:\"27\";}i:16;a:2:{s:8:\"tag_name\";s:6:\"神作\";s:6:\"result\";s:2:\"26\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"青春\";s:6:\"result\";s:2:\"24\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"励志\";s:6:\"result\";s:2:\"21\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"竞技\";s:6:\"result\";s:2:\"20\";}i:20;a:2:{s:8:\"tag_name\";s:6:\"人生\";s:6:\"result\";s:2:\"17\";}i:21;a:2:{s:8:\"tag_name\";s:7:\"2017年\";s:6:\"result\";s:2:\"14\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"成长\";s:6:\"result\";s:2:\"14\";}i:23;a:2:{s:8:\"tag_name\";s:12:\"茅野爱衣\";s:6:\"result\";s:2:\"13\";}i:24;a:2:{s:8:\"tag_name\";s:6:\"校园\";s:6:\"result\";s:2:\"12\";}i:25;a:2:{s:8:\"tag_name\";s:15:\"羽海野チカ\";s:6:\"result\";s:2:\"11\";}i:26;a:2:{s:8:\"tag_name\";s:9:\"半年番\";s:6:\"result\";s:2:\"11\";}i:27;a:2:{s:8:\"tag_name\";s:6:\"恋爱\";s:6:\"result\";s:2:\"10\";}i:28;a:2:{s:8:\"tag_name\";s:3:\"TVA\";s:6:\"result\";s:1:\"9\";}i:29;a:2:{s:8:\"tag_name\";s:9:\"剧情片\";s:6:\"result\";s:1:\"8\";}}',18,4,3,7,33,92,335,975,1491,1359,0,10,2017,10,6,'2017-10-14',0),(315957,3,'a:12:{i:0;a:2:{s:8:\"tag_name\";s:3:\"OST\";s:6:\"result\";s:2:\"31\";}i:1;a:2:{s:8:\"tag_name\";s:6:\"原神\";s:6:\"result\";s:2:\"23\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"陈致逸\";s:6:\"result\";s:2:\"17\";}i:3;a:2:{s:8:\"tag_name\";s:8:\"HOYO-MiX\";s:6:\"result\";s:1:\"9\";}i:4;a:2:{s:8:\"tag_name\";s:18:\"动漫游戏原声\";s:6:\"result\";s:1:\"8\";}i:5;a:2:{s:8:\"tag_name\";s:4:\"2020\";s:6:\"result\";s:1:\"7\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"中国\";s:6:\"result\";s:1:\"7\";}i:7;a:2:{s:8:\"tag_name\";s:3:\"ACG\";s:6:\"result\";s:1:\"6\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"miHoYo\";s:6:\"result\";s:1:\"6\";}i:9;a:2:{s:8:\"tag_name\";s:6:\"游戏\";s:6:\"result\";s:1:\"3\";}i:10;a:2:{s:8:\"tag_name\";s:4:\"GAME\";s:6:\"result\";s:1:\"1\";}i:11;a:2:{s:8:\"tag_name\";s:12:\"游戏原声\";s:6:\"result\";s:1:\"1\";}}',2,0,1,0,0,6,15,31,16,10,0,1376,2020,9,1,'2020-09-28',0);
+/*!40000 ALTER TABLE `chii_subject_fields` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
 -- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
 -- Host: 192.168.201.71    Database: bangumi
@@ -3209,224 +3631,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 17, 2021 at 05:51 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_revisions`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subject_revisions` (
-  `rev_id` mediumint(8) unsigned NOT NULL,
-  `rev_type` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '修订类型',
-  `rev_subject_id` mediumint(8) unsigned NOT NULL,
-  `rev_type_id` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `rev_creator` mediumint(8) unsigned NOT NULL,
-  `rev_dateline` int(10) unsigned NOT NULL DEFAULT '0',
-  `rev_name` varchar(80) NOT NULL,
-  `rev_name_cn` varchar(80) NOT NULL,
-  `rev_field_infobox` mediumtext NOT NULL,
-  `rev_field_summary` mediumtext NOT NULL,
-  `rev_vote_field` mediumtext NOT NULL,
-  `rev_field_eps` mediumint(8) unsigned NOT NULL,
-  `rev_edit_summary` varchar(200) NOT NULL,
-  `rev_platform` smallint(6) unsigned NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_subject_revisions`
---
-ALTER TABLE `chii_subject_revisions`
-  ADD PRIMARY KEY (`rev_id`),
-  ADD KEY `rev_subject_id` (`rev_subject_id`,`rev_creator`),
-  ADD KEY `rev_type` (`rev_type`),
-  ADD KEY `rev_dateline` (`rev_dateline`),
-  ADD KEY `rev_creator` (`rev_creator`,`rev_id`) USING BTREE;
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chii_subject_revisions`
---
-ALTER TABLE `chii_subject_revisions`
-  MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 17, 2021 at 05:52 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_rev_history`
---
-
-CREATE TABLE IF NOT EXISTS `chii_rev_history` (
-  `rev_id` mediumint(8) unsigned NOT NULL,
-  `rev_type` tinyint(3) unsigned NOT NULL COMMENT '条目，角色，人物',
-  `rev_mid` mediumint(8) unsigned NOT NULL COMMENT '对应条目，人物的ID',
-  `rev_text_id` mediumint(9) unsigned NOT NULL,
-  `rev_dateline` int(10) unsigned NOT NULL,
-  `rev_creator` mediumint(8) unsigned NOT NULL,
-  `rev_edit_summary` varchar(200) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_rev_text`
---
-
-CREATE TABLE IF NOT EXISTS `chii_rev_text` (
-  `rev_text_id` mediumint(9) unsigned NOT NULL,
-  `rev_text` mediumblob NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_rev_history`
---
-ALTER TABLE `chii_rev_history`
-  ADD PRIMARY KEY (`rev_id`),
-  ADD KEY `rev_crt_id` (`rev_type`,`rev_mid`),
-  ADD KEY `rev_crt_creator` (`rev_creator`),
-  ADD KEY `rev_id` (`rev_id`,`rev_type`,`rev_creator`);
-
---
--- Indexes for table `chii_rev_text`
---
-ALTER TABLE `chii_rev_text`
-  ADD PRIMARY KEY (`rev_text_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chii_rev_history`
---
-ALTER TABLE `chii_rev_history`
-  MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_rev_text`
---
-ALTER TABLE `chii_rev_text`
-  MODIFY `rev_text_id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 17, 2021 at 05:51 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_ep_revisions`
---
-
-CREATE TABLE IF NOT EXISTS `chii_ep_revisions` (
-  `ep_rev_id` mediumint(8) unsigned NOT NULL,
-  `rev_sid` mediumint(8) unsigned NOT NULL, # subject_id
-  `rev_eids` varchar(255) NOT NULL,
-  `rev_ep_infobox` mediumtext NOT NULL,
-  `rev_creator` mediumint(8) unsigned NOT NULL,
-  `rev_version` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `rev_dateline` int(10) unsigned NOT NULL,
-  `rev_edit_summary` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_ep_revisions`
---
-ALTER TABLE `chii_ep_revisions`
-  ADD PRIMARY KEY (`ep_rev_id`),
-  ADD KEY `rev_sid` (`rev_sid`,`rev_creator`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chii_ep_revisions`
---
-ALTER TABLE `chii_ep_revisions`
-  MODIFY `ep_rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -3535,103 +3739,169 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+LOCK TABLES `chii_subjects` WRITE;
+/*!40000 ALTER TABLE `chii_subjects` DISABLE KEYS */;
+REPLACE INTO `chii_subjects` VALUES (363612,2,'沙盒','沙盒','',287622,1640456969,'82/15/363612_6uauA.jpg',1,'{{Infobox animanga/TVAnime\r\n|中文名= 沙盒\r\n|别名={\r\n}\r\n|话数= 7\r\n|放送开始= 0000-10-06\r\n|放送星期= \r\n|官方网站= \r\n|播放电视台= \r\n|其他电视台= \r\n|播放结束= \r\n|其他= \r\n|Copyright= \r\n|平台={\r\n[Xbox Series S]\r\n[Xbox Series X]\r\n[Xbox Series X/S]\r\n[PC]\r\n[Xbox Series X|S]\r\n}\r\n}}','本条目是一个沙盒，可以用于尝试bgm功能。\r\n\r\n普通维基人可以随意编辑条目信息以及相关关联查看编辑效果，但是请不要删除沙盒说明并且不要关联非沙盒条目/人物/角色。\r\n\r\nhttps://bgm.tv/group/topic/366812#post_1923517','',0,7,0,7,1,1,0,0,0,'s',0,1,0);
+/*!40000 ALTER TABLE `chii_subjects` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-
-CREATE TABLE IF NOT EXISTS chii_memberfields
-(
-    uid       mediumint unsigned       default 0  not null primary key,
-    site      varchar(75) charset utf8 default '' not null,
-    location  varchar(30) charset utf8 default '' not null,
-    bio       text charset utf8                   not null,
-    privacy   mediumtext charset utf8             not null,
-    blocklist mediumtext charset utf8             not null
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_members`
---
-
-CREATE TABLE IF NOT EXISTS chii_members
-(
-    uid          mediumint unsigned auto_increment primary key,
-    username     char(15) charset utf8 default '' not null,
-    nickname     varchar(30)                      not null,
-    avatar       varchar(255) charset utf8        not null,
-    groupid      smallint(6) unsigned  default 0  not null, # 用户权限组
-    regdate      int unsigned          default 0  not null, # 注册日期
-    lastvisit    int unsigned          default 0  not null, # 最后访问
-    lastactivity int unsigned          default 0  not null, # 最后活动
-    lastpost     int unsigned          default 0  not null, # 最后发帖
-    dateformat   char(10) charset utf8 default '' not null, # 没用
-    timeformat   tinyint(1)            default 0  not null, # 没用
-    timeoffset   char(4) charset utf8  default '' not null, # 没用
-    newpm        tinyint(1)            default 0  not null,
-    new_notify   smallint(6) unsigned  default 0  not null comment '新提醒',
-    sign         varchar(255) charset utf8        not null,
-    constraint username unique (username)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 19, 2021 at 09:15 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Database: `bangumi`
---
+LOCK TABLES `chii_subject_fields` WRITE;
+/*!40000 ALTER TABLE `chii_subject_fields` DISABLE KEYS */;
+REPLACE INTO `chii_subject_fields` VALUES (363612,2,'a:6:{i:0;a:2:{s:8:\"tag_name\";s:12:\"开放世界\";s:6:\"result\";s:1:\"2\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"2021年12月\";s:6:\"result\";s:1:\"2\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:1:\"2\";}i:3;a:2:{s:8:\"tag_name\";s:10:\"2021.12.26\";s:6:\"result\";s:1:\"1\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"沙盒\";s:6:\"result\";s:1:\"1\";}i:5;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"1\";}}',2,0,0,0,0,0,1,1,0,1,0,0,0000,10,5,'0000-10-06',0);
+/*!40000 ALTER TABLE `chii_subject_fields` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_oauth_access_tokens`
---
-
-CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens` (
-  `access_token` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `client_id` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `expires` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `scope` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chii_oauth_access_tokens`
---
-ALTER TABLE `chii_oauth_access_tokens`
-  ADD PRIMARY KEY (`access_token`);
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_episodes` WRITE;
+/*!40000 ALTER TABLE `chii_episodes` DISABLE KEYS */;
+REPLACE INTO `chii_episodes` VALUES (1075440,363612,1,0,0,'NULL','null',0,'','1453-05-29','',0,0,'',1640456969,0,0,0),(1075441,363612,2,0,0,'','',0,'','-753-01-01','',0,0,'',1640456969,0,0,0),(1075442,363612,1,4,0,'','',0,'','','',0,0,'',1640456969,0,0,0),(1075443,363612,4,0,0,'','',0,'12m','2099-11-31','',0,0,'',1640456969,0,0,0),(1075444,363612,4.5,0,0,'12','22',0,'','4000-02-30','',0,0,'[code][/code]',1640456969,0,0,0),(1075445,363612,5,0,0,'','qqq',0,'','2021-04-32','',0,0,'test(bgm38)',1640456969,0,0,1),(1075446,363612,6,0,0,'','',0,'','10000-04-01','',0,0,'[s][/s]',1640456969,0,0,0),(1075455,363612,1,3,0,'op1','',0,'','','',0,0,'',1640457099,0,0,0),(1075456,363612,7,0,0,'','',0,'5m','2999-99-99','',0,0,'',1640457110,0,0,0),(1075457,363612,0,2,0,'','',0,'','1712-02-30','',0,0,'',1640457428,0,0,0),(1075546,363612,1,1,0,'','',0,'','0000-00-00','',0,0,'',1640516014,0,0,0),(1075547,363612,1,5,0,'','',0,'','0000-00-00','',0,0,'',1640516040,0,0,0),(1075548,363612,1,6,0,'','',0,'','0000-00-00','',0,0,'',1640516097,0,0,0);
+/*!40000 ALTER TABLE `chii_episodes` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_ep_revisions` WRITE;
+/*!40000 ALTER TABLE `chii_ep_revisions` DISABLE KEYS */;
+REPLACE INTO `chii_ep_revisions` VALUES (53135,363612,'1075443,1075456,1075444,1075446,1075445','4|||12m|2099-11-31\r\n4.5|12|22||4000-02-30\r\n5||qqq||2021-04-32\r\n6||||10000-04-01\r\n7|||5m|2999-99-99',287622,0,1640531498,'');
+/*!40000 ALTER TABLE `chii_ep_revisions` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO chii_usergroup (usr_grp_id, usr_grp_name, usr_grp_perm, usr_grp_dateline) VALUES (10, '普通用户', 'a:14:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";}', 1304011366);
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_subject_topics` WRITE;
+/*!40000 ALTER TABLE `chii_subject_topics` DISABLE KEYS */;
+REPLACE INTO `chii_subject_topics` VALUES (1,1,2,'拿这个来测试',1216020847,1639999129,76,0,1),(20,2,212,'cheer~',1217558002,1217558840,1,0,1),(452,2,442,'2333',1262410348,1263199823,18,0,1),(460,2,4182,'问两个问题',1263200884,1263200884,0,0,1),(3585,2,30734,'这是什么意思Σ(っ °Д °;)っ',1375949320,1378037814,120,0,1),(3586,2,116420,'……',1375966632,1376101675,1,0,1),(3677,2,130147,'这TM都能有？',1378011331,1566267744,24,0,1),(3752,2,58132,'为什么武林外传可以有',1380471577,1382194163,2,0,1),(4030,2,157769,'(临时召唤)',1388585469,1388586320,1,0,0),(4038,2,157769,'建条目不发种，当斩。',1388872714,1389351890,51,0,1),(4093,2,9387,'《坟场之书》by尼尔·盖曼',1390144688,1390144688,0,0,1),(4322,2,101885,'2、6、16话应该是日本最早的百合动画',1397134860,1397134860,0,0,0),(4330,2,101885,'第三话的キャロン看来是这话人设最得意的作品',1397323484,1397323484,0,0,0),(4579,2,157769,'你们在舔什么呀？',1402892210,1402901320,1,0,0),(4730,2,206841,'哪里有小孩收养18751781850哪里有婴儿领养宝宝送养 哪里有小孩收养18751781850哪里有婴儿领养宝宝送养 哪里有小孩收养18751781850哪里',1405043620,1405043620,0,0,0),(4731,2,206841,'哪里有小孩收养18751781850哪里有婴儿领养宝宝送养',1405046944,1405046944,0,0,0),(4732,2,206841,'哪里有小孩收养18751781850哪里有小孩可以领养小孩送养',1405046990,1405046990,0,0,0),(4733,2,206841,'哪里有婴儿收养18751781850哪里有婴儿可以领养婴儿送养',1405047045,1405047045,0,0,0),(4744,2,207185,'哪里有小孩收养18751781850哪里有小孩可以领养小孩抱养',1405334963,1405334963,0,0,0),(4745,2,207185,'哪里有婴儿收养18751781850哪里有婴儿可以领养婴儿抱养',1405335005,1405335005,0,0,0),(4746,2,207185,'哪里有宝宝收养18751781850哪里有宝宝领养宝宝抱养',1405335039,1405335039,0,0,0),(4748,2,37478,'w卧槽还有这书',1405343587,1405467853,4,0,1),(5029,2,215406,'哪里有小孩领养15830636858待产婴儿收养',1411218966,1411218966,0,0,0),(5030,2,215406,'哪里有小孩领养15830636858小孩送养婴儿收养',1411218996,1411218996,0,0,0),(5031,2,215406,'哪里有小孩领养15830636858送养婴儿收养',1411219020,1411219020,0,0,0),(5263,2,223082,'婴儿领养婴儿送养15773804004婴儿收养锦州',1416738501,1416738501,0,0,0),(5851,2,246626,'哪里有小孩领养15756274660送养婴儿收养',1432252353,1432252371,1,0,0),(5852,2,246626,'哪里有小女孩领养15756274660送养小男孩收养',1432252403,1432252403,0,0,0),(5853,2,246626,'哪里有婴儿领养15756274660送养待产婴儿收养',1432252430,1432252437,1,0,0),(6932,2,289192,'哪里有小孩领养15658327871送养婴儿收养抱养',1464313503,1464313503,0,0,0),(6933,2,289192,'哪里有小孩送养15658327871如何抱养送养婴儿怎么领送养婴儿',1464313931,1464313931,0,0,0),(6934,2,289192,'健康婴儿领养15658327871不孕不育带养儿童 哪里有小孩送养',1464314001,1464314001,0,0,0),(3,4,2,'不错',1216022809,1217552145,2,0,1),(58,6,4,'Heavy Update is coming',1218580387,1218580387,0,0,0),(59,6,4,'Heavy Update is coming',1218580401,1218790065,3,0,1),(1219,6,3320,'【求搞基】有兴趣的不妨留下ID',1309534312,1319719408,3,0,1),(45,8,101,'绝望啦!!对这个连CC都能被萌化的世界绝望啦!!',1217761913,1240129976,7,0,1),(73,8,4,'高清在线播放地址',1221746945,1221746945,0,0,1),(564,8,2571,'Code Geass GAIDEN亡国的阿基德',1272917462,1273028200,1,0,1),(1204,8,9683,'说起来天子的声优到底是谁',1309002791,1309060709,3,0,1),(3653,8,52289,'c.c with lelouchu',1377499964,1555773511,22,0,1),(17169,8,534587,'666666',1586051356,1586051361,1,0,0),(19886,8,617229,'请教大神R2为什么节奏没有R1好',1628589932,1628845201,1,0,1),(19887,8,617229,'请教大神R2为什么节奏没有R1好',1628589969,1639381921,19,0,1),(5,12,5,'Sai，赐我一个Chobits吧',1216209316,1566361616,147,0,0),(7,12,1,'删除测试',1217520011,1217520011,0,0,0),(81,12,1465,'囧rz..CHOBITS还没看完捏。。',1230554045,1230554045,0,0,0),(6873,12,142527,'这条目简介也太剧透了吧',1462335911,1481098545,8,0,1),(8,13,43,'为什么我总good ending不起',1217529168,1434291845,15,0,1),(306,13,3943,'不知这样同一个游戏的不同版本能不能算事？',1249928428,1254495433,9,0,1),(1485,13,14127,'哪有这样说自己女儿的父亲啊……',1316166646,1493510294,21,0,1),(1726,13,64728,'南平套牌车出售',1324664544,1324664544,0,0,0),(2185,13,74384,'新人求解......',1333119113,1333203834,7,0,1),(2740,13,104740,'最爱',1351518163,1351677920,1,0,1),(19876,13,451958,'CLANNAD和寒蝉鸣泣之时 梦幻联动',1628511864,1628518918,2,0,1),(77,14,1114,'神作，也是前几部MGS的终章',1224851090,1232527707,1,0,1),(93,14,1951,'BEAST美女形态 不忍心下手最后死掉的来报到',1232955025,1232955025,0,0,1),(19800,14,546484,'小说作者与小岛的一段友谊',1627227686,1627227686,0,0,1);
+/*!40000 ALTER TABLE `chii_subject_topics` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+LOCK TABLES `chii_subject_posts` WRITE;
+/*!40000 ALTER TABLE `chii_subject_posts` DISABLE KEYS */;
+REPLACE INTO `chii_subject_posts` VALUES (1,1,2,0,'SAi看的也是红皮书吧',0,1216020847),(2,1,3,0,'你是猪 ... 鉴定完毕 ...',0,1216021115),(3,1,2,0,'023 你才是猪',0,1216021295),(7,1,1,0,'这一套的封面真赞',0,1216024050),(8,1,5,0,'这里最好有一个标题',0,1216028733),(9,1,5,0,'我的意思是来一点面包屑导航一类的。这里本来是关于XXXX的讨论。而这里左侧唯一的link是标题“拿这个来测试”。',0,1216080837),(27,1,69,0,'各个',0,1217542023),(29,1,64,0,'响应测试……\r\n我记得这本当年我看的盗版。',0,1217543185),(60,1,301,0,'恩哼',0,1217563697),(79,1,293,0,'至今仍是印象最深最美好的网络小心。',0,1217587002),(89,1,206,0,'最喜欢痞子蔡的&lt;檞寄生&gt;',0,1217605069),(24357,1,5881,89,'檞寄生+1 我的明菁 T-T',0,1356260803),(24360,1,4431,89,'[quote][b]15www[/b] 说: 檞寄生+1 我的明菁 T-T[/quote]\n挖墳黨喪心病狂！',0,1356266789),(24361,1,12391,0,'(bgm38)卧槽这什么年代的帖子了喂……',0,1356268296),(24362,1,14127,0,'看了这帖子，我去查看了豆瓣的第一个条目，发现不在影音书任何一个里，看来是黑历史被删掉了',0,1356269034),(47939,1,29266,0,'试着[s]挖[/s]',0,1411314560),(47946,1,175982,0,'/subject/topic/1\n[s]刘明[/s]',0,1411341862),(47947,1,12391,47946,'almost two years later than me (bgm38)',0,1411342326),(47948,1,9387,0,'又被娃起来了(bgm38)',0,1411352806),(47950,1,175982,47946,'[quote][b]邵小貓[/b] 说: almost two years later than me [/quote]\n(bgm38)',0,1411356928),(47995,1,77515,47948,'等等，为什么是“娃”而不是“挂”？！此事必有蹊跷(bgm38)',0,1411433212),(48049,1,9387,47948,'[quote][b]th3ta \"Paradox\"[/b] 说: 等等，为什么是“娃”而不是“挂”？！此事必有蹊跷[/quote]\r\n因为是”挖“啊！并没有“又怀孕了”的影射包含其中！',0,1411484472),(48057,1,77515,47948,'[quote][b]Phaer[/b] 说: 因为是”挖“啊！并没有“又怀孕了”的影射包含其中！[/quote]\r\n[s]谁的孩子？！！[/s](bgm53)\r\n我还以为pko是在暗示：(挂->娃) “以前用手”，但是“现在有了女朋友”（ry',0,1411501145),(48060,1,9387,47948,'[quote][b]th3ta \"Paradox\"[/b] 说: 谁的孩子？！！\n我还以为pko是在暗示：(挂->娃) “以前用手”，但是“现在有了女朋友”（ry[/quote]\n(bgm38)这个脑洞厉害，输了',0,1411514048),(67970,1,26024,0,'这个帖子竟然没人挖(bgm38)',0,1452862700),(67974,1,204679,0,'卧槽！\n为什么会有这个条目。\n为什么会被挖出来。\np.s.推荐痞子蔡的所有小说。',0,1452874283),(67989,1,29266,67970,'挖坟党丧心病狂(bgm38)',0,1452912119),(67996,1,8256,0,'没看过，但是知道这本',0,1452950840),(68004,1,259211,0,'那我也只能来一发\n有时间看看好了',0,1452960290),(68013,1,103988,67970,'专业挖坟的么=_=',0,1452965112),(77981,1,258435,0,'无意间翻到黑历史ww\n\n另外[url]http://jht.pixnet.net/blog[/url] 作者博客，最近貌似不怎么更新了~\n\n很喜欢这本书的说',0,1470800362),(77985,1,208378,0,'#八年前的那个夏天',0,1470823591),(77988,1,255501,0,'四年前的那句(bgm38)卧槽这什么年代的帖子了喂……都已经是什么年代了喂(bgm38)',0,1470840724),(77989,1,14382,0,'我上次看到这帖还是几年前，想着留言看着像“到此一游”还是算了。\n\n唔，到此一游。',0,1470854418),(77997,1,261227,0,'到此一游',0,1470886077),(78004,1,16185,0,'到此一游~(bgm24)',0,1470917195),(78010,1,95693,0,'到此一游\n(bgm37)',0,1470928052),(78011,1,8142,0,'什么你们居然打算把1号帖学姐掉(bgm38)\n[s]好像并没有什么问题[/s]',0,1470931398),(78016,1,202786,0,'8年过去了(bgm38)',0,1470967445),(78018,1,3490,78011,'丧心病狂',0,1470970181),(78019,1,3490,0,'(bgm39)果然是暑假啊',0,1470970200),(84335,1,116229,0,'这个楼主\n。是活的',0,1486705486),(84349,1,188332,0,'我想做个好人',0,1486731233),(88934,1,99210,0,'2、3楼可真是青春呀(bgm61)',0,1497530602),(88922,1,50042,0,'Lz竟然是活的。明年办个十周年纪念会吧。',0,1497489442),(88923,1,225835,0,'快十年了，留名(bgm38)',0,1497493252),(88924,1,27159,0,'(bgm38) [s]明年再来[/s]',0,1497493274),(88925,1,330033,0,'1(bgm38)',0,1497497586),(88926,1,133075,0,'到此一游',0,1497501545),(88927,1,171851,0,'(bgm67)发现文物',0,1497501781),(88931,1,283739,0,'四国一(bgm58)',0,1497511094),(88938,1,90690,88927,'放在最近的巨作展位产生 +2 文化和 +2 魅力。',0,1497532145),(88939,1,168706,0,'08-12-16-17(bgm38)\n最本书最后就记住了一个轻舞飞扬',0,1497533670),(88968,1,211998,0,'观光',0,1497608964),(88969,1,54176,88934,'鉴定完毕这词太令人怀念了。。。',0,1497611729),(88970,1,99210,88934,'[quote][b]lighthouse[/b] 说: 鉴定完毕这词太令人怀念了。。。[/quote]\n想起了哪些有趣的回忆呢(bgm106)',0,1497612827),(88984,1,54176,88934,'[quote][b]阿良良木翔[/b] 说: 想起了哪些有趣的回忆呢[/quote]\n我第一次常驻某个网络社区的时候也是差不多那段时间，所以对那个时候的网络用语都很有感觉',0,1497634519),(88989,1,211931,0,'祭奠',0,1497657984),(136681,1,407029,0,'编号1姑且还是要观光的',0,1574430511),(146050,1,485664,0,'www',0,1589374822),(146367,1,438735,0,'到此一游(bgm38)',0,1589895880),(146371,1,383342,0,'洛阳铲草',0,1589899533),(146388,1,193812,0,'这条怎么上首页了（',0,1589926926),(146398,1,533134,0,'12年老洛阳铲',0,1589939693),(146403,1,449217,0,'我铲',0,1589950826),(146423,1,432086,0,'来自十二年前的思念(bgm37)',0,1589975040),(146445,1,514619,88927,'[quote][b]Genius、小乖??[/b] 说: 放在最近的巨作展位产生+2文化和+2魅力。[/quote]\n太草了',0,1590023443),(158959,1,543571,0,'泪目',6,1611387062),(158960,1,543571,0,'2021八省联考前来考古',0,1611387082),(158982,1,524993,0,'洛阳铲',0,1611445817),(158984,1,9580,78011,'怎么什么帖子都有你',0,1611459212),(159101,1,8142,78011,'[quote][b]水嶋春歌[/b] 说: 怎么什么帖子都有你[/quote]\n那毕竟当年的bgm还是一个友好开放包容的社区\n当年的\n嗯',0,1611602460),(161716,1,480062,0,'topic001',0,1614494140),(171094,1,282103,0,'创世纪',0,1628517214),(180237,1,605528,0,'！',0,1639884408),(180316,1,437960,0,'genesis block',0,1639952681),(180375,1,503023,0,'《星之声》',0,1639995688),(180380,1,391908,0,'到此一游',0,1639999129),(5,3,2,0,'比较好玩',0,1216022809),(6,3,1,0,'NDS被别人借走了……',0,1216023735),(38,3,101,0,'里层众占领了这里',0,1217552145),(12,5,5,0,'赐我一个Chobits吧，功能不要太全。只要能和我QA即可～～\r\n^_^',0,1216209316),(33,5,80,0,'外设电源按钮能自设么?求团购',0,1217547696),(47,5,224,0,'- -\r\n像PB一样开源么？\r\n这个更类douban',0,1217559141),(83,5,547,0,'求购sumomo一只~',0,1217589463),(90,5,619,0,'QA.. 我以為ox...........',0,1217618519),(172,5,1043,0,'我要小型号的也好了',0,1219927140),(206,5,1434,0,'我也很喜欢啊.',0,1229494908),(4382,5,10376,0,'我愿做Chobits',0,1280840571),(4383,5,5,4382,'...\n第一次得到春菜的提醒.而且是天降Chobits',0,1280893744),(4385,5,5,4382,'[quote][b]南盏[/b] 说: 满足你~~　　２年ｂａｎｇｕｍｉ的老会员　　O(∩_∩)O[/quote]\n...额..俺不需要满足.',0,1280902090),(4395,5,3918,0,'+1求团购～～但是能买柚姬吗～～个人觉得柚姬更美～～啦啦啦～～',0,1280987722),(4400,5,9802,4395,'+2 团购美腻点',0,1281014046),(4403,5,3490,83,'路过路过',0,1281024645),(14389,5,68276,0,'秀树是个YY狂。',0,1327659243),(14395,5,6241,0,'这个帖子每两年被人顶一次(bgm27)',0,1327668871),(14396,5,31002,0,'= =好老的坟',0,1327670602),(14398,5,16138,0,'topic/5 注目',0,1327684488),(14399,5,11118,0,'而且还是吾辈生日那天的坟',0,1327691930),(14415,5,10823,0,'世界末日也要顶=w=',0,1327764947),(14412,5,30105,0,'既然已经被顶起来了，咱还是继续顶吧。',0,1327754043),(14468,5,10729,0,'2014年的时候会再次光顾的',0,1327870779),(14404,5,3490,14395,'今年也没有系列么？',0,1327728230),(14405,5,3332,0,'两年一次的()期',0,1327729576),(15518,5,5,0,'(bgm74)',0,1332685098),(15519,5,37469,14395,'帖子加起来，能绕地球两圈……',0,1332685613),(15520,5,14127,0,'楼主又是一个诈尸的好例子(bgm86)',0,1332685755),(15528,5,11118,15520,'(bgm86)',0,1332717775),(15555,5,12391,0,'=。=2014年再one more time么……',0,1332819387),(15568,5,4431,15518,'人群當中忽然鑽出一只樓主！',0,1332907651),(15571,5,45533,0,'(bgm90)原来是坟。。那就挖挖',0,1332909469),(15577,5,34985,0,'等2014再来',0,1332912546),(15635,5,8739,15518,'楼主居然还在！',0,1333045138),(15704,5,6705,0,'同求chobits一只(bgm37)',0,1333209173),(30625,5,53426,0,'我也好想要啊..(bgm38)',0,1370443251),(30626,5,37469,30625,'您是挖坟的吗？',0,1370443382),(30627,5,53426,30625,'[quote][b]Fantasy[/b] 说: 您是挖坟的吗？[/quote]\n不准么？',0,1370443479),(30628,5,37469,30625,'[quote][b]col[/b] 说: 不准么？[/quote]\n尚未。',0,1370443523),(30629,5,53426,30625,'[quote][b]Fantasy[/b] 说: 尚未。[/quote]\n那就好。',0,1370443550),(30633,5,8838,0,'还没到两年呢啊！',0,1370448642),(30651,5,11327,0,'既然都看到，那么就ry',0,1370516417),(30682,5,68752,0,'原来还有这种坟(bgm99)',0,1370600338),(30690,5,15578,0,'说好的两年一次呢(bgm38)',0,1370612602),(30695,5,41436,0,'诶进来就习惯性扫了下时间真是好习惯...\r\nid 号瞩目...\r\n然后顺手去 topic/1 参观了下，发现那边的楼主居然现在还活跃中...',0,1370616943),(33603,5,5,0,'挖坟的节奏，让(bgm34)时不时进来看看的人汗颜(bgm99)',0,1377065134),(33604,5,2571,33603,'好可怕，個位數的 ID 。',0,1377065876),(33605,5,123168,33603,'BGM五号机(bgm38)',0,1377066117),(33609,5,10327,33603,'……5号………………膝盖收好',0,1377067244),(33611,5,127728,0,'呼！topic5！',0,1377067728),(33614,5,38770,0,'铜球！！',0,1377076172),(33633,5,37681,0,'Chobits，赐我一个Sai吧',0,1377140213),(57932,5,3490,0,'于是今年的BGM也没有',0,1433332130),(57934,5,141485,57914,'[quote][b]lhb5883[/b] 说: 天国的年糕可好？[/quote]\n年糕是什么？',0,1433332546),(43057,5,46380,33603,'楼主我来挖坟了(bgm24)',0,1400771732),(43058,5,144717,0,'既然在首页看到了这个帖子，又正好是2014年，那我就来挖坟吧(bgm56)',0,1400776835),(43063,5,141485,0,'终于到2014年了(bgm38)，虽然已经被人在2013顶过了(bgm102)',0,1400813180),(43068,5,131421,0,'顶个顶个 既然都是传统了(bgm39)',0,1400823232),(43070,5,6,0,'这个坟挖的……(bgm27)',0,1400823502),(43071,5,175982,0,'卧槽08年的……08年是奥运会对吗？',0,1400824905),(43072,5,79332,0,'等有了chobits的时候还会再来挖的',0,1400825424),(52024,5,79256,0,'因为这个帖子有了 Chobits？',0,1421046294),(52048,5,123081,0,'刚看到这个……[url=http://www.solidot.org/story?sid=42641]霍金马斯克对人工智能研究发出警告[/url]',0,1421127304),(52050,5,211931,52048,'美帝早已成立人工智能伦理研究会',0,1421128782),(52051,5,3490,0,'(bgm38)',0,1421130968),(52039,5,29266,52016,'such',0,1421074899),(52016,5,211931,0,'wow',0,1421032282),(52019,5,141485,0,'2015年再次被顶起',0,1421038619),(57850,5,5,0,'话说又到了夏天(bgm115)',0,1433227997),(57856,5,13548,57850,'转眼间已经7年了',0,1433235201),(57858,5,49777,57850,'是啊 ~',0,1433239837),(57873,5,82575,57850,'(bgm38)',0,1433257909),(57887,5,162791,0,'然而我依然没有chobits。。。',0,1433266764),(57892,5,226624,0,'千年古坟',0,1433294760),(57894,5,231508,0,'比较喜欢丝茉茉',0,1433296666),(57895,5,49777,57894,'Sumomo 相关的图都挺可爱的 ~ 不过动画里的感觉有些闹 ... (bgm72)',0,1433301452),(57896,5,112191,0,'赌五毛再过五年还是不会有(bgm38)',0,1433301543),(57903,5,231508,57894,'[quote][b]MousHu[/b] 说: Sumomo 相关的图都挺可爱的 ~ 不过动画里的感觉有些闹 ... [/quote]\n闹闹的很好啊。。一个人很寂寞的。。',0,1433305828),(57904,5,49777,57894,'[quote][b]空琉美游亭丸京[/b] 说: 闹闹的很好啊。。一个人很寂寞的。。[/quote]\n只要不是长时间一个人的话 ~ 也是可以过得并不太寂寞的 ~',0,1433305988),(57905,5,231508,57894,'[quote][b]MousHu[/b] 说: 只要不是长时间一个人的话 ~ 也是可以过得并不太寂寞的 ~[/quote]\n(bgm38)',0,1433306294),(57906,5,49777,57894,'[quote][b]空琉美游亭丸京[/b] 说: [/quote]\n要有良好的心态 ~ (bgm24)',0,1433306614),(57914,5,141485,0,'又是一年过去了\n\n然而还是没有',0,1433310995),(57920,5,3490,57914,'天国的年糕可好？',0,1433321260),(57935,5,3490,57914,'[quote][b]音月[/b] 说: 年糕是什么？[/quote]\n[url]http://bgm.tv/apology[/url](bgm38)',0,1433334154),(57939,5,90690,0,'So what is Chobits?',0,1433341910),(57941,5,231508,57914,'[quote][b]lhb5883[/b] 说: http://bangumi.tv/apology[/quote]\n原来bangumi还有过这样的大事件啊。。',0,1433343340),(57952,5,141485,57914,'[quote][b]lhb5883[/b] 说: http://bangumi.tv/apology[/quote]\n详细过程大发现！原本只是知道发售终止了而已，毕竟入驻BGM的时候这事件就已经是过去时了',0,1433346577),(57956,5,8766,57850,'[quote][b]orange[/b] 说: 转眼间已经7年了[/quote]\n..哇塞7年了',0,1433349069),(57961,5,232228,0,'开机关机开机关机(bgm38)(bgm38)(bgm38)',0,1433390315),(61705,5,234413,0,'时间过得可真快啊(bgm35)(bgm39)',0,1440143107),(61709,5,78305,0,'洛阳铲真是可怕 (bgm38)(bgm38)',0,1440161845),(61757,5,211931,57914,'[quote][b]lhb5883[/b] 说: http://bangumi.tv/apology[/quote]\n咦你这样不会被转学吗',0,1440297167),(61792,5,10259,57894,'+1',0,1440343792),(67961,5,208378,0,'于是8年之后，还是没有\n[mask]虽然觉得好像不把这个位子留给老BGMer不太合适，不过既然看见了就顺手挖了\n[/mask]',0,1452832722),(67967,5,267492,0,'(bgm38)',0,1452844532),(67968,5,250298,0,'(bgm38)',0,1452846041),(67969,5,26024,0,'(bgm38)',0,1452862585),(67985,5,103988,0,'(bgm38)',0,1452893864),(67988,5,76509,0,'啊，这么一想，Chobits居然已经是接近15年前(完结的)作品了....(bgm41)',0,1452902152),(68019,5,6497,0,'(bgm38)',0,1452973354),(68037,5,12630,0,'(bgm38)bgm神楼之一',0,1453025063),(68045,5,215979,0,'(bgm38)',0,1453049523),(68056,5,3490,0,'(bgm38)',0,1453085279),(68057,5,3490,67988,'连Round Table feat. Nino都隐退了(bgm41)',0,1453085324),(68073,5,9387,0,'(bgm38)',0,1453118281),(68096,5,99210,0,'(bgm38)',0,1453205381),(68099,5,77488,0,'破坏bgm38队列',0,1453212408),(68105,5,267845,0,'又见挖坟(bgm38)',0,1453230720),(68222,5,5,67961,'类目，本来不打算挖的...',0,1453532170),(68233,5,208378,67961,'[quote][b]如果思念是一碗汤圆[/b] 说: 类目，本来不打算挖的...[/quote]\n楼主！！居然还在(bgm40)\n[s]楼主我们一直挖坟挖到chobits出现的那一天吧好不好[/s]',0,1453548365),(68295,5,5,67961,'[quote][b]芥末酱油丸[/b] 说: 楼主！！居然还在\n楼主我们一直挖坟挖到chobits出现的那一天吧好不好[/quote]\n要看sai能坚持么',0,1453685653),(68306,5,252257,0,'(bgm38)',0,1453700225),(68302,5,208378,67961,'[quote][b]如果思念是一碗汤圆[/b] 说: 要看sai能坚持么[/quote]\n要相信(bgm78)',0,1453689382),(71593,5,265239,0,'再过30年吧(bgm38)',0,1462365352),(71597,5,255501,0,'(bgm38)',0,1462373443),(71601,5,185084,0,'(bgm38)\n看过楼主的时间胶囊里的Chobits吐槽(bgm67)',0,1462382034),(71614,5,3490,0,'(bgm38)你们为什么挖的那么熟练啊',0,1462411018),(71615,5,248715,0,'等十周年的时候会不会有周年庆呢(bgm39)',0,1462411379),(71623,5,141485,0,'(bgm38)继续等下一个8年',0,1462431127),(71679,5,280179,0,'(bgm38)',0,1462467495),(71692,5,14268,83,'[quote][b]lhb5883-污喵王VIP⑩[/b] 说: 路过路过[/quote]\n终于又抓到你了个说',0,1462506737),(71694,5,3490,83,'[quote][b]柳胜薰CALFN-触触小污贼VIP[/b] 说: 终于又抓到你了个说[/quote]\n你来抓我啊来抓我，抓住我我就让你嘿嘿嘿(bgm38)',0,1462509441),(71707,5,14268,83,'[quote][b]lhb5883-污喵王VIP⑩[/b] 说: 你来抓我啊来抓我，抓住我我就让你嘿嘿嘿[/quote]\n别一副不情愿的样子，你这个⑩',0,1462517402),(71745,5,142527,0,'(bgm38) 你们究竟是挖了多少次啊',0,1462533783),(88886,5,5,0,'回来铲铲土~',0,1497421756),(88887,5,2571,88886,'太可怕了，九年了。',0,1497422359),(88892,5,171851,88886,'(bgm60)',0,1497431253),(88894,5,99210,88886,'围观一下～',0,1497432923),(88895,5,90690,88886,'QA 是一个复杂的东西。',0,1497433243),(88916,5,277875,0,'(bgm38)',0,1497457402),(88917,5,248715,88886,'明年就是十周年了(bgm38)',0,1497457726),(106171,5,53426,0,'十周年了，仍然还没有(bgm38)',0,1521990181),(106190,5,312525,0,'十年了。',0,1521997811),(106193,5,79290,0,'。。。。10周年未满',0,1522000094),(106200,5,15476,88886,'现在有许愿板功能了，你去那边发一下说不定下一个十年就(',0,1522018213),(106337,5,268422,0,'别想了，如果真的有那样的独立智能机器人妹子，人家一定不会满足于跟你或我聊天这种程度的行为，除非这个独立智能无欲无求，心甘情愿和你天天聊天。',0,1522067886),(106403,5,4286,0,'并没有',0,1522117567),(118121,5,341935,0,'[img]https://files.catbox.moe/xbp85a.jpeg[/img]\n微软小冰已经是这种画风了（',0,1540995946),(118123,5,268865,71745,'08,10,12,13,14,15,16,17,18',0,1540997597),(118124,5,299955,0,'科技的发展使得十年前的人们的设想一步步的接近。真是令人感叹啊。',0,1541001959),(118138,5,386396,0,'也想要一只，超超超可爱的VR女友或男友',0,1541035905),(131594,5,291520,0,'看来今年到我了(bgm38)',0,1565610307),(131605,5,310722,0,'(bgm58)',0,1565627760),(131715,5,327934,0,'谁挖的坟？',0,1565662139),(131716,5,3490,131715,'就是你LS啊',0,1565662481),(131726,5,312525,0,'出现吧',0,1565693784),(132036,5,5,0,'今年挖坟在8月：）(bgm24)',0,1566271867),(132048,5,213658,0,'我也想要一只Chobits',0,1566298860),(132066,5,320903,132036,'11年了？？',0,1566319472),(132074,5,346405,0,'又出现了！',0,1566361616),(14,7,1,0,'其实是假删',0,1217520011),(16,8,43,0,'`````失败 失败 全部失败！',0,1217529168),(17,8,1,0,'我是跟着攻略完成after story的',0,1217529276),(23,8,43,0,'~~我是智代就跟我说了句 我喜欢只有你\r\n没了 完了！！！！\r\n攻略的话就不是自己争取的了！',0,1217532429),(30,8,64,0,'同不喜攻略，但是也不喜S&amp;L，\r\n所以玩的游戏少，但是花的时间多……',0,1217543327),(31,8,64,0,'不过CLANNAD确实skip了不少，\r\n正式开始认证玩游戏的时候觉得字太多，\r\n而剧情已经了解，这也算是一种悲哀吧……',0,1217543430),(32,8,43,0,'我玩的简直跟剧情一点发展也没 郁闷死了\r\n就是少陪渚说了句话 然后就乱七八糟`',0,1217546178),(150,8,780,0,'先看了动画再玩游戏的人是绝对打不出Good Ending的……\r\n那种花心的思维模式已经成功建立～',0,1218859854),(1725,8,6157,0,'此等神作不看攻略想通关。。LZ太天真了，神作的选支一般都是很诡异。。',0,1256707839),(1727,8,4293,0,'真的，有时候的确很诡异',0,1256721814),(1736,8,5453,0,'我刚看完AfterStory动画不久，玩游戏的话，不想再那样难受一次了。。。',0,1256808938),(1743,8,3417,0,'我没看攻略完成了智代、杏、琴美的Good End\n=v=\n然后基本就在无限Loop，最后求助攻略，这……诡异的选择分支。',0,1256866223),(1745,8,3371,0,'不看攻略根本难以想象如何进入春原线、幸村线等等这些路线的吧……',0,1256869576),(1747,8,2978,0,'完全按照动画玩的。。后来不小心提早表白。。杯具了。。\n改天重来。。',0,1256915362),(2603,8,2571,0,'重要的是不能無視渚，渚王道啊！\n\n另﹕全選第一個能過美佐枝線',0,1270546090),(8883,8,31609,0,'LZ同道中人啊,我是绝对有BE的天赋...只要有选择支,第一次一般都能被我走到BE...',0,1305434601),(58288,8,192733,1743,'椋的GE好打，杏的好难啊，因为和椋去游戏厅那段我老不选“恋人”，就老是BE……',0,1434291845),(114,45,101,0,'群众纷纷表示,我们要女王,不要萌女',0,1217761913),(115,45,80,0,'你是什么- -,LZ的立场说这话很无力哟',0,1217772149),(120,45,166,0,'绿毛必须死 0/1',0,1217847264),(128,45,619,0,'綠毛跟我名字一樣給人叫死那個感覺真是囧 = =',0,1218003951),(136,45,613,0,'李兰花必须死！',0,1218134745),(186,45,1191,0,'绿毛党参上~~~~~~~~\r\n女王党退散~~~~~~~~囧',0,1221934721),(614,45,11,0,'没人理LULU了现在',0,1239866357),(622,45,6,0,'微微（=  =b）.....\r\n我知道你对LULU有所图很久了......',0,1240129976),(138,58,4,0,'[url]http://www.steampowered.com/tf2/heavy/[/url]',0,1218580387),(139,59,4,0,'http://www.steampowered.com/tf2/heavy/',0,1218580401),(140,59,4,0,'强烈呼唤 UBB 支持!',0,1218580412),(142,59,1,0,'修了频道新帖无法显示的Bug,UBB等TAG完成后再加',0,1218720825),(143,59,4,0,'那个页面现在每天都在更新',0,1218790065),(185,73,4,0,'http://6.cn/profile/playlist.php?p=165000',0,1221746945),(200,77,1114,0,'：） \r\n\r\n值得收藏',0,1224851090),(221,77,2,0,'买不起，只看录像',0,1232527707),(208,81,1465,0,'期末考试啊\r\n怨念',0,1230554045),(249,93,1951,0,'RT 每次都流着口水不断切换角度看美女和SNAKE缠绵 不顾HP条的骤降。。。小岛太坏了',0,1232955025),(1168,306,3943,0,'360版值得一玩，只是没有汉化……',0,1249928428),(1169,306,886,0,'移植作品，并且没有大量更改 的话应该归为一个条目吧',0,1249964065),(1173,306,3943,0,'但是填写平台的地方似乎不支持多个项目\r\n而且像使命召唤4这种不同平台完全一样的游戏都有多个条目，CLANNAD的PC和XBOX360版不同点还是很多的',0,1250061161),(1174,306,886,0,'不支持多平台就能添加多个条目么= =那那些跨平台的玩意儿怎么办啊……\r\n使命召唤4的多条目也只是重复了而已\r\n再说CLANNAD的PC和Xbox360版又有多少区别？',0,1250067913),(1175,306,1,0,'理论上是要合并的，只是现在人物部分合并不好处理',0,1250072223),(1177,306,3943,0,'希望网站开发人员能搞定这些跨平台游戏的问题',0,1250119245),(1178,306,4293,0,'但是啊，选游戏的时候经常没看到平台……经常选错了……啃',0,1250127990),(1456,306,5489,0,'360的有成就....还是宽屏的',0,1254231386),(1460,306,5613,0,'平臺什么的只要游戲一樣就可以了啊\n支持合并',0,1254273863),(1486,306,4755,0,'還有動畫原版\\改版\\外傳\\本篇的問題啊',0,1254495433),(2826,564,2571,0,'沒變態妹控的份',0,1272917462),(2831,564,7378,0,'车夫！',0,1273028200),(9655,1204,9683,0,'复习R2的时候突然被萌到了orz',0,1309002791),(9662,1204,7088,0,'松元環季',0,1309016840),(9673,1204,9683,9662,'非常感谢orz',0,1309060366),(9674,1204,2813,9662,'原来是真LOLI。。。[url]http://bgm.tv/person/6821[/url]',0,1309060709),(9798,1219,3320,0,'ID：wjdavid\r\n\r\n这游戏很久之前就关注过了可惜一直都玩不成\r\n现在免费了于是终于可以玩了……T  T\r\n求组队求好友\r\n菜鸟一只见谅=w=',0,1309534312),(12645,1219,58635,0,'ID：z359386903\n\n我自己感觉自己玩士兵和Spy很好',0,1319711788),(12646,1219,3320,12645,'我最近都AFK了……',0,1319713914),(12647,1219,58635,12645,'[quote][b]Aquarius才不会[/b] 说: 我最近都AFK了……[/quote]\n反正我在玩就是了',0,1319719408),(11860,1485,4681,0,'(bgm62)\n咦？咖喱酱玩的不是FV？',0,1316168319),(11964,1485,37469,11869,'[quote][b]油咖喱酱[/b] 说: 这游戏里除了芽衣就没正常人啦！[/quote]\n怎么能这么说?',0,1316263841),(11965,1485,14127,11869,'[quote][b]Fantasy[/b] 说: 怎么能这么说?[/quote]\n就这么觉得的',0,1316263999),(11966,1485,37469,11869,'[quote][b]油咖喱酱[/b] 说: 就这么觉得的[/quote]\n其实芽衣也不正常。',0,1316264144),(11967,1485,14127,11869,'[quote][b]Fantasy[/b] 说: 其实芽衣也不正常。[/quote]\n我觉得至少不会像其他角色那样属性鲜明吧',0,1316264227),(11968,1485,37469,11869,'[quote][b]油咖喱酱[/b] 说: 我觉得至少不会像其他角色那样属性鲜明吧[/quote]\n不正常才吸引人吗，再说每个人不都有点什么特点吗？相比之下藤林椋倒是有点正常女性的感觉，或者说正常女性更应该这样的。',0,1316264414),(11969,1485,14127,11869,'[quote][b]Fantasy[/b] 说: 不正常才吸引人吗，再说每个人不都有点什么特点吗？相比之下藤林椋倒是有点正常女性的感觉，或者说正常女性更应该这样的。[/quote]\n嗯 我忘了椋的存在了…你貌似误会了 我说的不正常不是贬义的   将平常人的特点加以夸大 塑造鲜明的人物性格 这估计是动画和GAL的表现优势 夸张的东西在动画里不会显得突兀 要是真人版就会很傻 这也是我喜欢看动画的原因啊',0,1316264816),(11971,1485,37469,11869,'[quote][b]油咖喱酱[/b] 说: 嗯 我忘了椋的存在了…你貌似误会了 我说的不正常不是贬义的&nbsp; &nbsp;将平常人的特点加以夸大 塑造鲜明的人物性格 这估计是动画和GAL的表现优势 夸张的东西在动画里不会显得突兀 要是真人...[/quote]\n确实，我倒是没有什么意思。夸大个性这正是アニメ和ゲーム的一种手段，所以才吸引人的嘛……\n当然clannad这种各种人物集中在一起还是比较少见的了。',0,1316269090),(11980,1485,31328,0,'秋生和冈崎都是人生的大淫家啊xsk',0,1316311881),(11854,1485,14127,0,'[IMG]http://i.imgur.com/61iNp.jpg[/IMG]',0,1316166646),(11858,1485,14876,0,'[mask]我下面的怪兽已经饥渴难耐了！[/mask]',0,1316167510),(11861,1485,14127,11860,'是的啊……这是当时就截的图……',0,1316168809),(11862,1485,14127,11858,'变态！',0,1316168865),(11867,1485,3320,0,'他说的没错啊。',0,1316176732),(11868,1485,14127,11867,'不是错没错的问题啊 这种说法真是……',0,1316176798),(11869,1485,24178,0,'= =每次看他说这种话都觉得秋生他好厉害\n= =难为早苗你了（你确定不是难为的秋生吗）',0,1316178349),(11870,1485,14127,11869,'这游戏里除了芽衣就没正常人啦！',0,1316179140),(11871,1485,24178,11869,'[quote][b]油咖喱酱[/b] 说: 这游戏里除了芽衣就没正常人啦！[/quote]\n= =我觉得椋就挺正常的.....',0,1316180701),(11872,1485,10009,0,'秋生可是紳士72柱之一啊!',0,1316180840),(11873,1485,14127,11872,'这是什么……还有哪71个？',0,1316180902),(11874,1485,10009,11872,'[quote][b]油咖喱酱[/b] 说: 这是什么……还有哪71个？[/quote]\n這是禁則事項',0,1316180936),(86483,1485,302247,0,'HENTAI',0,1493510294),(15662,2185,74384,0,'选了某个游戏以后【比如就这款团子】，怎么才能下载【玩】这款游戏啊.......或是在哪里才能找到连接之内的下载？',0,1333119113),(15664,2185,9639,0,'一下子想到了[url=http://chii.in/rakuen/topic/subject/892]这个[/url]\nBangumi不提供任何资源的下载哦(bgm25)',0,1333120490),(15665,2185,2571,0,'在里區裏有下載，進入資格要向阿叉用10000金幣換100節操，再以這100節操平均分給鸛狸猿以獲得進入里區資格。',0,1333120687),(15668,2185,74384,15665,'不是很明白 O . O  但是觉得好强大哦！求细解~(≧▽≦)/~',0,1333156112),(15669,2185,14127,0,'这里不提供下载。',0,1333157389),(15674,2185,11118,15669,'太长了，“没”\n（致敬用意',0,1333159547),(15675,2185,9639,15665,'[quote][b]【以吾之名】[/b] 说: 不是很明白 O . O&nbsp;&nbsp;但是觉得好强大哦！求细解~(≧▽≦)/~[/quote]\n解只有两个字：[mask]真相[/mask]\n(bgm38)',0,1333160316),(15698,2185,74384,0,'SOKA......原来是这样的  O . O ...不提供下载啊...',0,1333203834),(22419,2740,3417,0,'[url]http://bangumi.tv/character/8[/url]',0,1351677920),(22377,2740,104740,0,'智代~~~~赛高！！！！！',0,1351518163),(33767,3653,52289,0,'道道阳光从空中倾注而下，其本身就像生命的赞歌一般。\r\n在绿色的丘陵间延伸着一条蜿蜒曲折的小路。上面并没有铺设水泥，只由黄土培实而成。虽然正处于欧洲的正中央，但这里还没有沾染现代文明的颜色，维持着原有的土色土香。虽说住在这里想必多有不便，但也乐得远离都市的喧嚣。\r\n在鸡犬相闻的田间小路上，一驾运货马车正不慌不慢地向东而去。握着两匹马的缰绳的，是一个身材修长的乡下马夫。尽管如此，他好像深知御马之道，握缰的手没有一点颤抖。\r\n马车的车斗里装满了干草。\r\n干草上面坐着一个少女。长发齐腰，相貌端正，这就是她留给人的第一印象。\r\n在她的手里，持有和周遭环境毫无关系的日本折纸。少女正一门心思地摆弄着它。\r\n终于，折纸渐渐成型了。那是一只鹤。少女满意的端详了一会儿，把它放在了干草上，使劲伸了个懒腰，就这样在甘草上睡了过去。\r\n马车微微一摇，车夫并不转头，只是视线向背后瞟去。\r\n少女没有在意。\r\n少女尽情地吸着沐浴阳光后的草香，仰视头顶青空，嫣然一笑。\r\n  \r\n然后，\r\n“名为Geass的王之力会让人孤独——”\r\n少女C.C.那无忧无虑的，银铃般的声音在天际回响着。\r\n“呵呵……也不尽然呢。呐，鲁路修。”\r\n握着缰绳的车夫依旧看着身后。\r\n但他嘴角边突然浮出一丝笑意，转向了前方。\r\n在两匹劣马的牵引下，马车沿着小路缓缓前进。\r\n风和日丽，万里无云。',0,1377499964),(33768,3653,52289,0,'在我心目中最好的结局 (bgm50)(bgm50)(bgm50)(bgm50)',0,1377499986),(33769,3653,52289,0,'重要的不是cc跟lulu能一直在一起\n最重要的是lulu没死！！！！！！\n最好的惩罚 永生\n最好的结局 cc不会再孤独',0,1377500149),(33770,3653,52289,0,'不愧是11年最萌男 Lelouch·Vi·Britannia实在当之无愧！！！\n\n慧跟恶意 善良与为求目的不择手段的奸诈 一盘完美的棋盘\n\nAll Hail Lelouch~!All Hail Lelouch~!All Hail Lelouch~!\n完美的王之力使用者！！！！',0,1377500372),(33786,3653,157444,0,'哎。。鲁鲁修一直活在我心中。。当时他死了我都呆了QVQ',0,1377519718),(33772,3653,52289,0,'clamp大妈性格塑造跟福山润大大配音实在无敌赞！！！！！',0,1377500702),(33773,3653,52289,0,'(bgm67)(bgm67)(bgm67)(bgm67)(bgm67)(bgm67)(bgm67)',0,1377500711),(33775,3653,12391,0,'(bgm38)鲁鲁修这角色除了脸和CLAMP有关系？\n回想起来还好R2出的早。\n以及当年大河内病了，我特么还没有吃药；谷口还能整出最后一集神洗地。不然R2下场和罪冠以及VVV又有啥区别？',0,1377501764),(33780,3653,52289,33775,'这个嘛。。。我就不知道了= = 我不是很清楚那些..要是clamp跟塑造没什么关系我就说错了..我认得只有长相不好意思啊...行了行了',0,1377504288),(33781,3653,52289,33775,'体谅你 亲爱的',0,1377504298),(33788,3653,52289,33786,'我要相信他没死没死就是没死',0,1377523249),(33789,3653,157444,33786,'[quote][b]鱼子酱[/b] 说: 我要相信他没死没死就是没死[/quote]\n恩恩！0 0我一直觉得他有code！',0,1377527762),(33795,3653,155127,0,'这个是官方小说的结局吧~~\n从CP上看是个最完美的结局，一对永生CP',0,1377582295),(33813,3653,82260,33775,'+1，clamp只做了人设，其他包括剧情脚本神马的都是别人做的',0,1377609004),(33926,3653,52289,33795,'是啊 现在的我 比较喜欢he',0,1377843872),(33928,3653,155127,33795,'[quote][b]鱼子酱[/b] 说: 是啊 现在的我 比较喜欢he[/quote]\n一直都很喜欢HE哦~虽然BE也很美但是还是喜欢经历风雨后大家平静倚在一起的那种美好。',0,1377852605),(33938,3653,52289,33795,'[quote][b]十六樱[/b] 说: 一直都很喜欢HE哦~虽然BE也很美但是还是喜欢经历风雨后大家平静倚在一起的那种美好。[/quote]\n哈哈 有时候 be也是个很好的结局 因为毕竟现实中还是be为结局的事情居多',0,1377863691),(33969,3653,9703,0,'后来少年改名叫劳伦斯 少女改名叫赫萝\n当然那又是另外一个故事了',0,1377938273),(33991,3653,52289,33969,'哈哈 另外一个故事又如何呢？好看吗',0,1378011981),(34000,3653,9703,33969,'[quote][b]鱼子酱[/b] 说: 哈哈 另外一个故事又如何呢？好看吗[/quote]\n很喜欢 漫画动画都看了 小说苦手',0,1378033031),(34008,3653,155127,33795,'[quote][b]鱼子酱[/b] 说: 哈哈 有时候 be也是个很好的结局 因为毕竟现实中还是be为结局的事情居多[/quote]\n也是',0,1378050369),(34009,3653,155127,33969,'[quote][b]L君[/b] 说: 很喜欢 漫画动画都看了 小说苦手[/quote]\n这么一说我想起了鲁鲁修X卡莲…………',0,1378050400),(124927,3653,467385,0,'车夫党的胜利哦！',0,1555773511),(71572,6873,142527,0,'看到第四集了还没看到这些剧情，但是被剧透了一脸，现在都悬着一颗心 …… (bgm38)(bgm38)\r\n\r\n「本须和秀树捡到了人型计算机〔唧〕。虽然不晓得她到底是不是〔Chobits〕，但她的身上似乎藏有极大的秘密。看到秀树为了钱[mask]而烦恼，唧出去找打工，没想到却找到了危险的工作！为了让秀树开心，唧开始到色情小屋打工。但她在遭到过度激烈的强迫要求之后失控。让周遭计算机因此而强制停摆。\r\n另一方面，秀树发现好友新保与补习班的清水老师[/mask]有着不可告人的关系……」',0,1462335911),(71580,6873,38770,0,'剧透你再给他发一遍，等于是，你也有责任吧！？',0,1462337710),(71737,6873,142527,71580,'哎呀好有道理 ∑(ﾟДﾟ)\n不过不然别人怎么才知道我说的是哪一段啊 总之先标黑就是了 (',0,1462528625),(81868,6873,264146,0,'人物条目内容也满是剧透......现在一般补番不看完前都不敢进了，有些回复还会自觉打码。',0,1481041761),(81879,6873,3490,0,'其实没有透多少吧',0,1481090544),(81880,6873,264146,81879,'都透到EP十几去了......',0,1481093740),(81881,6873,3490,81879,'[quote][b]小T[/b] 说: 都透到EP十几去了......[/quote]\n这片子主要看福利，剧情太都合了',0,1481094210),(81882,6873,264146,81879,'[quote][b]lhb5883-污喵王VIP⑩[/b] 说: 这片子主要看福利，剧情太都合了[/quote]\n讲道理还好自己没看到，条目介绍最后那段我看的贼几把嗨',0,1481094293),(81884,6873,3490,81879,'[quote][b]小T[/b] 说: 讲道理还好自己没看到，条目介绍最后那段我看的贼几把嗨[/quote]\n哈哈哈 还好我看的早。',0,1481098545),(170405,19800,546484,0,'蛮感人的，重病作者与小岛还有合金装备系列的一段缘。\r\n\r\nON PROJECT ITOH\r\nCompiled from an interview with Hideo Kojima\r\nFebruary 12, 2010\r\nMARCH 1998. I remember first meeting Itoh-san during the Spring ’98 Tokyo\r\nGame Show. I was in the exhibitor’s booth for Metal Gear Solid, to be released\r\nthat September, when a young man called my name. I turned to see who it was\r\nand saw his face streaming with tears. Here, amid the clamor and festivities of\r\nthe Game Show, one young man was crying. Later, he would become the\r\nnovelist Project Itoh.\r\nAt the booth, we showed a trailer of in-game footage I’d compiled and edited.\r\nThe preview had brought Itoh-san to tears, and now he talked to me earnestly.\r\nBefore that moment, I’d never met a fan who so loved Metal Gear Solid, and I\r\nremember being moved. From then on, Itoh-san sent me fan letters and even\r\nMetal Gear doujinshi—fanzines—created by him and his friends. I eventually\r\nheard he had a website, and I would take a look at it from time to time.\r\nStill, my relationship with Itoh-san remained nothing more than that of a\r\ngame creator and a passionate fan. This may sound cold to some readers, but I\r\ndon’t ever think of fostering one-on-one connections with my fans. And I feel\r\nthis way even today—I’m just on the delivery end and mustn’t directly\r\nexchange with the consumers. The messages and presents and web comments\r\nare the most crucial nourishment for my work, and of course I’m grateful for\r\nthem each and every day. But I feel the only way I can properly respond to\r\nthem is through my creations, my games. So I never did anything to encourage\r\nItoh-san. For a time, our relationship wasn’t mutual, it was one-way.\r\nChange came to our relationship in September 2001, right before 9/11.\r\nI heard from members of the Konami team that Itoh-san had been\r\nhospitalized, possibly with cancer. I want to do something for him, I thought,\r\nthen when I thought of him on his sickbed, I wondered, But what can I do for\r\nhim? The answer I came up with was, of course, a game. We had met because\r\nof my game, Metal Gear Solid. That provided the only answer. I recorded cutscenes from the still-in-progress Metal Gear Solid 2 onto a MiniDV cassette and\r\ntook it to his hospital room. He put on a composed front, but it couldn’t mask\r\nhis dark expression. An uncertain future left him depressed. It wasn’t much, but\r\nfrom his bedside, I showed him the ending scene of the Tanker segment.\r\nNormally, we can’t show people outside the company even a portion of a\r\nwork-in-progress. But it was all I could do for him, so I let him see it.\r\n“I won’t die until you finish the game.” That was what Itoh-san said, to my\r\nrelief, when the clip ended.\r\nIn November 2001, we managed to release Metal Gear Solid 2: Sons of Liberty\r\nas planned. I invited Itoh-san to the press conference, and he attended the\r\nreception. He had been through a serious operation, and I was pained to watch\r\nhim walking with a cane, but I was glad to see him. He kept his promise. When I\r\nlook back at it now, I think that was the moment he went in my mind from\r\nbeing a fan to a friend.\r\nMetal Gear Solid 2 was greatly anticipated, but the initial response to its\r\nrelease was sharply divided. The game has since gained a reputation, but at the\r\ntime, I would become depressed when I saw what people wrote in comments\r\nand reviews—about the new character, Raiden; that the message at the end\r\nwas too strong; and that the story was too abstruse for a gamer audience. Itohsan was the first to understand me. On his personal website, he wrote an article\r\nsaying, “I’m the only one happy with this kind of game!” Someone understood\r\nthe riddles and messages I put into my games. I felt that simple fact saved me.\r\nI think that was when Itoh-san had an awakening and set forth on the\r\nauthor’s path. One time, Itoh-san asked me to look at a manga written by him\r\nand drawn by his friend. I was happy at the chance to read it, but to be blunt,\r\nhis work didn’t really do anything for me. True, he had abundant knowledge\r\nand an uncanny power of understanding. He was able to grasp points in my\r\ngames that most of my fans missed. One of my works before Metal Gear Solid,\r\nPolicenauts, featured as part of its theme the notion that a space colony would\r\nhave to become a highly medicalized society, but very few understood its\r\ninevitability. But Itoh-san got it, along with the reveal in Metal Gear Solid that\r\nLiquid’s group sought Big Boss’s corpse, and the twist in Metal Gear Solid 2\r\nwhen Snake’s NPO becomes designated a terrorist organization. He delighted inthem, saying, “This is science fiction!” But I had doubts about his creative\r\npotential, as opposed to his discernment as a gamer.\r\nThen he began to change. It started with the quality of his writings on his\r\nblog, followed by his online movie reviews. I can’t quite find the right words to\r\nexplain it, but I was seeing something like a new perspective within his writing.\r\nLooking back at it, I think the change came soon before he started writing\r\nGenocidal Organ. I can’t give a solid explanation, but perhaps the experience of\r\na severe illness awakened the author within him. I imagine as he lived with\r\ndeath by his side, his perceptions underwent a major shift.\r\nWhen I read Genocidal Organ, I was shocked. It was something only Itoh-san\r\ncould have written; delicate, yet dreadful, and even endearing. Project Itoh the\r\nwriter was born. Apparently, in a later interview, Itoh-san said that the short\r\nstory serving as the basis for Genocidal Organ had been fan fiction of my early\r\ngame Snatcher. But in the novel I saw reflections of the Metal Gear Solid series.\r\nAnd so I didn’t hesitate to approach him for the novelization of Metal Gear Solid\r\n4.\r\nWe made the first plans for the novelization in January 2008. When Itoh-san\r\nentered the meeting room cane in hand, he emanated an author’s aura. Gone\r\nwas the fragility of the young man crying at the Tokyo Game Show booth just\r\nten years prior. He had the dignified countenance of an author. I think this was\r\nthe first time Itoh-san and I exchanged words as two creators.\r\nBefore we knew it, the plans had been made. I wanted the novel to be based\r\non Metal Gear Solid 4, but also, so that those who hadn’t played the rest of the\r\nseries could understand, to include characters, history, and settings from the\r\nMetal Gear saga. I wanted it to be written and composed so that it would be\r\naccessible to younger readers, and I wanted the novel to express the themes of\r\nMGS4. He took our unreasonable list of demands and checked them off one by\r\none. He came up with the ideas of making Otacon the narrator and omitting the\r\nBeauty and the Beast Unit, boss characters crucial to the themes and game\r\ndesign of MGS4, to instead let series regulars embody the themes. In almost no\r\ntime at all, the basic concepts of the novel had been set.\r\nThen, with tremendous enthusiasm, he went to work.The first draft soon arrived, and it surpassed my expectations. There was even\r\na feeling, I have to say a nice feeling, of entrusting my own creation to a third\r\nparty. Of course he recreated the themes I’d put into the game, the emotions of\r\nmy characters, and the turns of the story, but vividly present in Itoh-san’s prose\r\nwere different aspects of the story I’d never realized were there, and motifs\r\nhidden within the setting. There’s a phrase, “reading between the lines.” Itohsan gathered meaning and details and feelings between the letters of the game\r\nscript. This wasn’t merely a carbon copy of the game in novel form.\r\nAfter the game and the novel were released, I settled on the plot for my next\r\nproject. After Metal Gear Solid 2, whenever I finished creating a game, I always\r\nfirst looked to see if it made Itoh-san happy. And not just then, but during\r\nproduction I would wonder, Will he take to this story, to this setting, to these\r\ncharacters? I had it in my head that my next game would be set in Costa Rica in\r\n1974. On the timeline it would come after Metal Gear Solid 3. It takes place\r\nduring the Cold War, when an unknown military group engages in secret\r\noperations within the peaceful, defenseless Central American nation. Naked\r\nSnake’s Militaires Sans Frontieres are brought in to stop them. The game is\r\nMetal Gear Solid: Peace Walker.\r\nI wanted to ask Itoh-san to collect my new story with Metal Gear Solid 3 into a\r\nsingle novel. My next chance to talk with him came unexpectedly.\r\nFebruary 2009. In the hospital, Itoh-san’s condition was not good. So far he\r\nhad won every battle in the long fight with his illness, but I was told that this\r\ntime he might not make it. I dropped everything and rushed to see him. Itohsan was in bed, and I talked about what movies I’d seen and what books I’d\r\nread recently, but his expression was blank, and he wasn’t able to say much in\r\nreturn. I thought, I want him to get his spark back. I don’t want him to give up\r\nliving. So I started to tell him about Peace Walker. I told him about Costa Rica\r\nand the theme of nuclear deterrence, about the secret struggle between\r\nintelligence agencies in the Cold War, about the AI weapon straight out of 70s’\r\nsci-fi, about Snake and the other characters, and as I talked he regained more\r\nand more of his smile. And then, just like before, he told me, “I won’t give up\r\nuntil you’re done.”\r\nAt that point I hadn’t publicly announced a single aspect of my plans for thegame. Itoh-san was the first person outside the company to hear any details,\r\njust as it had been with Metal Gear Solid 2. The only real difference between\r\nthe events of 2001 and 2009 was that this time, Itoh-san couldn’t keep his\r\npromise.\r\nThere is a scene in this novel in which Naomi teaches the struggling Sunny the\r\ntrick to making fried eggs. That scene, of course, is also in the game, but as Itohsan writes it, even that moment is a story handed to Sunny by Naomi. Even in\r\nthe morning’s fried eggs a story dwells—a story not expressed in my game. I\r\nbelieve this novel is Project Itoh’s Metal Gear Solid.\r\nWould this game make Itoh-san happy? That standard is part of what the\r\nstory of Project Itoh means to me. Therefore, Project Itoh already dwells inside\r\nmy game. Itoh-san took this game, retold it, and handed me back his own Metal\r\nGear Solid. Like a double helix. Such a wonderful game of catch.\r\nBecause of the existence of a man called Itoh-san, I’ve experienced a\r\nhappiness difficult for a creator to obtain.\r\nProject Itoh-san, thank you.',0,1627227686),(171087,19876,451958,0,'CLANNAD × 寒蝉鸣泣之时 命（手游）\r\n\r\n[img]https://tupian.li/images/2021/08/09/006Hm8pLgy1gtaovotpnxj30ru0fo77p.jpg[/img]\r\n\r\n[img]https://tupian.li/images/2021/08/09/-2021-08-09-202135.png[/img]\r\n\r\n[img]https://tupian.li/images/2021/08/09/-2021-08-09-202234.png[/img]\r\n\r\n[img]https://tupian.li/images/2021/08/09/-2021-08-09-202206.png[/img]\r\n\r\n[url=https://www.bilibili.com/video/BV1ZL411n7Ni]宣传pv[/url]\r\n\r\n这波啊，是双倍的治愈人心(bgm38)',0,1628511864),(171092,19876,592541,0,'——唔唔...酱油瓶子！(bgm34)\n——你喜欢这座小镇吗？(bgm35)\n我非常非常喜欢。但是，所有的这一切都在不断重复着。\n无论是多么愉快的事，还是多么痛哭的事。一切，所有这一切，都在不断重复着。即使如此，你还会喜欢上这里吗?(bgm27)\n——我最喜欢雏见泽了！(bgm43)',0,1628514735),(171096,19876,14488,0,'还是拖了同一个CV的福，感恩',0,1628518918),(171124,19886,617229,0,'请教大神R2为什么节奏没有R1好  我个人看下来倒是觉着没太大问题',0,1628589932),(171255,19886,436597,0,'势力更多更广的情况下势必要使用更多笔墨，用皇帝的金锄头不论战争的进程也明显加快，政治就不提了全靠脑补和脑抽反转Shocking观众，过段时间冷静想想其实就那么回事',0,1628845201),(171125,19887,617229,0,'请教大神R2为什么节奏没有R1好 我R2通篇看完下来没觉着有啥不妥的',0,1628589969),(171126,19887,617229,0,'不好意思 没有熟悉操作发送了两遍',0,1628590024),(171127,19887,539219,0,'凭空出现的设定、暴风般的剧情进展、语焉不详的心理活动。',0,1628590749),(171128,19887,617229,171127,'凭空设定出自哪集？ 是什么设定？',0,1628590889),(171129,19887,539219,171127,'[quote][b]翔の意识[/b] 说: 凭空设定出自哪集？ 是什么设定？[/quote]\n“C的世界”整集都是在神棍式地乱抛设定。',0,1628591945),(171148,19887,482674,0,'据一位业内人士说是大人的原因……\r\n好像原本预定有三季还是怎么回事，结果做了几集突然被金主告知要在两季内结束。',0,1628647000),(171149,19887,603727,0,'R2的细节处理相比R1要粗糙得太多了，世界观和主题表达都相当混乱。我印象最深刻的几点有，紫禁城势力的左右横跳、忽强忽弱，帝国直接把敌人精心挑选出来的分裂分子直接放走，各角色之间的感情处理混乱，人物塑造也和R1严重冲突，还有就是编剧强行多次让鲁路修降智并封口，槽点多到无力吐槽。',0,1628650022),(171151,19887,582116,0,'个人感觉最难接受的是人物塑造得工具人感太强，还有ep22-25的剧情可以多水一季，结果就往四集里硬塞。',0,1628651192),(171155,19887,617229,171149,'纳入后duo 大概懂了',0,1628655775),(171156,19887,603727,171149,'[quote][b]翔の意识[/b] 说: 纳入后duo 大概懂了[/quote]\nR2其实是非常非常可惜的，存在可以扩充和讨论的空间其实极大，但R1塑造了一个优秀的底子硬是全都让R2霍霍完了，哪怕是最后一集被吹爆的封神之作其实也不过是作者在中后段已经崩坏的前提下强行收尾。鲁路修算是我最惋惜的几部作品之一了。',0,1628656451),(171163,19887,274258,0,'剧情飞快，反复横跳，其实看的挺刺激的',0,1628667863),(171173,19887,211931,0,'名为第一骑士，实为第一工具人',0,1628677093),(171176,19887,559571,171163,'+1',0,1628682644),(171201,19887,7626,0,'R1结尾时岛上朱雀飞踢开始崩坏，设定变成了何でもあり\nR2全程迷走，最后靠着结局拉回来一点\n跟AZ非常相似，只是AZ最后也没拉住',0,1628720628),(179385,19887,307715,171127,'[quote][b]五月症候群[/b] 说: “C的世界”整集都是在神棍式地乱抛设定。[/quote]\n这就是口胡了。Geass的力量来源是从第一集就埋下的伏笔，鲁鲁修获得Geass的时候看到的幻觉，集体行走的人，挣扎嚎叫的人，闭目祷告的人，还有第二季新增的无数的假面，都是在暗示人的集体无意识。设定参考的根据，估计就是布吉波普不笑了。',0,1638797602),(179386,19887,307715,171127,'[quote][b]五月症候群[/b] 说: “C的世界”整集都是在神棍式地乱抛设定。[/quote]\n以及大多数的Geass都是通过影响人类意识发生作用的。',0,1638797678),(179387,19887,539219,171127,'[quote][b]匿名[/b] 说: 这就是口胡了。Geass的力量来源是从第一集就埋下的伏笔，鲁鲁修获得Geass的时候看到的幻觉，集体行走的人，挣扎嚎叫的人，闭目祷告的人，还有第二季新增的无数的假面，都是在暗示人的集体无意识。设定参考...[/quote]\n你也说了是暗示，所以除此之外，有没有任何一处能够支持鲁路修能打败他爹的伏笔？阿卡夏纪录、他妈的Geass、只有Geass成熟的人才能杀死C.C等等设定几乎全部都是在这集才有出现，这不是神棍式的乱抛难不成只有河森正治才能算？',0,1638800258),(179769,19887,307715,171127,'[quote][b]五月症候群[/b] 说: 你也说了是暗示，所以除此之外，有没有任何一处能够支持鲁路修能打败他爹的伏笔？阿卡夏纪录、他妈的Geass、只有Geass成熟的人才能杀死C.C等等设定几乎全部都是在这集才有出现，这不是神棍式的乱抛难不...[/quote]\n阿卡夏纪录，也即Code和Geass的来源，通过以上种种已经有暗示了。他妈的Geass，阿尼亚有说过自己的记忆非常混乱，还有持有鲁鲁修年幼时候的照片，也是有伏笔的。“只有Geass成熟的人才能杀死C.C.”，这条第一季对战毛的时候开始铺垫，第二季V.V.被杀的时候铺垫完毕，随后在C的世界中，C.C.和查理斯亲自说明了。\n思考电梯计划，都是暗示但没有明确说明，这条才可以说是非常突兀。',0,1639309484),(179770,19887,307715,171127,'[quote][b]五月症候群[/b] 说: 你也说了是暗示，所以除此之外，有没有任何一处能够支持鲁路修能打败他爹的伏笔？阿卡夏纪录、他妈的Geass、只有Geass成熟的人才能杀死C.C等等设定几乎全部都是在这集才有出现，这不是神棍式的乱抛难不...[/quote]\n你怕不是只看了总集片，还是跳着看的。',0,1639309549),(179792,19887,581555,0,'别问  问就是大河内江郎才尽(bgm74)',0,1639381921);
+/*!40000 ALTER TABLE `chii_subject_posts` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
 INSERT INTO `chii_members` (`uid`,
                             `username`,
                             `nickname`,
