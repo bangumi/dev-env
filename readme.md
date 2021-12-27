@@ -9,7 +9,7 @@
 ```bash
 git clone https://github.com/bangumi/dev-env.git bangumi-dev-env
 cd bangumi-dev-env
-bash run.sh
+docker-compose up --build -d
 ```
 
 mysql容器的内置数据位于 [./sql](sql) 文件夹内，
@@ -20,38 +20,47 @@ mysql容器的内置数据位于 [./sql](sql) 文件夹内，
 
 此 SQL 不支持多次运行。如果运行失败请删除旧数据库中所有表后重试。
 
-## 添加sql文件
+### 更新
+
+```shell
+sudo rm ./data -rf # 如果不删除旧数据，新添加的sql文件不会被运行。
+
+git pull
+docker-compose up --build -d # 如果没有修改sql文件，可以不用 --build
+```
+
+---
+
+## 开发
+
+### 安装依赖
+```shell
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+
+### 添加sql文件
+
+#### 文件结构
 
 * [./sql/schema/](sql/schema/): DDL相关 (`create table ...`)
 * [./sql/data/](sql/data/): DML相关 (`insert into ...`)
 * [./sql_script_load_order.txt](sql_script_load_order.txt): sql文件执行顺序定义，按行数正序执行
 
-### 添加步骤
+#### 步骤
 1. 把sql文件放到对应目录
 2. 更新[./sql_script_load_order.txt](sql_script_load_order.txt)
 3. 更新[./test.py](test.py#L55)，如果添加了新表
 
-### 测试
+#### 测试
 ```shell
 # 删除旧数据及docker环境
 docker-compose down -v
 sudo rm -rf ./data  
 
-# 安装依赖
-python -m venv .venv
-source .venv/bin/activate
-poetry install --remove-untracked
-
 # 测试
-docker-compose up -d
-python test.py  # 需要等docker container准备完成
-```
-
-## 更新
-
-```shell
-git pull
-
-sudo rm ./data -rf # 如果不删除旧数据，新添加的sql文件不会被运行。
-bash run.sh
+docker-compose up --build -d
+python test.py # 需要等docker container准备完成
 ```
