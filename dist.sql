@@ -1234,6 +1234,99 @@ ALTER TABLE `chii_episodes`
 -- http://www.phpmyadmin.net
 --
 -- Host: 192.168.201.71
+-- Generation Time: Dec 27, 2021 at 03:29 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chii_subject_interests`
+--
+
+CREATE TABLE IF NOT EXISTS `chii_subject_interests` (
+  `interest_id` int(10) unsigned NOT NULL,
+  `interest_uid` mediumint(8) unsigned NOT NULL,
+  `interest_subject_id` mediumint(8) unsigned NOT NULL,
+  `interest_subject_type` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `interest_rate` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `interest_type` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `interest_has_comment` tinyint(1) unsigned NOT NULL,
+  `interest_comment` mediumtext NOT NULL,
+  `interest_tag` mediumtext NOT NULL,
+  `interest_ep_status` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `interest_vol_status` mediumint(8) unsigned NOT NULL COMMENT '卷数',
+  `interest_wish_dateline` int(10) unsigned NOT NULL,
+  `interest_doing_dateline` int(10) unsigned NOT NULL,
+  `interest_collect_dateline` int(10) unsigned NOT NULL,
+  `interest_on_hold_dateline` int(10) unsigned NOT NULL,
+  `interest_dropped_dateline` int(10) unsigned NOT NULL,
+  `interest_lasttouch` int(10) unsigned NOT NULL DEFAULT '0',
+  `interest_private` tinyint(1) unsigned NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chii_subject_interests`
+--
+ALTER TABLE `chii_subject_interests`
+  ADD PRIMARY KEY (`interest_id`),
+  ADD UNIQUE KEY `user_interest` (`interest_uid`,`interest_subject_id`),
+  ADD KEY `interest_subject_id` (`interest_subject_id`,`interest_type`),
+  ADD KEY `interest_uid` (`interest_uid`),
+  ADD KEY `interest_collect_dateline` (`interest_collect_dateline`),
+  ADD KEY `interest_private` (`interest_private`),
+  ADD KEY `interest_lasttouch` (`interest_lasttouch`),
+  ADD KEY `interest_subject_id_2` (`interest_subject_id`),
+  ADD KEY `interest_type` (`interest_type`),
+  ADD KEY `interest_subject_type` (`interest_subject_type`),
+  ADD KEY `interest_rate` (`interest_rate`),
+  ADD KEY `tag_subject_id` (`interest_subject_type`,`interest_type`,`interest_uid`) USING BTREE,
+  ADD KEY `user_collects` (`interest_subject_type`,`interest_uid`),
+  ADD KEY `subject_lasttouch` (`interest_subject_id`,`interest_private`,`interest_lasttouch`),
+  ADD KEY `subject_comment` (`interest_subject_id`,`interest_has_comment`,`interest_private`,`interest_lasttouch`) USING BTREE,
+  ADD KEY `subject_collect` (`interest_subject_id`,`interest_type`,`interest_private`,`interest_collect_dateline`),
+  ADD KEY `user_collect_type` (`interest_subject_type`,`interest_type`,`interest_uid`,`interest_private`,`interest_collect_dateline`),
+  ADD KEY `interest_id` (`interest_uid`,`interest_private`) USING BTREE,
+  ADD KEY `subject_rate` (`interest_subject_id`,`interest_rate`,`interest_private`),
+  ADD KEY `top_subject` (`interest_subject_id`,`interest_subject_type`,`interest_doing_dateline`),
+  ADD KEY `user_collect_latest` (`interest_subject_type`,`interest_type`,`interest_uid`,`interest_private`),
+  ADD KEY `interest_type_2` (`interest_type`,`interest_uid`),
+  ADD KEY `interest_uid_2` (`interest_uid`,`interest_private`,`interest_lasttouch`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_subject_interests`
+--
+ALTER TABLE `chii_subject_interests`
+  MODIFY `interest_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
 -- Generation Time: Dec 06, 2021 at 02:29 PM
 -- Server version: 5.7.33-0ubuntu0.16.04.1-log
 -- PHP Version: 5.5.9-1ubuntu4.29
@@ -3949,3 +4042,115 @@ VALUES (382951,
 
 INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope)
 VALUES ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', null);
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 27, 2021 at 03:35 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+--
+-- Dumping data for table `chii_person_collects`
+--
+
+INSERT INTO `chii_person_collects` (`prsn_clt_id`, `prsn_clt_cat`, `prsn_clt_mid`, `prsn_clt_uid`, `prsn_clt_dateline`) VALUES
+(1, 'crt', 706, 1, 1296495506),
+(2, 'crt', 3, 1, 1296495535),
+(3, 'crt', 1, 1, 1296495541),
+(4, 'crt', 10792, 14459, 1296495763),
+(5, 'crt', 10760, 14459, 1296495906),
+(6, 'crt', 10776, 14459, 1296495929),
+(7, 'crt', 292, 6162, 1296496026),
+(8, 'crt', 297, 6162, 1296496052),
+(9, 'crt', 10078, 6162, 1296496114),
+(10, 'crt', 706, 6235, 1296496204),
+(11, 'crt', 10586, 6235, 1296496213),
+(13, 'crt', 4569, 6162, 1296496228),
+(15, 'crt', 606, 6162, 1296496251),
+(16, 'crt', 32, 6162, 1296496277),
+(17, 'crt', 10774, 6235, 1296496283),
+(18, 'prsn', 5816, 14459, 1296496294),
+(19, 'crt', 53, 6162, 1296496302),
+(20, 'prsn', 5818, 14459, 1296496318),
+(21, 'prsn', 5813, 14459, 1296496349),
+(22, 'crt', 1, 6162, 1296496366),
+(23, 'crt', 3, 6162, 1296496378),
+(24, 'prsn', 2923, 14459, 1296496379),
+(25, 'crt', 5690, 6162, 1296496401),
+(26, 'prsn', 5809, 14459, 1296496412),
+(27, 'prsn', 5805, 14459, 1296496429),
+(28, 'prsn', 5804, 14459, 1296496452),
+(29, 'crt', 1937, 2978, 1296496467),
+(30, 'prsn', 5802, 14459, 1296496468),
+(31, 'crt', 712, 6162, 1296496472),
+(33, 'prsn', 5792, 14459, 1296496505),
+(34, 'crt', 9969, 6162, 1296496552),
+(35, 'prsn', 5789, 14459, 1296496559),
+(36, 'prsn', 5788, 14459, 1296496582),
+(37, 'crt', 10447, 6162, 1296496585),
+(38, 'prsn', 5830, 1, 1296496598),
+(40, 'crt', 423, 6162, 1296496645),
+(41, 'prsn', 5761, 14459, 1296496690),
+(42, 'crt', 1026, 6162, 1296496728),
+(43, 'prsn', 5830, 4, 1296496729),
+(44, 'crt', 8937, 6162, 1296496759),
+(45, 'prsn', 5741, 14459, 1296496763),
+(46, 'crt', 10608, 14459, 1296496779),
+(47, 'prsn', 1, 14459, 1296496832),
+(48, 'crt', 32, 1, 1296496835),
+(50, 'prsn', 3287, 3730, 1296497138);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 192.168.201.71
+-- Generation Time: Dec 27, 2021 at 03:32 AM
+-- Server version: 5.7.33-0ubuntu0.16.04.1-log
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bangumi`
+--
+
+--
+-- Dumping data for table `chii_subject_interests`
+--
+
+INSERT INTO `chii_subject_interests` (`interest_id`, `interest_uid`, `interest_subject_id`, `interest_subject_type`, `interest_rate`, `interest_type`, `interest_has_comment`, `interest_comment`, `interest_tag`, `interest_ep_status`, `interest_vol_status`, `interest_wish_dateline`, `interest_doing_dateline`, `interest_collect_dateline`, `interest_on_hold_dateline`, `interest_dropped_dateline`, `interest_lasttouch`, `interest_private`) VALUES
+(17325702, 382951, 8, 2, 0, 2, 1, 'test comment', 'SUNRISE ', 23, 0, 0, 0, 1639569348, 0, 0, 1639569371, 0),
+(17325710, 382951, 4, 4, 0, 1, 0, '', '', 0, 0, 1639569404, 0, 0, 0, 0,  1639569404, 0),
+(17325711, 382951, 9, 4, 0, 5, 0, '', '', 0, 0, 0, 0, 0, 0, 1639569424,  1639569424, 0),
+(17325712, 382951, 10, 1, 0, 4, 0, '', '', 0, 0, 0, 0, 0, 1639569433, 0, 1639569433, 0),
+(17325727, 382951, 20, 3, 0, 3, 0, '', '', 0, 0, 0, 1639569656, 0, 0, 0, 1639569656, 0);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
