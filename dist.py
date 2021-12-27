@@ -2,38 +2,26 @@
 concat all sql to a single sql file
 """
 import os
+import sys
 from typing import List, TextIO
-
-import yaml
 
 
 def main():
-    with open("./docker-compose.yaml", "r", encoding="utf8") as f:
-        compose = yaml.safe_load(f.read())
-
-    volumes = compose["services"]["mysql"]["volumes"]
+    with open("sql_script_load_order.txt", 'r') as f:
+        sql_scripts = [line.rstrip() for line in f.readlines()]
 
     os.makedirs("./public", exist_ok=True)
 
     with open("./public/dist.sql", 'w+', encoding='utf-8') as f:
-        build_final_sql(volumes, out=f)
+        build_final_sql(sql_scripts, out=f)
+        f.close()
 
 
-def build_final_sql(volumes: List[str], out: TextIO):
-    volumes = volumes[1:]  # 第一行是mysql持久化数据的配置
+def build_final_sql(sql_scripts: List[str], out: TextIO):
+    sql_scripts = [line for line in sql_scripts if line]  # remove empty lines
 
-    map = {}
-    for line in volumes:
-        try:
-            source, dst = line.split(":")
-        except ValueError:
-            raise ValueError(line)
-        if not dst.startswith("/docker-entrypoint-initdb.d/"):
-            raise ValueError(line)
-        map[dst] = source
-
-    for dst in sorted(map.keys()):
-        source = map[dst]
+    for i, source in enumerate(sql_scripts):
+        print(f"{i}: {source}", file=sys.stderr)
         with open(source, 'r', encoding='utf8') as f:
             out.write(f.read())
 

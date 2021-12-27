@@ -1,8 +1,6 @@
 import json
-import ntpath
 import os
-import posixpath
-from typing import List
+from typing import List, Dict
 
 import pymysql
 
@@ -13,11 +11,47 @@ def main():
     with open("./docker-compose.yaml", "r", encoding="utf8") as f:
         compose = yaml.safe_load(f.read())
 
+    with open("./sql_script_load_order.txt", 'r') as f:
+        sql_scripts = f.readlines()
+        sql_scripts = [line.rstrip() for line in sql_scripts]
+
     container_config = compose["services"]["mysql"]["environment"]
 
-    volumes = compose["services"]["mysql"]["volumes"]
-    check_volumes(volumes)
+    check_sql_scripts(sql_scripts)
+    check_tables(container_config)
 
+
+def check_sql_scripts(sql_scripts: List[str]):
+    configured_sql = set(
+        [os.path.abspath(line) for line in sql_scripts if line]  # exclude empty lines
+    )
+
+    current_sql = set(
+        list_dir_with_full_path("./sql/data") + list_dir_with_full_path("./sql/schema")
+    )
+
+    if configured_sql - current_sql:
+        view = json.dumps(
+            [
+                "./" + os.path.relpath(x, os.getcwd()).replace("\\", "/")
+                for x in configured_sql - current_sql
+            ],
+            indent=2,
+        )
+        raise ValueError(f"sql script ordered in sql_script_load_order.txt but not found in sql/: {view}")
+
+    if current_sql - configured_sql:
+        view = json.dumps(
+            [
+                "./" + os.path.relpath(x, os.getcwd()).replace("\\", "/")
+                for x in current_sql - configured_sql
+            ],
+            indent=2,
+        )
+        raise ValueError(f"sql script exists in sql/ but not found in sql_script_load_order.txt: {view}")
+
+
+def check_tables(container_config: Dict[str, str]):
     Expected_Tables = {
         "chii_characters",
         "chii_crt_cast_index",
@@ -32,6 +66,7 @@ def main():
         "chii_subjects",
         "chii_subject_alias",
         "chii_subject_fields",
+        "chii_subject_interests",
         "chii_subject_relations",
         "chii_rev_text",
         "chii_ep_revisions",
@@ -82,50 +117,6 @@ def main():
         ), f"missing tables {Expected_Tables - tables}, extra tables {tables - Expected_Tables} in database"
 
     db.close()
-
-
-def check_volumes(volumes: List[str]):
-    volumes = volumes[1:]  # 第一行是mysql持久化数据的配置
-
-    map = {}
-    for line in volumes:
-        try:
-            source, dst = line.split(":")
-        except ValueError:
-            raise ValueError(line)
-        if not dst.startswith("/docker-entrypoint-initdb.d/"):
-            raise ValueError(line)
-        map[source] = dst
-
-    assert len(set(map.values())) == len(map.values())
-    assert len(map) == len(volumes)
-
-    current_sql = set(
-        list_dir_with_full_path("./sql/data") + list_dir_with_full_path("./sql/schema")
-    )
-    configurated_sql = {os.path.abspath(x) for x in map}
-
-    if configurated_sql - current_sql:
-        view = json.dumps(
-            [
-                "./" + os.path.relpath(x, os.getcwd()).replace("\\", "/")
-                for x in configurated_sql - current_sql
-            ],
-            indent=2,
-        )
-        raise ValueError(
-            f"docker-compose volumes file missing in the repo to docker-compose file {view}"
-        )
-
-    if current_sql - configurated_sql:
-        view = json.dumps(
-            [
-                "./" + os.path.relpath(x, os.getcwd()).replace("\\", "/")
-                for x in current_sql - configurated_sql
-            ],
-            indent=2,
-        )
-        raise ValueError(f"sql file in repo not mapped to docker-compose file {view}")
 
 
 def list_dir_with_full_path(p: str) -> List[str]:
