@@ -7,7 +7,7 @@ services:
       - '3306:3306'
     restart: unless-stopped
     volumes:
-      # mysql的容器在启动的时候会按字符串顺序加载 /docker-en  trypoint-initdb.d/ 文件夹内的sql文件
+      # mysql的容器在启动的时候会按字符串顺序加载 /docker-entrypoint-initdb.d/ 文件夹内的sql文件
       - ./data/mysql:/var/lib/mysql
       # pre-start mysql script
       - ./public/dist.sql:/docker-entrypoint-initdb.d/dist.sql
