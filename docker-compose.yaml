@@ -3,6 +3,7 @@ version: "3.7"
 services:
   mysql:
     build:
+      context: .
       dockerfile: db.Dockerfile
     ports:
       - '3306:3306'
