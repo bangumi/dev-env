@@ -23,10 +23,8 @@ mysql容器的内置数据位于 [./sql](sql) 文件夹内，
 ### 更新
 
 ```shell
-sudo rm ./data -rf # 如果不删除旧数据，新添加的sql文件不会被运行。
-
 git pull
-docker-compose up --build -d # 如果没有修改sql文件，可以不用 --build
+bash scripts/reload.sh
 ```
 
 ---
@@ -58,7 +56,7 @@ pip install -r requirements.txt
 ```shell
 # 删除旧数据及docker环境
 docker-compose down -v
-sudo rm -rf ./data  
+sudo rm -rf ./data
 
 # 测试
 docker-compose up --build -d

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 LOAD_ORDER_FILE="./sql_script_load_order.txt"
 OUTPUT_PATH="./public"

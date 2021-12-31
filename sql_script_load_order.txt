@@ -42,3 +42,5 @@
 
 ./sql/data/data_chii_person_collects.sql
 ./sql/data/data_chii_subject_interests_treehole.sql
+
+./sql/data/data_subjects_topics_closed_silent.sql
