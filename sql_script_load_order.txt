@@ -47,3 +47,4 @@
 ./sql/data/data_subjects_topics_closed_silent.sql
 ./sql/data/data_subjects_topics_authz_check.sql
 ./sql/data/data_subjects_topics_1.sql
+./sql/data/chii_subject_revisions_with_amz.sql
