@@ -11,6 +11,7 @@
 ./sql/schema/20211208_bangumi_subject.sql
 ./sql/schema/chii_episodes.sql
 ./sql/schema/chii_subject_interests.sql
+./sql/schema/chii_index.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
@@ -48,3 +49,7 @@
 ./sql/data/data_subjects_topics_authz_check.sql
 ./sql/data/data_subjects_topics_1.sql
 ./sql/data/chii_subject_revisions_with_amz.sql
+
+./sql/data/chii_index.sql
+./sql/data/chii_index_comments.sql
+./sql/data/chii_index_related.sql

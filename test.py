@@ -83,6 +83,10 @@ def check_tables(container_config: Dict[str, str]):
         "chii_oauth_access_tokens",
         "chii_members",
         "chii_memberfields",
+        "chii_index",
+        "chii_index_comments",
+        "chii_index_collects",
+        "chii_index_related"
     }
 
     # 打开数据库连接
