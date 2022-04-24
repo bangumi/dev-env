@@ -684,21 +684,23 @@ CREATE TABLE IF NOT EXISTS chii_memberfields
 
 CREATE TABLE IF NOT EXISTS chii_members
 (
-    uid          mediumint unsigned auto_increment primary key,
-    username     char(15) charset utf8 default '' not null,
-    nickname     varchar(30)                      not null,
-    avatar       varchar(255) charset utf8        not null,
-    groupid      smallint(6) unsigned  default 0  not null, # 用户权限组
-    regdate      int unsigned          default 0  not null, # 注册日期
-    lastvisit    int unsigned          default 0  not null, # 最后访问
-    lastactivity int unsigned          default 0  not null, # 最后活动
-    lastpost     int unsigned          default 0  not null, # 最后发帖
-    dateformat   char(10) charset utf8 default '' not null, # 没用
-    timeformat   tinyint(1)            default 0  not null, # 没用
-    timeoffset   char(4) charset utf8  default '' not null, # 没用
-    newpm        tinyint(1)            default 0  not null,
-    new_notify   smallint(6) unsigned  default 0  not null comment '新提醒',
-    sign         varchar(255) charset utf8        not null,
+    uid            mediumint unsigned auto_increment primary key,
+    username       char(15) charset utf8 default ''                    not null,
+    nickname       varchar(30)                                         not null,
+    avatar         varchar(255) charset utf8                           not null,
+    groupid        smallint(6) unsigned  default 0                     not null, # 用户权限组
+    regdate        int unsigned          default 0                     not null, # 注册日期
+    lastvisit      int unsigned          default 0                     not null, # 最后访问
+    lastactivity   int unsigned          default 0                     not null, # 最后活动
+    lastpost       int unsigned          default 0                     not null, # 最后发帖
+    dateformat     char(10) charset utf8 default ''                    not null, # 没用
+    timeformat     tinyint(1)            default 0                     not null, # 没用
+    timeoffset     char(4) charset utf8  default ''                    not null, # 没用
+    newpm          tinyint(1)            default 0                     not null,
+    new_notify     smallint(6) unsigned  default 0                     not null comment '新提醒',
+    sign           varchar(255) charset utf8                           not null,
+    password_crypt char(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+    email          char(50) CHARACTER SET utf8                         NOT NULL DEFAULT '',
     constraint username unique (username)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
