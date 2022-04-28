@@ -12,7 +12,9 @@ INSERT INTO `chii_members` (`uid`,
                             `timeoffset`,
                             `newpm`,
                             `new_notify`,
-                            `sign`)
+                            `sign`,
+                            `password_crypt`,
+                            `email`)
 VALUES (382951,
         '382951',
         '树洞酱',
@@ -27,7 +29,9 @@ VALUES (382951,
         '9999',
         0,
         7,
-        'treeholechan@gmail.com 密码:lovemeplease');
+        'treeholechan@gmail.com 密码:lovemeplease',
+        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+        'treeholechan@gmail.com');
 
 INSERT INTO `chii_memberfields` (`uid`,
                                  `site`,
