@@ -86,7 +86,8 @@ def check_tables(container_config: Dict[str, str]):
         "chii_index",
         "chii_index_comments",
         "chii_index_collects",
-        "chii_index_related"
+        "chii_index_related",
+        "chii_os_web_sessions"
     }
 
     # 打开数据库连接
