@@ -12,6 +12,7 @@
 ./sql/schema/chii_episodes.sql
 ./sql/schema/chii_subject_interests.sql
 ./sql/schema/chii_index.sql
+./sql/schema/session.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
