@@ -8,10 +8,11 @@
 ./sql/schema/chii_subject_revisions.sql
 ./sql/schema/chii_rev_history.sql
 ./sql/schema/chii_ep_revisions.sql
-./sql/schema/20211208_bangumi_subject.sql
+./sql/schema/chii_subjects.sql
 ./sql/schema/chii_episodes.sql
 ./sql/schema/chii_subject_interests.sql
 ./sql/schema/chii_index.sql
+./sql/schema/chii_apps.sql
 ./sql/schema/session.sql
 
 ./sql/data/data_chii_person_fields.sql

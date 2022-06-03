@@ -53,6 +53,7 @@ def check_sql_scripts(sql_scripts: List[str]):
 
 def check_tables(container_config: Dict[str, str]):
     Expected_Tables = {
+        "chii_apps",
         "chii_characters",
         "chii_crt_cast_index",
         "chii_crt_subject_index",
