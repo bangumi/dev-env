@@ -704,28 +704,6 @@ CREATE TABLE IF NOT EXISTS chii_members
     constraint username unique (username)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 19, 2021 at 09:15 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `bangumi`
---
-
 -- --------------------------------------------------------
 
 --
@@ -733,11 +711,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens` (
+  `id` mediumint(8) NOT NULL,
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `access_token` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `client_id` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   `expires` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `scope` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL
+  `scope` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `info` varchar(255) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -748,12 +729,19 @@ CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens` (
 -- Indexes for table `chii_oauth_access_tokens`
 --
 ALTER TABLE `chii_oauth_access_tokens`
-  ADD PRIMARY KEY (`access_token`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `access_token` (`access_token`) USING BTREE,
+  ADD KEY `type` (`type`);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
--- phpMyAdmin SQL Dump
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chii_oauth_access_tokens`
+--
+ALTER TABLE `chii_oauth_access_tokens`
+  MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;-- phpMyAdmin SQL Dump
 -- version 4.4.15.1
 -- http://www.phpmyadmin.net
 --
@@ -4211,9 +4199,9 @@ VALUES (382951,
         '0');
 
 
-INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope)
-VALUES ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', null),
-       ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', null);
+INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope, id, type, info)
+VALUES ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', null, 1, 0, ''),
+       ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', null, 2, 0, '');
 INSERT INTO `chii_members` (`uid`, `username`, `nickname`, `avatar`, `groupid`, `regdate`, `lastvisit`, `lastactivity`,
                             `lastpost`, `dateformat`, `timeformat`, `timeoffset`, `newpm`, `new_notify`, `sign`,
                             `password_crypt`, `email`)
