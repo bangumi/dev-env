@@ -13,6 +13,7 @@
 ./sql/schema/chii_subject_interests.sql
 ./sql/schema/chii_index.sql
 ./sql/schema/chii_apps.sql
+./sql/schema/chii_oauth_clients.sql
 ./sql/schema/session.sql
 
 ./sql/data/data_chii_person_fields.sql

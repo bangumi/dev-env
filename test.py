@@ -58,6 +58,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_crt_cast_index",
         "chii_crt_subject_index",
         "chii_episodes",
+        "chii_oauth_clients",
         "chii_person_alias",
         "chii_person_collects",
         "chii_person_cs_index",
