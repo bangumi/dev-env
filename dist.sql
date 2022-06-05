@@ -2009,8 +2009,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `chii_characters` WRITE;
-/*!40000 ALTER TABLE `chii_characters`
-    DISABLE KEYS */;
+
 REPLACE INTO `chii_characters`
 VALUES (55, '国崎往人', 1, '{{Infobox Crt\n|简体中文名=国崎往人\n|声优=\n|性别=男\n|生日=\n|血型=\n|身高=\n|体重=\n|BWH=\n}}',
         'くにさき ゆきと：\r\n男主角（游戏中可以更改名字），背负著传承了近1000年的使命：寻找并解救“天空中的女孩”。他从母亲身上学到操纵玩偶的特殊能力，以表演玩偶为生，四处旅行。在一个海边小镇上认识了神尾观铃并且暂时寄宿在她家。喜欢吃的食物是拉面套餐。最终献出自身以完成拯救神奈灵魂的使命。',
@@ -2021,8 +2020,7 @@ VALUES (55, '国崎往人', 1, '{{Infobox Crt\n|简体中文名=国崎往人\n|�
        (202, '本田 透（ほんだ とおる）', 1, '{{Infobox Crt\n|简体中文名=本田　透\n|声优=\n|性别=女\n|生日=\n|血型=\n|身高=\n|体重=\n|BWH=\n}}',
         '16岁，故事的主要人物，妈妈去世后便成了孤儿，很想让自己属不是十二生肖中的猫，和草摩家的草摩紫吴、草摩由希、草摩夹住在一起，负责他们的家务。小透性格开朗，不知不觉中影响了大家的性格。',
         '85/4d/202_fae5ee42911677c739ee1734486_7jQ9E.jpg', 0, 6, 0, 0, 0, '', 0, 1, 276, 0);
-/*!40000 ALTER TABLE `chii_characters`
-    ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 
@@ -2034,8 +2032,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `chii_crt_cast_index` WRITE;
-/*!40000 ALTER TABLE `chii_crt_cast_index`
-    DISABLE KEYS */;
+
 REPLACE INTO `chii_crt_cast_index`
 VALUES (32, 3862, 12, 2, ''),
        (46, 3863, 12, 2, ''),
@@ -2451,8 +2448,7 @@ VALUES (32, 3862, 12, 2, ''),
        (102810, 1, 340822, 2, ''),
        (35592, 1, 281281, 4, ''),
        (10956, 1, 220187, 2, '');
-/*!40000 ALTER TABLE `chii_crt_cast_index`
-    ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 
@@ -2945,8 +2941,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `chii_episodes` WRITE;
-/*!40000 ALTER TABLE `chii_episodes`
-    DISABLE KEYS */;
+
 REPLACE INTO `chii_episodes`
 VALUES (522, 8, 1, 0, 0, '魔神 が 目覚める 日', '魔王的苏醒之日', 0, '24m', '2008-04-06', 'a:1:{i:0;s:16:\"http://v.qq.com/\";}', 11,
         0, '', 1218805567, 1636102860, 1, 0),
@@ -3154,8 +3149,7 @@ VALUES (522, 8, 1, 0, 0, '魔神 が 目覚める 日', '魔王的苏醒之日',
        (1009, 20, 19, 0, 0, 'キミが生まれてくる世界', '', 0, '', '', '', 0, 0, '', 1232912313, 0, 1, 0),
        (1010, 20, 20, 0, 0, '＜ハジマリ＞のChronicle', '', 0, '', '', '', 0, 0, '', 1232912313, 0, 1, 0),
        (1062152, 20, 21, 0, 0, '＜空白＞のChronicle', '', 0, '', '', '', 0, 0, '', 1634225602, 0, 0, 0);
-/*!40000 ALTER TABLE `chii_episodes`
-    ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 
