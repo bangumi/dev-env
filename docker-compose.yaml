@@ -12,6 +12,7 @@ services:
     volumes:
       - ./data/mysql:/var/lib/mysql
     environment:
+      LANG: C.UTF-8 # make sure sql files are loaded as utf8
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: bangumi
       MYSQL_USER: user
