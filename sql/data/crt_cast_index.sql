@@ -1,6 +1,5 @@
 LOCK TABLES `chii_crt_cast_index` WRITE;
-/*!40000 ALTER TABLE `chii_crt_cast_index`
-    DISABLE KEYS */;
+
 REPLACE INTO `chii_crt_cast_index`
 VALUES (32, 3862, 12, 2, ''),
        (46, 3863, 12, 2, ''),
@@ -416,8 +415,7 @@ VALUES (32, 3862, 12, 2, ''),
        (102810, 1, 340822, 2, ''),
        (35592, 1, 281281, 4, ''),
        (10956, 1, 220187, 2, '');
-/*!40000 ALTER TABLE `chii_crt_cast_index`
-    ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 
