@@ -8,6 +8,8 @@ for _ in {1..60}; do
   sleep 1
 done
 
+docker exec bangumi-dev-env_mysql_1 mysql --user=user --password=password -e "SELECT 1"
+
 echo "timeout"
 
 exit 1
