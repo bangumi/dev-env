@@ -18,7 +18,7 @@ services:
 
   redis:
     image: redis:alpine
-    command: redis-server requirepass "redis-pass"
+    command: redis-server --requirepass "redis-pass"
     restart: unless-stopped
     ports:
       - '6379:6379'
