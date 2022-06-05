@@ -13,6 +13,7 @@
 ./sql/schema/chii_subject_interests.sql
 ./sql/schema/chii_index.sql
 ./sql/schema/chii_apps.sql
+./sql/schema/chii_timeline.sql
 ./sql/schema/chii_oauth_clients.sql
 ./sql/schema/session.sql
 
@@ -21,6 +22,7 @@
 ./sql/data/data_chii_crt_subject_index.sql
 ./sql/data/data_chii_person_cs_index.sql
 ./sql/data/data_chii_persons.sql
+./sql/data/chii_timeline.sql
 ./sql/data/data_persons_2.sql
 ./sql/data/data_characters_2.sql
 ./sql/data/crt_cast_index.sql
