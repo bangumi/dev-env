@@ -53,7 +53,7 @@ pip install -r requirements.txt
 #### 测试
 ```shell
 # 删除旧数据及docker环境
-docker-compose down -v
+docker-compose down -v --remove-orphans
 sudo rm -rf ./data
 
 # 测试
