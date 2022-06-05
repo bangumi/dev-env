@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_characters`
---
-
 CREATE TABLE IF NOT EXISTS `chii_characters`
 (
     `crt_id`        mediumint(8) unsigned                NOT NULL,
@@ -30,11 +20,7 @@ CREATE TABLE IF NOT EXISTS `chii_characters`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_crt_cast_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_crt_cast_index`
 (
@@ -47,11 +33,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_cast_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_crt_subject_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_crt_subject_index`
 (
@@ -65,11 +47,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_subject_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_persons`
---
 
 CREATE TABLE IF NOT EXISTS `chii_persons`
 (
@@ -100,11 +78,7 @@ CREATE TABLE IF NOT EXISTS `chii_persons`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='（现实）人物表';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_alias`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_alias`
 (
@@ -117,11 +91,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_alias`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_collects`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_collects`
 (
@@ -133,11 +103,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_collects`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='人物收藏';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_cs_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_cs_index`
 (
@@ -152,11 +118,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_cs_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='subjects'' credits/creator & staff (c&s)index';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_fields`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_fields`
 (
@@ -171,11 +133,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_fields`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_relationship`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_relationship`
 (
@@ -188,40 +146,32 @@ CREATE TABLE IF NOT EXISTS `chii_person_relationship`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_characters`
---
+
 ALTER TABLE `chii_characters`
     ADD PRIMARY KEY (`crt_id`),
     ADD KEY `crt_role` (`crt_role`),
     ADD KEY `crt_lock` (`crt_lock`),
     ADD KEY `crt_ban` (`crt_ban`);
 
---
--- Indexes for table `chii_crt_cast_index`
---
+
+
 ALTER TABLE `chii_crt_cast_index`
     ADD PRIMARY KEY (`crt_id`, `prsn_id`, `subject_id`),
     ADD KEY `prsn_id` (`prsn_id`),
     ADD KEY `subject_id` (`subject_id`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_crt_subject_index`
---
+
+
 ALTER TABLE `chii_crt_subject_index`
     ADD PRIMARY KEY (`crt_id`, `subject_id`),
     ADD KEY `subject_id` (`subject_id`),
     ADD KEY `crt_type` (`crt_type`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_persons`
---
+
+
 ALTER TABLE `chii_persons`
     ADD PRIMARY KEY (`prsn_id`),
     ADD KEY `prsn_type` (`prsn_type`),
@@ -235,25 +185,22 @@ ALTER TABLE `chii_persons`
     ADD KEY `prsn_ban` (`prsn_ban`),
     ADD KEY `prsn_actor` (`prsn_actor`);
 
---
--- Indexes for table `chii_person_alias`
---
+
+
 ALTER TABLE `chii_person_alias`
     ADD KEY `prsn_cat` (`prsn_cat`, `prsn_id`),
     ADD KEY `prsn_id` (`prsn_id`);
 
---
--- Indexes for table `chii_person_collects`
---
+
+
 ALTER TABLE `chii_person_collects`
     ADD PRIMARY KEY (`prsn_clt_id`),
     ADD KEY `prsn_clt_cat` (`prsn_clt_cat`, `prsn_clt_mid`),
     ADD KEY `prsn_clt_uid` (`prsn_clt_uid`),
     ADD KEY `prsn_clt_mid` (`prsn_clt_mid`);
 
---
--- Indexes for table `chii_person_cs_index`
---
+
+
 ALTER TABLE `chii_person_cs_index`
     ADD PRIMARY KEY (`prsn_type`, `prsn_id`, `subject_id`, `prsn_position`),
     ADD KEY `subject_id` (`subject_id`),
@@ -261,49 +208,30 @@ ALTER TABLE `chii_person_cs_index`
     ADD KEY `prsn_id` (`prsn_id`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_person_fields`
---
+
+
 ALTER TABLE `chii_person_fields`
     ADD PRIMARY KEY (`prsn_cat`, `prsn_id`),
     ADD KEY `prsn_id` (`prsn_id`);
 
---
--- Indexes for table `chii_person_relationship`
---
+
+
 ALTER TABLE `chii_person_relationship`
     ADD KEY `prsn_type` (`prsn_type`, `prsn_id`),
     ADD KEY `relat_prsn_type` (`relat_prsn_type`, `relat_prsn_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_characters`
---
+
 ALTER TABLE `chii_characters`
     MODIFY `crt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_persons`
---
+
+
 ALTER TABLE `chii_persons`
     MODIFY `prsn_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_person_collects`
---
+
+
 ALTER TABLE `chii_person_collects`
     MODIFY `prsn_clt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_usergroup`
---
-
 CREATE TABLE IF NOT EXISTS `chii_usergroup`
 (
     `usr_grp_id`       mediumint(8) unsigned           NOT NULL,
@@ -315,32 +243,16 @@ CREATE TABLE IF NOT EXISTS `chii_usergroup`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for table `chii_usergroup`
---
+
+
 ALTER TABLE `chii_usergroup`
     ADD PRIMARY KEY (`usr_grp_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_usergroup`
---
+
 ALTER TABLE `chii_usergroup`
     MODIFY `usr_grp_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 12;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_topics`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subject_topics`
 (
     `sbj_tpc_id`         mediumint(8) unsigned             NOT NULL,
@@ -355,13 +267,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_topics`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_topics`
---
+
 ALTER TABLE `chii_subject_topics`
     ADD PRIMARY KEY (`sbj_tpc_id`),
     ADD KEY `tpc_subject_id` (`sbj_tpc_subject_id`),
@@ -369,25 +276,10 @@ ALTER TABLE `chii_subject_topics`
     ADD KEY `sbj_tpc_uid` (`sbj_tpc_uid`),
     ADD KEY `sbj_tpc_lastpost` (`sbj_tpc_lastpost`, `sbj_tpc_subject_id`, `sbj_tpc_display`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_topics`
---
+
 ALTER TABLE `chii_subject_topics`
     MODIFY `sbj_tpc_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_group_topics`
---
-
 CREATE TABLE IF NOT EXISTS `chii_group_topics`
 (
     `grp_tpc_id`       mediumint(8) unsigned NOT NULL,
@@ -402,13 +294,8 @@ CREATE TABLE IF NOT EXISTS `chii_group_topics`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_group_topics`
---
+
 ALTER TABLE `chii_group_topics`
     ADD PRIMARY KEY (`grp_tpc_id`),
     ADD KEY `grp_tpc_gid` (`grp_tpc_gid`),
@@ -416,13 +303,8 @@ ALTER TABLE `chii_group_topics`
     ADD KEY `grp_tpc_uid` (`grp_tpc_uid`),
     ADD KEY `grp_tpc_lastpost` (`grp_tpc_lastpost`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_group_topics`
---
+
 ALTER TABLE `chii_group_topics`
     MODIFY `grp_tpc_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
 CREATE TABLE IF NOT EXISTS `chii_crt_comments`
@@ -436,11 +318,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_ep_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_ep_comments`
 (
@@ -453,11 +331,7 @@ CREATE TABLE IF NOT EXISTS `chii_ep_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_group_posts`
---
 
 CREATE TABLE IF NOT EXISTS `chii_group_posts`
 (
@@ -471,11 +345,7 @@ CREATE TABLE IF NOT EXISTS `chii_group_posts`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_prsn_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_prsn_comments`
 (
@@ -488,11 +358,7 @@ CREATE TABLE IF NOT EXISTS `chii_prsn_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_posts`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_posts`
 (
@@ -506,82 +372,64 @@ CREATE TABLE IF NOT EXISTS `chii_subject_posts`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_crt_comments`
---
+
 ALTER TABLE `chii_crt_comments`
     ADD PRIMARY KEY (`crt_pst_id`),
     ADD KEY `cmt_crt_id` (`crt_pst_mid`),
     ADD KEY `crt_pst_related` (`crt_pst_related`),
     ADD KEY `crt_pst_uid` (`crt_pst_uid`);
 
---
--- Indexes for table `chii_ep_comments`
---
+
+
 ALTER TABLE `chii_ep_comments`
     ADD PRIMARY KEY (`ep_pst_id`),
     ADD KEY `ep_cmt_crt_id` (`ep_pst_mid`),
     ADD KEY `ep_pst_related` (`ep_pst_related`),
     ADD KEY `ep_pst_uid` (`ep_pst_uid`);
 
---
--- Indexes for table `chii_group_posts`
---
+
+
 ALTER TABLE `chii_group_posts`
     ADD PRIMARY KEY (`grp_pst_id`),
     ADD KEY `pss_topic_id` (`grp_pst_mid`),
     ADD KEY `grp_pst_related` (`grp_pst_related`),
     ADD KEY `grp_pst_uid` (`grp_pst_uid`);
 
---
--- Indexes for table `chii_prsn_comments`
---
+
+
 ALTER TABLE `chii_prsn_comments`
     ADD PRIMARY KEY (`prsn_pst_id`),
     ADD KEY `cmt_prsn_id` (`prsn_pst_mid`),
     ADD KEY `prsn_pst_related` (`prsn_pst_related`),
     ADD KEY `prsn_pst_uid` (`prsn_pst_uid`);
 
---
--- Indexes for table `chii_subject_posts`
---
+
+
 ALTER TABLE `chii_subject_posts`
     ADD PRIMARY KEY (`sbj_pst_id`),
     ADD KEY `pss_topic_id` (`sbj_pst_mid`),
     ADD KEY `sbj_pst_related` (`sbj_pst_related`),
     ADD KEY `sbj_pst_uid` (`sbj_pst_uid`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_crt_comments`
---
+
 ALTER TABLE `chii_crt_comments`
     MODIFY `crt_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_ep_comments`
---
+
+
 ALTER TABLE `chii_ep_comments`
     MODIFY `ep_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_group_posts`
---
+
+
 ALTER TABLE `chii_group_posts`
     MODIFY `grp_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_prsn_comments`
---
+
+
 ALTER TABLE `chii_prsn_comments`
     MODIFY `prsn_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_subject_posts`
---
+
+
 ALTER TABLE `chii_subject_posts`
     MODIFY `sbj_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
 CREATE TABLE IF NOT EXISTS chii_memberfields
@@ -596,11 +444,6 @@ CREATE TABLE IF NOT EXISTS chii_memberfields
   DEFAULT CHARSET = utf8mb4;
 
 
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_members`
---
 
 CREATE TABLE IF NOT EXISTS chii_members
 (
@@ -624,12 +467,6 @@ CREATE TABLE IF NOT EXISTS chii_members
     constraint username unique (username)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_oauth_access_tokens`
---
-
 CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens`
 (
     `id`           mediumint(8)                        NOT NULL,
@@ -644,37 +481,17 @@ CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_oauth_access_tokens`
---
+
 ALTER TABLE `chii_oauth_access_tokens`
     ADD PRIMARY KEY (`id`),
     ADD UNIQUE KEY `access_token` (`access_token`) USING BTREE,
     ADD KEY `type` (`type`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_oauth_access_tokens`
---
+
 ALTER TABLE `chii_oauth_access_tokens`
-    MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;--
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_revisions`
---
-
-CREATE TABLE IF NOT EXISTS `chii_subject_revisions`
+    MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;CREATE TABLE IF NOT EXISTS `chii_subject_revisions`
 (
     `rev_id`            mediumint(8) unsigned NOT NULL,
     `rev_type`          tinyint(3) unsigned   NOT NULL DEFAULT '1' COMMENT '修订类型',
@@ -693,13 +510,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_revisions`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_revisions`
---
+
 ALTER TABLE `chii_subject_revisions`
     ADD PRIMARY KEY (`rev_id`),
     ADD KEY `rev_subject_id` (`rev_subject_id`, `rev_creator`),
@@ -707,25 +519,10 @@ ALTER TABLE `chii_subject_revisions`
     ADD KEY `rev_dateline` (`rev_dateline`),
     ADD KEY `rev_creator` (`rev_creator`, `rev_id`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_revisions`
---
+
 ALTER TABLE `chii_subject_revisions`
     MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_rev_history`
---
-
 CREATE TABLE IF NOT EXISTS `chii_rev_history`
 (
     `rev_id`           mediumint(8) unsigned                NOT NULL,
@@ -739,11 +536,7 @@ CREATE TABLE IF NOT EXISTS `chii_rev_history`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_rev_text`
---
 
 CREATE TABLE IF NOT EXISTS `chii_rev_text`
 (
@@ -753,37 +546,25 @@ CREATE TABLE IF NOT EXISTS `chii_rev_text`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_rev_history`
---
+
 ALTER TABLE `chii_rev_history`
     ADD PRIMARY KEY (`rev_id`),
     ADD KEY `rev_crt_id` (`rev_type`, `rev_mid`),
     ADD KEY `rev_crt_creator` (`rev_creator`),
     ADD KEY `rev_id` (`rev_id`, `rev_type`, `rev_creator`);
 
---
--- Indexes for table `chii_rev_text`
---
+
+
 ALTER TABLE `chii_rev_text`
     ADD PRIMARY KEY (`rev_text_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_rev_history`
---
+
 ALTER TABLE `chii_rev_history`
     MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_rev_text`
---
+
+
 ALTER TABLE `chii_rev_text`
     MODIFY `rev_text_id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT;
 CREATE TABLE IF NOT EXISTS `chii_ep_revisions`
@@ -799,36 +580,16 @@ CREATE TABLE IF NOT EXISTS `chii_ep_revisions`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_ep_revisions`
---
+
 ALTER TABLE `chii_ep_revisions`
     ADD PRIMARY KEY (`ep_rev_id`),
     ADD KEY `rev_sid` (`rev_sid`, `rev_creator`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_ep_revisions`
---
+
 ALTER TABLE `chii_ep_revisions`
     MODIFY `ep_rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subjects`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subjects`
 (
     `subject_id`           mediumint(8) unsigned NOT NULL,
@@ -859,11 +620,7 @@ CREATE TABLE IF NOT EXISTS `chii_subjects`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_alias`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_alias`
 (
@@ -875,11 +632,7 @@ CREATE TABLE IF NOT EXISTS `chii_subject_alias`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_fields`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_fields`
 (
@@ -906,11 +659,7 @@ CREATE TABLE IF NOT EXISTS `chii_subject_fields`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_relations`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_relations`
 (
@@ -925,13 +674,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_relations`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='条目关联表';
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subjects`
---
+
 ALTER TABLE `chii_subjects`
     ADD PRIMARY KEY (`subject_id`),
     ADD KEY `subject_name_cn` (`subject_name_cn`),
@@ -948,15 +692,13 @@ ALTER TABLE `chii_subjects`
     ADD KEY `browser` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`) USING BTREE,
     ADD KEY `subject_nsfw` (`subject_nsfw`);
 
---
--- Indexes for table `chii_subject_alias`
---
+
+
 ALTER TABLE `chii_subject_alias`
     ADD KEY `subject_id` (`subject_id`);
 
---
--- Indexes for table `chii_subject_fields`
---
+
+
 ALTER TABLE `chii_subject_fields`
     ADD PRIMARY KEY (`field_sid`),
     ADD KEY `sort_id` (`field_tid`),
@@ -967,39 +709,22 @@ ALTER TABLE `chii_subject_fields`
     ADD KEY `field_year` (`field_year`),
     ADD KEY `query_date` (`field_sid`, `field_date`);
 
---
--- Indexes for table `chii_subject_relations`
---
+
+
 ALTER TABLE `chii_subject_relations`
     ADD UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`, `rlt_related_subject_id`, `rlt_vice_versa`),
     ADD KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`, `rlt_order`),
     ADD KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
     ADD KEY `rlt_relation_type` (`rlt_relation_type`, `rlt_subject_id`, `rlt_related_subject_id`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subjects`
---
+
 ALTER TABLE `chii_subjects`
     MODIFY `subject_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_subject_fields`
---
+
+
 ALTER TABLE `chii_subject_fields`
     MODIFY `field_sid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_episodes`
---
-
 CREATE TABLE IF NOT EXISTS `chii_episodes`
 (
     `ep_id`         mediumint(8) unsigned NOT NULL,
@@ -1023,13 +748,8 @@ CREATE TABLE IF NOT EXISTS `chii_episodes`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_episodes`
---
+
 ALTER TABLE `chii_episodes`
     ADD PRIMARY KEY (`ep_id`),
     ADD KEY `ep_sort` (`ep_sort`),
@@ -1039,24 +759,10 @@ ALTER TABLE `chii_episodes`
     ADD KEY `ep_ban` (`ep_ban`),
     ADD KEY `ep_subject_id_2` (`ep_subject_id`, `ep_ban`, `ep_sort`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_episodes`
---
+
 ALTER TABLE `chii_episodes`
     MODIFY `ep_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_interests`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subject_interests`
 (
     `interest_id`               int(10) unsigned      NOT NULL,
@@ -1080,13 +786,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_interests`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_interests`
---
+
 ALTER TABLE `chii_subject_interests`
     ADD PRIMARY KEY (`interest_id`),
     ADD UNIQUE KEY `user_interest` (`interest_uid`, `interest_subject_id`),
@@ -1112,21 +813,10 @@ ALTER TABLE `chii_subject_interests`
     ADD KEY `interest_type_2` (`interest_type`, `interest_uid`),
     ADD KEY `interest_uid_2` (`interest_uid`, `interest_private`, `interest_lasttouch`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_interests`
---
+
 ALTER TABLE `chii_subject_interests`
     MODIFY `interest_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_index`
---
-
 CREATE TABLE IF NOT EXISTS `chii_index`
 (
     `idx_id`            mediumint(8)          NOT NULL COMMENT '自动id',
@@ -1144,11 +834,7 @@ CREATE TABLE IF NOT EXISTS `chii_index`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_collects`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_collects`
 (
@@ -1159,11 +845,7 @@ CREATE TABLE IF NOT EXISTS `chii_index_collects`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='目录收藏';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_comments`
 (
@@ -1176,11 +858,7 @@ CREATE TABLE IF NOT EXISTS `chii_index_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_related`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_related`
 (
@@ -1195,13 +873,8 @@ CREATE TABLE IF NOT EXISTS `chii_index_related`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='目录关联表';
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_index`
---
+
 ALTER TABLE `chii_index`
     ADD UNIQUE KEY `mid` (`idx_id`),
     ADD KEY `idx_ban` (`idx_ban`),
@@ -1209,25 +882,22 @@ ALTER TABLE `chii_index`
     ADD KEY `idx_uid` (`idx_uid`),
     ADD KEY `idx_collects` (`idx_collects`);
 
---
--- Indexes for table `chii_index_collects`
---
+
+
 ALTER TABLE `chii_index_collects`
     ADD PRIMARY KEY (`idx_clt_id`),
     ADD KEY `idx_clt_mid` (`idx_clt_mid`, `idx_clt_uid`);
 
---
--- Indexes for table `chii_index_comments`
---
+
+
 ALTER TABLE `chii_index_comments`
     ADD PRIMARY KEY (`idx_pst_id`),
     ADD KEY `idx_pst_mid` (`idx_pst_mid`),
     ADD KEY `idx_pst_related` (`idx_pst_related`),
     ADD KEY `idx_pst_uid` (`idx_pst_uid`);
 
---
--- Indexes for table `chii_index_related`
---
+
+
 ALTER TABLE `chii_index_related`
     ADD PRIMARY KEY (`idx_rlt_id`),
     ADD KEY `idx_rlt_rid` (`idx_rlt_rid`, `idx_rlt_type`),
@@ -1236,28 +906,20 @@ ALTER TABLE `chii_index_related`
     ADD KEY `idx_rlt_cat` (`idx_rlt_cat`),
     ADD KEY `idx_order` (`idx_rlt_rid`, `idx_rlt_cat`, `idx_rlt_order`, `idx_rlt_sid`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_index`
---
+
 ALTER TABLE `chii_index`
     MODIFY `idx_id` mediumint(8) NOT NULL AUTO_INCREMENT COMMENT '自动id';
---
--- AUTO_INCREMENT for table `chii_index_collects`
---
+
+
 ALTER TABLE `chii_index_collects`
     MODIFY `idx_clt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_index_comments`
---
+
+
 ALTER TABLE `chii_index_comments`
     MODIFY `idx_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_index_related`
---
+
+
 ALTER TABLE `chii_index_related`
     MODIFY `idx_rlt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
 CREATE TABLE IF NOT EXISTS `chii_apps`
@@ -1277,22 +939,16 @@ CREATE TABLE IF NOT EXISTS `chii_apps`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
---
--- Indexes for table `chii_apps`
---
+
+
 ALTER TABLE `chii_apps`
     ADD PRIMARY KEY (`app_id`),
     ADD KEY `app_type` (`app_type`, `app_creator`),
     ADD KEY `app_ban` (`app_ban`),
     ADD KEY `app_status` (`app_status`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_apps`
---
+
 ALTER TABLE `chii_apps`
     MODIFY `app_id` mediumint(8) NOT NULL AUTO_INCREMENT;
 CREATE TABLE IF NOT EXISTS `chii_timeline`
@@ -1348,15 +1004,6 @@ CREATE TABLE IF NOT EXISTS `chii_os_web_sessions`
     `expired_at` bigint               not null comment 'int64 unix timestamp, when session is expired'
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_fields`
---
-
 INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES ('crt', 1, 1, 0, 0000, 12, 5),
        ('prsn', 1, 2, 0, 1980, 1, 21),
@@ -1382,15 +1029,6 @@ VALUES ('crt', 1, 1, 0, 0000, 12, 5),
 
 
 
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_characters`
---
-
 INSERT INTO `chii_characters` (`crt_id`, `crt_name`, `crt_role`, `crt_infobox`, `crt_summary`, `crt_img`, `crt_comment`, `crt_collects`, `crt_dateline`, `crt_lastpost`, `crt_lock`, `crt_img_anidb`, `crt_anidb_id`, `crt_ban`, `crt_redirect`, `crt_nsfw`)
 VALUES (1, 'ルルーシュ・ランペルージ', 1, '{{Infobox Crt\r\n|简体中文名= 鲁路修·兰佩路基\r\n|别名={\r\n[L.L.]\r\n[勒鲁什]\r\n[鲁鲁修]\r\n[ゼロ]\r\n[Zero]\r\n[英文名|Lelouch Lamperouge]\r\n[第二中文名|鲁路修·冯·布里塔尼亚]\r\n[英文名二|Lelouch Vie Britannia]\r\n[日文名|ルルーシュ・ヴィ・ブリタニア]\r\n[纯假名|]\r\n[罗马字|]\r\n[昵称|]\r\n[其他名义|]\r\n}\r\n|性别= 男\r\n|生日= 12月5日\r\n|血型= A型\r\n|身高= 178cm→181cm\r\n|体重= 54kg\r\n|BWH= \r\n|引用来源= Wikipedia\r\n}}', '鲁路修·兰佩洛基是日本动画《Code Geass 反叛的鲁路修》中的主角。\r\n\r\n一年前的东京攻略战中，黑色骑士团因为首领Zero的离开而最终战败。之后一年间，鲁路修的Geass能力被人封印而平静的生活在阿什弗德学园，在第二季开头，鲁路修重新与C.C相遇之后，Geass封印被解开，鲁路修也恢复了记忆。\r\n一年前最后的神根岛之战，鲁路修被朱雀制服，并被押到其父不列颠皇帝面前，被皇帝施以Geass封印一切记忆。\r\n封印解除之后，Geass能力恢复到封印之前的状态，依然暴走，无法关闭，为了防止尤菲米雅的悲剧再次上演，C.C给了鲁路修特制的隐形眼镜来应对暴走的Geass能力。', '7b/3a/1_crt_8V556.jpg?r=1603459589', 111, 667, 0, 1638705672, 0, '', 0, 0, 0, 0),
        (2, '枢木スザク', 1, '{{Infobox Crt\r\n|简体中文名= 枢木朱雀\r\n|别名={\r\n[第二中文名|白色骑士]\r\n[英文名|Knight of Seven]\r\n[日文名|枢木 スザク]\r\n[纯假名|くるるぎ スザク]\r\n[罗马字|Kururugi Suzaku]\r\n[昵称|]\r\n}\r\n|性别= 男\r\n|生日= 皇历2000年7月10日\r\n|血型= O型\r\n|身高= 176cm→179cm\r\n|体重= 58kg\r\n|BWH= \r\n|引用来源={\r\n}\r\n}}', '在第一季的最后，驾驶兰斯洛特向Zero展开了大报复，于战场上活跃，被柯内莉娅晋升为骑士侯。最后在神根岛和鲁路修对决中。从V.V处得知了Geass能力的实质。\r\n第二季中，朱雀进入了皇帝直属的亲卫队“Knight of Rounds”，是排名第七位的骑士。现在作为皇帝的直属骑士，奔走于世界各地。因为年龄相近，和骑士阿妮娅和基诺关系不错，朱雀是第一位出身Number的“Knight of Rounds”骑士。\r\n在一年前的神根岛之战的最后，朱雀制服鲁路修，并把他押送到不列颠皇帝面前，因此功绩主动向皇帝申请加入皇帝亲卫队圆桌骑士团，获准。目前转战于不列颠帝国对EU的欧洲战场前线，在波尔多（Bordeaux）地区大破EU方面的德意志、法国、荷兰、意大利联合部队。\r\n现在，再次以学生身份回到了11区阿什弗德学园，最终目的是为了得到圆桌骑士NO.1位置，得到并建立行政特区“日本”。', '6f/40/2_crt_08diJ.jpg?r=1581939778', 86, 112, 0, 1638458451, 0, '', 0, 0, 0, 0),
@@ -1405,15 +1043,6 @@ VALUES (1, 'ルルーシュ・ランペルージ', 1, '{{Infobox Crt\r\n|简体�
 
 
 
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_crt_subject_index`
---
 
 INSERT INTO `chii_crt_subject_index` (`crt_id`, `subject_id`, `subject_type_id`, `crt_type`, `ctr_appear_eps`, `crt_order`)
 VALUES (1, 8, 2, 1, '', 1),
@@ -1493,24 +1122,6 @@ VALUES (1, 8, 2, 1, '', 1),
 
 
 
-
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 06, 2021 at 02:22 PM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_cs_index`
---
 
 INSERT INTO `chii_person_cs_index` (`prsn_type`, `prsn_id`, `prsn_position`, `subject_id`, `subject_type_id`, `summary`, `prsn_appear_eps`)
 VALUES ('prsn', 1, 1001, 4, 4, '', ''),
@@ -2268,14 +1879,6 @@ VALUES ('prsn', 1, 1001, 4, 4, '', ''),
 
 
 
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_persons`
---
-
 INSERT INTO `chii_persons` (`prsn_id`, `prsn_name`, `prsn_type`, `prsn_infobox`, `prsn_producer`, `prsn_mangaka`, `prsn_artist`, `prsn_seiyu`, `prsn_writer`, `prsn_illustrator`, `prsn_actor`, `prsn_summary`, `prsn_img`, `prsn_img_anidb`, `prsn_comment`, `prsn_collects`, `prsn_dateline`, `prsn_lastpost`, `prsn_lock`, `prsn_anidb_id`, `prsn_ban`, `prsn_redirect`, `prsn_nsfw`)
 VALUES (1, '水樹奈々', 1, '{{Infobox Crt\r\n|简体中文名= 水树奈奈\r\n|别名={\r\n[第二中文名|]\r\n[英文名|]\r\n[日文名|近藤奈々 (こんどう なな)]\r\n[纯假名|みずき なな]\r\n[罗马字|Mizuki Nana]\r\n[昵称|奈々ちゃん、奈々さん、奈々様、お奈々、ヘッド]\r\n[其他名义|]\r\n}\r\n|性别= 女\r\n|生日= 1980年1月21日\r\n|血型= O型\r\n|身高= 153cm\r\n|体重= \r\n|BWH= \r\n|引用来源= zh.moegirl.org.cn\r\n|星座= 水瓶座\r\n|出身地区= 爱媛县 新居滨市\r\n|所属公司= StarCrew(事务所) / KING AMUSEMENT CREATIVE(唱片公司)\r\n|个人状态= 已婚\r\n|官网= https://www.mizukinana.jp\r\n|FanClub= https://fanclub.mizukinana.jp\r\n|Twitter= https://twitter.com/NM_NANAPARTY\r\n}}', 0, 0, 1, 1, 0, 0, 0,
         '原名 近藤 奈々（こんどう なな），日本女性声优兼歌手。有个妹妹名字是近藤美香，为Daisy×Daisy主唱。\r\n\r\n简介\r\n自小受业余经营歌谣教室的父母影响，希望成为演歌歌手，从5岁起学习唱歌。小学和初中时经常在四国地区的各种歌唱比赛获奖，中一时以本名名义灌录单曲《杜樱》（つがざくら），中三时获“濑户内卡拉OK歌谣赛十周年记念全国大赛”总冠军，获其中一名评判赏识，邀请她初中毕业后往东京发展。高二（1997年）时入读代代木动画学院声优科，一边上学一边接受声优训练，不久她所属的事务所倒闭，几个月后加入由她的歌唱老师所成立的“产光音乐”事务所。其后参演PlayStation游戏NOёL ~La neige~，正式出道。因本名的日语读音跟另一位歌手近藤名奈完全一样，出道时以水树奈奈作为艺名。\r\n高中就读堀越高等学校，跟堂本刚、友坂理惠以及山口纱弥加等同班。毕业后获颁了“堀越赏”，至今只有她和草彅刚以艺能科毕业而获得该奖赏。\r\n水树奈奈原以演歌歌手为目标，自小受父亲训练演歌，高中时就读堀越高等学校中容许较低出席率的艺能科，尽管有所属的经纪公司，却迟迟未有歌手出道机会。\r\n高中1年级时，事务所向水树奈奈提出进行配音工作的建议，于是，接受该建议的水树奈奈在高中二年级开始入读了代代木动画学院声优科，在此接受配音演员的训练。在1997年高三时，终于获得出道机会，获选PS游戏软件‘NOeL 〜La neige〜’的门仓千纱都一角，以艺名水树奈奈完成声优出道。高中毕业后，在吉祥寺的美体沙龙做着一份时薪850日元的兼职工作。\r\n20岁时加盟King Records，2000年12月6日以单曲“想い”歌手出道，至今共推出34张单曲、12张大碟和3张精选集，歌手出道时的销情惨淡，但是之后就稳步上扬，销量不俗，惟近年因为实体唱片市场衰落以及日本个人女歌手热潮退却而出现下跌趋势。直到现时为止，音乐作品总销量约350万，声优唱片总销量排第三。演唱会场场爆满，音乐活动之外，也常接旁白以及配音的工作。\r\n2000年开始每年冬季举行演唱会，至2003年增至每年夏、冬各一次日本巡回演出。2005、06年两度在日本武道馆举行演唱会，是继椎名碧流后第二位踏足这舞台的声优；2007、08年更先后成为首位在横滨体育馆、埼玉超级体育馆及国立代代木竞技场举行个人演唱会的声优。\r\n2004年因配音人气动漫魔法少女奈叶中菲特·泰斯塔罗沙一角并演唱其中多首主题曲而走红，水树奈奈曾于出席发表会时透露配音过最喜欢的动漫角色为菲特·泰斯塔罗沙。\r\n2009年7月5日在西武巨蛋举办了个人（也是声优界）最大场的演唱会，全长4小时半，曲目29首，不但刷新个人纪录，也刷新了声优界的纪录。\r\n2009年12月31日获选第60回NHK红白歌合战，成为NHK红白歌合战史上第一位登上舞台的声优，被称“动画歌曲的女王”。\r\n因唱功获赞赏和唱片销量成绩不俗，2010－14年均被邀请参加第61回－第65回NHK红白歌合战（第61回兼任红白应援队队员）。\r\n2011年12月3日及4日首次登上东京巨蛋，是史上第八位以个人名义登上东京巨蛋、第四位连续两天开唱的日本女性歌手，而且是第一位声优能在东京巨蛋举行演唱会，再次破声优纪录。\r\n2013年7月14日在日本巡回演唱会“NANA MIZUKI LIVE CIRCUS 2013”大阪城音乐厅场次中，宣布将于台湾举办首次海外演唱会。\r\n2013年11月23日及24日，在台湾台北市华山1914创意文化园区台北音乐传记（Legacy Taipei）举办首次海外演唱会“NANA MIZUKI LIVE CIRCUS 2013+”。2013年11月24日，在“NANA MIZUKI LIVE CIRCUS 2013+”宣布，将于2014年再次于台湾举办海外演唱会。\r\n2014年6月，NANA MIZUKI LIVE CIRCUS×CIRCUS＋×WINTER FESTA BD作品首周以1.8万张销售额获得公信榜音乐部门第一名，综合部门第二名且打破纪录以连续9张BD作品蝉联音乐部门榜上第一名。第二名为安室奈美惠（5张）。\r\n2016年4月9、10日第二次在东京巨蛋举行演唱会，成为在东京巨蛋开唱过最多次的日本个人女歌手之一，并且宣布于2016年9月22日于阪神甲子园球场举办个人演唱会。\r\n\r\n演艺经历\r\n1998年在Pioneer LDC（现已改名为日本Geneon环球娱乐）旗下推出一张CD。\r\n1999年10月在网络电台JAM STATION主持自己的节目《NANA CHANNEL》。\r\n2000年1月23日于电台节目制作团队的协助下，举行第一场个人演唱会，被King Records制作人三嶋章夫所赏识，其后正式成为King Records（但不是King Records旗下制作动画、声优音乐为主的STARCHILD）的歌手。\r\n2001年9月受现在经纪人建议，离开她在东京寄宿的歌唱老师住所与其经纪公司，转往Sigma Seven事务所。\r\n2001年曾因《妹妹公主》而与桑谷夏子、小林由美子、望月久代组成声优组合“Prits”，并发行过3张单曲和1张大碟。\r\n同年（2001年）再因动画《七小花》（七人のナナ）而与秋田まどか、浅木舞、中原麻衣、名冢佳织、福井裕佳梨、桃森すもも组成“nana×nana”主唱该动画的主题曲。\r\n2003年7月7日成立官方俱乐部S.C. NANA NET。\r\n2005年1月2日于日本武道馆举行演唱会，是继椎名碧流后的第二位以个人名义在武道馆开演唱会的声优。\r\n2006年1月21日再次踏足日本武道馆，自2000年和2001年以来再次举行生日演唱会，演唱会当天更自弹自唱“宝物”。\r\n2006年10月29日日本电视台TBS Channel播放特别制作的水树奈奈特集，片长约90分钟，节目中有独家访问、2006年夏季演唱会精选片段和本人亲自下厨等珍贵镜头。\r\n2007年2月12日在横滨体育馆举行个人史上最长最大的演唱会，成为首位以个人名义使用这场地的声优。\r\n2007年3月3日第一届“声优Awards”获歌唱赏。\r\n2009年2月5日首度亮相全国广播的NHK电视音乐节目MUSIC JAPAN，并于同年4月开始担任节目旁白。\r\n2009年7月5日举办个人首场巨蛋演唱会，现场人数涌进3万人，为2009年唯一使用巨蛋级场地举办演唱会的女性歌手。\r\n2009年12月31日初次参与NHK红白歌合战。\r\n2010年3月6日第四届“声优Awards”获富山敬赏。\r\n2010年12月31日第二次参与NHK红白歌合战。\r\n2011年2月6日荣获“Billboard JAPAN MUSIC AWARDS 2010年年度优秀歌手赏”。\r\n2011年3月27日参与niconico为2011年日本本州岛海域地震举行的赈灾款募金义演，总金额达315万1800円。\r\n2011年12月3日及4日举办个人首场东京巨蛋演唱会，为史上第八位日本女歌手以个人名义登上东京巨蛋，累计现场人数为8万人。这场演唱会还创下“东京巨蛋史上的第一场全天域星象投影表演”的纪录。\r\n2011年12月31日第三次参与NHK红白歌合战。\r\n2012年3月3日荣获“Billboard JAPAN MUSIC AWARDS”年度最佳动画歌手。并在2012年度蝉联该奖项。\r\n2012年12月31日连续第四年参与NHK红白歌合战。\r\n2013年5月15日发表第一首合唱单曲“Preserved Roses”（合唱者为T.M.Revolution）。\r\n2013年11月10日参与于新加坡举行的Anime Festival Asia 2013: Valvrave Night演出，乃首个于国外进行的公开活动。\r\n2013年11月23日及24日举行第一场海外演唱会“NANA MIZUKI LIVE CIRCUS 2013+”，地点为台湾Legacy Taipei，其中24日场次于日本、台湾、新加坡、香港、泰国、印尼等65间戏院进行直播。\r\n2013年12月31日连续第五年参与NHK红白歌合战。\r\n2014年3月13日于文部科学省文化厅举办的“2013年度（第64届）艺术选奖”中获得大众艺能部门的新人赏。\r\n2014年6月1日 在演唱会上宣布追加海外公演，在新加坡及台湾举行，新加坡场于9月27日在“RESORTS WORLD THEATRE”演出，台湾场则于10月4、5两日在台北市立大学天母校区体育馆举行。\r\n2014年12月31日连续第六年参与NHK红白歌合战。\r\n2015年7月24日首度在MUSIC STATION中演出，是继椎名碧流后的第二位在该节目中演出的声优。\r\n2016年4月9日及10日再度于东京巨蛋举行演唱会，成为东京巨蛋中演唱会举行次数最多的日本个人女性歌手之一（另一个为安室奈美惠）。\r\n2016年9月22日首度于阪神甲子园球场举行演唱会，成为首位在阪神甲子园球场举行演唱会的个人歌手。\r\n2017年7、8月于帝国剧场参与以卡洛尔·金为题材的音乐剧，并与平原绫香担任双主演。\r\n\r\n个人生活\r\n水树奈奈的父亲为近藤信光，母亲为近藤训子 。名字的由来是因为父亲是演员冈田奈奈的粉丝，因为避免本名“近藤奈奈”与歌手近藤名奈出现混淆，所以决定使用“水树奈奈”作为艺名。\r\n她的妹妹近藤美香为Daisy×Daisy主唱，艺名为Mika。\r\n家庭环境并不富裕，所以学生时代是学校里少数几乎全勤的学生，并为领奖学金以贴补家用而十分用功，经常学年第一。2008年10月29日，水树奈奈的父亲去世 。\r\n持有书友会毛笔部七段、珠算三级、心算二级、自动档汽车驾驶执照等资格。\r\n与同事务所所属，在电台节目“スマイルギャング”中共演的声优福圆美里交情深厚，每年在彼此生日临近的时候都会互相交换生日礼物。因演出“放浪男孩”而与同事务所所属声优濑户麻沙美关系亲密，经常一起吃饭，将瀬戸视作自己妹妹般。2004年于因为演出魔法少女奈叶而和声优田村由香里关系亲密。与能登麻美子和泽城美雪一起去旅行后，交情加深。\r\n2020年7月6日，与作为音乐界从业者的丈夫登记结婚。11月6号，通过官网宣布怀孕，目前已经进入安定期，将暂时工作一段时间。\r\n水树的父亲持有硬式棒球的裁判执照，水树则是个颇热情的阪神虎爱好者。最初比较喜欢高校棒球，受喜欢读卖巨人的父亲影响而成为了巨人的球迷。1996年，当清原和博（已在2008年球季结束后退休）由Free Agent转至巨人时，开始觉得巨人不好，而转而喜欢阪神虎直至现在。特别尊敬星野仙一。\r\n水树为第11张专辑SMASHING ANTHEMS拍专辑照时，到过阪神虎的主场阪神甲子园球场取景。在阪神甲子园球场举行演唱会为水树的其中一个梦想，场方则以保护天然草皮为理由，每年只批准一组歌唱单位举行演唱会。每年在甲子园球场举行演唱会的TUBE宣布2016年不会在此场举行演唱会，结果水树得到这个机会。\r\n\r\n其他\r\n2006年，井上喜久子曾经希望水树能够加入17岁教。\r\n2008年6月19日，21岁的送报员堀大树用手机在2ch的声优板块预告中模仿加藤智大，发出拟于7月5日-6日在代代木体育馆举行的LIVE FIGHTER 2008 BLUE SIDE/RED SIDE中，杀害水树奈奈的犯罪预告，后嫌疑人被警方监控、逮捕。\r\n2008年10月29日晚间8时40分，水树之父近藤信光因多器官衰竭去世，卒年75岁。\r\n2009年11月21日于东京国际展示场举行的俱乐部活动中挑战吉尼斯世界纪录，原本要挑战三个项目，有两个项目挑战成功，分别是7014人全场手牵手形成最长人浪，以及动员6961人创下最多人于同一时间一起吹party blowers，其后由吉尼斯世界纪录职员即场颁发证书。\r\n至于无法挑战成功的项目，就是于室内发出最大音量的人声，现时纪录由香港饶舌团体农夫举行的演唱会保持。\r\n2009年12月13日，终于与一直想见面的同乡（爱媛县出身）・演员真锅香织在剧场版动画“雷顿教授与永远的歌姬”的首映会上见面。\r\n2010年2月20日，被任命为新居浜观光大使。\r\n2010年10月，台湾金牌大风取得代理并发售IMPACT EXCITER台压盘，是水树的第一张海外盘。\r\n2011年1月21日，于生日当天发售个人第一本自传“深爱”。\r\n2012年2月，中国大陆星外星唱片取得代理并发售IMPACT EXCITER引进版，是水树正式在大陆发行的首张个人专辑。\r\n2012年5月，台湾金牌大风取得代理并发售NANA MIZUKI LIVE CASTLE×JOURNEY台压盘，是第一张水树的演唱会海外盘。\r\n2012年4月17日，再次被任命为伊予观光大使。\r\n2012年6月10日播出的新堂本兄弟中与高中同学堂本刚实现了久隔14年见面的会谈，称水树为近藤さん，并在业界传开来。\r\n2012年12月5日，在富士电视台的FNS歌谣祭中水树与堂本刚所在的团队KinKi Kids坐在同一个圆桌时，并从刚君处听说他在他的演唱会上提到了水树。\r\n2014年1月16日，发售文库版本之自传。\r\n2014年6月10日，25岁男子福元一辉为了抽奖在演唱会与水树见面而购买1000包卡乐B薯片，将每包薯片上的抽奖券取去后丢弃在树林中，因违反《废弃物处理法》而被警方逮捕。\r\n2014年6月22日，由于水树的声带发炎导致失声，为日后着想需要休息一段时间，原定于当日以及6月28日和29日举行的巡回公演被迫取消。\r\n\r\nYouTube频道：\r\nhttps://www.youtube.com/user/mizukinanaKING',
@@ -2395,18 +1998,6 @@ VALUES (28684346, 685747, 5, 2, '685747', 'a:2:{s:6:\"before\";s:15:\"约翰史�
        (28682801, 63167, 2, 1, '386258', 'a:3:{s:10:\"subject_id\";i:386258;s:12:\"subject_name\";s:49:\"やり直し令嬢は竜帝陛下を攻略中 (4)\";s:15:\"subject_name_cn\";s:0:\"\";}', '', 0, 0, 0, 1654366677),
        (28682731, 63167, 2, 2, '386257', 'a:3:{s:10:\"subject_id\";i:386257;s:12:\"subject_name\";s:12:\"Marnies Welt\";s:15:\"subject_name_cn\";s:15:\"萌宠特工队\";}', '', 0, 0, 0, 1654366124);
 
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_persons`
---
--- WHERE:  prsn_ban != 0 ORDER BY prsn_id LIMIT 3
-
 LOCK TABLES `chii_persons` WRITE;
 
 REPLACE INTO `chii_persons`
@@ -2416,19 +2007,6 @@ VALUES (153, '葉月九ロウ', 1, '{{Infobox Crt\n|性别= 男\n|别名={\n[纯
 
 UNLOCK TABLES;
 
-
--- Dump completed on 2021-12-16  9:19:20
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_characters`
---
--- WHERE:  crt_ban != 0 ORDER BY crt_id LIMIT 3
 
 LOCK TABLES `chii_characters` WRITE;
 /*!40000 ALTER TABLE `chii_characters`
@@ -2454,18 +2032,6 @@ UNLOCK TABLES;
 
 
 
-
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_crt_cast_index`
---
--- WHERE:  prsn_id <= 10 OR subject_id <= 20 OR crt_id <= 10
 
 LOCK TABLES `chii_crt_cast_index` WRITE;
 /*!40000 ALTER TABLE `chii_crt_cast_index`
@@ -2890,15 +2456,6 @@ VALUES (32, 3862, 12, 2, ''),
 UNLOCK TABLES;
 
 
--- Dump completed on 2021-12-16 11:19:53
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_fields`
---
-
 INSERT INTO `chii_subject_fields` (`field_sid`, `field_tid`, `field_tags`, `field_rate_1`, `field_rate_2`, `field_rate_3`, `field_rate_4`, `field_rate_5`, `field_rate_6`, `field_rate_7`, `field_rate_8`, `field_rate_9`, `field_rate_10`, `field_airtime`, `field_rank`, `field_year`, `field_mon`, `field_week_day`, `field_date`, `field_redirect`)
 VALUES (1, 1,
         'a:18:{i:0;a:2:{s:8:"tag_name";s:9:"痞子蔡";s:6:"result";s:2:"23";}i:1;a:2:{s:8:"tag_name";s:9:"蔡智恒";s:6:"result";s:2:"11";}i:2;a:2:{s:8:"tag_name";s:6:"爱情";s:6:"result";s:2:"10";}i:3;a:2:{s:8:"tag_name";s:12:"轻舞飞扬";s:6:"result";s:2:"10";}i:4;a:2:{s:8:"tag_name";s:6:"小说";s:6:"result";s:1:"9";}i:5;a:2:{s:8:"tag_name";s:6:"台湾";s:6:"result";s:1:"8";}i:6;a:2:{s:8:"tag_name";s:9:"三次元";s:6:"result";s:1:"5";}i:7;a:2:{s:8:"tag_name";s:6:"经典";s:6:"result";s:1:"5";}i:8;a:2:{s:8:"tag_name";s:6:"国产";s:6:"result";s:1:"4";}i:9;a:2:{s:8:"tag_name";s:6:"网络";s:6:"result";s:1:"2";}i:10;a:2:{s:8:"tag_name";s:12:"网络小说";s:6:"result";s:1:"2";}i:11;a:2:{s:8:"tag_name";s:4:"1999";s:6:"result";s:1:"2";}i:12;a:2:{s:8:"tag_name";s:3:"国";s:6:"result";s:1:"1";}i:13;a:2:{s:8:"tag_name";s:2:"NN";s:6:"result";s:1:"1";}i:14;a:2:{s:8:"tag_name";s:6:"网文";s:6:"result";s:1:"1";}i:15;a:2:{s:8:"tag_name";s:9:"少女系";s:6:"result";s:1:"1";}i:16;a:2:{s:8:"tag_name";s:6:"书籍";s:6:"result";s:1:"1";}i:17;a:2:{s:8:"tag_name";s:6:"小説";s:6:"result";s:1:"1";}}',
@@ -2951,24 +2508,6 @@ VALUES (1, 1,
 
 
 
-
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 08, 2021 at 06:56 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_relations`
---
 
 INSERT INTO `chii_subject_relations` (`rlt_subject_id`, `rlt_subject_type_id`, `rlt_relation_type`, `rlt_related_subject_id`, `rlt_related_subject_type_id`, `rlt_vice_versa`, `rlt_order`)
 VALUES (1, 1, 1, 296317, 4, 1, 0),
@@ -3085,24 +2624,6 @@ VALUES (1, 1, 1, 296317, 4, 1, 0),
 
 
 
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 08, 2021 at 06:57 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_relations`
---
-
 INSERT INTO `chii_subject_relations` (`rlt_subject_id`, `rlt_subject_type_id`, `rlt_relation_type`, `rlt_related_subject_id`, `rlt_related_subject_type_id`, `rlt_vice_versa`, `rlt_order`)
 VALUES (497, 1, 1004, 10, 1, 1, 0),
        (497, 1, 1, 12, 2, 1, 0),
@@ -3216,14 +2737,6 @@ VALUES (497, 1, 1004, 10, 1, 1, 0),
 
 
 
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subjects`
---
-
 INSERT INTO `chii_subjects` (`subject_id`, `subject_type_id`, `subject_name`, `subject_name_cn`, `subject_uid`, `subject_creator`, `subject_dateline`, `subject_image`, `subject_platform`, `field_infobox`, `field_summary`, `field_5`, `field_volumes`, `field_eps`, `subject_wish`, `subject_collect`, `subject_doing`, `subject_on_hold`, `subject_dropped`, `subject_series`, `subject_series_entry`, `subject_idx_cn`, `subject_airtime`, `subject_nsfw`, `subject_ban`)
 VALUES (1, 1, '第一次的親密接觸', '第一次的亲密接触', '9789861733432', 2, 1216020688, 'c4/ca/1_EcYzQ.jpg', 1002, '{{Infobox animanga/Novel\r\n|中文名= 第一次的亲密接触\r\n|别名={\r\n}\r\n|出版社= 紅色文化、知识出版社\r\n|价格= NT$160\r\n|连载杂志= \r\n|发售日= 1998-09-25\r\n|册数= \r\n|页数= 188\r\n|话数= \r\n|ISBN= 9577086705\r\n|其他= \r\n|作者= 蔡智恒\r\n}}', '　　風靡華人世界的網戀小說經典，暢銷紀錄超過百萬冊！\r\n　　有最初的《第一次的親密接觸》，才有今日網路文學。\r\n　　蔡智恆的最新作品《暖暖》，提升你的戀愛幸福溫度。\r\n　　紀念版收錄蔡智恆醞釀十年，最溫柔的純愛萬語宣言。\r\n　　PH值小於7的微酸心情，讓十年後的痞子蔡告訴你。\r\n　　一場最美麗的網路解逅，當痞子蔡遇見輕舞飛揚……\r\n　　蔡智恆最真實的情感原點\r\n　　痞子蔡與輕舞飛揚一起記錄的甜蜜日子\r\n　　一則發生在成大校園的純愛故事，網路上一再被轉載的熱門小說。', '　　蔡智恆\r\n　　BBS的ID為jht，網路上的暱稱是痞子蔡。\r\n　　1969年生於台灣嘉義縣，成功大學水利工程博士。\r\n　　1998年於BBS發表第一部小說《第一次的親密接觸》，造成全球華文地區的痞子蔡熱潮。\r\n　　自此以後，左腦創作小說，右腦書寫學術論文，獨樹一格。\r\n　　現任教於立德管理學院。', 0, 0, 13, 105, 1, 3, 3, 0, 0, 'd', 0, 0, 0),
        (2, 3, '坟场', '', '', 2, 1216021625, '9b/e7/59392_05W7s.jpg', 0, '|出版社= カゲキヤ出版\n|价格= ¥330\n|连载杂志= カゲキヤコミック\n|发售日= 2017-07-20\n|页数= 32\n|作者= 松波留美 赤髭\n}}', '可能由以下原因导致条目合并至此处：\r\n【三次元】非欧美剧，非日剧，非华语剧\r\n【动画】同人视频；网友自制视频(游戏实况·攻略·解说，MAD/MV等)\r\n【书籍】同人本，与ACG无关的书籍等\r\n【音乐】BD/DVD条目，尚未发行CD版本；与ACG或剧集无关的音乐条目\r\n【游戏】已存在包含某平台游戏的条目等\r\n【其他】个人自创条目；无法查询来源的未知条目\r\n\r\n如您有意见请到WIKI小组 (http://bangumi.tv/group/wiki) 讨论，谢谢！', '', 0, 0, 109, 531, 48, 18, 19, 0, 0, 'f', 0, 0, 2),
@@ -3242,7 +2755,7 @@ VALUES (1, 1, '第一次的親密接觸', '第一次的亲密接触', '978986173
         0, 'r', 0, 0, 0),
        (13, 4, 'CLANNAD', '', '', 1, 1216043239, 'c5/1c/13_tQxwM.jpg', 0,
         '{{Infobox Game\r\n|中文名= \r\n|别名={\r\n[小镇家族]\r\n[クラナド]\r\n}\r\n|平台={\r\n[PC]\r\n[PS2]\r\n[PSP]\r\n[Xbox 360]\r\n[PS3]\r\n[Nintendo Switch]\r\n[PSV]\r\n[PS4]\r\n}\r\n|游戏类型= 恋爱ADV\r\n|游戏引擎= RealLive(PC)\r\n|游玩人数= 1\r\n|发行日期= 2004年4月28日(PC)\r\n|售价={\r\n[7,500円(税別)(PC）]\r\n[7,560円(税込)(PS2)]\r\n[6,800円(税別)(PCフルボイス)]\r\n[6,090円(税込)(PSP)]\r\n[6,720円(税込)(Xbox360)]\r\n[5,800円(税別)(PCメモリアルエディション)]\r\n[¥ 133(Steam - CLANNAD HD Edition)]\r\n}\r\n|website={\r\n[PC: http://key.visualarts.gr.jp/product/clannad/]\r\n[PS2: http://www.gunghoworks.jp/game/clannad]\r\n[PSP: http://www.prot.co.jp/psp/clannad]\r\n[Xbox360: http://www.prot.co.jp/xbox/clannad]\r\n}\r\n|其他版本={\r\n[2006年2月23日(PS2)]\r\n[2008年2月29日(PCフルボイス)]\r\n[2008年5月29日(PSP)]\r\n[2008年8月28日(Xbox360)]\r\n[2010年5月28日(PCメモリアルエディション)]\r\n[2015年11月24日(Steam - CLANNAD HD Edition)]\r\n}\r\n|游戏开发商= Key\r\n|发行= Key/ビジュアルアーツ(PC)、ガンホー・ワークス(PS2)、プロトタイプ(360/PSP/PS3)、Sekai Project(Steam)\r\n|剧本= 麻枝准(共通 / 古河渚 / 坂上智代 / 伊吹風子 / 宮沢有紀寧一部 / 相楽美佐枝 / 幸村俊夫 / AFTER STORY 担当)、魁( 藤林杏 / 藤林椋 / 宮沢有紀寧一部 / 柊勝平 担当)、涼元悠一(一ノ瀬ことみ 担当)、丘野塔也(春原兄妹 担当)\r\n}}',
-        '季節は春、楽しく等身大で過ごす学園での日常から物語は始まり、やがてストーリーはヒロインたちとの恋愛に発展していきます。\r\n深遠な世界観を背景に語られるのはひとつの町に住む人々それぞれの思い、その先にある「生きる」ということ。\r\nその一方で、人々の思いを包み込むように存在する町そのものを幻想的なイメージで描き出していきます。\r\n-----------------------------------------------------------------------------------------------------------\r\n\r\n《CLANNAD》为2004年key社所发行的文字冒险游戏（AVG），和key社以往游戏不同的是，这款是以全年龄版PC的形式发行。CLANNAD在凯尔特语中代表的是“家族”。正如其名，这款游戏的核心价值及在描写各类的家族温暖，是个感动人心的落泪游戏。\r\n', 'a:3:{i:0;s:1:"9";i:1;s:1:"7";i:2;s:1:"6";}', 0, 0, 1103, 4027, 469, 409, 109, 0, 0, 'c', 0, 0, 0),
+        '季節は春、楽しく等身大で過ごす学園での日常から物語は始まり、やがてストーリーはヒロインたちとの恋愛に発展していきます。\r\n深遠な世界観を背景に語られるのはひとつの町に住む人々それぞれの思い、その先にある「生きる」ということ。\r\nその一方で、人々の思いを包み込むように存在する町そのものを幻想的なイメージで描き出していきます。\r\n-\r\n\r\n《CLANNAD》为2004年key社所发行的文字冒险游戏（AVG），和key社以往游戏不同的是，这款是以全年龄版PC的形式发行。CLANNAD在凯尔特语中代表的是“家族”。正如其名，这款游戏的核心价值及在描写各类的家族温暖，是个感动人心的落泪游戏。\r\n', 'a:3:{i:0;s:1:"9";i:1;s:1:"7";i:2;s:1:"6";}', 0, 0, 1103, 4027, 469, 409, 109, 0, 0, 'c', 0, 0, 0),
        (14, 4, 'Metal Gear Solid 4 Guns of the Patriots', '潜龙谍影4 爱国者之枪', '', 2, 1216043502, 'aa/b3/14_FlCod.jpg', 8, '{{Infobox Game\r\n|中文名= 潜龙谍影4 爱国者之枪\r\n|别名={\r\n[メタルギアソリッド4 ガンズ・オブ・ザ・パトリオット]\r\n[潛龍諜影4 愛國者之槍]\r\n[合金装备4 爱国者之枪]\r\n}\r\n|平台= PS3\r\n|游戏类型= ACT\r\n|游戏引擎= \r\n|游玩人数= 1\r\n|发行日期= 2008年6月12日\r\n|售价= 8,800日元（日版）、99.99美元（美版）\r\n|website= http://www.konami.jp/mgs4/jp/\r\n|开发= KOJIMA PRODUCTION\r\n|发行= KONAMI\r\n|游戏设计师= 小岛秀夫\r\n}}',
         '2014年，在「大貝殼事件」（Metal Gear Solid 2裡面的鑽油平台事件）之後5年，武裝介入異國油田的約束開始放緩，刺激私人軍事公司Private Military Companies（PMCs）為了商業目的去進行代理戰爭，使得戰爭成為世界上的一種嶄新經濟體系。當時世界上存在著五大PMCs，分別是Praying Mantis/禱念螳螂（英國）、оцелотовая хватка/山貓鉤爪（俄羅斯）、Werewolf/狼人軍團（美國）、 Pieuvre Armement/武裝章魚（法國）、以及Raven Sword/渡鴉之劍（美國），但事實上這五大PMC背後的母公司是液體山貓所擁有的「世外方舟」（Outer Haven）。將奈米機械植入士兵體內後則對於加強士兵的管理、戰鬥能力、以及忠誠作用顯著，戰場上使用的士兵奈米機械管理系統稱為「愛國者之子」（Sons of the Patriots：SOP）。液體山貓欲利用破壞SOP引發起一場武裝破壞，且「世外方舟」已經積聚了可與美國政府匹敵的力量，世界即將落入危機，於是故事在羅伊坎貝爾請求老蛇進入中東抹殺液體山貓展開了序幕……遊戲任務在五個地方進行：中東，南美，東歐，夏德莫榭斯島，以及戰艦「Outer Haven」。　\r\n\r\n    第一章：液體的太陽/ACT.1：Liquid Sun\r\n    第二章：固體的太陽/ACT.2：Solid Sun\r\n    第三章：第三的太陽/ACT.3：Third Sun\r\n    第四章：雙子的太陽/ACT.4：Twins Sun\r\n    第五章：老雄的太陽/ACT.5：Old Sun\r\n    第六章：赤裸的太陽/ACT.6：Naked Sun\r\n    尾聲：赤裸的原罪/Epilogue：Naked Sin', 'a:1:{i:0;s:1:"8";}', 0, 0, 161, 261, 33, 14, 8, 0, 0, 'q', 0, 0, 0),
        (15, 3, 'Chronicle', '', '', 1, 1216086051, '9b/f3/15_g5Apf.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|发售日期= 2001-12-30\r\n|价格= \r\n|播放时长= \r\n|录音= \r\n|碟片数量= 2\r\n|艺术家= Sound Horizon\r\n}}', '2001年12月,这张CD在ComicMarket61上以同人音乐《CIRCLE》 发表.\r\n全曲无演唱.以朴素的音符首次传递出Chronicle的理念.\r\n\r\n由于年代久远的关系,这张CD早已绝版,现在可以找到应该是重制版本(也很难找…)', '', 0, 0, 28, 388, 10, 3, 0, 0, 0, 'c', 0, 0, 0),
@@ -3430,12 +2943,6 @@ UNLOCK TABLES;
 
 
 
-
-
---
--- Dumping data for table `chii_episodes`
---
--- WHERE:  ep_subject_id <= 20 and ep_subject_id != 2
 
 LOCK TABLES `chii_episodes` WRITE;
 /*!40000 ALTER TABLE `chii_episodes`
@@ -3652,7 +3159,6 @@ VALUES (522, 8, 1, 0, 0, '魔神 が 目覚める 日', '魔王的苏醒之日',
 UNLOCK TABLES;
 
 
--- Dump completed on 2021-12-16  8:29:05
 LOCK TABLES `chii_subjects` WRITE;
 
 REPLACE INTO `chii_subjects`
@@ -6903,15 +6409,6 @@ VALUES (1, '1', 'nickname 1', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 1', '', 
        (534587, '534587', 'nickname 534587', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 534587', '', ''),
        (546484, '546484', 'nickname 546484', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 546484', '', ''),
        (617229, '617229', 'nickname 617229', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 617229', '', '');
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_collects`
---
-
 INSERT INTO `chii_person_collects` (`prsn_clt_id`, `prsn_clt_cat`, `prsn_clt_mid`, `prsn_clt_uid`, `prsn_clt_dateline`)
 VALUES (1, 'crt', 706, 1, 1296495506),
        (2, 'crt', 3, 1, 1296495535),
@@ -6961,14 +6458,6 @@ VALUES (1, 'crt', 706, 1, 1296495506),
 
 
 
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_interests`
---
 
 INSERT INTO `chii_subject_interests` (`interest_id`, `interest_uid`, `interest_subject_id`, `interest_subject_type`, `interest_rate`, `interest_type`, `interest_has_comment`, `interest_comment`, `interest_tag`, `interest_ep_status`, `interest_vol_status`, `interest_wish_dateline`, `interest_doing_dateline`, `interest_collect_dateline`, `interest_on_hold_dateline`, `interest_dropped_dateline`, `interest_lasttouch`, `interest_private`)
 VALUES (17325702, 382951, 8, 2, 0, 2, 1, 'test comment', 'SUNRISE ', 23, 0, 0, 0, 1639569348, 0, 0, 1639569371, 0),
