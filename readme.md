@@ -48,7 +48,7 @@ pip install -r requirements.txt
 #### 步骤
 1. 把sql文件放到对应目录
 2. 更新[./sql_script_load_order.txt](sql_script_load_order.txt)
-3. 更新[./test.py](test.py#L55)，如果添加了新表
+3. 更新[./test.py](test.py#L59)，如果添加了新表
 
 #### 测试
 ```shell
