@@ -1,15 +1,3 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_crt_cast_index`
---
--- WHERE:  prsn_id <= 10 OR subject_id <= 20 OR crt_id <= 10
-
 LOCK TABLES `chii_crt_cast_index` WRITE;
 /*!40000 ALTER TABLE `chii_crt_cast_index`
     DISABLE KEYS */;
@@ -433,4 +421,3 @@ VALUES (32, 3862, 12, 2, ''),
 UNLOCK TABLES;
 
 
--- Dump completed on 2021-12-16 11:19:53

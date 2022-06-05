@@ -1,15 +1,3 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_persons`
---
--- WHERE:  prsn_ban != 0 ORDER BY prsn_id LIMIT 3
-
 LOCK TABLES `chii_persons` WRITE;
 
 REPLACE INTO `chii_persons`
@@ -20,4 +8,3 @@ VALUES (153, '葉月九ロウ', 1, '{{Infobox Crt\n|性别= 男\n|别名={\n[纯
 UNLOCK TABLES;
 
 
--- Dump completed on 2021-12-16  9:19:20

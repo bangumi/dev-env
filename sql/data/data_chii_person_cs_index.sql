@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 06, 2021 at 02:22 PM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_cs_index`
---
-
 INSERT INTO `chii_person_cs_index` (`prsn_type`, `prsn_id`, `prsn_position`, `subject_id`, `subject_type_id`, `summary`, `prsn_appear_eps`)
 VALUES ('prsn', 1, 1001, 4, 4, '', ''),
        ('prsn', 1, 1002, 500, 4, '', ''),

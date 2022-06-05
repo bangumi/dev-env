@@ -11,23 +11,13 @@ CREATE TABLE IF NOT EXISTS `chii_ep_revisions`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_ep_revisions`
---
+
 ALTER TABLE `chii_ep_revisions`
     ADD PRIMARY KEY (`ep_rev_id`),
     ADD KEY `rev_sid` (`rev_sid`, `rev_creator`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_ep_revisions`
---
+
 ALTER TABLE `chii_ep_revisions`
     MODIFY `ep_rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

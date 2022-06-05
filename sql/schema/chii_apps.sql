@@ -15,21 +15,15 @@ CREATE TABLE IF NOT EXISTS `chii_apps`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
---
--- Indexes for table `chii_apps`
---
+
+
 ALTER TABLE `chii_apps`
     ADD PRIMARY KEY (`app_id`),
     ADD KEY `app_type` (`app_type`, `app_creator`),
     ADD KEY `app_ban` (`app_ban`),
     ADD KEY `app_status` (`app_status`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_apps`
---
+
 ALTER TABLE `chii_apps`
     MODIFY `app_id` mediumint(8) NOT NULL AUTO_INCREMENT;

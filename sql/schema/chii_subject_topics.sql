@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_topics`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subject_topics`
 (
     `sbj_tpc_id`         mediumint(8) unsigned             NOT NULL,
@@ -22,13 +12,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_topics`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_topics`
---
+
 ALTER TABLE `chii_subject_topics`
     ADD PRIMARY KEY (`sbj_tpc_id`),
     ADD KEY `tpc_subject_id` (`sbj_tpc_subject_id`),
@@ -36,12 +21,7 @@ ALTER TABLE `chii_subject_topics`
     ADD KEY `sbj_tpc_uid` (`sbj_tpc_uid`),
     ADD KEY `sbj_tpc_lastpost` (`sbj_tpc_lastpost`, `sbj_tpc_subject_id`, `sbj_tpc_display`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_topics`
---
+
 ALTER TABLE `chii_subject_topics`
     MODIFY `sbj_tpc_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

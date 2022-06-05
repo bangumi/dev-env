@@ -1,12 +1,3 @@
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_fields`
---
-
 INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES ('crt', 1, 1, 0, 0000, 12, 5),
        ('prsn', 1, 2, 0, 1980, 1, 21),

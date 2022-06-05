@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_episodes`
---
-
 CREATE TABLE IF NOT EXISTS `chii_episodes`
 (
     `ep_id`         mediumint(8) unsigned NOT NULL,
@@ -31,13 +21,8 @@ CREATE TABLE IF NOT EXISTS `chii_episodes`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_episodes`
---
+
 ALTER TABLE `chii_episodes`
     ADD PRIMARY KEY (`ep_id`),
     ADD KEY `ep_sort` (`ep_sort`),
@@ -47,12 +32,7 @@ ALTER TABLE `chii_episodes`
     ADD KEY `ep_ban` (`ep_ban`),
     ADD KEY `ep_subject_id_2` (`ep_subject_id`, `ep_ban`, `ep_sort`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_episodes`
---
+
 ALTER TABLE `chii_episodes`
     MODIFY `ep_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

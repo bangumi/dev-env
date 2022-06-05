@@ -9,11 +9,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_ep_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_ep_comments`
 (
@@ -26,11 +22,7 @@ CREATE TABLE IF NOT EXISTS `chii_ep_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_group_posts`
---
 
 CREATE TABLE IF NOT EXISTS `chii_group_posts`
 (
@@ -44,11 +36,7 @@ CREATE TABLE IF NOT EXISTS `chii_group_posts`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_prsn_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_prsn_comments`
 (
@@ -61,11 +49,7 @@ CREATE TABLE IF NOT EXISTS `chii_prsn_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_posts`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_posts`
 (
@@ -79,81 +63,63 @@ CREATE TABLE IF NOT EXISTS `chii_subject_posts`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_crt_comments`
---
+
 ALTER TABLE `chii_crt_comments`
     ADD PRIMARY KEY (`crt_pst_id`),
     ADD KEY `cmt_crt_id` (`crt_pst_mid`),
     ADD KEY `crt_pst_related` (`crt_pst_related`),
     ADD KEY `crt_pst_uid` (`crt_pst_uid`);
 
---
--- Indexes for table `chii_ep_comments`
---
+
+
 ALTER TABLE `chii_ep_comments`
     ADD PRIMARY KEY (`ep_pst_id`),
     ADD KEY `ep_cmt_crt_id` (`ep_pst_mid`),
     ADD KEY `ep_pst_related` (`ep_pst_related`),
     ADD KEY `ep_pst_uid` (`ep_pst_uid`);
 
---
--- Indexes for table `chii_group_posts`
---
+
+
 ALTER TABLE `chii_group_posts`
     ADD PRIMARY KEY (`grp_pst_id`),
     ADD KEY `pss_topic_id` (`grp_pst_mid`),
     ADD KEY `grp_pst_related` (`grp_pst_related`),
     ADD KEY `grp_pst_uid` (`grp_pst_uid`);
 
---
--- Indexes for table `chii_prsn_comments`
---
+
+
 ALTER TABLE `chii_prsn_comments`
     ADD PRIMARY KEY (`prsn_pst_id`),
     ADD KEY `cmt_prsn_id` (`prsn_pst_mid`),
     ADD KEY `prsn_pst_related` (`prsn_pst_related`),
     ADD KEY `prsn_pst_uid` (`prsn_pst_uid`);
 
---
--- Indexes for table `chii_subject_posts`
---
+
+
 ALTER TABLE `chii_subject_posts`
     ADD PRIMARY KEY (`sbj_pst_id`),
     ADD KEY `pss_topic_id` (`sbj_pst_mid`),
     ADD KEY `sbj_pst_related` (`sbj_pst_related`),
     ADD KEY `sbj_pst_uid` (`sbj_pst_uid`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_crt_comments`
---
+
 ALTER TABLE `chii_crt_comments`
     MODIFY `crt_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_ep_comments`
---
+
+
 ALTER TABLE `chii_ep_comments`
     MODIFY `ep_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_group_posts`
---
+
+
 ALTER TABLE `chii_group_posts`
     MODIFY `grp_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_prsn_comments`
---
+
+
 ALTER TABLE `chii_prsn_comments`
     MODIFY `prsn_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_subject_posts`
---
+
+
 ALTER TABLE `chii_subject_posts`
     MODIFY `sbj_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

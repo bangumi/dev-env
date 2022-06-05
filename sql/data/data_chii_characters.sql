@@ -1,12 +1,3 @@
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_characters`
---
-
 INSERT INTO `chii_characters` (`crt_id`, `crt_name`, `crt_role`, `crt_infobox`, `crt_summary`, `crt_img`, `crt_comment`, `crt_collects`, `crt_dateline`, `crt_lastpost`, `crt_lock`, `crt_img_anidb`, `crt_anidb_id`, `crt_ban`, `crt_redirect`, `crt_nsfw`)
 VALUES (1, 'ルルーシュ・ランペルージ', 1, '{{Infobox Crt\r\n|简体中文名= 鲁路修·兰佩路基\r\n|别名={\r\n[L.L.]\r\n[勒鲁什]\r\n[鲁鲁修]\r\n[ゼロ]\r\n[Zero]\r\n[英文名|Lelouch Lamperouge]\r\n[第二中文名|鲁路修·冯·布里塔尼亚]\r\n[英文名二|Lelouch Vie Britannia]\r\n[日文名|ルルーシュ・ヴィ・ブリタニア]\r\n[纯假名|]\r\n[罗马字|]\r\n[昵称|]\r\n[其他名义|]\r\n}\r\n|性别= 男\r\n|生日= 12月5日\r\n|血型= A型\r\n|身高= 178cm→181cm\r\n|体重= 54kg\r\n|BWH= \r\n|引用来源= Wikipedia\r\n}}', '鲁路修·兰佩洛基是日本动画《Code Geass 反叛的鲁路修》中的主角。\r\n\r\n一年前的东京攻略战中，黑色骑士团因为首领Zero的离开而最终战败。之后一年间，鲁路修的Geass能力被人封印而平静的生活在阿什弗德学园，在第二季开头，鲁路修重新与C.C相遇之后，Geass封印被解开，鲁路修也恢复了记忆。\r\n一年前最后的神根岛之战，鲁路修被朱雀制服，并被押到其父不列颠皇帝面前，被皇帝施以Geass封印一切记忆。\r\n封印解除之后，Geass能力恢复到封印之前的状态，依然暴走，无法关闭，为了防止尤菲米雅的悲剧再次上演，C.C给了鲁路修特制的隐形眼镜来应对暴走的Geass能力。', '7b/3a/1_crt_8V556.jpg?r=1603459589', 111, 667, 0, 1638705672, 0, '', 0, 0, 0, 0),
        (2, '枢木スザク', 1, '{{Infobox Crt\r\n|简体中文名= 枢木朱雀\r\n|别名={\r\n[第二中文名|白色骑士]\r\n[英文名|Knight of Seven]\r\n[日文名|枢木 スザク]\r\n[纯假名|くるるぎ スザク]\r\n[罗马字|Kururugi Suzaku]\r\n[昵称|]\r\n}\r\n|性别= 男\r\n|生日= 皇历2000年7月10日\r\n|血型= O型\r\n|身高= 176cm→179cm\r\n|体重= 58kg\r\n|BWH= \r\n|引用来源={\r\n}\r\n}}', '在第一季的最后，驾驶兰斯洛特向Zero展开了大报复，于战场上活跃，被柯内莉娅晋升为骑士侯。最后在神根岛和鲁路修对决中。从V.V处得知了Geass能力的实质。\r\n第二季中，朱雀进入了皇帝直属的亲卫队“Knight of Rounds”，是排名第七位的骑士。现在作为皇帝的直属骑士，奔走于世界各地。因为年龄相近，和骑士阿妮娅和基诺关系不错，朱雀是第一位出身Number的“Knight of Rounds”骑士。\r\n在一年前的神根岛之战的最后，朱雀制服鲁路修，并把他押送到不列颠皇帝面前，因此功绩主动向皇帝申请加入皇帝亲卫队圆桌骑士团，获准。目前转战于不列颠帝国对EU的欧洲战场前线，在波尔多（Bordeaux）地区大破EU方面的德意志、法国、荷兰、意大利联合部队。\r\n现在，再次以学生身份回到了11区阿什弗德学园，最终目的是为了得到圆桌骑士NO.1位置，得到并建立行政特区“日本”。', '6f/40/2_crt_08diJ.jpg?r=1581939778', 86, 112, 0, 1638458451, 0, '', 0, 0, 0, 0),

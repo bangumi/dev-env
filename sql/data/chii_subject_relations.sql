@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.4.15.1
--- http://www.phpmyadmin.net
---
--- Host: 192.168.201.71
--- Generation Time: Dec 08, 2021 at 06:56 AM
--- Server version: 5.7.33-0ubuntu0.16.04.1-log
--- PHP Version: 5.5.9-1ubuntu4.29
-
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_relations`
---
-
 INSERT INTO `chii_subject_relations` (`rlt_subject_id`, `rlt_subject_type_id`, `rlt_relation_type`, `rlt_related_subject_id`, `rlt_related_subject_type_id`, `rlt_vice_versa`, `rlt_order`)
 VALUES (1, 1, 1, 296317, 4, 1, 0),
        (4, 4, 4002, 9944, 4, 1, 0),

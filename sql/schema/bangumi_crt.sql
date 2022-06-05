@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_characters`
---
-
 CREATE TABLE IF NOT EXISTS `chii_characters`
 (
     `crt_id`        mediumint(8) unsigned                NOT NULL,
@@ -30,11 +20,7 @@ CREATE TABLE IF NOT EXISTS `chii_characters`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_crt_cast_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_crt_cast_index`
 (
@@ -47,11 +33,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_cast_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_crt_subject_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_crt_subject_index`
 (
@@ -65,11 +47,7 @@ CREATE TABLE IF NOT EXISTS `chii_crt_subject_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_persons`
---
 
 CREATE TABLE IF NOT EXISTS `chii_persons`
 (
@@ -100,11 +78,7 @@ CREATE TABLE IF NOT EXISTS `chii_persons`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='（现实）人物表';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_alias`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_alias`
 (
@@ -117,11 +91,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_alias`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_collects`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_collects`
 (
@@ -133,11 +103,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_collects`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='人物收藏';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_cs_index`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_cs_index`
 (
@@ -152,11 +118,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_cs_index`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='subjects'' credits/creator & staff (c&s)index';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_fields`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_fields`
 (
@@ -171,11 +133,7 @@ CREATE TABLE IF NOT EXISTS `chii_person_fields`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_person_relationship`
---
 
 CREATE TABLE IF NOT EXISTS `chii_person_relationship`
 (
@@ -188,40 +146,32 @@ CREATE TABLE IF NOT EXISTS `chii_person_relationship`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_characters`
---
+
 ALTER TABLE `chii_characters`
     ADD PRIMARY KEY (`crt_id`),
     ADD KEY `crt_role` (`crt_role`),
     ADD KEY `crt_lock` (`crt_lock`),
     ADD KEY `crt_ban` (`crt_ban`);
 
---
--- Indexes for table `chii_crt_cast_index`
---
+
+
 ALTER TABLE `chii_crt_cast_index`
     ADD PRIMARY KEY (`crt_id`, `prsn_id`, `subject_id`),
     ADD KEY `prsn_id` (`prsn_id`),
     ADD KEY `subject_id` (`subject_id`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_crt_subject_index`
---
+
+
 ALTER TABLE `chii_crt_subject_index`
     ADD PRIMARY KEY (`crt_id`, `subject_id`),
     ADD KEY `subject_id` (`subject_id`),
     ADD KEY `crt_type` (`crt_type`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_persons`
---
+
+
 ALTER TABLE `chii_persons`
     ADD PRIMARY KEY (`prsn_id`),
     ADD KEY `prsn_type` (`prsn_type`),
@@ -235,25 +185,22 @@ ALTER TABLE `chii_persons`
     ADD KEY `prsn_ban` (`prsn_ban`),
     ADD KEY `prsn_actor` (`prsn_actor`);
 
---
--- Indexes for table `chii_person_alias`
---
+
+
 ALTER TABLE `chii_person_alias`
     ADD KEY `prsn_cat` (`prsn_cat`, `prsn_id`),
     ADD KEY `prsn_id` (`prsn_id`);
 
---
--- Indexes for table `chii_person_collects`
---
+
+
 ALTER TABLE `chii_person_collects`
     ADD PRIMARY KEY (`prsn_clt_id`),
     ADD KEY `prsn_clt_cat` (`prsn_clt_cat`, `prsn_clt_mid`),
     ADD KEY `prsn_clt_uid` (`prsn_clt_uid`),
     ADD KEY `prsn_clt_mid` (`prsn_clt_mid`);
 
---
--- Indexes for table `chii_person_cs_index`
---
+
+
 ALTER TABLE `chii_person_cs_index`
     ADD PRIMARY KEY (`prsn_type`, `prsn_id`, `subject_id`, `prsn_position`),
     ADD KEY `subject_id` (`subject_id`),
@@ -261,36 +208,27 @@ ALTER TABLE `chii_person_cs_index`
     ADD KEY `prsn_id` (`prsn_id`),
     ADD KEY `subject_type_id` (`subject_type_id`);
 
---
--- Indexes for table `chii_person_fields`
---
+
+
 ALTER TABLE `chii_person_fields`
     ADD PRIMARY KEY (`prsn_cat`, `prsn_id`),
     ADD KEY `prsn_id` (`prsn_id`);
 
---
--- Indexes for table `chii_person_relationship`
---
+
+
 ALTER TABLE `chii_person_relationship`
     ADD KEY `prsn_type` (`prsn_type`, `prsn_id`),
     ADD KEY `relat_prsn_type` (`relat_prsn_type`, `relat_prsn_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_characters`
---
+
 ALTER TABLE `chii_characters`
     MODIFY `crt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_persons`
---
+
+
 ALTER TABLE `chii_persons`
     MODIFY `prsn_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_person_collects`
---
+
+
 ALTER TABLE `chii_person_collects`
     MODIFY `prsn_clt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

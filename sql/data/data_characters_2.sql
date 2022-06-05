@@ -1,15 +1,3 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
--- ------------------------------------------------------
--- Server version	5.7.33-0ubuntu0.16.04.1-log
-
-
---
--- Dumping data for table `chii_characters`
---
--- WHERE:  crt_ban != 0 ORDER BY crt_id LIMIT 3
-
 LOCK TABLES `chii_characters` WRITE;
 /*!40000 ALTER TABLE `chii_characters`
     DISABLE KEYS */;

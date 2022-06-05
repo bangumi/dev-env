@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_group_topics`
---
-
 CREATE TABLE IF NOT EXISTS `chii_group_topics`
 (
     `grp_tpc_id`       mediumint(8) unsigned NOT NULL,
@@ -22,13 +12,8 @@ CREATE TABLE IF NOT EXISTS `chii_group_topics`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_group_topics`
---
+
 ALTER TABLE `chii_group_topics`
     ADD PRIMARY KEY (`grp_tpc_id`),
     ADD KEY `grp_tpc_gid` (`grp_tpc_gid`),
@@ -36,12 +21,7 @@ ALTER TABLE `chii_group_topics`
     ADD KEY `grp_tpc_uid` (`grp_tpc_uid`),
     ADD KEY `grp_tpc_lastpost` (`grp_tpc_lastpost`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_group_topics`
---
+
 ALTER TABLE `chii_group_topics`
     MODIFY `grp_tpc_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

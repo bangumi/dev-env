@@ -9,7 +9,7 @@
 ```bash
 git clone https://github.com/bangumi/dev-env.git bangumi-dev-env
 cd bangumi-dev-env
-docker-compose up --build -d
+docker-compose up build -d
 ```
 
 mysql容器的内置数据位于 [./sql](sql) 文件夹内，
@@ -27,7 +27,7 @@ git pull
 bash scripts/reload.sh
 ```
 
----
+-
 
 ## 开发
 
@@ -59,6 +59,6 @@ docker-compose down -v
 sudo rm -rf ./data
 
 # 测试
-docker-compose up --build -d
+docker-compose up build -d
 python test.py # 需要等docker container准备完成
 ```

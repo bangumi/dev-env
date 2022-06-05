@@ -1,9 +1,3 @@
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_index`
---
-
 CREATE TABLE IF NOT EXISTS `chii_index`
 (
     `idx_id`            mediumint(8)          NOT NULL COMMENT '自动id',
@@ -21,11 +15,7 @@ CREATE TABLE IF NOT EXISTS `chii_index`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_collects`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_collects`
 (
@@ -36,11 +26,7 @@ CREATE TABLE IF NOT EXISTS `chii_index_collects`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='目录收藏';
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_comments`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_comments`
 (
@@ -53,11 +39,7 @@ CREATE TABLE IF NOT EXISTS `chii_index_comments`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_index_related`
---
 
 CREATE TABLE IF NOT EXISTS `chii_index_related`
 (
@@ -72,13 +54,8 @@ CREATE TABLE IF NOT EXISTS `chii_index_related`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8 COMMENT ='目录关联表';
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_index`
---
+
 ALTER TABLE `chii_index`
     ADD UNIQUE KEY `mid` (`idx_id`),
     ADD KEY `idx_ban` (`idx_ban`),
@@ -86,25 +63,22 @@ ALTER TABLE `chii_index`
     ADD KEY `idx_uid` (`idx_uid`),
     ADD KEY `idx_collects` (`idx_collects`);
 
---
--- Indexes for table `chii_index_collects`
---
+
+
 ALTER TABLE `chii_index_collects`
     ADD PRIMARY KEY (`idx_clt_id`),
     ADD KEY `idx_clt_mid` (`idx_clt_mid`, `idx_clt_uid`);
 
---
--- Indexes for table `chii_index_comments`
---
+
+
 ALTER TABLE `chii_index_comments`
     ADD PRIMARY KEY (`idx_pst_id`),
     ADD KEY `idx_pst_mid` (`idx_pst_mid`),
     ADD KEY `idx_pst_related` (`idx_pst_related`),
     ADD KEY `idx_pst_uid` (`idx_pst_uid`);
 
---
--- Indexes for table `chii_index_related`
---
+
+
 ALTER TABLE `chii_index_related`
     ADD PRIMARY KEY (`idx_rlt_id`),
     ADD KEY `idx_rlt_rid` (`idx_rlt_rid`, `idx_rlt_type`),
@@ -113,27 +87,19 @@ ALTER TABLE `chii_index_related`
     ADD KEY `idx_rlt_cat` (`idx_rlt_cat`),
     ADD KEY `idx_order` (`idx_rlt_rid`, `idx_rlt_cat`, `idx_rlt_order`, `idx_rlt_sid`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_index`
---
+
 ALTER TABLE `chii_index`
     MODIFY `idx_id` mediumint(8) NOT NULL AUTO_INCREMENT COMMENT '自动id';
---
--- AUTO_INCREMENT for table `chii_index_collects`
---
+
+
 ALTER TABLE `chii_index_collects`
     MODIFY `idx_clt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_index_comments`
---
+
+
 ALTER TABLE `chii_index_comments`
     MODIFY `idx_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_index_related`
---
+
+
 ALTER TABLE `chii_index_related`
     MODIFY `idx_rlt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

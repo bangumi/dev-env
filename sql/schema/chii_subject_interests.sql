@@ -1,12 +1,3 @@
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_interests`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subject_interests`
 (
     `interest_id`               int(10) unsigned      NOT NULL,
@@ -30,13 +21,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_interests`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_interests`
---
+
 ALTER TABLE `chii_subject_interests`
     ADD PRIMARY KEY (`interest_id`),
     ADD UNIQUE KEY `user_interest` (`interest_uid`, `interest_subject_id`),
@@ -62,12 +48,7 @@ ALTER TABLE `chii_subject_interests`
     ADD KEY `interest_type_2` (`interest_type`, `interest_uid`),
     ADD KEY `interest_uid_2` (`interest_uid`, `interest_private`, `interest_lasttouch`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_interests`
---
+
 ALTER TABLE `chii_subject_interests`
     MODIFY `interest_id` int(10) unsigned NOT NULL AUTO_INCREMENT;

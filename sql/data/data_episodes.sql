@@ -1,9 +1,3 @@
-
---
--- Dumping data for table `chii_episodes`
---
--- WHERE:  ep_subject_id <= 20 and ep_subject_id != 2
-
 LOCK TABLES `chii_episodes` WRITE;
 /*!40000 ALTER TABLE `chii_episodes`
     DISABLE KEYS */;
@@ -219,4 +213,3 @@ VALUES (522, 8, 1, 0, 0, '魔神 が 目覚める 日', '魔王的苏醒之日',
 UNLOCK TABLES;
 
 
--- Dump completed on 2021-12-16  8:29:05

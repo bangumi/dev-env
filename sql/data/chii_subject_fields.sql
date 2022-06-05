@@ -1,11 +1,3 @@
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_subject_fields`
---
-
 INSERT INTO `chii_subject_fields` (`field_sid`, `field_tid`, `field_tags`, `field_rate_1`, `field_rate_2`, `field_rate_3`, `field_rate_4`, `field_rate_5`, `field_rate_6`, `field_rate_7`, `field_rate_8`, `field_rate_9`, `field_rate_10`, `field_airtime`, `field_rank`, `field_year`, `field_mon`, `field_week_day`, `field_date`, `field_redirect`)
 VALUES (1, 1,
         'a:18:{i:0;a:2:{s:8:"tag_name";s:9:"痞子蔡";s:6:"result";s:2:"23";}i:1;a:2:{s:8:"tag_name";s:9:"蔡智恒";s:6:"result";s:2:"11";}i:2;a:2:{s:8:"tag_name";s:6:"爱情";s:6:"result";s:2:"10";}i:3;a:2:{s:8:"tag_name";s:12:"轻舞飞扬";s:6:"result";s:2:"10";}i:4;a:2:{s:8:"tag_name";s:6:"小说";s:6:"result";s:1:"9";}i:5;a:2:{s:8:"tag_name";s:6:"台湾";s:6:"result";s:1:"8";}i:6;a:2:{s:8:"tag_name";s:9:"三次元";s:6:"result";s:1:"5";}i:7;a:2:{s:8:"tag_name";s:6:"经典";s:6:"result";s:1:"5";}i:8;a:2:{s:8:"tag_name";s:6:"国产";s:6:"result";s:1:"4";}i:9;a:2:{s:8:"tag_name";s:6:"网络";s:6:"result";s:1:"2";}i:10;a:2:{s:8:"tag_name";s:12:"网络小说";s:6:"result";s:1:"2";}i:11;a:2:{s:8:"tag_name";s:4:"1999";s:6:"result";s:1:"2";}i:12;a:2:{s:8:"tag_name";s:3:"国";s:6:"result";s:1:"1";}i:13;a:2:{s:8:"tag_name";s:2:"NN";s:6:"result";s:1:"1";}i:14;a:2:{s:8:"tag_name";s:6:"网文";s:6:"result";s:1:"1";}i:15;a:2:{s:8:"tag_name";s:9:"少女系";s:6:"result";s:1:"1";}i:16;a:2:{s:8:"tag_name";s:6:"书籍";s:6:"result";s:1:"1";}i:17;a:2:{s:8:"tag_name";s:6:"小説";s:6:"result";s:1:"1";}}',

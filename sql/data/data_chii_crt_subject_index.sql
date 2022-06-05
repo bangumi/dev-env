@@ -1,12 +1,3 @@
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_crt_subject_index`
---
-
 INSERT INTO `chii_crt_subject_index` (`crt_id`, `subject_id`, `subject_type_id`, `crt_type`, `ctr_appear_eps`, `crt_order`)
 VALUES (1, 8, 2, 1, '', 1),
        (1, 793, 2, 1, '', 1),

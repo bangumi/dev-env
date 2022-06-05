@@ -1,12 +1,3 @@
-
---
--- Database: `bangumi`
---
-
---
--- Dumping data for table `chii_person_collects`
---
-
 INSERT INTO `chii_person_collects` (`prsn_clt_id`, `prsn_clt_cat`, `prsn_clt_mid`, `prsn_clt_uid`, `prsn_clt_dateline`)
 VALUES (1, 'crt', 706, 1, 1296495506),
        (2, 'crt', 3, 1, 1296495535),

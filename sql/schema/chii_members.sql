@@ -10,11 +10,6 @@ CREATE TABLE IF NOT EXISTS chii_memberfields
   DEFAULT CHARSET = utf8mb4;
 
 
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_members`
---
 
 CREATE TABLE IF NOT EXISTS chii_members
 (

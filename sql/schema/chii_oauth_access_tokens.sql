@@ -1,9 +1,3 @@
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_oauth_access_tokens`
---
-
 CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens`
 (
     `id`           mediumint(8)                        NOT NULL,
@@ -18,24 +12,14 @@ CREATE TABLE IF NOT EXISTS `chii_oauth_access_tokens`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_oauth_access_tokens`
---
+
 ALTER TABLE `chii_oauth_access_tokens`
     ADD PRIMARY KEY (`id`),
     ADD UNIQUE KEY `access_token` (`access_token`) USING BTREE,
     ADD KEY `type` (`type`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_oauth_access_tokens`
---
+
 ALTER TABLE `chii_oauth_access_tokens`
     MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;

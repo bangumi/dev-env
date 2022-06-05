@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subject_revisions`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subject_revisions`
 (
     `rev_id`            mediumint(8) unsigned NOT NULL,
@@ -27,13 +17,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_revisions`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subject_revisions`
---
+
 ALTER TABLE `chii_subject_revisions`
     ADD PRIMARY KEY (`rev_id`),
     ADD KEY `rev_subject_id` (`rev_subject_id`, `rev_creator`),
@@ -41,12 +26,7 @@ ALTER TABLE `chii_subject_revisions`
     ADD KEY `rev_dateline` (`rev_dateline`),
     ADD KEY `rev_creator` (`rev_creator`, `rev_id`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subject_revisions`
---
+
 ALTER TABLE `chii_subject_revisions`
     MODIFY `rev_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;

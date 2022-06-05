@@ -1,13 +1,3 @@
---
--- Database: `bangumi`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chii_subjects`
---
-
 CREATE TABLE IF NOT EXISTS `chii_subjects`
 (
     `subject_id`           mediumint(8) unsigned NOT NULL,
@@ -38,11 +28,7 @@ CREATE TABLE IF NOT EXISTS `chii_subjects`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_alias`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_alias`
 (
@@ -54,11 +40,7 @@ CREATE TABLE IF NOT EXISTS `chii_subject_alias`
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_fields`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_fields`
 (
@@ -85,11 +67,7 @@ CREATE TABLE IF NOT EXISTS `chii_subject_fields`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `chii_subject_relations`
---
 
 CREATE TABLE IF NOT EXISTS `chii_subject_relations`
 (
@@ -104,13 +82,8 @@ CREATE TABLE IF NOT EXISTS `chii_subject_relations`
   DEFAULT CHARSET = utf8
   COLLATE = utf8_unicode_ci COMMENT ='条目关联表';
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `chii_subjects`
---
+
 ALTER TABLE `chii_subjects`
     ADD PRIMARY KEY (`subject_id`),
     ADD KEY `subject_name_cn` (`subject_name_cn`),
@@ -127,15 +100,13 @@ ALTER TABLE `chii_subjects`
     ADD KEY `browser` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`) USING BTREE,
     ADD KEY `subject_nsfw` (`subject_nsfw`);
 
---
--- Indexes for table `chii_subject_alias`
---
+
+
 ALTER TABLE `chii_subject_alias`
     ADD KEY `subject_id` (`subject_id`);
 
---
--- Indexes for table `chii_subject_fields`
---
+
+
 ALTER TABLE `chii_subject_fields`
     ADD PRIMARY KEY (`field_sid`),
     ADD KEY `sort_id` (`field_tid`),
@@ -146,26 +117,19 @@ ALTER TABLE `chii_subject_fields`
     ADD KEY `field_year` (`field_year`),
     ADD KEY `query_date` (`field_sid`, `field_date`);
 
---
--- Indexes for table `chii_subject_relations`
---
+
+
 ALTER TABLE `chii_subject_relations`
     ADD UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`, `rlt_related_subject_id`, `rlt_vice_versa`),
     ADD KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`, `rlt_order`),
     ADD KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
     ADD KEY `rlt_relation_type` (`rlt_relation_type`, `rlt_subject_id`, `rlt_related_subject_id`) USING BTREE;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `chii_subjects`
---
+
 ALTER TABLE `chii_subjects`
     MODIFY `subject_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `chii_subject_fields`
---
+
+
 ALTER TABLE `chii_subject_fields`
     MODIFY `field_sid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
