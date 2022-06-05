@@ -7,6 +7,7 @@ services:
       dockerfile: db.Dockerfile
     ports:
       - '3306:3306'
+    command: --sql-mode=""
     restart: unless-stopped
     volumes:
       - ./data/mysql:/var/lib/mysql
