@@ -62,31 +62,3 @@ sudo rm -rf ./data
 docker-compose up --build -d
 python test.py # 需要等docker container准备完成
 ```
-
-#### Notes
-* sql文件需要设定encoding
-```sql
-
-
-
-
-
-
-
-
-
-
-
-
--- sql body
-
-
-
-
-
-
-
-
-
- 
-```
