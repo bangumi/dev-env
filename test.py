@@ -11,7 +11,7 @@ def main():
     with open("./docker-compose.yaml", "r", encoding="utf8") as f:
         compose = yaml.safe_load(f.read())
 
-    with open("./sql_script_load_order.txt", 'r') as f:
+    with open("./sql_script_load_order.txt", "r") as f:
         sql_scripts = f.readlines()
         sql_scripts = [line.rstrip() for line in sql_scripts]
 
@@ -38,7 +38,9 @@ def check_sql_scripts(sql_scripts: List[str]):
             ],
             indent=2,
         )
-        raise ValueError(f"sql script ordered in sql_script_load_order.txt but not found in sql/: {view}")
+        raise ValueError(
+            f"sql script ordered in sql_script_load_order.txt but not found in sql/: {view}"
+        )
 
     if current_sql - configured_sql:
         view = json.dumps(
@@ -48,7 +50,9 @@ def check_sql_scripts(sql_scripts: List[str]):
             ],
             indent=2,
         )
-        raise ValueError(f"sql script exists in sql/ but not found in sql_script_load_order.txt: {view}")
+        raise ValueError(
+            f"sql script exists in sql/ but not found in sql_script_load_order.txt: {view}"
+        )
 
 
 def check_tables(container_config: Dict[str, str]):
@@ -56,40 +60,41 @@ def check_tables(container_config: Dict[str, str]):
         "chii_apps",
         "chii_characters",
         "chii_crt_cast_index",
+        "chii_crt_comments",
         "chii_crt_subject_index",
+        "chii_ep_comments",
+        "chii_ep_revisions",
         "chii_episodes",
+        "chii_group_posts",
+        "chii_group_topics",
+        "chii_index",
+        "chii_index_collects",
+        "chii_index_comments",
+        "chii_index_related",
+        "chii_memberfields",
+        "chii_members",
+        "chii_oauth_access_tokens",
         "chii_oauth_clients",
+        "chii_os_web_sessions",
         "chii_person_alias",
         "chii_person_collects",
         "chii_person_cs_index",
         "chii_person_fields",
         "chii_person_relationship",
         "chii_persons",
-        "chii_subjects",
+        "chii_prsn_comments",
+        "chii_rev_history",
+        "chii_rev_text",
         "chii_subject_alias",
         "chii_subject_fields",
         "chii_subject_interests",
-        "chii_subject_relations",
-        "chii_rev_text",
-        "chii_ep_revisions",
-        "chii_usergroup",
-        "chii_ep_comments",
-        "chii_group_posts",
-        "chii_prsn_comments",
         "chii_subject_posts",
-        "chii_group_topics",
-        "chii_crt_comments",
-        "chii_subject_topics",
+        "chii_subject_relations",
         "chii_subject_revisions",
-        "chii_rev_history",
-        "chii_oauth_access_tokens",
-        "chii_members",
-        "chii_memberfields",
-        "chii_index",
-        "chii_index_comments",
-        "chii_index_collects",
-        "chii_index_related",
-        "chii_os_web_sessions"
+        "chii_subject_topics",
+        "chii_subjects",
+        "chii_timeline",
+        "chii_usergroup",
     }
 
     # 打开数据库连接
