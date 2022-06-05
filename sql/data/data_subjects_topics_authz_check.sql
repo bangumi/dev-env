@@ -1,12 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 replace into chii_subjects (`subject_id`, `subject_type_id`, `subject_name`, `subject_name_cn`, `subject_uid`,
                             `subject_creator`, `subject_dateline`, `subject_image`, `subject_platform`, `field_infobox`,
                             `field_summary`, `field_5`, `field_volumes`, `field_eps`, `subject_wish`, `subject_collect`,
@@ -68,6 +59,6 @@ values (132630, 15849, 259867, 0, '我不要你觉得，我要我觉得，我觉
         1612657183);
 
 
-/*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
+
+
+

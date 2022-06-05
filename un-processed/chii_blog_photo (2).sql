@@ -7,14 +7,6 @@
 -- Server version: 5.7.33-0ubuntu0.16.04.1-log
 -- PHP Version: 5.5.9-1ubuntu4.29
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `bangumi`
@@ -26,14 +18,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `chii_blog_photo`
 --
 
-CREATE TABLE IF NOT EXISTS `chii_blog_photo` (
-  `photo_id` mediumint(8) unsigned NOT NULL,
-  `photo_eid` mediumint(8) unsigned NOT NULL,
-  `photo_uid` mediumint(8) unsigned NOT NULL,
-  `photo_target` varchar(255) NOT NULL,
-  `photo_vote` mediumint(8) unsigned NOT NULL,
-  `photo_dateline` int(10) unsigned NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `chii_blog_photo`
+(
+    `photo_id`       mediumint(8) unsigned NOT NULL,
+    `photo_eid`      mediumint(8) unsigned NOT NULL,
+    `photo_uid`      mediumint(8) unsigned NOT NULL,
+    `photo_target`   varchar(255)          NOT NULL,
+    `photo_vote`     mediumint(8) unsigned NOT NULL,
+    `photo_dateline` int(10) unsigned      NOT NULL
+) ENGINE = MyISAM
+  DEFAULT CHARSET = utf8;
 
 --
 -- Indexes for dumped tables
@@ -43,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `chii_blog_photo` (
 -- Indexes for table `chii_blog_photo`
 --
 ALTER TABLE `chii_blog_photo`
-  ADD PRIMARY KEY (`photo_id`),
-  ADD KEY `photo_eid` (`photo_eid`);
+    ADD PRIMARY KEY (`photo_id`),
+    ADD KEY `photo_eid` (`photo_eid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -54,7 +48,7 @@ ALTER TABLE `chii_blog_photo`
 -- AUTO_INCREMENT for table `chii_blog_photo`
 --
 ALTER TABLE `chii_blog_photo`
-  MODIFY `photo_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+    MODIFY `photo_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+
+
+

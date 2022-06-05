@@ -1,27 +1,17 @@
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
 LOCK TABLES `chii_index` WRITE;
-/*!40000 ALTER TABLE `chii_index` DISABLE KEYS */;
-REPLACE INTO `chii_index` VALUES (15045,0,'日本动画最高收视率TOP100','[url]http://www.tudou.com/programs/view/W6eIoxnHs6g/[/url]\r\n有美国动画混入，所以准确的说是在日本播放的动画最高收视率（而且是关东地区的\r\n基本大部分是70年代的，那个年代娱乐贫乏优势真大',8,101,96,'a:1:{i:2;s:3:\"101\";}',1352366596,1356922367,14127,0),(15465,0,'このマンガを読め! / 这本漫画必读！ 2005-2015历年top10','「[url=http://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%82%AC%E3%82%92%E8%AA%AD%E3%82%81!]このマンガを読め![/url]」はフリースタイルから発行されている年刊の漫画ガイド本である。2004年12月発行開始。現在は独立した刊行物でなく、同社の季刊誌『フリースタイル』の特集記事となっている。',4,106,296,'a:1:{i:1;s:3:\"106\";}',1365008969,1422016824,110525,0);
-/*!40000 ALTER TABLE `chii_index` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+REPLACE INTO `chii_index`
+VALUES (15045, 0, '日本动画最高收视率TOP100', '[url]http://www.tudou.com/programs/view/W6eIoxnHs6g/[/url]\r\n有美国动画混入，所以准确的说是在日本播放的动画最高收视率（而且是关东地区的\r\n基本大部分是70年代的，那个年代娱乐贫乏优势真大', 8, 101, 96, 'a:1:{i:2;s:3:\"101\";}', 1352366596, 1356922367, 14127, 0),
+       (15465, 0, 'このマンガを読め! / 这本漫画必读！ 2005-2015历年top10', '「[url=http://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%82%AC%E3%82%92%E8%AA%AD%E3%82%81!]このマンガを読め![/url]」はフリースタイルから発行されている年刊の漫画ガイド本である。2004年12月発行開始。現在は独立した刊行物でなく、同社の季刊誌『フリースタイル』の特集記事となっている。', 4, 106, 296, 'a:1:{i:1;s:3:\"106\";}', 1365008969, 1422016824, 110525, 0);
+
+UNLOCK TABLES;
+
+
+
+
+
+
+
+
+
 
