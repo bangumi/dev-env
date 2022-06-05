@@ -26,9 +26,7 @@ def check_sql_scripts(sql_scripts: List[str]):
         [os.path.abspath(line) for line in sql_scripts if line]  # exclude empty lines
     )
 
-    current_sql = set(
-        list_dir_with_full_path("./sql/data") + list_dir_with_full_path("./sql/schema")
-    )
+    current_sql = set(get_all_sql_file_path())
 
     if configured_sql - current_sql:
         view = json.dumps(
@@ -131,8 +129,12 @@ def check_tables(container_config: Dict[str, str]):
     db.close()
 
 
-def list_dir_with_full_path(p: str) -> List[str]:
-    return [os.path.abspath(os.path.join(p, x)) for x in os.listdir(p)]
+def get_all_sql_file_path() -> List[str]:
+    data = []
+    for root, _, files in os.walk("./sql/"):
+        for file in files:
+            data.append(os.path.abspath(os.path.join(root, file)))
+    return data
 
 
 if __name__ == "__main__":
