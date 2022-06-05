@@ -1,3 +1,4 @@
+SET SQL_MODE = "";
 CREATE TABLE IF NOT EXISTS `chii_characters`
 (
     `crt_id`        mediumint(8) unsigned                NOT NULL,
