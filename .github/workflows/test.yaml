@@ -15,7 +15,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: wait mysql ready
-        run: ( timeout 60s docker-compose logs -f & ) | grep -q 'MySQL init process done'
+        run: ( timeout 60s docker-compose logs -f & ) | grep 'MySQL init process done'
 
       - run: python test.py
 
