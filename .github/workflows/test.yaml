@@ -16,6 +16,8 @@ jobs:
 
       - name: wait mysql ready
         run: bash ./wait_mysql_ready.sh
+        env:
+          COMPOSE_FILE: docker-compose.yaml
 
       - run: python test.py
 
