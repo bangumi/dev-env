@@ -15,9 +15,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: wait mysql ready
+        working-directory: .
         run: bash ./wait_mysql_ready.sh
-        env:
-          COMPOSE_FILE: docker-compose.yaml
 
       - run: python test.py
 
