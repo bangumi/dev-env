@@ -20,4 +20,4 @@ jobs:
       - run: python test.py
 
       - run: docker-compose logs
-        if: '${{ failure() }}'
+        if: "${{ failure() }}"

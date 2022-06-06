@@ -2,11 +2,12 @@ version: "3.7"
 
 services:
   mysql:
+    container_name: bangumi_mysql
     build:
       context: .
       dockerfile: db.Dockerfile
     ports:
-      - '3306:3306'
+      - "3306:3306"
     command: --sql-mode=""
     restart: unless-stopped
     volumes:
@@ -18,8 +19,9 @@ services:
       MYSQL_PASSWORD: password
 
   redis:
+    container_name: bangumi_redis
     image: redis:alpine
     command: redis-server --requirepass "redis-pass"
     restart: unless-stopped
     ports:
-      - '6379:6379'
+      - "6379:6379"
