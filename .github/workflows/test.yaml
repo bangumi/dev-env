@@ -15,7 +15,6 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: wait mysql ready
-        working-directory: .
         run: bash ./wait_mysql_ready.sh
 
       - run: python test.py
