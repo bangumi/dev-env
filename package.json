@@ -1,0 +1,24 @@
+{
+  "prettier": {
+    "printWidth": 120,
+    "overrides": [
+      {
+        "files": "*.sql",
+        "options": {
+          "formatter": "sql-formatter",
+          "language": "mysql",
+          "keywordCase": "upper",
+          "expressionWidth": 120,
+          "multilineLists": "expressionWidth"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "format": "prettier --list-different -w ./"
+  },
+  "dependencies": {
+    "prettier": "^2.7.0",
+    "prettier-plugin-sql": "^0.7.0"
+  }
+}

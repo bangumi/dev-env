@@ -1,35 +1,39 @@
-CREATE TABLE IF NOT EXISTS chii_memberfields
-(
-    uid       mediumint unsigned       default 0  not null primary key,
-    site      varchar(75) charset utf8 default '' not null,
-    location  varchar(30) charset utf8 default '' not null,
-    bio       text charset utf8                   not null,
-    privacy   mediumtext charset utf8             not null,
-    blocklist mediumtext charset utf8             not null
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+CREATE TABLE
+  IF NOT EXISTS chii_memberfields (
+    uid MEDIUMINT UNSIGNED DEFAULT 0 NOT NULL PRIMARY KEY,
+    site VARCHAR(75) CHARSET utf8 DEFAULT '' NOT NULL,
+    location VARCHAR(30) CHARSET utf8 DEFAULT '' NOT NULL,
+    bio TEXT CHARSET utf8 NOT NULL,
+    privacy MEDIUMTEXT CHARSET utf8 NOT NULL,
+    blocklist MEDIUMTEXT CHARSET utf8 NOT NULL
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-
-
-CREATE TABLE IF NOT EXISTS chii_members
-(
-    uid            mediumint unsigned auto_increment primary key,
-    username       char(15) charset utf8 default ''                    not null,
-    nickname       varchar(30)                                         not null,
-    avatar         varchar(255) charset utf8                           not null,
-    groupid        smallint(6) unsigned  default 0                     not null, # 用户权限组
-    regdate        int unsigned          default 0                     not null, # 注册日期
-    lastvisit      int unsigned          default 0                     not null, # 最后访问
-    lastactivity   int unsigned          default 0                     not null, # 最后活动
-    lastpost       int unsigned          default 0                     not null, # 最后发帖
-    dateformat     char(10) charset utf8 default ''                    not null, # 没用
-    timeformat     tinyint(1)            default 0                     not null, # 没用
-    timeoffset     char(4) charset utf8  default ''                    not null, # 没用
-    newpm          tinyint(1)            default 0                     not null,
-    new_notify     smallint(6) unsigned  default 0                     not null comment '新提醒',
-    sign           varchar(255) charset utf8                           not null,
-    password_crypt char(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-    email          char(50) CHARACTER SET utf8                         NOT NULL DEFAULT '',
-    constraint username unique (username)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+CREATE TABLE
+  IF NOT EXISTS chii_members (
+    uid MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username CHAR(15) CHARSET utf8 DEFAULT '' NOT NULL,
+    nickname VARCHAR(30) NOT NULL,
+    avatar VARCHAR(255) CHARSET utf8 NOT NULL,
+    groupid SMALLINT(6) UNSIGNED DEFAULT 0 NOT NULL,
+    # 用户权限组
+    regdate INT UNSIGNED DEFAULT 0 NOT NULL,
+    # 注册日期
+    lastvisit INT UNSIGNED DEFAULT 0 NOT NULL,
+    # 最后访问
+    lastactivity INT UNSIGNED DEFAULT 0 NOT NULL,
+    # 最后活动
+    lastpost INT UNSIGNED DEFAULT 0 NOT NULL,
+    # 最后发帖
+    dateformat CHAR(10) CHARSET utf8 DEFAULT '' NOT NULL,
+    # 没用
+    timeformat TINYINT(1) DEFAULT 0 NOT NULL,
+    # 没用
+    timeoffset CHAR(4) CHARSET utf8 DEFAULT '' NOT NULL,
+    # 没用
+    newpm TINYINT(1) DEFAULT 0 NOT NULL,
+    new_notify SMALLINT(6) UNSIGNED DEFAULT 0 NOT NULL COMMENT '新提醒',
+    SIGN VARCHAR(255) CHARSET utf8 NOT NULL,
+    password_crypt CHAR(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+    email CHAR(50) CHARACTER SET utf8 NOT NULL DEFAULT '',
+    CONSTRAINT username UNIQUE (username)
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
