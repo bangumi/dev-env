@@ -16,6 +16,8 @@
 ./sql/schema/chii_apps.sql
 ./sql/schema/chii_timeline.sql
 ./sql/schema/chii_oauth_clients.sql
+./sql/schema/chii_groups.sql
+./sql/schema/chii_group_members.sql
 ./sql/schema/session.sql
 
 ./sql/data/data_chii_person_fields.sql
