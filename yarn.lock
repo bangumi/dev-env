@@ -38,10 +38,3 @@ sql-formatter@^6.1.1:
   integrity sha512-aqhxDRIhllzCuwzDX18Y7TmcvD3Epb2qvkUDSoyX1+oDyMaWk7xja6mnuAZ4kaw2f0mVjzSZCJfCALtKx0WdoA==
   dependencies:
     argparse "^2.0.1"
-
-sql-formatter@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npmmirror.com/sql-formatter/-/sql-formatter-7.0.0.tgz#4d45aa60f9fba47f1d96cc49f72670c9b3624f9c"
-  integrity sha512-52kyWHxSOCRwdAtFQ5TBaUZlWRt4JZM1QacVIPC4BDPJ3ygb9PQ98JkALFPxDlKGFNXD8EP/hIhborRlOekhSg==
-  dependencies:
-    argparse "^2.0.1"
