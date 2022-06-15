@@ -3,3 +3,4 @@
 .venv/
 /data/
 public/
+node_modules/
