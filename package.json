@@ -7,7 +7,6 @@
         "options": {
           "formatter": "sql-formatter",
           "language": "mysql",
-          "keywordCase": "upper",
           "expressionWidth": 120,
           "multilineLists": "expressionWidth"
         }
