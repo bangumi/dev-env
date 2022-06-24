@@ -7,7 +7,7 @@
 ## QuickStart
 
 ```bash
-git clone https://github.com/bangumi/dev-env.git bangumi-dev-env
+git clone https://github.com/bangumi/dev-env.git bangumi-dev-env --depth=1
 cd bangumi-dev-env
 docker-compose up --build -d
 ```
