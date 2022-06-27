@@ -21,3 +21,39 @@ jobs:
 
       - run: docker-compose logs
         if: "${{ failure() }}"
+
+
+  test-each-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - run: |
+          docker run -d -p '3306:3306' \
+            -e 'MYSQL_ROOT_PASSWORD=secret' \
+            -e 'MYSQL_DATABASE=bangumi' \
+            -e 'MYSQL_USER=user' \
+            -e 'MYSQL_PASSWORD=password' \
+            'mysql:5.7.33' --sql-mode=""
+
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+
+      - name: wait mysql ready
+        shell: bash
+        run: |
+          for _ in {1..60}; do
+          # your-unix-command-here
+            if mysqladmin ping -h "127.0.0.1" --silent; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+
+          echo "timeout"
+
+          exit 1
+
+      - run: python test-each-file.py
+
