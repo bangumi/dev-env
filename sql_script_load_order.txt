@@ -19,6 +19,7 @@
 ./sql/schema/chii_groups.sql
 ./sql/schema/chii_group_members.sql
 ./sql/schema/session.sql
+./sql/schema/chii_ep_status.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
@@ -63,3 +64,4 @@
 ./sql/data/chii_index_related.sql
 ./sql/data/chii_os_web_sessions.sql
 ./sql/data/chii_groups.sql
+./sql/data/chii_ep_status.sql
