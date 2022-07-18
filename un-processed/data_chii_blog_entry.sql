@@ -1,0 +1,58 @@
+INSERT INTO
+  `chii_blog_entry` (
+    `entry_id`,
+    `entry_type`,
+    `entry_uid`,
+    `entry_title`,
+    `entry_icon`,
+    `entry_content`,
+    `entry_tags`,
+    `entry_views`,
+    `entry_replies`,
+    `entry_dateline`,
+    `entry_lastpost`,
+    `entry_like`,
+    `entry_dislike`,
+    `entry_noreply`,
+    `entry_related`,
+    `entry_public`
+  )
+VALUES
+  (
+    311629,
+    1,
+    697857,
+    '测试用',
+    'b5/a3/697857_FokBb.jpg',
+    '[url=https://lain.bgm.tv/pic/photo/l/b5/a3/697857_gpG9g.jpg][b][size=25]发表新日志[/size][/b][/url]\r\n[quote]在 Bangumi 发表日志，你可以使用 Tag 为自己的文章分类。你甚至可以通过日志为 Bangumi 的会员提供新闻，只需要在 Tag 中添加 (可直接点击以下标签) :[/quote]\r\n[code]在 Bangumi 发表日志，你可以为日志添加关联条目，这样你的日志就会作为关联条目的评论出现在条目页面中。每篇日志最多可以添加5个关联条目。[/code]\r\n(bgm38)\r\n[img]https://p.sda1.dev/4/c949ffa04e19035274ed179833de3d4b/genre.png[/img]\r\n[img]https://p.sda1.dev/4/d5b07bc69f24b96e9a90f9b4873ef063/company.png[/img]',
+    '游戏 三次元 动画 书籍 音乐 ',
+    0,
+    1,
+    1658118734,
+    1658119009,
+    0,
+    0,
+    0,
+    1,
+    0
+  ),
+  (311637, 1, 287622, '球', 'c1/5d/287622_3Npsc.jpg', 'asd', '动画 sdm rty5#|23SD#& df ', 0, 0, 1658141731, 1658141731, 0, 0, 0, 1, 1),
+  (
+    311638,
+    1,
+    287622,
+    '正文	 粗体 斜体 下划线 删除线 --------------- 图片 链接 --------------- 文字尺寸 --------------- 引用 ',
+    '',
+    'n',
+    '动画 ',
+    0,
+    0,
+    1658141760,
+    1658141760,
+    0,
+    0,
+    0,
+    1,
+    1
+  ),
+  (311639, 1, 287622, 'qw', 'c1/5d/287622_eCp5f.jpg', 'q', '动画qq ', 0, 5, 1658141782, 1658141794, 0, 0, 0, 1, 1);
