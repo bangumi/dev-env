@@ -813,7 +813,18 @@ ALTER TABLE `chii_ep_status`
 ADD PRIMARY KEY (`ep_stt_id`),
 ADD UNIQUE KEY `ep_stt_uniq` (`ep_stt_uid`, `ep_stt_sid`) USING BTREE;
 
-ALTER TABLE `chii_ep_status` MODIFY `ep_stt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
+ALTER TABLE `chii_ep_status` MODIFY `ep_stt_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;CREATE TABLE
+  IF NOT EXISTS `chii_friends` (
+    `frd_uid` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+    `frd_fid` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+    `frd_grade` TINYINT(3) UNSIGNED NOT NULL DEFAULT '1',
+    `frd_dateline` INT(10) UNSIGNED NOT NULL DEFAULT '0',
+    `frd_description` CHAR(255) NOT NULL
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+ALTER TABLE `chii_friends`
+ADD KEY `uid` (`frd_uid`),
+ADD KEY `frd_fid` (`frd_fid`);INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES
   ('crt', 1, 1, 0, 0000, 12, 5),
   ('prsn', 1, 2, 0, 1980, 1, 21),
@@ -4008,7 +4019,8 @@ VALUES
   (35592, 1, 281281, 4, ''),
   (10956, 1, 220187, 2, '');
 
-UNLOCK TABLES;INSERT INTO
+UNLOCK TABLES;INSERT INTO `chii_friends` (`frd_uid`, `frd_fid`, `frd_grade`, `frd_dateline`, `frd_description`)
+VALUES (287622, 427613, 1, 1658142804, '');INSERT INTO
   `chii_subject_fields` (
     `field_sid`,
     `field_tid`,
