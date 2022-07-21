@@ -64,6 +64,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_ep_revisions",
         "chii_ep_status",
         "chii_episodes",
+        "chii_friends",
         "chii_groups",
         "chii_group_members",
         "chii_group_posts",

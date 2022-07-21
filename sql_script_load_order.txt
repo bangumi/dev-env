@@ -20,6 +20,7 @@
 ./sql/schema/chii_group_members.sql
 ./sql/schema/session.sql
 ./sql/schema/chii_ep_status.sql
+./sql/schema/chii_friends.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
@@ -30,6 +31,7 @@
 ./sql/data/data_persons_2.sql
 ./sql/data/data_characters_2.sql
 ./sql/data/crt_cast_index.sql
+./sql/data/chii_friends.sql
 
 ./sql/data/chii_subject_fields.sql
 ./sql/data/chii_subject_relations.sql
