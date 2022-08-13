@@ -115,7 +115,7 @@ def check_tables(container_config: Dict[str, str]):
         # 使用 fetchone() 方法获取单条数据.
         data = cursor.fetchone()
 
-        assert data[0] == "5.7.33", data
+        assert data[0].startswith("5.7.33"), data
 
         print("Database version : %s " % data)
 
