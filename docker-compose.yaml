@@ -8,10 +8,11 @@ services:
       dockerfile: db.Dockerfile
     ports:
       - "3306:3306"
-    command: --sql-mode=""
+    command: --sql-mode="" --log-bin=/var/lib/mysql/binlog
     restart: unless-stopped
     volumes:
       - ./data/mysql:/var/lib/mysql
+      - ./config/mysql-master.cnf:/etc/mysql/conf.d/binlog.cnf
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: bangumi
