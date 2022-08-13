@@ -29,6 +29,9 @@ mysql 容器的内置数据位于 [./sql](sql) 文件夹内，
 
 基础的 http server 不需要这些服务，可以不启动。
 
+如果你的 docker-compose 跟开发机器运行在的不同的机器上，设置 `CHII_HOST` 环境变量来解决 kafka
+的 `KAFKA_ADVERTISED_LISTENERS` 问题
+
 ### 更新
 
 ```shell
