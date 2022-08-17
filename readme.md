@@ -10,7 +10,7 @@
 git clone https://github.com/bangumi/dev-env.git bangumi-dev-env --depth=1
 cd bangumi-dev-env
 docker-compose up --build -d
-# start binlog message query, optional
+# start mysql binlog message watcher, optional
 cd mq
 docker-compose up -d
 ```
