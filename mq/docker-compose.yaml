@@ -7,9 +7,6 @@ services:
     user: "1000:1000"
     ports:
     - "8088:8080"
-    volumes:
-    #      - './config/debezium:/debezium/conf'
-    - "./data/debezium:/debezium/data"
     environment:
     - "debezium.sink.type=kafka"
     - "debezium.sink.kafka.producer.bootstrap.servers=kafka:9092"
@@ -32,16 +29,14 @@ services:
 
     - "quarkus.log.console.json=false"
 
-    - "debezium.source.offset.storage.file.filename=/debezium/data/offsets.dat"
-    - "debezium.source.offset.flush.interval.ms=0"
+    - 'debezium.source.database.history=io.debezium.server.redis.RedisDatabaseHistory'
+    - 'debezium.source.database.history.redis.address=host.docker.internal:6379'
+    - 'debezium.source.database.history.redis.password=redis-pass'
 
-    #      - 'debezium.source.offset.storage=io.debezium.server.redis.RedisDatabaseHistory'
-    #      - 'debezium.source.offset.storage.redis.address=host.docker.internal:6379'
-    #      - 'debezium.source.offset.storage.redis.password=redis-pass'
-    #      - 'debezium.source.offset.storage.redis.key=offset-storage-1'
-
-    - "debezium.source.database.history.kafka.bootstrap.servers=kafka:9092"
-    - "debezium.source.database.history.kafka.topic=debezium-database-history"
+    - 'debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore'
+    - 'debezium.source.offset.storage.redis.address=host.docker.internal:6379'
+    - 'debezium.source.offset.storage.redis.password=redis-pass'
+    - 'debezium.source.offset.storage.redis.key=debezium-offset-storage-1'
     extra_hosts:
     - "host.docker.internal:host-gateway"
 
@@ -69,6 +64,7 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
@@ -81,14 +77,3 @@ services:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
       KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
-      #      KAFKA_CLUSTERS_0_JMXPORT: 9997
-      #      KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
-#      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
-#      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect0:8083
-#      KAFKA_CLUSTERS_1_NAME: secondLocal
-#      KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS: kafka1:29092
-#      KAFKA_CLUSTERS_1_ZOOKEEPER: zookeeper1:2181
-#      KAFKA_CLUSTERS_1_JMXPORT: 9998
-#      KAFKA_CLUSTERS_1_SCHEMAREGISTRY: http://schemaregistry1:8085
-#      KAFKA_CLUSTERS_1_KAFKACONNECT_0_NAME: first
-#      KAFKA_CLUSTERS_1_KAFKACONNECT_0_ADDRESS: http://kafka-connect0:8083
