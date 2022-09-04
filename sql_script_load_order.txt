@@ -67,3 +67,5 @@
 ./sql/data/chii_os_web_sessions.sql
 ./sql/data/chii_groups.sql
 ./sql/data/chii_ep_status.sql
+./sql/data/chii_group_posts.sql
+./sql/data/chii_group_topics.sql

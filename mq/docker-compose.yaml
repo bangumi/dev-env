@@ -6,39 +6,39 @@ services:
     container_name: debezium
     user: "1000:1000"
     ports:
-    - "8088:8080"
+      - "8088:8080"
     environment:
-    - "debezium.sink.type=kafka"
-    - "debezium.sink.kafka.producer.bootstrap.servers=kafka:9092"
-    - "debezium.sink.kafka.producer.key.serializer=org.apache.kafka.common.serialization.StringSerializer"
-    - "debezium.sink.kafka.producer.value.serializer=org.apache.kafka.common.serialization.StringSerializer"
-    #      - 'debezium.sink.pulsar.client.serviceUrl=pulsar://pulsar:6650'
+      - "debezium.sink.type=kafka"
+      - "debezium.sink.kafka.producer.bootstrap.servers=kafka:9092"
+      - "debezium.sink.kafka.producer.key.serializer=org.apache.kafka.common.serialization.StringSerializer"
+      - "debezium.sink.kafka.producer.value.serializer=org.apache.kafka.common.serialization.StringSerializer"
+      #      - 'debezium.sink.pulsar.client.serviceUrl=pulsar://pulsar:6650'
 
-    - "debezium.source.connector.class=io.debezium.connector.mysql.MySqlConnector"
-    - "debezium.source.database.hostname=host.docker.internal"
-    - "debezium.source.database.port=3306"
-    - "debezium.source.database.server.id=5"
-    - "debezium.source.database.user=root"
-    - "debezium.source.database.password=secret"
-    - "debezium.source.database.server.name=chii"
+      - "debezium.source.connector.class=io.debezium.connector.mysql.MySqlConnector"
+      - "debezium.source.database.hostname=host.docker.internal"
+      - "debezium.source.database.port=3306"
+      - "debezium.source.database.server.id=5"
+      - "debezium.source.database.user=root"
+      - "debezium.source.database.password=secret"
+      - "debezium.source.database.server.name=chii"
 
-    - "debezium.source.database.dbname=bangumi"
-    - "debezium.source.database.include.list=bangumi"
-    - "debezium.source.table.include.list=bangumi.chii_members,bangumi.chii_subjects,bangumi.chii_subject_fields"
-    #    - 'debezium.source.table.exclude.list=chii_os_web_sessions'
+      - "debezium.source.database.dbname=bangumi"
+      - "debezium.source.database.include.list=bangumi"
+      - "debezium.source.table.include.list=bangumi.chii_members,bangumi.chii_subjects,bangumi.chii_subject_fields"
+      #    - 'debezium.source.table.exclude.list=chii_os_web_sessions'
 
-    - "quarkus.log.console.json=false"
+      - "quarkus.log.console.json=false"
 
-    - 'debezium.source.database.history=io.debezium.server.redis.RedisDatabaseHistory'
-    - 'debezium.source.database.history.redis.address=host.docker.internal:6379'
-    - 'debezium.source.database.history.redis.password=redis-pass'
+      - "debezium.source.database.history=io.debezium.server.redis.RedisDatabaseHistory"
+      - "debezium.source.database.history.redis.address=host.docker.internal:6379"
+      - "debezium.source.database.history.redis.password=redis-pass"
 
-    - 'debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore'
-    - 'debezium.source.offset.storage.redis.address=host.docker.internal:6379'
-    - 'debezium.source.offset.storage.redis.password=redis-pass'
-    - 'debezium.source.offset.storage.redis.key=debezium-offset-storage-1'
+      - "debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore"
+      - "debezium.source.offset.storage.redis.address=host.docker.internal:6379"
+      - "debezium.source.offset.storage.redis.password=redis-pass"
+      - "debezium.source.offset.storage.redis.key=debezium-offset-storage-1"
     extra_hosts:
-    - "host.docker.internal:host-gateway"
+      - "host.docker.internal:host-gateway"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.2.1
@@ -46,15 +46,15 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     ports:
-    - "22181:2181"
+      - "22181:2181"
 
   kafka:
     image: confluentinc/cp-kafka:7.2.1
     depends_on:
-    - zookeeper
+      - zookeeper
     ports:
-    #      - '9092:9092'
-    - "29092:29092"
+      #      - '9092:9092'
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -64,15 +64,14 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
     ports:
-    - "8087:8080"
+      - "8087:8080"
     depends_on:
-    - zookeeper
-    - kafka
+      - zookeeper
+      - kafka
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
