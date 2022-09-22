@@ -72,3 +72,23 @@ VALUES
     1,
     0
   );
+
+INSERT INTO
+  `chii_groups` (
+    `grp_id`,
+    `grp_cat`,
+    `grp_name`,
+    `grp_title`,
+    `grp_icon`,
+    `grp_creator`,
+    `grp_topics`,
+    `grp_posts`,
+    `grp_members`,
+    `grp_desc`,
+    `grp_lastpost`,
+    `grp_builddate`,
+    `grp_accessible`,
+    `grp_nsfw`
+  )
+VALUES
+  (4215, 32, 'sandbox', '沙盒', '000/00/42/4215.jpg?r=1531631345', 287622, 1, 0, 3, '[s]非[/s]官方沙盒', 0, 1531631310, 1, 0);
