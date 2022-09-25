@@ -97,6 +97,9 @@ def check_tables(container_config: Dict[str, str]):
         "chii_subjects",
         "chii_timeline",
         "chii_usergroup",
+        "chii_notify",
+        "chii_notify_field",
+        "chii_pms"
     }
 
     # 打开数据库连接
