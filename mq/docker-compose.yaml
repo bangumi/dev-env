@@ -2,41 +2,54 @@ version: "3.7"
 
 services:
   debezium-server:
-    image: debezium/server:1.9.5.Final
+    image: debezium/server:2.0.0.Final
     container_name: debezium
     user: "1000:1000"
     ports:
       - "8088:8080"
     environment:
-      - "debezium.sink.type=kafka"
-      - "debezium.sink.kafka.producer.bootstrap.servers=kafka:9092"
-      - "debezium.sink.kafka.producer.key.serializer=org.apache.kafka.common.serialization.StringSerializer"
-      - "debezium.sink.kafka.producer.value.serializer=org.apache.kafka.common.serialization.StringSerializer"
-      #      - 'debezium.sink.pulsar.client.serviceUrl=pulsar://pulsar:6650'
+      "debezium.sink.type": "kafka"
+      "debezium.sink.kafka.producer.bootstrap.servers": "kafka:9092"
+      "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
+      "debezium.sink.kafka.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
+      "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
+      "debezium.source.database.hostname": "host.docker.internal"
+      "debezium.source.database.port": "3306"
+      "debezium.source.database.server.id": "5"
+      "debezium.source.database.user": "root"
+      "debezium.source.database.password": "secret"
+      "debezium.source.database.server.name": "chii"
+      "debezium.source.database.dbname": "bangumi"
+      "debezium.source.database.include.list": "bangumi"
+      "debezium.source.table.include.list": "bangumi.chii_members,bangumi.chii_subjects,bangumi.chii_subject_fields"
+      "debezium.source.snapshot.mode": "schema_only"
+      "debezium.source.snapshot.locking.mode": "none"
+      "quarkus.log.console.json": "false"
+      "debezium.source.database.history": "io.debezium.server.redis.RedisDatabaseHistory"
+      "debezium.source.database.history.redis.address": "host.docker.internal:6379"
+      "debezium.source.database.history.redis.password": "redis-pass"
+      "debezium.source.offset.storage": "io.debezium.server.redis.RedisOffsetBackingStore"
+      "debezium.source.offset.storage.redis.address": "host.docker.internal:6379"
+      "debezium.source.offset.storage.redis.password": "redis-pass"
+      "debezium.source.offset.storage.redis.key": "debezium-offset-storage-1"
+      "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
+      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
+      "debezium.source.topic.prefix": "debezium.chii"
 
-      - "debezium.source.connector.class=io.debezium.connector.mysql.MySqlConnector"
-      - "debezium.source.database.hostname=host.docker.internal"
-      - "debezium.source.database.port=3306"
-      - "debezium.source.database.server.id=5"
-      - "debezium.source.database.user=root"
-      - "debezium.source.database.password=secret"
-      - "debezium.source.database.server.name=chii"
+      "ENABLE_DEBEZIUM_SCRIPTING": "true"
+      "debezium.transforms": "filter"
+      "debezium.transforms.filter.type": "io.debezium.transforms.Filter"
+      "debezium.transforms.filter.language": "jsr223.groovy"
+      "debezium.transforms.filter.topic.regex": '^debezium\.chii\.bangumi\.chii_subject_fields$$'
+      "debezium.transforms.filter.condition": >-
+        !(
+        (value.op == 'u')
+        && (value.source.table == 'chii_subject_fields')
+        && (value.before.field_rank != value.after.field_rank)
+        )
 
-      - "debezium.source.database.dbname=bangumi"
-      - "debezium.source.database.include.list=bangumi"
-      - "debezium.source.table.include.list=bangumi.chii_members,bangumi.chii_subjects,bangumi.chii_subject_fields"
-      #    - 'debezium.source.table.exclude.list=chii_os_web_sessions'
 
-      - "quarkus.log.console.json=false"
 
-      - "debezium.source.database.history=io.debezium.server.redis.RedisDatabaseHistory"
-      - "debezium.source.database.history.redis.address=host.docker.internal:6379"
-      - "debezium.source.database.history.redis.password=redis-pass"
-
-      - "debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore"
-      - "debezium.source.offset.storage.redis.address=host.docker.internal:6379"
-      - "debezium.source.offset.storage.redis.password=redis-pass"
-      - "debezium.source.offset.storage.redis.key=debezium-offset-storage-1"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
