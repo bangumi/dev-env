@@ -92,3 +92,6 @@ INSERT INTO
   )
 VALUES
   (4215, 32, 'sandbox', '沙盒', '000/00/42/4215.jpg?r=1531631345', 287622, 1, 0, 3, '[s]非[/s]官方沙盒', 0, 1531631310, 1, 0);
+
+INSERT INTO `chii_group_members` (`gmb_uid`, `gmb_gid`, `gmb_moderator`, `gmb_dateline`)
+VALUES (287622, 4215, 1, 1531631310), (427613, 4215, 0, 1531631570), (382951, 4215, 0, 1640499538);

@@ -48,8 +48,6 @@ services:
         && (value.before.field_rank != value.after.field_rank)
         )
 
-
-
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
