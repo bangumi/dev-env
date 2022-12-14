@@ -15536,6 +15536,25 @@ VALUES
     'treeholechan@gmail.com 密码:lovemeplease',
     '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
     'treeholechan@gmail.com'
+  ),
+  (
+    318250,
+    'treehole2',
+    '树洞2',
+    '',
+    10,
+    1512262276,
+    1639827114,
+    1639841249,
+    0,
+    '',
+    0,
+    '9999',
+    0,
+    0,
+    'treeholechan2@gmail.com 密码:lovemeplease',
+    '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+    'treeholechan2@gmail.com'
   );
 
 INSERT INTO `chii_memberfields` (`uid`, `site`, `location`, `bio`, `privacy`, `blocklist`)
@@ -15639,7 +15658,6 @@ VALUES
   (267266, '267266', 'nickname 267266', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 267266', '', ''),
   (287622, '287622', 'nickname 287622', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 287622', '', ''),
   (289192, '289192', 'nickname 289192', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 289192', '', ''),
-  (318251, '318251', 'nickname 318251', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 318251', '', ''),
   (407835, '407835', 'nickname 407835', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 407835', '', ''),
   (409035, '409035', 'nickname 409035', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 409035', '', ''),
   (451958, '451958', 'nickname 451958', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 451958', '', ''),
@@ -15648,8 +15666,7 @@ VALUES
   (464691, '464691', 'nickname 464691', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 464691', '', ''),
   (534587, '534587', 'nickname 534587', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 534587', '', ''),
   (546484, '546484', 'nickname 546484', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 546484', '', ''),
-  (617229, '617229', 'nickname 617229', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 617229', '', '');
-INSERT INTO `chii_person_collects` (`prsn_clt_id`, `prsn_clt_cat`, `prsn_clt_mid`, `prsn_clt_uid`, `prsn_clt_dateline`)
+  (617229, '617229', 'nickname 617229', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 617229', '', '');INSERT INTO `chii_person_collects` (`prsn_clt_id`, `prsn_clt_cat`, `prsn_clt_mid`, `prsn_clt_uid`, `prsn_clt_dateline`)
 VALUES
   (1, 'crt', 706, 1, 1296495506),
   (2, 'crt', 3, 1, 1296495535),
