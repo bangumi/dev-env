@@ -37,6 +37,25 @@ VALUES
     'treeholechan@gmail.com 密码:lovemeplease',
     '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
     'treeholechan@gmail.com'
+  ),
+  (
+    318250,
+    'treehole2',
+    '树洞2',
+    '',
+    10,
+    1512262276,
+    1639827114,
+    1639841249,
+    0,
+    '',
+    0,
+    '9999',
+    0,
+    0,
+    'treeholechan2@gmail.com 密码:lovemeplease',
+    '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+    'treeholechan2@gmail.com'
   );
 
 INSERT INTO `chii_memberfields` (`uid`, `site`, `location`, `bio`, `privacy`, `blocklist`)
