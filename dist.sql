@@ -18372,24 +18372,20 @@ VALUES (2055276, 371602, 287622, 0, 'tt', 0, 1657885648),
        (2092074, 371602, 287622, 2092069, 'sub', 0, 1662283112);
 
 
+
 INSERT INTO `chii_group_posts` (`grp_pst_id`, `grp_pst_mid`, `grp_pst_uid`, `grp_pst_related`,
                                 `grp_pst_content`, `grp_pst_state`, `grp_pst_dateline`)
-VALUES (375793, 18515, 47686, 375780,
-        '[quote][b]Amarantine[/b] 说: 是啊，以及新人报道那里[/quote]\n你算计我！', 0, 1346638583);
-INSERT INTO `chii_group_topics` (`grp_tpc_id`, `grp_tpc_gid`, `grp_tpc_uid`, `grp_tpc_title`,
-                                 `grp_tpc_dateline`, `grp_tpc_lastpost`, `grp_tpc_replies`,
-                                 `grp_tpc_state`, `grp_tpc_display`)
-VALUES (375793, 4215, 287622, '测试贴 2', 1671381484, 1671381518, 2, 0, 1);
-INSERT INTO
-  `chii_group_topics` (
-    `grp_tpc_id`,
-    `grp_tpc_gid`,
-    `grp_tpc_uid`,
-    `grp_tpc_title`,
-    `grp_tpc_dateline`,
-    `grp_tpc_lastpost`,
-    `grp_tpc_replies`,
-    `grp_tpc_state`,
-    `grp_tpc_display`
-  )
-VALUES (371602, 4215, 287622, 'tes', 1657885648, 1662283112, 2, 2, 1);
+VALUES (2177417, 375793, 287622, 0, '测试贴 正文2', 0, 1671381484),
+       (2177419, 375793, 287622, 0, 'top', 0, 1671381514),
+       (2177420, 375793, 287622, 2177419, 'sub', 0, 1671381518);
+INSERT INTO `chii_group_topics` (`grp_tpc_id`,
+                                 `grp_tpc_gid`,
+                                 `grp_tpc_uid`,
+                                 `grp_tpc_title`,
+                                 `grp_tpc_dateline`,
+                                 `grp_tpc_lastpost`,
+                                 `grp_tpc_replies`,
+                                 `grp_tpc_state`,
+                                 `grp_tpc_display`)
+VALUES (371602, 4215, 287622, 'tes', 1657885648, 1662283112, 2, 2, 1),
+       (375793, 4215, 287622, '测试贴 2', 1671381484, 1671381518, 2, 0, 1);
