@@ -758,7 +758,6 @@ ALTER TABLE `chii_apps` MODIFY `app_id` MEDIUMINT(8) NOT NULL AUTO_INCREMENT;CRE
     `tml_source` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '更新来源',
     `tml_replies` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '回复数',
     `tml_dateline` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-    `tml_status` TINYINT UNSIGNED NOT NULL DEFAULT '0'
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4;
 
 ALTER TABLE `chii_timeline`
@@ -768,7 +767,8 @@ ADD KEY `tml_cat` (`tml_cat`),
 ADD KEY `tml_batch` (`tml_batch`),
 ADD KEY `query_tml_cat` (`tml_uid`, `tml_cat`);
 
-ALTER TABLE `chii_timeline` MODIFY `tml_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;CREATE TABLE
+ALTER TABLE `chii_timeline` MODIFY `tml_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+CREATE TABLE
   IF NOT EXISTS `chii_oauth_clients` (
     `app_id` MEDIUMINT(8) NOT NULL,
     `client_id` VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL,
