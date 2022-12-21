@@ -11,7 +11,6 @@ CREATE TABLE
     `tml_source` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '更新来源',
     `tml_replies` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '回复数',
     `tml_dateline` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-    `tml_status` TINYINT UNSIGNED NOT NULL DEFAULT '0'
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8mb4;
 
 ALTER TABLE `chii_timeline`
