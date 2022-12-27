@@ -767,8 +767,7 @@ ADD KEY `tml_cat` (`tml_cat`),
 ADD KEY `tml_batch` (`tml_batch`),
 ADD KEY `query_tml_cat` (`tml_uid`, `tml_cat`);
 
-ALTER TABLE `chii_timeline` MODIFY `tml_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-CREATE TABLE
+ALTER TABLE `chii_timeline` MODIFY `tml_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;CREATE TABLE
   IF NOT EXISTS `chii_oauth_clients` (
     `app_id` MEDIUMINT(8) NOT NULL,
     `client_id` VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL,
@@ -14813,6 +14812,12 @@ VALUES
     '普通用户',
     'a:14:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";}',
     1304011366
+  ),
+  (
+    11,
+    'wiki人',
+    'a:14:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";}',
+    1304011366
   );LOCK TABLES `chii_subject_topics` WRITE;
 
 REPLACE INTO `chii_subject_topics`
@@ -15497,75 +15502,101 @@ VALUES
   ),
   (179792, 19887, 581555, 0, '别问  问就是大河内江郎才尽(bgm74)', 0, 1639381921);
 
-UNLOCK TABLES;INSERT INTO `chii_members` (`uid`,
-                            `username`,
-                            `nickname`,
-                            `avatar`,
-                            `groupid`,
-                            `regdate`,
-                            `lastvisit`,
-                            `lastactivity`,
-                            `lastpost`,
-                            `dateformat`,
-                            `timeformat`,
-                            `timeoffset`,
-                            `newpm`,
-                            `new_notify`,
-                            `sign`,
-                            `password_crypt`,
-                            `email`)
-VALUES (382951,
-        '382951',
-        '树洞酱',
-        '000/38/29/382951.jpg?r=1571167246',
-        10,
-        1512262276,
-        1639827114,
-        1639841249,
-        0,
-        '',
-        0,
-        '9999',
-        0,
-        7,
-        'treeholechan@gmail.com 密码:lovemeplease',
-        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
-        'treeholechan@gmail.com'),
-       (318250,
-        'treehole2',
-        '树洞2',
-        '',
-        10,
-        1512262276,
-        1639827114,
-        1639841249,
-        0,
-        '',
-        0,
-        '9999',
-        0,
-        0,
-        'treeholechan2@gmail.com 密码:lovemeplease',
-        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
-        'treeholechan2@gmail.com');
+UNLOCK TABLES;INSERT INTO
+  `chii_members` (
+    `uid`,
+    `username`,
+    `nickname`,
+    `avatar`,
+    `groupid`,
+    `regdate`,
+    `lastvisit`,
+    `lastactivity`,
+    `lastpost`,
+    `dateformat`,
+    `timeformat`,
+    `timeoffset`,
+    `newpm`,
+    `new_notify`,
+    `sign`,
+    `password_crypt`,
+    `email`
+  )
+VALUES
+  (
+    382951,
+    '382951',
+    '树洞酱',
+    '000/38/29/382951.jpg?r=1571167246',
+    10,
+    1512262276,
+    1639827114,
+    1639841249,
+    0,
+    '',
+    0,
+    '9999',
+    0,
+    7,
+    'treeholechan@gmail.com 密码:lovemeplease',
+    '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+    'treeholechan@gmail.com'
+  ),
+  (
+    318250,
+    'treehole2',
+    '树洞2',
+    '',
+    10,
+    1512262276,
+    1639827114,
+    1639841249,
+    0,
+    '',
+    0,
+    '9999',
+    0,
+    0,
+    'treeholechan2@gmail.com 密码:lovemeplease',
+    '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+    'treeholechan2@gmail.com'
+  ),
+  (
+    2,
+    '2',
+    'nickname 2',
+    '',
+    11,
+    0,
+    0,
+    0,
+    0,
+    '',
+    0,
+    '',
+    0,
+    0,
+    'sing 2',
+    '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
+    '2@bgm38.com'
+  );
 
 INSERT INTO `chii_memberfields` (`uid`, `site`, `location`, `bio`, `privacy`, `blocklist`)
-VALUES (382951,
-        'bgm.tv/character/13307',
-        '',
-        'treeholechan@gmail.com 密码：lovemeplease\r\n（欢迎大家一起维护树洞酱，但请勿随意修改密码）\r\n\r\n[url=https://bgm.tv/user/treehole]初心[/url]\r\n\r\n[b][url=https://bgm.tv/blog/3996]1. 关于树洞酱的事[/url][/b]\r\n[size=8]任何人都可以钻到这里：可以诉说不为人知的秘密，可以自曝真相，可以晒黑历史，可以说平时不太敢说的话，可以扮演不同的人格……\r\n不用担心维护自己的形象。也许你会说，有什么都可以直接说出来嘛，为什么要这样做？但是既然有一个完全虚拟的网络，为什么非要对应着现实世界每个人都要有个id，有个头像呢？\r\n或者这只是一种尝试吧。[/size]\r\n\r\n[b][url=https://bgm.tv/blog/3998]2. 爱护我们的树洞酱[/url][/b]',
-        'a:4:{i:1;i:2;i:30;i:2;i:20;i:2;i:21;i:0;}',
-        '0'),
-       (287622, 'bgm.tv/character/13307', '', 'fake bio',
-        'a:4:{i:1;i:2;i:30;i:2;i:20;i:2;i:21;i:0;}', '0');
+VALUES
+  (
+    382951,
+    'bgm.tv/character/13307',
+    '',
+    'treeholechan@gmail.com 密码：lovemeplease\r\n（欢迎大家一起维护树洞酱，但请勿随意修改密码）\r\n\r\n[url=https://bgm.tv/user/treehole]初心[/url]\r\n\r\n[b][url=https://bgm.tv/blog/3996]1. 关于树洞酱的事[/url][/b]\r\n[size=8]任何人都可以钻到这里：可以诉说不为人知的秘密，可以自曝真相，可以晒黑历史，可以说平时不太敢说的话，可以扮演不同的人格……\r\n不用担心维护自己的形象。也许你会说，有什么都可以直接说出来嘛，为什么要这样做？但是既然有一个完全虚拟的网络，为什么非要对应着现实世界每个人都要有个id，有个头像呢？\r\n或者这只是一种尝试吧。[/size]\r\n\r\n[b][url=https://bgm.tv/blog/3998]2. 爱护我们的树洞酱[/url][/b]',
+    'a:4:{i:1;i:2;i:30;i:2;i:20;i:2;i:21;i:0;}',
+    '0'
+  ),
+  (287622, 'bgm.tv/character/13307', '', 'fake bio', 'a:4:{i:1;i:2;i:30;i:2;i:20;i:2;i:21;i:0;}', '0');
 
-
-INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope, id, TYPE,
-                                      info)
-VALUES ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', NULL, 1, 0,
-        ''),
-       ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', NULL, 2, 0, '');
-INSERT INTO
+INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope, id, TYPE, info)
+VALUES
+  ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', NULL, 1, 0, ''),
+  ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', NULL, 2, 0, '');INSERT INTO
   `chii_members` (
     `uid`,
     `username`,
@@ -15587,7 +15618,6 @@ INSERT INTO
   )
 VALUES
   (1, '1', 'nickname 1', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 1', '', ''),
-  (2, '2', 'nickname 2', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 2', '', ''),
   (4, '4', 'nickname 4', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 4', '', ''),
   (5, '5', 'nickname 5', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 5', '', ''),
   (43, '43', 'nickname 43', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 43', '', ''),
@@ -18360,32 +18390,35 @@ VALUES
     0,
     'a:23:{i:17224;a:2:{s:3:"eid";s:5:"17224";s:4:"type";i:2;}i:17225;a:2:{s:3:"eid";s:5:"17225";s:4:"type";i:2;}i:17226;a:2:{s:3:"eid";s:5:"17226";s:4:"type";i:2;}i:17227;a:2:{s:3:"eid";s:5:"17227";s:4:"type";i:2;}i:17228;a:2:{s:3:"eid";s:5:"17228";s:4:"type";i:2;}i:17229;a:2:{s:3:"eid";s:5:"17229";s:4:"type";i:2;}i:17239;a:2:{s:3:"eid";s:5:"17239";s:4:"type";i:2;}i:17230;a:2:{s:3:"eid";s:5:"17230";s:4:"type";i:2;}i:17231;a:2:{s:3:"eid";s:5:"17231";s:4:"type";i:2;}i:17232;a:2:{s:3:"eid";s:5:"17232";s:4:"type";i:2;}i:17233;a:2:{s:3:"eid";s:5:"17233";s:4:"type";i:2;}i:17234;a:2:{s:3:"eid";s:5:"17234";s:4:"type";i:2;}i:17235;a:2:{s:3:"eid";s:5:"17235";s:4:"type";i:2;}i:17236;a:2:{s:3:"eid";s:5:"17236";s:4:"type";i:2;}i:17237;a:2:{s:3:"eid";s:5:"17237";s:4:"type";i:2;}i:17238;a:2:{s:3:"eid";s:5:"17238";s:4:"type";i:2;}i:17240;a:2:{s:3:"eid";s:5:"17240";s:4:"type";i:2;}i:17241;a:2:{s:3:"eid";s:5:"17241";s:4:"type";i:2;}i:17242;a:2:{s:3:"eid";s:5:"17242";s:4:"type";i:2;}i:17243;a:2:{s:3:"eid";s:5:"17243";s:4:"type";i:2;}i:17244;a:2:{s:3:"eid";s:5:"17244";s:4:"type";i:2;}i:17245;a:2:{s:3:"eid";s:5:"17245";s:4:"type";i:2;}i:17246;a:2:{s:3:"eid";s:5:"17246";s:4:"type";i:2;}}',
     1651883020
-  );INSERT INTO `chii_group_posts` (`grp_pst_id`, `grp_pst_mid`, `grp_pst_uid`, `grp_pst_related`,
-                                `grp_pst_content`, `grp_pst_state`, `grp_pst_dateline`)
-VALUES (2055276, 371602, 287622, 0, 'tt', 0, 1657885648),
-       (2056216, 371602, 287622, 0, 't', 6, 1658030918),
-       (2092004, 371602, 287622, 0, '管理员删除', 7, 1662276469),
-       (2092065, 371602, 1, 0, '', 5, 1662282514),
-       (2092066, 371602, 1, 0, '', 1, 1662282518),
-       (2092067, 371602, 1, 0, '', 2, 1662282523),
-       (2092069, 371602, 287622, 0, 'q', 0, 1662282554),
-       (2092074, 371602, 287622, 2092069, 'sub', 0, 1662283112);
+  );INSERT INTO
+  `chii_group_posts` (`grp_pst_id`, `grp_pst_mid`, `grp_pst_uid`, `grp_pst_related`, `grp_pst_content`, `grp_pst_state`, `grp_pst_dateline`)
+VALUES
+  (2055276, 371602, 287622, 0, 'tt', 0, 1657885648),
+  (2056216, 371602, 287622, 0, 't', 6, 1658030918),
+  (2092004, 371602, 287622, 0, '管理员删除', 7, 1662276469),
+  (2092065, 371602, 1, 0, '', 5, 1662282514),
+  (2092066, 371602, 1, 0, '', 1, 1662282518),
+  (2092067, 371602, 1, 0, '', 2, 1662282523),
+  (2092069, 371602, 287622, 0, 'q', 0, 1662282554),
+  (2092074, 371602, 287622, 2092069, 'sub', 0, 1662283112);
 
-
-
-INSERT INTO `chii_group_posts` (`grp_pst_id`, `grp_pst_mid`, `grp_pst_uid`, `grp_pst_related`,
-                                `grp_pst_content`, `grp_pst_state`, `grp_pst_dateline`)
-VALUES (2177417, 375793, 287622, 0, '测试贴 正文2', 0, 1671381484),
-       (2177419, 375793, 287622, 0, 'top', 0, 1671381514),
-       (2177420, 375793, 287622, 2177419, 'sub', 0, 1671381518);
-INSERT INTO `chii_group_topics` (`grp_tpc_id`,
-                                 `grp_tpc_gid`,
-                                 `grp_tpc_uid`,
-                                 `grp_tpc_title`,
-                                 `grp_tpc_dateline`,
-                                 `grp_tpc_lastpost`,
-                                 `grp_tpc_replies`,
-                                 `grp_tpc_state`,
-                                 `grp_tpc_display`)
-VALUES (371602, 4215, 287622, 'tes', 1657885648, 1662283112, 2, 2, 1),
-       (375793, 4215, 287622, '测试贴 2', 1671381484, 1671381518, 2, 0, 1);
+INSERT INTO
+  `chii_group_posts` (`grp_pst_id`, `grp_pst_mid`, `grp_pst_uid`, `grp_pst_related`, `grp_pst_content`, `grp_pst_state`, `grp_pst_dateline`)
+VALUES
+  (2177417, 375793, 287622, 0, '测试贴 正文2', 0, 1671381484),
+  (2177419, 375793, 287622, 0, 'top', 0, 1671381514),
+  (2177420, 375793, 287622, 2177419, 'sub', 0, 1671381518);INSERT INTO
+  `chii_group_topics` (
+    `grp_tpc_id`,
+    `grp_tpc_gid`,
+    `grp_tpc_uid`,
+    `grp_tpc_title`,
+    `grp_tpc_dateline`,
+    `grp_tpc_lastpost`,
+    `grp_tpc_replies`,
+    `grp_tpc_state`,
+    `grp_tpc_display`
+  )
+VALUES
+  (371602, 4215, 287622, 'tes', 1657885648, 1662283112, 2, 2, 1),
+  (375793, 4215, 287622, '测试贴 2', 1671381484, 1671381518, 2, 0, 1);
