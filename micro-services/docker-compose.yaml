@@ -1,0 +1,50 @@
+version: "3.7"
+
+services:
+  ms-timeline:
+    image: ghcr.io/bangumi/ms-timeline:v0.0.1
+    container_name: ms-timeline
+    ports:
+      - '5001:5001'
+    environment:
+      - MYSQL_DB=bangumi
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=user
+      - MYSQL_PASS=password
+      - GRPC_PORT=5001
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ms-timeline.rule=Host(`timeline.ms.grpc.chii`)"
+      - "traefik.http.routers.ms-timeline.entrypoints=grpc"
+      - "traefik.http.routers.ms-timeline.service=ms-timeline"
+      - "traefik.http.routers.ms-timeline.tls=false"
+      - "traefik.http.services.ms-timeline.loadBalancer.server.scheme=h2c"
+      - "traefik.http.services.ms-timeline.loadBalancer.server.port=5001"
+    expose:
+      - 5001
+    networks:
+      - internal
+
+  traefik:
+    image: "traefik:v2.9.6"
+    container_name: traefik
+    command:
+      - "--api.insecure=true"
+      - --entrypoints.web.address=:9002
+      - --entrypoints.grpc.address=:9003
+      - "--providers.docker=true"
+      - "--providers.docker.network=internal"
+      - "--providers.docker.exposedByDefault=false"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    ports:
+      - "10010:8080"
+      - '9002:9002'
+      - '9003:9003' # grpc
+    networks:
+      - internal
+      - proxied
+
+networks:
+  internal:
+  proxied:
