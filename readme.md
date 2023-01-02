@@ -78,3 +78,7 @@ python test.py # 需要等docker container准备完成
 ### un-processed
 
 `un-processed/` 文件夹中是已经导出但还没经处理，目前的开源后端服务器也还未使用的表。
+
+## 可用账号
+
+https://github.com/bangumi/dev-docs#api
