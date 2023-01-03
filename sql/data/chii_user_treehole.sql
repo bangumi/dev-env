@@ -53,7 +53,7 @@ VALUES
     '9999',
     0,
     0,
-    'treeholechan2@gmail.com 密码:lovemeplease',
+    'o &lt;img src=&quot;#&quot; &gt;&lt;/img&gt;',
     '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
     'treeholechan2@gmail.com'
   ),
