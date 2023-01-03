@@ -15557,7 +15557,7 @@ VALUES
     '9999',
     0,
     0,
-    'treeholechan2@gmail.com 密码:lovemeplease',
+    'o &lt;img src=&quot;#&quot; &gt;&lt;/img&gt;',
     '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
     'treeholechan2@gmail.com'
   ),
@@ -15596,7 +15596,8 @@ VALUES
 INSERT INTO chii_oauth_access_tokens (access_token, client_id, user_id, expires, scope, id, TYPE, info)
 VALUES
   ('a_development_access_token', 'test_client_id', '382951', '2030-12-21 14:16:28', NULL, 1, 0, ''),
-  ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', NULL, 2, 0, '');INSERT INTO
+  ('a_expired_token', 'test_client_id', '382951', '2020-12-21 14:16:28', NULL, 2, 0, '');
+INSERT INTO
   `chii_members` (
     `uid`,
     `username`,
