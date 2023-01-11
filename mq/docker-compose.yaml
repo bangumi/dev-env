@@ -36,18 +36,6 @@ services:
       "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
       "debezium.source.topic.prefix": "debezium.chii"
 
-      "ENABLE_DEBEZIUM_SCRIPTING": "true"
-      "debezium.transforms": "filter"
-      "debezium.transforms.filter.type": "io.debezium.transforms.Filter"
-      "debezium.transforms.filter.language": "jsr223.groovy"
-      "debezium.transforms.filter.topic.regex": '^debezium\.chii\.bangumi\.chii_subject_fields$$'
-      "debezium.transforms.filter.condition": >-
-        !(
-        (value.op == 'u')
-        && (value.source.table == 'chii_subject_fields')
-        && (value.before.field_rank != value.after.field_rank)
-        )
-
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
