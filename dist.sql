@@ -895,7 +895,22 @@ create index msgfromid on chii_pms (msg_sid, msg_folder, msg_dateline);
 
 create index msgtoid on chii_pms (msg_rid, msg_folder, msg_dateline);
 
-create index pm_related on chii_pms (msg_related);INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
+create index pm_related on chii_pms (msg_related);CREATE TABLE `chii_subject_imgs`
+(
+    `img_id`         mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+    `img_subject_id` mediumint(8) unsigned NOT NULL,
+    `img_uid`        mediumint(8) unsigned NOT NULL,
+    `img_target`     varchar(255)          NOT NULL,
+    `img_vote`       mediumint(8) unsigned NOT NULL,
+    `img_nsfw`       tinyint(1) unsigned   NOT NULL,
+    `img_ban`        tinyint(1) unsigned   NOT NULL,
+    `img_dateline`   int(10) unsigned      NOT NULL,
+    PRIMARY KEY (`img_id`),
+    KEY `img_subject_id` (`img_subject_id`),
+    KEY `img_nsfw` (`img_nsfw`, `img_ban`)
+) ENGINE = MyISAM
+  DEFAULT CHARSET = utf8;
+INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES
   ('crt', 1, 1, 0, 0000, 12, 5),
   ('prsn', 1, 2, 0, 1980, 1, 21),
