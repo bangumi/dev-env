@@ -40,6 +40,7 @@
 ./sql/data/chii_subject_relations_vice_versa.sql
 ./sql/data/chii_subjects.sql
 ./sql/data/subject_2.sql
+./sql/data/subject_406604.sql
 
 ./sql/data/data_episodes.sql
 ./sql/data/chii_ep_2.sql
