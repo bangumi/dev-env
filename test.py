@@ -88,6 +88,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_rev_history",
         "chii_rev_text",
         "chii_subject_alias",
+        "chii_subject_imgs",
         "chii_subject_fields",
         "chii_subject_interests",
         "chii_subject_posts",
