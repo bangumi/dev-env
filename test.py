@@ -74,6 +74,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_index_comments",
         "chii_index_related",
         "chii_memberfields",
+        "chii_likes",
         "chii_members",
         "chii_oauth_access_tokens",
         "chii_oauth_clients",

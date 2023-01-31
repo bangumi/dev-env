@@ -23,6 +23,7 @@
 ./sql/schema/chii_friends.sql
 ./sql/schema/chii_notify.sql
 ./sql/schema/chii_subject_imgs.sql
+./sql/schema/chii_likes.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
