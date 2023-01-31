@@ -910,6 +910,23 @@ create index pm_related on chii_pms (msg_related);CREATE TABLE `chii_subject_img
     KEY `img_nsfw` (`img_nsfw`, `img_ban`)
 ) ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
+drop table if exists chii_likes;
+
+create table IF NOT EXISTS `chii_likes`
+(
+    `type`       MEDIUMINT UNSIGNED  NOT NULL,
+    `related_id` mediumint           NOT NULL,
+    `uid`        mediumint UNSIGNED  NOT NULL,
+    `value`      mediumint unsigned  not null default 0,
+    `ban`        tinyint(2) unsigned not null DEFAULT 0,
+    `created_at` int unsigned        not null comment 'unix timestamp seconds',
+    PRIMARY KEY (type, related_id, uid)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+
+create index idx_uid on `chii_likes` (uid);
+create index idx_related on `chii_likes` (related_id);
 INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES
   ('crt', 1, 1, 0, 0000, 12, 5),
@@ -14934,9 +14951,10 @@ VALUES
   (
     11,
     'wiki人',
-    'a:14:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";}',
+    'a:15:{s:9:"user_list";s:1:"1";s:17:"manage_user_group";s:1:"1";s:11:"manage_user";s:1:"1";s:19:"doujin_subject_lock";s:1:"1";s:12:"subject_edit";s:1:"1";s:12:"subject_lock";s:1:"1";s:15:"subject_refresh";s:1:"1";s:15:"subject_related";s:1:"1";s:10:"mono_merge";s:1:"1";s:10:"mono_erase";s:1:"1";s:7:"ep_edit";s:1:"1";s:7:"ep_move";s:1:"1";s:6:"report";s:1:"1";s:9:"app_erase";s:1:"1";s:19:"subject_cover_erase";s:1:"1";}',
     1304011366
-  );LOCK TABLES `chii_subject_topics` WRITE;
+  );
+LOCK TABLES `chii_subject_topics` WRITE;
 
 REPLACE INTO `chii_subject_topics`
 VALUES
