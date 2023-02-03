@@ -915,7 +915,7 @@ drop table if exists chii_likes;
 create table IF NOT EXISTS `chii_likes`
 (
     `type`       MEDIUMINT UNSIGNED  NOT NULL,
-    `related_id` mediumint           NOT NULL,
+    `related_id` int(10) unsigned    NOT NULL,
     `uid`        mediumint UNSIGNED  NOT NULL,
     `value`      mediumint unsigned  not null default 0,
     `ban`        tinyint(2) unsigned not null DEFAULT 0,
