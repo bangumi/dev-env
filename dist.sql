@@ -26,11 +26,6 @@
 --
 -- Current Database: `bangumi`
 --
-CREATE DATABASE
-  /*!32312 IF NOT EXISTS*/
-  `bangumi`
-  /*!40100 DEFAULT CHARACTER SET latin1 */;
-
 USE
   `bangumi`;
 
