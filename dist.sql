@@ -927,6 +927,40 @@ create table IF NOT EXISTS `chii_likes`
 
 create index idx_uid on `chii_likes` (uid);
 create index idx_related on `chii_likes` (related_id);
+DROP TABLE IF EXISTS `chii_tag_neue_index`;
+CREATE TABLE `chii_tag_neue_index`
+(
+    `tag_id`        mediumint(8) unsigned               NOT NULL AUTO_INCREMENT,
+    `tag_name`      varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+    `tag_cat`       tinyint(3)                          NOT NULL COMMENT '0=条目 1=日志 2=天窗',
+    `tag_type`      tinyint(3)                          NOT NULL,
+    `tag_results`   mediumint(8) unsigned               NOT NULL,
+    `tag_dateline`  int(10) unsigned                    NOT NULL,
+    `tag_lasttouch` int(10) unsigned                    NOT NULL,
+    PRIMARY KEY (`tag_id`),
+    KEY `tag_cat` (`tag_cat`, `tag_type`),
+    KEY `tag_results` (`tag_cat`, `tag_type`, `tag_results`),
+    KEY `tag_query` (`tag_name`, `tag_cat`, `tag_type`)
+) ENGINE = MyISAM
+  AUTO_INCREMENT = 367287
+  DEFAULT CHARSET = utf8
+  COLLATE = utf8_unicode_ci;
+DROP TABLE IF EXISTS `chii_tag_neue_list`;
+CREATE TABLE `chii_tag_neue_list`
+(
+    `tlt_tid`      mediumint(8) unsigned NOT NULL,
+    `tlt_uid`      mediumint(8) unsigned NOT NULL,
+    `tlt_cat`      tinyint(3) unsigned   NOT NULL,
+    `tlt_type`     tinyint(3) unsigned   NOT NULL,
+    `tlt_mid`      mediumint(8) unsigned NOT NULL,
+    `tlt_dateline` int(10) unsigned      NOT NULL,
+    KEY `tlt_tid` (`tlt_tid`, `tlt_uid`, `tlt_cat`, `tlt_type`, `tlt_mid`),
+    KEY `user_tags` (`tlt_uid`, `tlt_cat`, `tlt_mid`, `tlt_tid`),
+    KEY `subject_tags` (`tlt_cat`, `tlt_mid`, `tlt_tid`),
+    KEY `tag_to_subject` (`tlt_tid`, `tlt_mid`)
+) ENGINE = MyISAM
+  DEFAULT CHARSET = utf8
+  COLLATE = utf8_unicode_ci;
 INSERT INTO `chii_person_fields` (`prsn_cat`, `prsn_id`, `gender`, `bloodtype`, `birth_year`, `birth_mon`, `birth_day`)
 VALUES
   ('crt', 1, 1, 0, 0000, 12, 5),
