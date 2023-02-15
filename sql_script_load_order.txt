@@ -24,6 +24,8 @@
 ./sql/schema/chii_notify.sql
 ./sql/schema/chii_subject_imgs.sql
 ./sql/schema/chii_likes.sql
+./sql/schema/chii_tag_neue_index.sql
+./sql/schema/chii_tag_neue_list.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
