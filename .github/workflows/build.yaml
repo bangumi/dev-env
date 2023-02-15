@@ -14,12 +14,14 @@ jobs:
       - run: docker-compose up -d
 
       - name: wait mysql ready
-        run: bash ./dist/wait_mysql_ready.sh
+        run: bash ./wait_mysql_ready.sh
 
       - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --hex-blob > ./dist/dist.sql
 
       - run: docker-compose logs
         if: "${{ failure() }}"
+
+      - run: cp ./wait_mysql_ready.sh dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
