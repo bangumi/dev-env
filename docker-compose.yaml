@@ -7,7 +7,7 @@ services:
       context: .
     ports:
       - "3306:3306"
-    command: --sql-mode="" --log-bin=/var/lib/mysql/binlog
+    command: --sql-mode=""
     restart: unless-stopped
     volumes:
       - ./data/mysql:/var/lib/mysql
