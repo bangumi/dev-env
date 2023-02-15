@@ -1,0 +1,6 @@
+.vscode/
+.idea/
+.venv/
+./data/
+public/
+node_modules/
