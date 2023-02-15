@@ -22,7 +22,6 @@ jobs:
         if: "${{ failure() }}"
 
       - run: cp ./wait_mysql_ready.sh dist
-      - run: cp -r scripts ./dist/scripts
 
       - name: Setup node
         uses: actions/setup-node@v3
