@@ -35,3 +35,7 @@ docker-compose up -d
 git pull
 bash scripts/reload.sh
 ```
+
+## 可用账号
+
+https://github.com/bangumi/dev-docs#api
