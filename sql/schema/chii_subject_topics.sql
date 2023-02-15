@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_subject_topics` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subject_topics` (
     `sbj_tpc_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `sbj_tpc_subject_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `sbj_tpc_uid` MEDIUMINT(8) UNSIGNED NOT NULL,
@@ -11,11 +11,24 @@ CREATE TABLE
     `sbj_tpc_display` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1'
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-ALTER TABLE `chii_subject_topics`
-ADD PRIMARY KEY (`sbj_tpc_id`),
-ADD KEY `tpc_subject_id` (`sbj_tpc_subject_id`),
-ADD KEY `tpc_display` (`sbj_tpc_display`),
-ADD KEY `sbj_tpc_uid` (`sbj_tpc_uid`),
-ADD KEY `sbj_tpc_lastpost` (`sbj_tpc_lastpost`, `sbj_tpc_subject_id`, `sbj_tpc_display`) USING BTREE;
+ALTER TABLE
+  `chii_subject_topics`
+ADD
+  PRIMARY KEY (`sbj_tpc_id`),
+ADD
+  KEY `tpc_subject_id` (`sbj_tpc_subject_id`),
+ADD
+  KEY `tpc_display` (`sbj_tpc_display`),
+ADD
+  KEY `sbj_tpc_uid` (`sbj_tpc_uid`),
+ADD
+  KEY `sbj_tpc_lastpost` (
+    `sbj_tpc_lastpost`,
+    `sbj_tpc_subject_id`,
+    `sbj_tpc_display`
+  ) USING BTREE;
 
-ALTER TABLE `chii_subject_topics` MODIFY `sbj_tpc_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_subject_topics`
+MODIFY
+  `sbj_tpc_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;

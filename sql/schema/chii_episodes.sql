@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_episodes` (
+CREATE TABLE IF NOT EXISTS
+  `chii_episodes` (
     `ep_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `ep_subject_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `ep_sort` FLOAT UNSIGNED NOT NULL DEFAULT '0',
@@ -20,13 +20,24 @@ CREATE TABLE
     `ep_ban` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0'
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-ALTER TABLE `chii_episodes`
-ADD PRIMARY KEY (`ep_id`),
-ADD KEY `ep_sort` (`ep_sort`),
-ADD KEY `ep_disc` (`ep_disc`),
-ADD KEY `ep_subject_id` (`ep_subject_id`),
-ADD KEY `ep_lastpost` (`ep_lastpost`),
-ADD KEY `ep_ban` (`ep_ban`),
-ADD KEY `ep_subject_id_2` (`ep_subject_id`, `ep_ban`, `ep_sort`);
+ALTER TABLE
+  `chii_episodes`
+ADD
+  PRIMARY KEY (`ep_id`),
+ADD
+  KEY `ep_sort` (`ep_sort`),
+ADD
+  KEY `ep_disc` (`ep_disc`),
+ADD
+  KEY `ep_subject_id` (`ep_subject_id`),
+ADD
+  KEY `ep_lastpost` (`ep_lastpost`),
+ADD
+  KEY `ep_ban` (`ep_ban`),
+ADD
+  KEY `ep_subject_id_2` (`ep_subject_id`, `ep_ban`, `ep_sort`);
 
-ALTER TABLE `chii_episodes` MODIFY `ep_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_episodes`
+MODIFY
+  `ep_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;

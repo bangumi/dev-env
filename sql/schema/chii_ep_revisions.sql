@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_ep_revisions` (
+CREATE TABLE IF NOT EXISTS
+  `chii_ep_revisions` (
     `ep_rev_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `rev_sid` MEDIUMINT(8) UNSIGNED NOT NULL,
     # subject_id
@@ -11,8 +11,14 @@ CREATE TABLE
     `rev_edit_summary` VARCHAR(200) NOT NULL
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-ALTER TABLE `chii_ep_revisions`
-ADD PRIMARY KEY (`ep_rev_id`),
-ADD KEY `rev_sid` (`rev_sid`, `rev_creator`);
+ALTER TABLE
+  `chii_ep_revisions`
+ADD
+  PRIMARY KEY (`ep_rev_id`),
+ADD
+  KEY `rev_sid` (`rev_sid`, `rev_creator`);
 
-ALTER TABLE `chii_ep_revisions` MODIFY `ep_rev_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_ep_revisions`
+MODIFY
+  `ep_rev_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;

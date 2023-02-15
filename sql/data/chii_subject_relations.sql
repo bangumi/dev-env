@@ -1,13 +1,5 @@
 INSERT INTO
-  `chii_subject_relations` (
-    `rlt_subject_id`,
-    `rlt_subject_type_id`,
-    `rlt_relation_type`,
-    `rlt_related_subject_id`,
-    `rlt_related_subject_type_id`,
-    `rlt_vice_versa`,
-    `rlt_order`
-  )
+  `chii_subject_relations` (`rlt_subject_id`, `rlt_subject_type_id`, `rlt_relation_type`, `rlt_related_subject_id`, `rlt_related_subject_type_id`, `rlt_vice_versa`, `rlt_order`)
 VALUES
   (1, 1, 1, 296317, 4, 1, 0),
   (4, 4, 4002, 9944, 4, 1, 0),

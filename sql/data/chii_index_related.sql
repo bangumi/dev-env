@@ -1,6 +1,8 @@
-LOCK TABLES `chii_index_related` WRITE;
+LOCK TABLES
+  `chii_index_related` WRITE;
 
-REPLACE INTO `chii_index_related`
+REPLACE INTO
+  `chii_index_related`
 VALUES
   (29277, 0, 15045, 2, 806, 1, '1位 40.3', 1352382566),
   (29276, 0, 15045, 2, 28165, 2, '2位 39.9', 1352382511),

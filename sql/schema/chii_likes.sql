@@ -1,7 +1,8 @@
-drop table if exists chii_likes;
+drop table if exists
+  chii_likes;
 
-create table
-  IF NOT EXISTS `chii_likes` (
+create table IF NOT EXISTS
+  `chii_likes` (
     `type` MEDIUMINT UNSIGNED NOT NULL,
     `related_id` int(10) unsigned NOT NULL,
     `uid` mediumint UNSIGNED NOT NULL,
@@ -11,6 +12,8 @@ create table
     PRIMARY KEY (type, related_id, uid)
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-create index idx_uid on `chii_likes` (uid);
+create index
+  idx_uid on `chii_likes` (uid);
 
-create index idx_related on `chii_likes` (related_id);
+create index
+  idx_related on `chii_likes` (related_id);

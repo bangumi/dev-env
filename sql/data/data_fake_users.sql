@@ -1,23 +1,5 @@
 INSERT INTO
-  `chii_members` (
-    `uid`,
-    `username`,
-    `nickname`,
-    `avatar`,
-    `groupid`,
-    `regdate`,
-    `lastvisit`,
-    `lastactivity`,
-    `lastpost`,
-    `dateformat`,
-    `timeformat`,
-    `timeoffset`,
-    `newpm`,
-    `new_notify`,
-    `sign`,
-    `password_crypt`,
-    `email`
-  )
+  `chii_members` (`uid`, `username`, `nickname`, `avatar`, `groupid`, `regdate`, `lastvisit`, `lastactivity`, `lastpost`, `dateformat`, `timeformat`, `timeoffset`, `newpm`, `new_notify`, `sign`, `password_crypt`, `email`)
 VALUES
   (1, '1', 'nickname 1', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 1', '', ''),
   (4, '4', 'nickname 4', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 4', '', ''),

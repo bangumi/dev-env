@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_subjects` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subjects` (
     `subject_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `subject_type_id` SMALLINT(6) UNSIGNED NOT NULL DEFAULT '0',
     `subject_name` VARCHAR(80) NOT NULL,
@@ -27,8 +27,8 @@ CREATE TABLE
     `subject_ban` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0'
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-CREATE TABLE
-  IF NOT EXISTS `chii_subject_alias` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subject_alias` (
     `subject_id` INT(10) UNSIGNED NOT NULL,
     `alias_name` VARCHAR(255) NOT NULL,
     `subject_type_id` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '所属条目的类型',
@@ -36,8 +36,8 @@ CREATE TABLE
     `alias_key` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-CREATE TABLE
-  IF NOT EXISTS `chii_subject_fields` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subject_fields` (
     `field_sid` MEDIUMINT(8) UNSIGNED NOT NULL,
     `field_tid` SMALLINT(6) UNSIGNED NOT NULL DEFAULT '0',
     `field_tags` MEDIUMTEXT NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE
     `field_redirect` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0'
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-CREATE TABLE
-  IF NOT EXISTS `chii_subject_relations` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subject_relations` (
     `rlt_subject_id` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '关联主 ID',
     `rlt_subject_type_id` TINYINT(3) UNSIGNED NOT NULL,
     `rlt_relation_type` SMALLINT(5) UNSIGNED NOT NULL COMMENT '关联类型',
@@ -71,42 +71,97 @@ CREATE TABLE
     `rlt_order` TINYINT(3) UNSIGNED NOT NULL COMMENT '关联排序'
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci COMMENT = '条目关联表';
 
-ALTER TABLE `chii_subjects`
-ADD PRIMARY KEY (`subject_id`),
-ADD KEY `subject_name_cn` (`subject_name_cn`),
-ADD KEY `subject_platform` (`subject_platform`),
-ADD KEY `subject_creator` (`subject_creator`),
-ADD KEY `subject_series` (`subject_series`),
-ADD KEY `subject_series_entry` (`subject_series_entry`),
-ADD KEY `subject_airtime` (`subject_airtime`),
-ADD KEY `subject_ban` (`subject_ban`),
-ADD KEY `subject_idx_cn` (`subject_idx_cn`, `subject_type_id`),
-ADD KEY `subject_type_id` (`subject_type_id`),
-ADD KEY `subject_name` (`subject_name`),
+ALTER TABLE
+  `chii_subjects`
 ADD
-  KEY `order_by_name` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`, `subject_name`) USING BTREE,
-ADD KEY `browser` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`) USING BTREE,
-ADD KEY `subject_nsfw` (`subject_nsfw`);
+  PRIMARY KEY (`subject_id`),
+ADD
+  KEY `subject_name_cn` (`subject_name_cn`),
+ADD
+  KEY `subject_platform` (`subject_platform`),
+ADD
+  KEY `subject_creator` (`subject_creator`),
+ADD
+  KEY `subject_series` (`subject_series`),
+ADD
+  KEY `subject_series_entry` (`subject_series_entry`),
+ADD
+  KEY `subject_airtime` (`subject_airtime`),
+ADD
+  KEY `subject_ban` (`subject_ban`),
+ADD
+  KEY `subject_idx_cn` (`subject_idx_cn`, `subject_type_id`),
+ADD
+  KEY `subject_type_id` (`subject_type_id`),
+ADD
+  KEY `subject_name` (`subject_name`),
+ADD
+  KEY `order_by_name` (
+    `subject_ban`,
+    `subject_type_id`,
+    `subject_series`,
+    `subject_platform`,
+    `subject_name`
+  ) USING BTREE,
+ADD
+  KEY `browser` (
+    `subject_ban`,
+    `subject_type_id`,
+    `subject_series`,
+    `subject_platform`
+  ) USING BTREE,
+ADD
+  KEY `subject_nsfw` (`subject_nsfw`);
 
-ALTER TABLE `chii_subject_alias`
-ADD KEY `subject_id` (`subject_id`);
+ALTER TABLE
+  `chii_subject_alias`
+ADD
+  KEY `subject_id` (`subject_id`);
 
-ALTER TABLE `chii_subject_fields`
-ADD PRIMARY KEY (`field_sid`),
-ADD KEY `sort_id` (`field_tid`),
-ADD KEY `subject_airtime` (`field_airtime`),
-ADD KEY `field_rank` (`field_rank`),
-ADD KEY `field_date` (`field_date`),
-ADD KEY `field_year_mon` (`field_year`, `field_mon`),
-ADD KEY `field_year` (`field_year`),
-ADD KEY `query_date` (`field_sid`, `field_date`);
+ALTER TABLE
+  `chii_subject_fields`
+ADD
+  PRIMARY KEY (`field_sid`),
+ADD
+  KEY `sort_id` (`field_tid`),
+ADD
+  KEY `subject_airtime` (`field_airtime`),
+ADD
+  KEY `field_rank` (`field_rank`),
+ADD
+  KEY `field_date` (`field_date`),
+ADD
+  KEY `field_year_mon` (`field_year`, `field_mon`),
+ADD
+  KEY `field_year` (`field_year`),
+ADD
+  KEY `query_date` (`field_sid`, `field_date`);
 
-ALTER TABLE `chii_subject_relations`
-ADD UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`, `rlt_related_subject_id`, `rlt_vice_versa`),
-ADD KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`, `rlt_order`),
-ADD KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
-ADD KEY `rlt_relation_type` (`rlt_relation_type`, `rlt_subject_id`, `rlt_related_subject_id`) USING BTREE;
+ALTER TABLE
+  `chii_subject_relations`
+ADD
+  UNIQUE KEY `rlt_subject_id` (
+    `rlt_subject_id`,
+    `rlt_related_subject_id`,
+    `rlt_vice_versa`
+  ),
+ADD
+  KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`, `rlt_order`),
+ADD
+  KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
+ADD
+  KEY `rlt_relation_type` (
+    `rlt_relation_type`,
+    `rlt_subject_id`,
+    `rlt_related_subject_id`
+  ) USING BTREE;
 
-ALTER TABLE `chii_subjects` MODIFY `subject_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_subjects`
+MODIFY
+  `subject_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
-ALTER TABLE `chii_subject_fields` MODIFY `field_sid` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_subject_fields`
+MODIFY
+  `field_sid` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;

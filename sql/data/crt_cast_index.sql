@@ -1,6 +1,8 @@
-LOCK TABLES `chii_crt_cast_index` WRITE;
+LOCK TABLES
+  `chii_crt_cast_index` WRITE;
 
-REPLACE INTO `chii_crt_cast_index`
+REPLACE INTO
+  `chii_crt_cast_index`
 VALUES
   (32, 3862, 12, 2, ''),
   (46, 3863, 12, 2, ''),

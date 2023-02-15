@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_os_web_sessions` (
+CREATE TABLE IF NOT EXISTS
+  `chii_os_web_sessions` (
     `key` CHAR(64) PRIMARY KEY NOT NULL COMMENT 'session key',
     #
     `user_id` INT UNSIGNED NOT NULL COMMENT 'uint32 user id',

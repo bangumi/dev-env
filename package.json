@@ -10,8 +10,18 @@
         "options": {
           "formatter": "sql-formatter",
           "language": "mysql",
-          "expressionWidth": 120,
-          "multilineLists": "expressionWidth"
+          "database": "mysql",
+          "newlineBeforeSemicolon": false,
+          "commaPosition": "after",
+          "denseOperators": false,
+          "expressionWidth": 1000
+        }
+      },
+      {
+        "files": "./sql/schema/*.sql",
+        "options": {
+          "commaPosition": "after",
+          "expressionWidth": 50
         }
       }
     ]

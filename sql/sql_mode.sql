@@ -1,1 +1,2 @@
-SET SQL_MODE = "";
+SET
+  SQL_MODE = "";

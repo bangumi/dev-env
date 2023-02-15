@@ -1,5 +1,5 @@
-CREATE TABLE
-  IF NOT EXISTS `chii_subject_revisions` (
+CREATE TABLE IF NOT EXISTS
+  `chii_subject_revisions` (
     `rev_id` MEDIUMINT(8) UNSIGNED NOT NULL,
     `rev_type` TINYINT(3) UNSIGNED NOT NULL DEFAULT '1' COMMENT '修订类型',
     `rev_subject_id` MEDIUMINT(8) UNSIGNED NOT NULL,
@@ -16,11 +16,20 @@ CREATE TABLE
     `rev_platform` SMALLINT(6) UNSIGNED NOT NULL
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-ALTER TABLE `chii_subject_revisions`
-ADD PRIMARY KEY (`rev_id`),
-ADD KEY `rev_subject_id` (`rev_subject_id`, `rev_creator`),
-ADD KEY `rev_type` (`rev_type`),
-ADD KEY `rev_dateline` (`rev_dateline`),
-ADD KEY `rev_creator` (`rev_creator`, `rev_id`) USING BTREE;
+ALTER TABLE
+  `chii_subject_revisions`
+ADD
+  PRIMARY KEY (`rev_id`),
+ADD
+  KEY `rev_subject_id` (`rev_subject_id`, `rev_creator`),
+ADD
+  KEY `rev_type` (`rev_type`),
+ADD
+  KEY `rev_dateline` (`rev_dateline`),
+ADD
+  KEY `rev_creator` (`rev_creator`, `rev_id`) USING BTREE;
 
-ALTER TABLE `chii_subject_revisions` MODIFY `rev_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE
+  `chii_subject_revisions`
+MODIFY
+  `rev_id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT;

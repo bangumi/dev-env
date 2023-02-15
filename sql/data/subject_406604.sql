@@ -1,83 +1,10 @@
 INSERT INTO
-  `chii_subjects` (
-    `subject_id`,
-    `subject_type_id`,
-    `subject_name`,
-    `subject_name_cn`,
-    `subject_uid`,
-    `subject_creator`,
-    `subject_dateline`,
-    `subject_image`,
-    `subject_platform`,
-    `field_infobox`,
-    `field_summary`,
-    `field_5`,
-    `field_volumes`,
-    `field_eps`,
-    `subject_wish`,
-    `subject_collect`,
-    `subject_doing`,
-    `subject_on_hold`,
-    `subject_dropped`,
-    `subject_series`,
-    `subject_series_entry`,
-    `subject_idx_cn`,
-    `subject_airtime`,
-    `subject_nsfw`,
-    `subject_ban`
-  )
+  `chii_subjects` (`subject_id`, `subject_type_id`, `subject_name`, `subject_name_cn`, `subject_uid`, `subject_creator`, `subject_dateline`, `subject_image`, `subject_platform`, `field_infobox`, `field_summary`, `field_5`, `field_volumes`, `field_eps`, `subject_wish`, `subject_collect`, `subject_doing`, `subject_on_hold`, `subject_dropped`, `subject_series`, `subject_series_entry`, `subject_idx_cn`, `subject_airtime`, `subject_nsfw`, `subject_ban`)
 VALUES
-  (
-    406604,
-    3,
-    '結束バンド',
-    '',
-    '',
-    366797,
-    1667139245,
-    '2b/03/406604_iYYvi.jpg',
-    0,
-    '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n[TVアニメ『ぼっち・ざ・ろっく！』結束バンドフルアルバム]\r\n}\r\n|版本特性= Album, CD + BD\r\n|发售日期= 2022-12-28\r\n|价格= 期間生産限定盤 ￥4,070\r\n|播放时长= \r\n|录音= \r\n|碟片数量= 2\r\n|艺术家= 結束バンド[後藤ひとり(CV. 青山吉能)、伊地知虹夏(CV. 鈴代紗弓)、山田リョウ(CV. 水野朔)、喜多郁代(CV. 長谷川育美)]\r\n|作词= 樋口愛(ヒグチアイ)、谷口鮪、ZAQ、中嶋イッキュウ、音羽-otoha-、北澤ゆうほ、後藤正文\r\n|作曲= 音羽-otoha-、永井正道、谷口鮪、吉岡大地、塚田耕平、草野華余子、中嶋イッキュウ、北澤ゆうほ、内藤英雅、後藤正文\r\n|编曲= 三井律郎、akkin\r\n}}',
-    'TVアニメ『ぼっち・ざ・ろっく！』の劇中バンド「結束バンド」による、OP・ED・劇中曲、\r\nアルバム新録曲などを含めた全14曲収録のフルアルバム。',
-    '',
-    0,
-    0,
-    41,
-    289,
-    66,
-    4,
-    1,
-    0,
-    0,
-    '',
-    0,
-    0,
-    0
-  );
+  (406604, 3, '結束バンド', '', '', 366797, 1667139245, '2b/03/406604_iYYvi.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n[TVアニメ『ぼっち・ざ・ろっく！』結束バンドフルアルバム]\r\n}\r\n|版本特性= Album, CD + BD\r\n|发售日期= 2022-12-28\r\n|价格= 期間生産限定盤 ￥4,070\r\n|播放时长= \r\n|录音= \r\n|碟片数量= 2\r\n|艺术家= 結束バンド[後藤ひとり(CV. 青山吉能)、伊地知虹夏(CV. 鈴代紗弓)、山田リョウ(CV. 水野朔)、喜多郁代(CV. 長谷川育美)]\r\n|作词= 樋口愛(ヒグチアイ)、谷口鮪、ZAQ、中嶋イッキュウ、音羽-otoha-、北澤ゆうほ、後藤正文\r\n|作曲= 音羽-otoha-、永井正道、谷口鮪、吉岡大地、塚田耕平、草野華余子、中嶋イッキュウ、北澤ゆうほ、内藤英雅、後藤正文\r\n|编曲= 三井律郎、akkin\r\n}}', 'TVアニメ『ぼっち・ざ・ろっく！』の劇中バンド「結束バンド」による、OP・ED・劇中曲、\r\nアルバム新録曲などを含めた全14曲収録のフルアルバム。', '', 0, 0, 41, 289, 66, 4, 1, 0, 0, '', 0, 0, 0);
 
 INSERT INTO
-  `chii_subject_fields` (
-    `field_sid`,
-    `field_tid`,
-    `field_tags`,
-    `field_rate_1`,
-    `field_rate_2`,
-    `field_rate_3`,
-    `field_rate_4`,
-    `field_rate_5`,
-    `field_rate_6`,
-    `field_rate_7`,
-    `field_rate_8`,
-    `field_rate_9`,
-    `field_rate_10`,
-    `field_airtime`,
-    `field_rank`,
-    `field_year`,
-    `field_mon`,
-    `field_week_day`,
-    `field_date`,
-    `field_redirect`
-  )
+  `chii_subject_fields` (`field_sid`, `field_tid`, `field_tags`, `field_rate_1`, `field_rate_2`, `field_rate_3`, `field_rate_4`, `field_rate_5`, `field_rate_6`, `field_rate_7`, `field_rate_8`, `field_rate_9`, `field_rate_10`, `field_airtime`, `field_rank`, `field_year`, `field_mon`, `field_week_day`, `field_date`, `field_redirect`)
 VALUES
   (
     406604,

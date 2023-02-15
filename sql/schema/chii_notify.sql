@@ -10,11 +10,14 @@ create table
     nt_dateline int unsigned not null
   ) engine = MyISAM charset = utf8;
 
-create index nt_from_uid on chii_notify (nt_from_uid);
+create index
+  nt_from_uid on chii_notify (nt_from_uid);
 
-create index nt_mid on chii_notify (nt_mid);
+create index
+  nt_mid on chii_notify (nt_mid);
 
-create index nt_uid on chii_notify (nt_uid, nt_status, nt_type, nt_related_id);
+create index
+  nt_uid on chii_notify (nt_uid, nt_status, nt_type, nt_related_id);
 
 create table
   chii_notify_field (
@@ -24,16 +27,18 @@ create table
     ntf_title varchar(255) charset utf8mb4 not null
   ) engine = MyISAM charset = utf8;
 
-create index ntf_hash on chii_notify_field (ntf_hash);
+create index
+  ntf_hash on chii_notify_field (ntf_hash);
 
-create index ntf_rid on chii_notify_field (ntf_rid);
+create index
+  ntf_rid on chii_notify_field (ntf_rid);
 
 create table
   chii_pms (
     msg_id int unsigned auto_increment primary key,
     msg_sid mediumint unsigned default 0 not null,
     msg_rid mediumint unsigned default 0 not null,
-    msg_folder enum ('inbox', 'outbox') default 'inbox' not null,
+    msg_folder enum('inbox', 'outbox') default 'inbox' not null,
     msg_new tinyint(1) default 0 not null,
     msg_title varchar(75) not null,
     msg_dateline int unsigned default 0 not null,
@@ -44,10 +49,14 @@ create table
     msg_rdeleted tinyint(1) unsigned default 0 not null
   ) engine = MyISAM charset = utf8;
 
-create index msg_sdeleted on chii_pms (msg_sdeleted, msg_rdeleted);
+create index
+  msg_sdeleted on chii_pms (msg_sdeleted, msg_rdeleted);
 
-create index msgfromid on chii_pms (msg_sid, msg_folder, msg_dateline);
+create index
+  msgfromid on chii_pms (msg_sid, msg_folder, msg_dateline);
 
-create index msgtoid on chii_pms (msg_rid, msg_folder, msg_dateline);
+create index
+  msgtoid on chii_pms (msg_rid, msg_folder, msg_dateline);
 
-create index pm_related on chii_pms (msg_related);
+create index
+  pm_related on chii_pms (msg_related);

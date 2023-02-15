@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS `chii_tag_neue_index`;
+DROP TABLE IF EXISTS
+  `chii_tag_neue_index`;
 
 CREATE TABLE
   `chii_tag_neue_index` (
