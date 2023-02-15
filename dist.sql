@@ -26,9 +26,6 @@
 --
 -- Current Database: `bangumi`
 --
-USE
-  `bangumi`;
-
 --
 -- Table structure for table `chii_apps`
 --
