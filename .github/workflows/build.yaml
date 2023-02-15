@@ -14,7 +14,7 @@ jobs:
       - run: docker-compose up -d
 
       - name: wait mysql ready
-        run: bash ./wait_mysql_ready.sh
+        run: bash ./dist/wait_mysql_ready.sh
 
       - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --hex-blob > ./dist/dist.sql
 
