@@ -10,10 +10,7 @@ CREATE TABLE IF NOT EXISTS
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS
-  `chii_rev_text` (
-    `rev_text_id` MEDIUMINT(9) UNSIGNED NOT NULL,
-    `rev_text` MEDIUMBLOB NOT NULL
-  ) ENGINE = MyISAM DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+  `chii_rev_text` (`rev_text_id` MEDIUMINT(9) UNSIGNED NOT NULL, `rev_text` MEDIUMBLOB NOT NULL) ENGINE = MyISAM DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 ALTER TABLE
   `chii_rev_history`

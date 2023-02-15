@@ -57,72 +57,31 @@ create index
   interest_uid on chii_subject_interests (interest_uid);
 
 create index
-  interest_uid_2 on chii_subject_interests (
-    interest_uid,
-    interest_private,
-    interest_lasttouch
-  );
+  interest_uid_2 on chii_subject_interests (interest_uid, interest_private, interest_lasttouch);
 
 create index
-  subject_collect on chii_subject_interests (
-    interest_subject_id,
-    interest_type,
-    interest_private,
-    interest_collect_dateline
-  );
+  subject_collect on chii_subject_interests (interest_subject_id, interest_type, interest_private, interest_collect_dateline);
 
 create index
-  subject_comment on chii_subject_interests (
-    interest_subject_id,
-    interest_has_comment,
-    interest_private,
-    interest_lasttouch
-  );
+  subject_comment on chii_subject_interests (interest_subject_id, interest_has_comment, interest_private, interest_lasttouch);
 
 create index
-  subject_lasttouch on chii_subject_interests (
-    interest_subject_id,
-    interest_private,
-    interest_lasttouch
-  );
+  subject_lasttouch on chii_subject_interests (interest_subject_id, interest_private, interest_lasttouch);
 
 create index
-  subject_rate on chii_subject_interests (
-    interest_subject_id,
-    interest_rate,
-    interest_private
-  );
+  subject_rate on chii_subject_interests (interest_subject_id, interest_rate, interest_private);
 
 create index
-  tag_subject_id on chii_subject_interests (
-    interest_subject_type,
-    interest_type,
-    interest_uid
-  );
+  tag_subject_id on chii_subject_interests (interest_subject_type, interest_type, interest_uid);
 
 create index
-  top_subject on chii_subject_interests (
-    interest_subject_id,
-    interest_subject_type,
-    interest_doing_dateline
-  );
+  top_subject on chii_subject_interests (interest_subject_id, interest_subject_type, interest_doing_dateline);
 
 create index
-  user_collect_latest on chii_subject_interests (
-    interest_subject_type,
-    interest_type,
-    interest_uid,
-    interest_private
-  );
+  user_collect_latest on chii_subject_interests (interest_subject_type, interest_type, interest_uid, interest_private);
 
 create index
-  user_collect_type on chii_subject_interests (
-    interest_subject_type,
-    interest_type,
-    interest_uid,
-    interest_private,
-    interest_collect_dateline
-  );
+  user_collect_type on chii_subject_interests (interest_subject_type, interest_type, interest_uid, interest_private, interest_collect_dateline);
 
 create index
   user_collects on chii_subject_interests (interest_subject_type, interest_uid);

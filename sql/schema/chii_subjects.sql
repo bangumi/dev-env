@@ -96,20 +96,9 @@ ADD
 ADD
   KEY `subject_name` (`subject_name`),
 ADD
-  KEY `order_by_name` (
-    `subject_ban`,
-    `subject_type_id`,
-    `subject_series`,
-    `subject_platform`,
-    `subject_name`
-  ) USING BTREE,
+  KEY `order_by_name` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`, `subject_name`) USING BTREE,
 ADD
-  KEY `browser` (
-    `subject_ban`,
-    `subject_type_id`,
-    `subject_series`,
-    `subject_platform`
-  ) USING BTREE,
+  KEY `browser` (`subject_ban`, `subject_type_id`, `subject_series`, `subject_platform`) USING BTREE,
 ADD
   KEY `subject_nsfw` (`subject_nsfw`);
 
@@ -140,21 +129,13 @@ ADD
 ALTER TABLE
   `chii_subject_relations`
 ADD
-  UNIQUE KEY `rlt_subject_id` (
-    `rlt_subject_id`,
-    `rlt_related_subject_id`,
-    `rlt_vice_versa`
-  ),
+  UNIQUE KEY `rlt_subject_id` (`rlt_subject_id`, `rlt_related_subject_id`, `rlt_vice_versa`),
 ADD
   KEY `rlt_related_subject_type_id` (`rlt_related_subject_type_id`, `rlt_order`),
 ADD
   KEY `rlt_subject_type_id` (`rlt_subject_type_id`),
 ADD
-  KEY `rlt_relation_type` (
-    `rlt_relation_type`,
-    `rlt_subject_id`,
-    `rlt_related_subject_id`
-  ) USING BTREE;
+  KEY `rlt_relation_type` (`rlt_relation_type`, `rlt_subject_id`, `rlt_related_subject_id`) USING BTREE;
 
 ALTER TABLE
   `chii_subjects`

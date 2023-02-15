@@ -21,7 +21,7 @@
         "files": "./sql/schema/*.sql",
         "options": {
           "commaPosition": "after",
-          "expressionWidth": 50
+          "expressionWidth": 100
         }
       }
     ]

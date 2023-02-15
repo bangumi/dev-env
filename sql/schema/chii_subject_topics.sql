@@ -22,11 +22,7 @@ ADD
 ADD
   KEY `sbj_tpc_uid` (`sbj_tpc_uid`),
 ADD
-  KEY `sbj_tpc_lastpost` (
-    `sbj_tpc_lastpost`,
-    `sbj_tpc_subject_id`,
-    `sbj_tpc_display`
-  ) USING BTREE;
+  KEY `sbj_tpc_lastpost` (`sbj_tpc_lastpost`, `sbj_tpc_subject_id`, `sbj_tpc_display`) USING BTREE;
 
 ALTER TABLE
   `chii_subject_topics`

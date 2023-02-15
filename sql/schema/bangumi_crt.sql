@@ -192,12 +192,7 @@ ADD
 ALTER TABLE
   `chii_person_cs_index`
 ADD
-  PRIMARY KEY (
-    `prsn_type`,
-    `prsn_id`,
-    `subject_id`,
-    `prsn_position`
-  ),
+  PRIMARY KEY (`prsn_type`, `prsn_id`, `subject_id`, `prsn_position`),
 ADD
   KEY `subject_id` (`subject_id`),
 ADD

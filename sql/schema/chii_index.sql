@@ -88,12 +88,7 @@ ADD
 ADD
   KEY `idx_rlt_cat` (`idx_rlt_cat`),
 ADD
-  KEY `idx_order` (
-    `idx_rlt_rid`,
-    `idx_rlt_cat`,
-    `idx_rlt_order`,
-    `idx_rlt_sid`
-  ) USING BTREE;
+  KEY `idx_order` (`idx_rlt_rid`, `idx_rlt_cat`, `idx_rlt_order`, `idx_rlt_sid`) USING BTREE;
 
 ALTER TABLE
   `chii_index`
