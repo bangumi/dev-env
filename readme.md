@@ -21,8 +21,6 @@ mysql 容器的内置数据位于 [./sql](sql) 文件夹内，
 
 墙内可以访问 jsdelivr 镜像网址 https://cdn.jsdelivr.net/gh/bangumi/dev-env@gh-pages/dist.sql
 
-此 SQL 不支持多次运行。如果运行失败请删除旧数据库中所有表后重试。
-
 ---
 
 `./mq/` 文件夹包含 kafka 和 debezium 等组件的配置文件，用于解析 mysql 的 binlog。
