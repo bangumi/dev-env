@@ -3,7 +3,7 @@ version: "3.7"
 services:
   mysql:
     container_name: bangumi_mysql
-    image: 'mysql:5.7.33'
+    image: "mysql:5.7.33"
     ports:
       - "3306:3306"
     command: --sql-mode="" --log-bin=/var/lib/mysql/binlog

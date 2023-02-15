@@ -1,6 +1,9 @@
 {
   "prettier": {
     "printWidth": 120,
+    "plugins": [
+      "prettier-plugin-sh"
+    ],
     "overrides": [
       {
         "files": "*.sql",
@@ -19,7 +22,8 @@
     "format": "prettier --list-different -w ./sql/"
   },
   "dependencies": {
-    "prettier": "^2.7.0",
-    "prettier-plugin-sql": "^0.7.0"
+    "prettier": "^2.8.4",
+    "prettier-plugin-sh": "^0.12.8",
+    "prettier-plugin-sql": "^0.12.1"
   }
 }

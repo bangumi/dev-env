@@ -23,6 +23,16 @@ jobs:
 
       - run: cp ./wait_mysql_ready.sh dist
 
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+
+      - run: yarn
+
+      - run: npx prettier --list-different -w ./dist/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
