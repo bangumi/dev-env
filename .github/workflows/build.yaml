@@ -26,7 +26,6 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version-file: '.node-version'
           cache: yarn
 
       - run: yarn
