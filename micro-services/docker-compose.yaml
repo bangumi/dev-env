@@ -1,0 +1,63 @@
+version: "3.7"
+
+services:
+  ms-timeline:
+    image: ghcr.io/bangumi/ms-timeline:master
+    container_name: ms-timeline
+    ports:
+      - "5001:5001"
+    environment:
+      - MYSQL_DB=bangumi
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=user
+      - MYSQL_PASS=password
+      - GRPC_PORT=5001
+    expose:
+      - 5001
+    networks:
+      - internal
+
+  etcd:
+    image: "quay.io/coreos/etcd:v3.5.6"
+    command:
+      [
+        "etcd",
+        "--name=etcd0",
+        "--advertise-client-urls=http://${CHII_HOST:-127.0.0.1}:2379,http://${CHII_HOST:-127.0.0.1}:4001",
+        "--listen-client-urls=http://0.0.0.0:2379,http://0.0.0.0:4001",
+        "--initial-advertise-peer-urls=http://${CHII_HOST:-127.0.0.1}:2380",
+        "--listen-peer-urls=http://0.0.0.0:2380",
+        "--initial-cluster-token=etcd-cluster-1",
+        "--initial-cluster=etcd0=http://${CHII_HOST:-127.0.0.1}:2380",
+        "--initial-cluster-state=new",
+      ]
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+      - "4001:4001"
+
+  etcd-keeper:
+    image: evildecay/etcdkeeper
+    ports:
+      - "8180:8080"
+
+  imaginary:
+    image: h2non/imaginary
+    init: true
+    ports:
+      - "9000:9000"
+
+  meilisearch:
+    container_name: "chii-base-meilisearch"
+    image: "getmeili/meilisearch:v1.0"
+    command: meilisearch
+    environment:
+      MEILI_MASTER_KEY: "masterKey"
+      MEILI_LOG_LEVEL: "WARN"
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./data/meilisearch/:/meili_data/
+
+networks:
+  internal:
