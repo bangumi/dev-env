@@ -16,8 +16,6 @@ jobs:
       - name: wait mysql ready
         run: bash ./wait_mysql_ready.sh
 
-      - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --skip-dump-date --hex-blob > ./dist/dist.sql
-
       - run: docker-compose logs
         if: "${{ failure() }}"
 
@@ -30,7 +28,13 @@ jobs:
 
       - run: yarn
 
-      - run: npx prettier --list-different -w ./dist/
+      - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --skip-dump-date --no-data > ./dump-schema.sql
+      - run: npx prettier --expression-width 50 -w ./dump-schema.sql
+
+      - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --skip-dump-date --hex-blob --no-create-info > ./dump-data.sql
+      - run: npx prettier --expression-width 1000 -w ./dump-data.sql
+
+      - run: cat ./dump-schema.sql ./dump-data.sql > ./dist/dist.sql
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
