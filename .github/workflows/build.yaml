@@ -16,19 +16,12 @@ jobs:
       - name: wait mysql ready
         run: bash ./wait_mysql_ready.sh
 
-      - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --skip-dump-date --no-create-db --hex-blob --skip-comments | sed '/USE `bangumi`;/d'  > ./dist/dist.sql
+      - run: mysqldump -h 127.0.0.1 -u root -psecret --databases bangumi --column-statistics=0 --skip-dump-date --no-create-db --hex-blob --extended-insert=FALSE | sed '/USE `bangumi`;/d' > ./dist/dist.sql
 
       - run: docker-compose logs
         if: "${{ failure() }}"
 
       - run: cp ./wait_mysql_ready.sh dist
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          cache: yarn
-
-      - run: yarn
 
       - run: npx prettier --list-different -w ./dist/
 
