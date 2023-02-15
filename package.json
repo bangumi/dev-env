@@ -13,8 +13,10 @@
       }
     ]
   },
+  "private": true,
+  "license": "private",
   "scripts": {
-    "format": "prettier --list-different -w ./"
+    "format": "prettier --list-different -w ./sql/"
   },
   "dependencies": {
     "prettier": "^2.7.0",
