@@ -2,12 +2,13 @@ version: "3.7"
 
 services:
   debezium-server:
-    image: debezium/server:2.0.0.Final
+    image: debezium/server:2.1.2.Final
     container_name: debezium
     user: "1000:1000"
     ports:
       - "8088:8080"
     environment:
+      "quarkus.log.level": "WARN"
       "debezium.sink.type": "kafka"
       "debezium.sink.kafka.producer.bootstrap.servers": "kafka:9092"
       "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
