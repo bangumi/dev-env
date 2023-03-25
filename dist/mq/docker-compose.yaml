@@ -23,7 +23,7 @@ services:
       "debezium.source.database.dbname": "bangumi"
       "debezium.source.database.include.list": "bangumi"
       "debezium.source.table.include.list": "bangumi.chii_members,bangumi.chii_subjects,bangumi.chii_subject_fields"
-      "debezium.source.snapshot.mode": "schema_only"
+      "debezium.source.snapshot.mode": "initial"
       "debezium.source.snapshot.locking.mode": "none"
       "quarkus.log.console.json": "false"
       "debezium.source.offset.storage.file.filename": "/debezium/data/offset.dat"
