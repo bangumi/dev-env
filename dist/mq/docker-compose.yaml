@@ -26,19 +26,15 @@ services:
       "debezium.source.snapshot.mode": "schema_only"
       "debezium.source.snapshot.locking.mode": "none"
       "quarkus.log.console.json": "false"
-      "debezium.source.database.history": "io.debezium.server.redis.RedisDatabaseHistory"
-      "debezium.source.database.history.redis.address": "host.docker.internal:6379"
-      "debezium.source.database.history.redis.password": "redis-pass"
-      "debezium.source.offset.storage": "io.debezium.server.redis.RedisOffsetBackingStore"
-      "debezium.source.offset.storage.redis.address": "host.docker.internal:6379"
-      "debezium.source.offset.storage.redis.password": "redis-pass"
-      "debezium.source.offset.storage.redis.key": "debezium-offset-storage-1"
+      "debezium.source.offset.storage.file.filename": "/debezium/data/offset.dat"
       "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
       "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
       "debezium.source.topic.prefix": "debezium.chii"
 
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    volumes:
+      - ../data/debezium:/debezium/data
 
   zookeeper:
     image: zookeeper:3.8
