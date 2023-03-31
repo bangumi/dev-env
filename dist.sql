@@ -2768,7 +2768,7 @@ DROP TABLE IF EXISTS `chii_likes`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chii_likes` (
   `type` mediumint(8) unsigned NOT NULL,
-  `main_id` int(10) unsigned NOT NULL,
+  `main_id` int(10) unsigned NOT NULL DEFAULT '0',
   `related_id` int(10) unsigned NOT NULL,
   `uid` mediumint(8) unsigned NOT NULL,
   `value` mediumint(8) unsigned NOT NULL DEFAULT '0',
