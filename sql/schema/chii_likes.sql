@@ -1,9 +1,7 @@
-drop table if exists chii_likes;
-
-CREATE TABLE IF NOT EXISTS `chii_likes`
+CREATE TABLE `chii_likes`
 (
     `type`       mediumint(8) unsigned NOT NULL,
-    `main_id`    int(10) unsigned      NOT NULL,
+    `main_id`    int(10) unsigned      NOT NULL DEFAULT '0',
     `related_id` int(10) unsigned      NOT NULL,
     `uid`        mediumint(8) unsigned NOT NULL,
     `value`      mediumint(8) unsigned NOT NULL DEFAULT '0',
