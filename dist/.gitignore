@@ -1,7 +1,7 @@
 .vscode/
 .idea/
 .venv/
-data/
+/data/
 public/
-node_modules/
-mq/.env
+/node_modules/
+/mq/.env
