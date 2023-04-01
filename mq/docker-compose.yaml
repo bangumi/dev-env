@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  debezium-server:
+  debezium:
     image: debezium/server:2.1.2.Final
     container_name: debezium
     user: "1000:1000"
@@ -9,10 +9,12 @@ services:
       - "8088:8080"
     environment:
       "quarkus.log.level": "WARN"
-      "debezium.sink.type": "kafka"
-      "debezium.sink.kafka.producer.bootstrap.servers": "kafka:9092"
-      "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
-      "debezium.sink.kafka.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
+      "debezium.sink.type": "redis"
+      "debezium.sink.redis.address": "host.docker.internal:6379"
+      'debezium.sink.redis.password': "redis-pass"
+      "debezium.sink.redis.message.format": 'extended'
+      #      "debezium.sink.redis.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
+      #      "debezium.sink.redis.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
       "debezium.source.database.hostname": "host.docker.internal"
       "debezium.source.database.port": "3306"
@@ -26,56 +28,12 @@ services:
       "debezium.source.snapshot.mode": "initial"
       "debezium.source.snapshot.locking.mode": "none"
       "quarkus.log.console.json": "false"
-      "debezium.source.offset.storage.file.filename": "/debezium/data/offset.dat"
-      "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
-      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
+
+      "debezium.source.offset.storage": "io.debezium.storage.redis.offset.RedisOffsetBackingStore"
+      "debezium.source.offset.storage.redis.key": "debezium-offset-storage-1"
+
+      "debezium.source.schema.history.internal": "io.debezium.storage.redis.history.RedisSchemaHistory"
       "debezium.source.topic.prefix": "debezium.chii"
 
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    volumes:
-      - ../data/debezium:/debezium/data
-
-  zookeeper:
-    image: zookeeper:3.8
-    user: root
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-    volumes:
-      - ../data/zk/data:/data
-      - ../data/zk/log:/datalog
-    ports:
-      - "22181:2181"
-
-  kafka:
-    image: confluentinc/cp-kafka:7.2.1
-    user: root
-    depends_on:
-      - zookeeper
-    volumes:
-      - ../data/kafka:/var/lib/kafka/data
-    ports:
-      #      - '9092:9092'
-      - "29092:29092"
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      #      KAFKA_LISTENERS: 'PLAINTEXT://0.0.0.0:9092'
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://${CHII_HOST:-localhost}:29092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-
-  kafka-ui:
-    container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
-    ports:
-      - "8087:8080"
-    depends_on:
-      - zookeeper
-      - kafka
-    environment:
-      KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
