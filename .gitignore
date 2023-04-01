@@ -2,5 +2,7 @@
 .idea/
 .venv/
 /data/
+/mq/data/
+/micro-services/data/
 public/
 node_modules/
