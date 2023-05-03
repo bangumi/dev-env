@@ -61,3 +61,37 @@ jobs:
           exit 1
 
       - run: python test-each-file.py
+
+
+  build:
+    needs: [test,test-each-file]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: docker-compose up -d
+
+      - name: wait mysql ready
+        run: bash ./wait_mysql_ready.sh
+
+      - run: |
+          mysqldump \
+            -h 127.0.0.1 -u root -psecret \
+            --databases bangumi \
+            --column-statistics=0 \
+            --skip-dump-date \
+            --no-create-db \
+            --hex-blob \
+            --extended-insert=FALSE | sed '/USE `bangumi`;/d' > ./dist/dist.sql
+
+      - run: docker-compose logs
+        if: "${{ failure() }}"
+
+      - run: cp ./wait_mysql_ready.sh dist
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist/
+          commit_message: deploy ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
