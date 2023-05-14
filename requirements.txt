@@ -1,2 +1,2 @@
 pymysql>=1.0.2,<2.0.0
-pyyaml
+pyyaml>=6.0,<7
