@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS
     sign           VARCHAR(255) CHARSET utf8                           NOT NULL,
     password_crypt CHAR(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
     email          CHAR(50) CHARACTER SET utf8                         NOT NULL DEFAULT '',
-    acl            mediumtext                                          NOT NULL default '{}',
+    acl            mediumtext                                          NOT NULL,
     CONSTRAINT username UNIQUE (username)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
