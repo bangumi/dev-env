@@ -3,12 +3,12 @@ INSERT INTO `chii_members` (`uid`, `username`, `nickname`, `avatar`, `groupid`, 
                             `password_crypt`, `email`, `acl`)
 VALUES (382951, '382951', '树洞酱', '000/38/29/382951.jpg?r=1571167246', 10, 1512262276, 1639827114, 1639841249, 0, '',
         0, '9999', 0, 7, 'treeholechan@gmail.com 密码:lovemeplease',
-        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq', 'treeholechan@gmail.com', '{}'),
+        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq', 'treeholechan@gmail.com', ''),
        (318250, 'treehole2', '树洞2', '', 10, 1512262276, 1639827114, 1639841249, 0, '', 0, '9999', 0, 0,
         'o &lt;img src=&quot;#&quot; &gt;&lt;/img&gt;', '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq',
-        'treeholechan2@gmail.com', '{}'),
+        'treeholechan2@gmail.com', ''),
        (2, '2', 'nickname 2', '', 11, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 2',
-        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq', '2@bgm38.com', '{}');
+        '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq', '2@bgm38.com', '');
 
 INSERT INTO `chii_memberfields` (`uid`, `site`, `location`, `bio`, `privacy`, `blocklist`)
 VALUES (382951, 'bgm.tv/character/13307', '',
