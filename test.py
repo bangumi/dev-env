@@ -70,6 +70,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_groups",
         "chii_group_members",
         "chii_group_posts",
+        "chii_subject_rec",
         "chii_group_topics",
         "chii_index",
         "chii_index_collects",
