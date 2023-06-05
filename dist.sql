@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.33, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
@@ -7380,6 +7380,32 @@ INSERT INTO `chii_subject_posts` VALUES (37962,4030,8766,0,'(bgm75)',0,138858632
 INSERT INTO `chii_subject_posts` VALUES (140983,16908,9580,0,'蛋糕小姐真的很好，真的就是淳朴善良勇往直前的无铁炮大正抚子，好几个场景我都很喜欢，随便写点，感觉如果有机会做动画的话，一定挺好看的。\r\n\r\n1.和光太分享围巾，说着光太有着温柔的味道，说着未婚男女做这种事太不知廉耻的蛋糕小姐\r\n2.在龟山公园展望台上喝醉了酒说着自己来到现代第一天就在京都站顶俯瞰下面星空的蛋糕小姐和说即使回不去你也不是一个人的光太\r\n3.从山科回京都时穿过隧道时握了小手体验了一回爱因斯坦相对论的蛋糕小姐\r\n4.最后在鹿儿岛“重逢”时说你答应给我当导游的蛋糕小姐\r\n5.医院里和老爷爷相认实现心愿的蛋糕小姐（老爷爷的身份倒是完全不藏着掖着，能学会自行车真的太好了呢）\r\n6.在运动会上举着日本国旗为美波摇旗呐喊的蛋糕小姐\r\n7.试穿水手服结果被光太推进门来看到不好意思地把她轰出去的蛋糕小姐（可惜明明请了shirabi老师，结果啥黑白插都没有，我想看这张）\r\n8,那个大象出来，真的笑了，没想到会在那里出来大象。',0,1582651379);
 INSERT INTO `chii_subject_posts` VALUES (140984,16908,9580,0,'真的基本就是那种很温暖的剧情，除了最后为了正剧的展开写了一些让人感到压抑的东西以外，读起来非常愉快，那些压抑的东西最后也通过作者的白魔法变成了温柔而美好的结局，这种意义上的确是很和我胃口的一本书了。虽然真的让我选的话，我更喜欢蛋糕小姐和老爷爷那对吧，毕竟这才是原配嘛。',0,1582651483);
 /*!40000 ALTER TABLE `chii_subject_posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `chii_subject_rec`
+--
+
+DROP TABLE IF EXISTS `chii_subject_rec`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `chii_subject_rec` (
+  `subject_id` mediumint(8) unsigned NOT NULL,
+  `rec_subject_id` mediumint(8) unsigned NOT NULL,
+  `mio_sim` float NOT NULL,
+  `mio_count` mediumint(9) NOT NULL,
+  KEY `subject_id` (`subject_id`),
+  KEY `mio_count` (`mio_count`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chii_subject_rec`
+--
+
+LOCK TABLES `chii_subject_rec` WRITE;
+/*!40000 ALTER TABLE `chii_subject_rec` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chii_subject_rec` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
