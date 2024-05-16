@@ -1,5 +1,6 @@
 ./sql/sql_mode.sql
 ./sql/schema/bangumi_crt.sql
+./sql/schema/chii_person_collects.sql
 ./sql/schema/chii_usergroup.sql
 ./sql/schema/chii_subject_topics.sql
 ./sql/schema/chii_group_topics.sql
