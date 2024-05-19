@@ -43,7 +43,7 @@ CREATE TABLE `chii_apps` (
   KEY `app_type` (`app_type`,`app_creator`),
   KEY `app_ban` (`app_ban`),
   KEY `app_status` (`app_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,6 +52,7 @@ CREATE TABLE `chii_apps` (
 
 LOCK TABLES `chii_apps` WRITE;
 /*!40000 ALTER TABLE `chii_apps` DISABLE KEYS */;
+INSERT INTO `chii_apps` VALUES (1,1,2,'Bangumi iOS','iOS app for Bangumi','',0,0,1715828406,1715828406,0);
 /*!40000 ALTER TABLE `chii_apps` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3085,6 +3086,7 @@ CREATE TABLE `chii_oauth_clients` (
 
 LOCK TABLES `chii_oauth_clients` WRITE;
 /*!40000 ALTER TABLE `chii_oauth_clients` DISABLE KEYS */;
+INSERT INTO `chii_oauth_clients` VALUES (1,'bgmabcdefg','abcdefg','bangumi://oauth/callback','','','2');
 /*!40000 ALTER TABLE `chii_oauth_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
