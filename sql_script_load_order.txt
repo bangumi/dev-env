@@ -78,3 +78,6 @@
 ./sql/data/chii_group_posts.sql
 ./sql/data/chii_group_topics.sql
 ./sql/data/chii_likes.sql
+
+./sql/data/chii_apps.sql
+./sql/data/chii_oauth_clients.sql
