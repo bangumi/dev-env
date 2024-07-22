@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.36, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.37, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
@@ -700,11 +700,12 @@ CREATE TABLE `chii_ep_comments` (
   `ep_pst_related` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `ep_pst_dateline` int(10) unsigned NOT NULL,
   `ep_pst_content` mediumtext NOT NULL,
+  `ep_pst_state` tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (`ep_pst_id`),
   KEY `ep_cmt_crt_id` (`ep_pst_mid`),
   KEY `ep_pst_related` (`ep_pst_related`),
   KEY `ep_pst_uid` (`ep_pst_uid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1569875 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -713,6 +714,9 @@ CREATE TABLE `chii_ep_comments` (
 
 LOCK TABLES `chii_ep_comments` WRITE;
 /*!40000 ALTER TABLE `chii_ep_comments` DISABLE KEYS */;
+INSERT INTO `chii_ep_comments` VALUES (1034989,1075440,600046,0,1640462712,'sandbox',0);
+INSERT INTO `chii_ep_comments` VALUES (1569792,1075440,448570,0,1719389390,'这是一条测试内容',0);
+INSERT INTO `chii_ep_comments` VALUES (1569874,1075440,448570,0,1719399020,'(bgm40)(bgm41)(bgm41)(bgm41)(bgm41)',0);
 /*!40000 ALTER TABLE `chii_ep_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
