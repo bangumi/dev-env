@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS
     `subject_type_id` TINYINT(4) UNSIGNED NOT NULL,
     `crt_type` TINYINT(4) UNSIGNED NOT NULL COMMENT '主角，配角',
     `ctr_appear_eps` MEDIUMTEXT COLLATE utf8_unicode_ci NOT NULL COMMENT '可选，角色出场的的章节',
-    `crt_order` TINYINT(3) UNSIGNED NOT NULL
+    `crt_order` smallint(6) UNSIGNED NOT NULL
   ) ENGINE = MyISAM DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS
