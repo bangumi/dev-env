@@ -1,17 +1,15 @@
 import json
 import os
-from typing import List, Dict
 
 import pymysql
-
 import yaml
 
 
 def main():
-    with open("./docker-compose.yaml", "r", encoding="utf8") as f:
+    with open("./docker compose.yaml", encoding="utf8") as f:
         compose = yaml.safe_load(f.read())
 
-    with open("./sql_script_load_order.txt", "r") as f:
+    with open("./sql_script_load_order.txt") as f:
         sql_scripts = f.readlines()
         sql_scripts = [line.rstrip() for line in sql_scripts]
 
@@ -21,7 +19,7 @@ def main():
     check_tables(container_config)
 
 
-def check_sql_scripts(sql_scripts: List[str]):
+def check_sql_scripts(sql_scripts: list[str]):
     configured_sql = set(
         [os.path.abspath(line) for line in sql_scripts if line]  # exclude empty lines
     )
@@ -53,10 +51,10 @@ def check_sql_scripts(sql_scripts: List[str]):
         )
 
 
-def check_tables(container_config: Dict[str, str]):
+def check_tables(container_config: dict[str, str]):
     Expected_Tables = {
         "chii_tag_neue_list",
-        'chii_tag_neue_index',
+        "chii_tag_neue_index",
         "chii_apps",
         "chii_characters",
         "chii_crt_cast_index",
@@ -104,7 +102,7 @@ def check_tables(container_config: Dict[str, str]):
         "chii_usergroup",
         "chii_notify",
         "chii_notify_field",
-        "chii_pms"
+        "chii_pms",
     }
 
     # 打开数据库连接
@@ -141,7 +139,7 @@ def check_tables(container_config: Dict[str, str]):
     db.close()
 
 
-def get_all_sql_file_path() -> List[str]:
+def get_all_sql_file_path() -> list[str]:
     data = []
     for root, _, files in os.walk("./sql/"):
         for file in files:

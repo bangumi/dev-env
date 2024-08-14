@@ -1,6 +1,6 @@
 # Bangumi 开发环境
 
-基于 docker 和 docker-compose
+基于 docker 和 docker compose
 
 本仓库仅用于快速配置 bangumi 开发环境，不包含任何 bangumi 代码。
 
@@ -36,11 +36,11 @@ pip install -r requirements.txt
 
 ```shell
 # 删除旧数据及docker环境
-docker-compose down -v --remove-orphans
+docker compose down -v --remove-orphans
 sudo rm -rf ./data
 
 # 测试
-docker-compose up --build -d
+docker compose up --build -d
 python test.py # 需要等docker container准备完成
 ```
 

@@ -6,10 +6,10 @@ from pymysql.constants import CLIENT
 
 
 def main():
-    with open("./docker-compose.yaml", "r", encoding="utf8") as f:
+    with open("./docker compose.yaml", encoding="utf8") as f:
         compose = yaml.safe_load(f.read())
 
-    with open("./sql_script_load_order.txt", "r") as f:
+    with open("./sql_script_load_order.txt") as f:
         sql_scripts = f.readlines()
         sql_scripts = [line.rstrip() for line in sql_scripts if line.rstrip()]
 
@@ -24,7 +24,7 @@ def main():
     )
 
     for script in sql_scripts:
-        with open(script, 'r', encoding='utf8') as f:
+        with open(script, encoding="utf8") as f:
             sql = f.read()
         print(f"executing {script}")
         with db.cursor() as cursor:

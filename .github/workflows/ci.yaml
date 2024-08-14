@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - run: docker-compose up -d
+      - run: docker compose up -d
 
       - uses: actions/setup-python@v3
         with:
@@ -28,7 +28,7 @@ jobs:
 
       - run: python test.py
 
-      - run: docker-compose logs
+      - run: docker compose logs
         if: "${{ failure() }}"
 
   test-each-file:
@@ -75,7 +75,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: docker-compose up -d
+      - run: docker compose up -d
 
       - name: wait mysql ready
         run: bash ./wait_mysql_ready.sh
@@ -90,7 +90,7 @@ jobs:
             --hex-blob \
             --extended-insert=FALSE | sed '/USE `bangumi`;/d' > ./dist/dist.sql
 
-      - run: docker-compose logs
+      - run: docker compose logs
         if: "${{ failure() }}"
 
       - run: cp ./wait_mysql_ready.sh dist
