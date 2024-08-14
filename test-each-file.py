@@ -6,7 +6,7 @@ from pymysql.constants import CLIENT
 
 
 def main():
-    with open("./docker compose.yaml", encoding="utf8") as f:
+    with open("./docker-compose.yaml", encoding="utf8") as f:
         compose = yaml.safe_load(f.read())
 
     with open("./sql_script_load_order.txt") as f:
