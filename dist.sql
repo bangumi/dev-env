@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.37, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.39, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
@@ -595,7 +595,7 @@ CREATE TABLE `chii_crt_subject_index` (
   `subject_type_id` tinyint(4) unsigned NOT NULL,
   `crt_type` tinyint(4) unsigned NOT NULL COMMENT '主角，配角',
   `ctr_appear_eps` mediumtext COLLATE utf8_unicode_ci NOT NULL COMMENT '可选，角色出场的的章节',
-  `crt_order` tinyint(3) unsigned NOT NULL,
+  `crt_order` smallint(6) unsigned NOT NULL,
   PRIMARY KEY (`crt_id`,`subject_id`),
   KEY `subject_id` (`subject_id`),
   KEY `crt_type` (`crt_type`),

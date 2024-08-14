@@ -7,13 +7,13 @@ Pull Request 也请向 master 分支提交。
 ```bash
 git clone https://github.com/bangumi/dev-env.git bangumi-dev-env --depth=1
 cd bangumi-dev-env
-docker-compose up --build -d
+docker compose up --build -d
 # start mysql binlog message watcher, optional
 cd mq
-docker-compose up -d
+docker compose up -d
 ```
 
-如果你不使用 docker 或者 docker-compose，也可以下载并导入 <https://bangumi.github.io/dev-env/dist.sql> 文件，此文件包含了本仓库的所有 sql 文件。
+如果你不使用 docker 或者 docker compose，也可以下载并导入 <https://bangumi.github.io/dev-env/dist.sql> 文件，此文件包含了本仓库的所有 sql 文件。
 
 墙内可以访问 jsdelivr 镜像网址 https://cdn.jsdelivr.net/gh/bangumi/dev-env@gh-pages/dist.sql
 
@@ -25,7 +25,7 @@ docker-compose up -d
 
 基础的 http server 不需要这些服务，可以不启动。
 
-如果你不在运行 docker-compose 的机器上进行开发（也就是说不使用`localhost`或者`127.0.0.1`来链接到数据库），
+如果你不在运行 docker compose 的机器上进行开发（也就是说不使用`localhost`或者`127.0.0.1`来链接到数据库），
 设置 `CHII_HOST` 环境变量来解决 kafka 的 `KAFKA_ADVERTISED_LISTENERS` 问题
 
 
