@@ -82,3 +82,10 @@
 
 ./sql/data/chii_apps.sql
 ./sql/data/chii_oauth_clients.sql
+
+./sql/data/chii_characters_12.sql
+./sql/data/chii_crt_cast_index_12.sql
+./sql/data/chii_crt_subject_index_12.sql
+./sql/data/chii_person_cs_index_12.sql
+./sql/data/chii_persons_12.sql
+./sql/data/chii_subject_relations_12.sql
