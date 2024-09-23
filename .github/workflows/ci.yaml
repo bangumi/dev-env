@@ -94,6 +94,7 @@ jobs:
         if: "${{ failure() }}"
 
       - run: cp ./wait_mysql_ready.sh dist
+      - run: cp -r mq dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
