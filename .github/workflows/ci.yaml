@@ -95,6 +95,7 @@ jobs:
 
       - run: cp ./wait_mysql_ready.sh dist
       - run: cp -r mq dist
+      - run: cp -r micro-services dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

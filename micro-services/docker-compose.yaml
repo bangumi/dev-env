@@ -1,0 +1,39 @@
+services:
+  ms-timeline:
+    image: ghcr.io/bangumi/ms-timeline:master
+    container_name: ms-timeline
+    ports:
+      - "5001:5001"
+    environment:
+      - MYSQL_DB=bangumi
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=user
+      - MYSQL_PASS=password
+      - GRPC_PORT=5001
+    expose:
+      - 5001
+    networks:
+      - internal
+
+  imaginary:
+    image: h2non/imaginary
+    init: true
+    ports:
+      - "9000:9000"
+
+  meilisearch:
+    container_name: "chii-base-meilisearch"
+    image: "getmeili/meilisearch:v1.10.1"
+    command:
+      - meilisearch
+      - --master-key
+      - BOxvL-Zkwfnfe6cG-hfqCsP4LR0aQOnssytKDa4_zD0
+    environment:
+      MEILI_LOG_LEVEL: "WARN"
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./data/meilisearch/:/meili_data/
+
+networks:
+  internal:
