@@ -2,7 +2,7 @@ services:
   debezium:
     image: debezium/server:2.7.3.Final
     container_name: debezium
-    user: "1000:1000"
+    user: "0:0"
     volumes:
       - ./data/debezium:/debezium/data
     environment:
@@ -12,6 +12,9 @@ services:
       "debezium.sink.kafka.producer.bootstrap.servers": "kafka:9092"
       "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.sink.kafka.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
+
+      "debezium.format.key.schemas.enable": 'false'
+      "debezium.format.value.schemas.enable": 'false'
 
       #      "debezium.sink.redis.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       #      "debezium.sink.redis.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
