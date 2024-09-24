@@ -43,7 +43,7 @@ services:
     image: 'bitnami/kafka:3.8'
     user: '0:0'
     volumes:
-      - ./data/to/bitnami-kafka:/bitnami/kafka
+      - ./data/kafka:/bitnami/kafka
     expose:
       - 9092
       - 9093
@@ -63,7 +63,11 @@ services:
       KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_CFG_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
-      KAFKA_CFG_NUM_PARTITIONS: 3
+      KAFKA_CFG_NUM_PARTITIONS: 1
+
+      KAFKA_CFG_LOG_RETENTION_BYTES: '1073741824' # 1 GiB
+      KAFKA_CFG_LOG_RETENTION_HOURS: '72'
+      KAFKA_CFG_COMPRESSION_TYPE: 'gzip'
 
     healthcheck:
       test: kafka-topics.sh --list --bootstrap-server localhost:9092 || exit 1
