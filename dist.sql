@@ -3125,6 +3125,32 @@ INSERT INTO `chii_oauth_clients` VALUES (1,'bgmabcdefg','abcdefg','bangumi://oau
 UNLOCK TABLES;
 
 --
+-- Table structure for table `chii_oauth_refresh_tokens`
+--
+
+DROP TABLE IF EXISTS `chii_oauth_refresh_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `chii_oauth_refresh_tokens` (
+  `refresh_token` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `client_id` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `expires` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `scope` varchar(4000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`refresh_token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chii_oauth_refresh_tokens`
+--
+
+LOCK TABLES `chii_oauth_refresh_tokens` WRITE;
+/*!40000 ALTER TABLE `chii_oauth_refresh_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chii_oauth_refresh_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `chii_os_web_sessions`
 --
 
