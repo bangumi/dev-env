@@ -103,6 +103,7 @@ def check_tables(container_config: dict[str, str]):
         "chii_notify",
         "chii_notify_field",
         "chii_pms",
+        'chii_oauth_refresh_tokens',
     }
 
     # 打开数据库连接
