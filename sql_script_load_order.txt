@@ -28,6 +28,7 @@
 ./sql/schema/chii_tag_neue_index.sql
 ./sql/schema/chii_tag_neue_list.sql
 ./sql/schema/chii_subject_rec.sql
+./sql/schema/chii_oauth_refresh_tokens.sql
 
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
