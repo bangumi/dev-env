@@ -30,6 +30,7 @@
 ./sql/schema/chii_subject_rec.sql
 ./sql/schema/chii_oauth_refresh_tokens.sql
 
+./sql/data/chii_oauth_refresh_tokens.sql
 ./sql/data/data_chii_person_fields.sql
 ./sql/data/data_chii_characters.sql
 ./sql/data/data_chii_crt_subject_index.sql
