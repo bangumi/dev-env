@@ -3,14 +3,11 @@ version: "3.7"
 services:
   mysql:
     container_name: bangumi_mysql
-    build:
-      context: .
+    image: mysql:5.7.33
     ports:
       - "3306:3306"
     command: --sql-mode=""
     restart: unless-stopped
-    volumes:
-      - ./data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: bangumi
