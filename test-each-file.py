@@ -26,6 +26,8 @@ def main():
     for script in sql_scripts:
         with open(script, encoding="utf8") as f:
             sql = f.read()
+        if sql.strip() == ';':
+            continue
         print(f"executing {script}")
         with db.cursor() as cursor:
             cursor.execute(sql)
