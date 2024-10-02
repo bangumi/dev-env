@@ -127,7 +127,7 @@ def check_tables(container_config: dict[str, str]):
         for table in data:
             if table[1] == container_config["MYSQL_DATABASE"]:
                 tables.add(table[2])
-        assert EXPECTED_TABLES - tables, f"missing tables {EXPECTED_TABLES - tables} in database"
+        assert not EXPECTED_TABLES - tables, f"missing tables {EXPECTED_TABLES - tables} in database"
 
     for table in EXPECTED_TABLES:
         with db.cursor() as cursor:
