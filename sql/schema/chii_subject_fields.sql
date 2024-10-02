@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `chii_subject_fields`;
 CREATE TABLE `chii_subject_fields` (
   `field_sid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `field_tid` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `field_meta_tags` mediumtext CHARACTER SET utf8mb4 NOT NULL default '',
+  `field_meta_tags` mediumtext CHARACTER SET utf8mb4 NOT NULL,
   `field_tags` mediumtext NOT NULL,
   `field_rate_1` mediumint(8) unsigned NOT NULL,
   `field_rate_2` mediumint(8) unsigned NOT NULL DEFAULT '0',
