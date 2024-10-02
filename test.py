@@ -107,20 +107,21 @@ EXPECTED_TABLES = {
 
 def check_tables(container_config: dict[str, str]):
     # 打开数据库连接
-    db = pymysql.connect(
+    conn = pymysql.connect(
         host=os.environ.get("CHII_HOST", "127.0.0.1"),
         database=container_config["MYSQL_DATABASE"],
         user=container_config["MYSQL_USER"],
         password=container_config["MYSQL_PASSWORD"],
+        autocommit=True,
     )
 
-    with db.cursor() as cursor:
+    with conn.cursor() as cursor:
         cursor.execute("SELECT VERSION()")
         data = cursor.fetchone()
         assert data[0].startswith("5.7.33"), data
         print("Database version : ", data[0])
 
-    with db.cursor() as cursor:
+    with conn.cursor() as cursor:
         cursor.execute("select * from information_schema.tables")
         data = cursor.fetchall()
         tables = set()
@@ -130,13 +131,13 @@ def check_tables(container_config: dict[str, str]):
         assert not EXPECTED_TABLES - tables, f"missing tables {EXPECTED_TABLES - tables} in database"
 
     for table in EXPECTED_TABLES:
-        with db.cursor() as cursor:
+        with conn.cursor() as cursor:
             cursor.execute(f"select count(1) from {table}")
             count, = cursor.fetchone()
             if not count:
                 print(f"table {table} is empty")
 
-    db.close()
+    conn.close()
 
 
 def get_all_sql_file_path() -> list[str]:

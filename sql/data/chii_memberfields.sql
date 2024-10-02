@@ -1,4 +1,4 @@
-insert into bangumi.chii_memberfields (uid, site, location, bio, privacy, blocklist)
+insert into chii_memberfields (uid, site, location, bio, privacy, blocklist)
 values  (287622, 'bgm.tv/character/13307', '', 'fake bio', 'a:4:{i:1;i:2;i:30;i:2;i:20;i:2;i:21;i:0;}', '0'),
         (382951, 'bgm.tv/character/13307', '', 'treeholechan@gmail.com 密码：lovemeplease
 （欢迎大家一起维护树洞酱，但请勿随意修改密码）

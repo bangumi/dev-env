@@ -1,4 +1,4 @@
-insert into bangumi.chii_index_related (idx_rlt_id, idx_rlt_cat, idx_rlt_rid, idx_rlt_type, idx_rlt_sid, idx_rlt_order, idx_rlt_comment, idx_rlt_dateline, idx_rlt_ban)
+insert into chii_index_related (idx_rlt_id, idx_rlt_cat, idx_rlt_rid, idx_rlt_type, idx_rlt_sid, idx_rlt_order, idx_rlt_comment, idx_rlt_dateline, idx_rlt_ban)
 values  (29277, 0, 15045, 2, 806, 1, '1位 40.3', 1352382566, 0),
         (29276, 0, 15045, 2, 28165, 2, '2位 39.9', 1352382511, 0),
         (29275, 0, 15045, 2, 32585, 3, '3位 39.4', 1352382444, 0),

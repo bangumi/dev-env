@@ -1,4 +1,4 @@
-insert into bangumi.chii_group_posts (grp_pst_id, grp_pst_mid, grp_pst_uid, grp_pst_related, grp_pst_content, grp_pst_state, grp_pst_dateline)
+insert into chii_group_posts (grp_pst_id, grp_pst_mid, grp_pst_uid, grp_pst_related, grp_pst_content, grp_pst_state, grp_pst_dateline)
 values  (2055276, 371602, 287622, 0, 'tt', 0, 1657885648),
         (2056216, 371602, 287622, 0, 't', 6, 1658030918),
         (2092004, 371602, 287622, 0, '管理员删除', 7, 1662276469),

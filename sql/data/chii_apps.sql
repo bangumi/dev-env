@@ -1,2 +1,2 @@
-insert into bangumi.chii_apps (app_id, app_type, app_creator, app_name, app_desc, app_url, app_collects, app_status, app_timestamp, app_lasttouch, app_ban)
+insert into chii_apps (app_id, app_type, app_creator, app_name, app_desc, app_url, app_collects, app_status, app_timestamp, app_lasttouch, app_ban)
 values  (1, 1, 2, 'Bangumi iOS', 'iOS app for Bangumi', '', 0, 0, 1715828406, 1715828406, 0);

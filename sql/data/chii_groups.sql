@@ -1,4 +1,4 @@
-insert into bangumi.chii_groups (grp_id, grp_cat, grp_name, grp_title, grp_icon, grp_creator, grp_topics, grp_posts, grp_members, grp_desc, grp_lastpost, grp_builddate, grp_accessible, grp_nsfw)
+insert into chii_groups (grp_id, grp_cat, grp_name, grp_title, grp_icon, grp_creator, grp_topics, grp_posts, grp_members, grp_desc, grp_lastpost, grp_builddate, grp_accessible, grp_nsfw)
 values  (1, 0, 'pb', 'Perfect Blue', '', 2, 579, 0, 15, '蛋疼的测试ing', 0, 1216020888, 1, 0),
         (2, 40, 'forum', '站务论坛', '000/00/00/2.jpg', 1, 8224, 0, 2523, '地图：
 [url=http://bgm.tv]Bangumi[/url]

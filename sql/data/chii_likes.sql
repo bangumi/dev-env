@@ -1,4 +1,4 @@
-insert into bangumi.chii_likes (type, main_id, related_id, uid, value, ban, created_at)
+insert into chii_likes (type, main_id, related_id, uid, value, ban, created_at)
 values  (8, 379821, 2288668, 6497, 54, 0, 1680273352),
         (8, 379821, 2288668, 49447, 132, 0, 1680273232),
         (8, 379821, 2288668, 153405, 54, 0, 1680273359),

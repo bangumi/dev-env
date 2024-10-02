@@ -15,24 +15,22 @@ def main():
 
     container_config = compose["services"]["mysql"]["environment"]
 
-    db = pymysql.connect(
+    conn = pymysql.connect(
         host=os.environ.get("CHII_HOST", "127.0.0.1"),
         database=container_config["MYSQL_DATABASE"],
         user=container_config["MYSQL_USER"],
         password=container_config["MYSQL_PASSWORD"],
         client_flag=CLIENT.MULTI_STATEMENTS,
+        autocommit=True,
     )
 
     for script in sql_scripts:
         with open(script, encoding="utf8") as f:
             sql = f.read()
-        if sql.strip() == ';':
-            continue
         print(f"executing {script}")
-        with db.cursor() as cursor:
+        with conn.cursor() as cursor:
             cursor.execute(sql)
-
-    db.close()
+    conn.close()
 
 
 if __name__ == "__main__":

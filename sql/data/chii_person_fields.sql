@@ -1,4 +1,4 @@
-insert into bangumi.chii_person_fields (prsn_cat, prsn_id, gender, bloodtype, birth_year, birth_mon, birth_day)
+insert into chii_person_fields (prsn_cat, prsn_id, gender, bloodtype, birth_year, birth_mon, birth_day)
 values  ('crt', 1, 1, 0, 0, 12, 5),
         ('prsn', 1, 2, 0, 1980, 1, 21),
         ('crt', 2, 1, 0, 2000, 7, 10),

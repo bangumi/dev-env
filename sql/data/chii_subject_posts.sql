@@ -1,4 +1,4 @@
-insert into bangumi.chii_subject_posts (sbj_pst_id, sbj_pst_mid, sbj_pst_uid, sbj_pst_related, sbj_pst_content, sbj_pst_state, sbj_pst_dateline)
+insert into chii_subject_posts (sbj_pst_id, sbj_pst_mid, sbj_pst_uid, sbj_pst_related, sbj_pst_content, sbj_pst_state, sbj_pst_dateline)
 values  (1, 1, 2, 0, 'SAi看的也是红皮书吧', 0, 1216020847),
         (2, 1, 3, 0, '你是猪 ... 鉴定完毕 ...', 0, 1216021115),
         (3, 1, 2, 0, '023 你才是猪', 0, 1216021295),
@@ -336,7 +336,7 @@ id 号瞩目...
         (142, 59, 1, 0, '修了频道新帖无法显示的Bug,UBB等TAG完成后再加', 0, 1218720825),
         (143, 59, 4, 0, '那个页面现在每天都在更新', 0, 1218790065),
         (185, 73, 4, 0, 'http://6.cn/profile/playlist.php?p=165000', 0, 1221746945),
-        (200, 77, 1114, 0, '：） 
+        (200, 77, 1114, 0, '：）
 
 值得收藏', 0, 1224851090),
         (221, 77, 2, 0, '买不起，只看录像', 0, 1232527707),
@@ -433,7 +433,7 @@ Bangumi不提供任何资源的下载哦(bgm25)', 0, 1333120490),
 马车微微一摇，车夫并不转头，只是视线向背后瞟去。
 少女没有在意。
 少女尽情地吸着沐浴阳光后的草香，仰视头顶青空，嫣然一笑。
-  
+
 然后，
 “名为Geass的王之力会让人孤独——”
 少女C.C.那无忧无虑的，银铃般的声音在天际回响着。

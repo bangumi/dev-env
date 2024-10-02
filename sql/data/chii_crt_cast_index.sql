@@ -1,4 +1,4 @@
-insert into bangumi.chii_crt_cast_index (crt_id, prsn_id, subject_id, subject_type_id, summary)
+insert into chii_crt_cast_index (crt_id, prsn_id, subject_id, subject_type_id, summary)
 values  (32, 3862, 12, 2, ''),
         (46, 3863, 12, 2, ''),
         (6540, 1, 61743, 4, ''),

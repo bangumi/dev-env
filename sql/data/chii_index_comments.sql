@@ -1,4 +1,4 @@
-insert into bangumi.chii_index_comments (idx_pst_id, idx_pst_mid, idx_pst_uid, idx_pst_related, idx_pst_dateline, idx_pst_content)
+insert into chii_index_comments (idx_pst_id, idx_pst_mid, idx_pst_uid, idx_pst_related, idx_pst_dateline, idx_pst_content)
 values  (1038, 15045, 2331, 0, 1352385392, '9/101
 渣渣~'),
         (1039, 15045, 14127, 1038, 1352385632, '哈哈 我也是9/101'),

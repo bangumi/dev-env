@@ -1,4 +1,4 @@
-insert into bangumi.chii_episodes (ep_id, ep_subject_id, ep_sort, ep_type, ep_disc, ep_name, ep_name_cn, ep_rate, ep_duration, ep_airdate, ep_online, ep_comment, ep_resources, ep_desc, ep_dateline, ep_lastpost, ep_lock, ep_ban)
+insert into chii_episodes (ep_id, ep_subject_id, ep_sort, ep_type, ep_disc, ep_name, ep_name_cn, ep_rate, ep_duration, ep_airdate, ep_online, ep_comment, ep_resources, ep_desc, ep_dateline, ep_lastpost, ep_lock, ep_ban)
 values  (519, 253, 1, 0, 0, 'アステロイド・ブルース Asteroid Blues', '小行星蓝调', 0, '00:24:43', '1998-10-23', 'a:7:{i:0;s:47:"http://v.youku.com/v_show/id_XMTA4OTQyOTY=.html";i:1;s:38:"http://player.56.com/v_NTExMjI2MDM.swf";i:2;s:40:"http://www.tudou.com/v/u_252U0EERY/v.swf";i:3;s:42:"http://www.letv.com/ptv/vplay/1305391.html";i:4;s:60:"http://6.cn/player.swf?flag=0&amp;vid=hkiNB/npqSwGyGFBcXBzmg";i:5;s:39:"http://www.bilibili.com/video/av488321/";i:6;s:3:"...";}', 66, 0, '脚本：信本敬子  絵コンテ：渡辺信一郎  演出：武井良幸  作画監督：川元利浩  メカ作画監督：佐野浩敏
 
 賞金首のアシモフを追うスパイクとジェット。アシモフは敵対する組織から非合法の目薬ドラッグ“ブラッディアイ”を盗み出していた。アシモフは恋人のカテリーナと共に、ブラッディアイを売り捌こうと売人のバーテンの店を訪れるが……

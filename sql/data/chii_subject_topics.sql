@@ -1,4 +1,4 @@
-insert into bangumi.chii_subject_topics (sbj_tpc_id, sbj_tpc_subject_id, sbj_tpc_uid, sbj_tpc_title, sbj_tpc_dateline, sbj_tpc_lastpost, sbj_tpc_replies, sbj_tpc_state, sbj_tpc_display)
+insert into chii_subject_topics (sbj_tpc_id, sbj_tpc_subject_id, sbj_tpc_uid, sbj_tpc_title, sbj_tpc_dateline, sbj_tpc_lastpost, sbj_tpc_replies, sbj_tpc_state, sbj_tpc_display)
 values  (1, 1, 2, '拿这个来测试', 1216020847, 1639999129, 76, 0, 1),
         (20, 2, 212, 'cheer~', 1217558002, 1217558840, 1, 0, 1),
         (452, 2, 442, '2333', 1262410348, 1263199823, 18, 0, 1),

@@ -1,4 +1,4 @@
-insert into bangumi.chii_members (uid, username, nickname, avatar, groupid, regdate, lastvisit, lastactivity, lastpost, dateformat, timeformat, timeoffset, newpm, new_notify, sign, password_crypt, email, acl)
+insert into chii_members (uid, username, nickname, avatar, groupid, regdate, lastvisit, lastactivity, lastpost, dateformat, timeformat, timeoffset, newpm, new_notify, sign, password_crypt, email, acl)
 values  (1, '1', 'nickname 1', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 1', '', '', ''),
         (2, '2', 'nickname 2', '', 11, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 2', '$2a$12$GA5Pr9GhsyLJcSPoTpYBY.JqTzYZb2nfgSeZ1EK38bfgk/Rykkvuq', '2@bgm38.com', ''),
         (4, '4', 'nickname 4', '', 0, 0, 0, 0, 0, '', 0, '', 0, 0, 'sing 4', '', '', ''),

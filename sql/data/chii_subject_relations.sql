@@ -1,4 +1,4 @@
-insert into bangumi.chii_subject_relations (rlt_subject_id, rlt_subject_type_id, rlt_relation_type, rlt_related_subject_id, rlt_related_subject_type_id, rlt_vice_versa, rlt_order)
+insert into chii_subject_relations (rlt_subject_id, rlt_subject_type_id, rlt_relation_type, rlt_related_subject_id, rlt_related_subject_type_id, rlt_vice_versa, rlt_order)
 values  (1, 1, 1, 296317, 4, 1, 0),
         (4, 4, 4002, 9944, 4, 1, 0),
         (4, 4, 4006, 9950, 4, 1, 0),

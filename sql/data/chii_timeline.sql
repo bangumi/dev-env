@@ -1,4 +1,4 @@
-insert into bangumi.chii_timeline (tml_id, tml_uid, tml_cat, tml_type, tml_related, tml_memo, tml_img, tml_batch, tml_source, tml_replies, tml_dateline)
+insert into chii_timeline (tml_id, tml_uid, tml_cat, tml_type, tml_related, tml_memo, tml_img, tml_batch, tml_source, tml_replies, tml_dateline)
 values  (28684346, 685747, 5, 2, '685747', 'a:2:{s:6:"before";s:15:"约翰史密斯";s:5:"after";s:10:"supepapupu";}', '', 0, 0, 0, 1654391216),
         (28684294, 459866, 5, 2, '459866', 'a:2:{s:6:"before";s:12:"Distance0098";s:5:"after";s:9:"已注销";}', '', 0, 0, 0, 1654390800),
         (28683698, 525800, 5, 0, '525800', '~~~~', '', 0, 0, 0, 1654380445),
@@ -90,7 +90,7 @@ Bangumi[http://bgm.tv]
 每日必修";}i:4301;a:4:{s:6:"grp_id";s:4:"4301";s:8:"grp_name";s:18:"estaban_leyendo084";s:9:"grp_title";s:18:"読書総合病院";s:8:"grp_desc";s:58:"旨在帮助成员重拾读书习惯的康复协会（ ...";}i:4374;a:4:{s:6:"grp_id";s:4:"4374";s:8:"grp_name";s:7:"senyaku";s:9:"grp_title";s:21:"写作与翻译练习";s:8:"grp_desc";s:63:"本组旨在供站友练习提高写作与翻译水平。
  ...";}i:651;a:4:{s:6:"grp_id";s:3:"651";s:8:"grp_name";s:9:"fillgrids";s:9:"grp_title";s:9:"补旧番";s:8:"grp_desc";s:68:"起源：由“建立补旧番小组”的提议而建。
 
-临 ...";}i:4483;a:4:{s:6:"grp_id";s:4:"4483";s:8:"grp_name";s:6:"latest";s:9:"grp_title";s:15:"新番咖啡厅";s:8:"grp_desc";s:62:"一个更 横向与通透 讨论 当季新番 的地方 
+临 ...";}i:4483;a:4:{s:6:"grp_id";s:4:"4483";s:8:"grp_name";s:6:"latest";s:9:"grp_title";s:15:"新番咖啡厅";s:8:"grp_desc";s:62:"一个更 横向与通透 讨论 当季新番 的地方
  ...";}i:4529;a:4:{s:6:"grp_id";s:4:"4529";s:8:"grp_name";s:8:"iijyanai";s:9:"grp_title";s:27:"班咕咪姛画片同好会";s:8:"grp_desc";s:67:"女孩子间纯洁无瑕的友情，无论是清淡的轻百还 ...";}i:202;a:4:{s:6:"grp_id";s:3:"202";s:8:"grp_name";s:8:"nihonngo";s:9:"grp_title";s:9:"日本語";s:8:"grp_desc";s:34:"梦想是有妹
 
 命运是无妹";}i:3880;a:4:{s:6:"grp_id";s:4:"3880";s:8:"grp_name";s:8:"galgamer";s:9:"grp_title";s:8:"Galgamer";s:8:"grp_desc";s:59:"本小组主要是用来讨论 Galgame 相关.
@@ -103,7 +103,7 @@ Bangumi[http://bgm.tv]
 临 ...";}', 'a:3:{s:6:"grp_id";s:3:"651";s:8:"grp_name";s:9:"fillgrids";s:6:"images";s:17:"000/00/06/651.jpg";}', 0, 0, 0, 1654355364),
         (28680104, 690243, 1, 3, 'latest', 'a:4:{i:651;a:4:{s:6:"grp_id";s:3:"651";s:8:"grp_name";s:9:"fillgrids";s:9:"grp_title";s:9:"补旧番";s:8:"grp_desc";s:68:"起源：由“建立补旧番小组”的提议而建。
 
-临 ...";}i:4483;a:4:{s:6:"grp_id";s:4:"4483";s:8:"grp_name";s:6:"latest";s:9:"grp_title";s:15:"新番咖啡厅";s:8:"grp_desc";s:62:"一个更 横向与通透 讨论 当季新番 的地方 
+临 ...";}i:4483;a:4:{s:6:"grp_id";s:4:"4483";s:8:"grp_name";s:6:"latest";s:9:"grp_title";s:15:"新番咖啡厅";s:8:"grp_desc";s:62:"一个更 横向与通透 讨论 当季新番 的地方
  ...";}i:4611;a:4:{s:6:"grp_id";s:4:"4611";s:8:"grp_name";s:6:"gungun";s:9:"grp_title";s:21:"今天看点儿啥？";s:8:"grp_desc";s:66:"随意记录值得记录的
 时而严谨时而活泼，大部 ...";}i:2;a:4:{s:6:"grp_id";s:1:"2";s:8:"grp_name";s:5:"forum";s:9:"grp_title";s:12:"站务论坛";s:8:"grp_desc";s:56:"地图：
 Bangumi[http://bgm.tv]

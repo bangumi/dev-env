@@ -1,4 +1,4 @@
-insert into bangumi.chii_rev_history (rev_id, rev_type, rev_mid, rev_text_id, rev_dateline, rev_creator, rev_edit_summary)
+insert into chii_rev_history (rev_id, rev_type, rev_mid, rev_text_id, rev_dateline, rev_creator, rev_edit_summary)
 values  (122788, 18, 522, 74717, 1370353738, 0, '章节初始化'),
         (1439146, 18, 522, 74717, 1646354994, 409467, '章节修改'),
         (1, 2, 1, 1, 1286307038, 1, ''),

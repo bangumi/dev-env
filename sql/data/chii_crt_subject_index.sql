@@ -1,4 +1,4 @@
-insert into bangumi.chii_crt_subject_index (crt_id, subject_id, subject_type_id, crt_type, ctr_appear_eps, crt_order)
+insert into chii_crt_subject_index (crt_id, subject_id, subject_type_id, crt_type, ctr_appear_eps, crt_order)
 values  (1, 8, 2, 1, '', 1),
         (1, 793, 2, 1, '', 1),
         (1, 32214, 3, 1, '', 0),

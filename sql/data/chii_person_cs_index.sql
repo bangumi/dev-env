@@ -1,4 +1,4 @@
-insert into bangumi.chii_person_cs_index (prsn_type, prsn_id, prsn_position, subject_id, subject_type_id, summary, prsn_appear_eps)
+insert into chii_person_cs_index (prsn_type, prsn_id, prsn_position, subject_id, subject_type_id, summary, prsn_appear_eps)
 values  ('prsn', 1, 1001, 4, 4, '', ''),
         ('prsn', 1, 1002, 500, 4, '', ''),
         ('prsn', 1, 1003, 6, 4, '', ''),
