@@ -1,6 +1,4 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
---
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
