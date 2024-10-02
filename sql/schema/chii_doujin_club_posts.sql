@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -31,7 +30,7 @@ CREATE TABLE `chii_doujin_club_posts` (
   KEY `pss_topic_id` (`club_pst_mid`),
   KEY `club_pst_related` (`club_pst_related`),
   KEY `club_pst_uid` (`club_pst_uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=12366 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

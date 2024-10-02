@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -31,6 +30,7 @@ CREATE TABLE `chii_subjects` (
   `subject_image` varchar(255) NOT NULL,
   `subject_platform` smallint(6) unsigned NOT NULL DEFAULT '0',
   `field_infobox` mediumtext NOT NULL,
+  `field_meta_tags` mediumtext CHARACTER SET utf8mb4 NOT NULL,
   `field_summary` mediumtext NOT NULL COMMENT 'summary',
   `field_5` mediumtext NOT NULL COMMENT 'author summary',
   `field_volumes` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '卷数',
@@ -60,7 +60,7 @@ CREATE TABLE `chii_subjects` (
   KEY `order_by_name` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`,`subject_name`) USING BTREE,
   KEY `browser` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`) USING BTREE,
   KEY `subject_nsfw` (`subject_nsfw`)
-) ENGINE=InnoDB AUTO_INCREMENT=516363 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

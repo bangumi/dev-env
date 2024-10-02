@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -36,7 +35,7 @@ CREATE TABLE `chii_eden` (
   `eden_pushdate` int(10) unsigned NOT NULL,
   PRIMARY KEY (`eden_id`),
   KEY `eden_type` (`eden_type`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

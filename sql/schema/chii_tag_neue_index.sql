@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -32,7 +31,7 @@ CREATE TABLE `chii_tag_neue_index` (
   KEY `tag_cat` (`tag_cat`,`tag_type`),
   KEY `tag_results` (`tag_cat`,`tag_type`,`tag_results`),
   KEY `tag_query` (`tag_name`,`tag_cat`,`tag_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=416338 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

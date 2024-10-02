@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -35,7 +34,7 @@ CREATE TABLE `chii_group_topics` (
   KEY `grp_tpc_display` (`grp_tpc_display`),
   KEY `grp_tpc_uid` (`grp_tpc_uid`),
   KEY `grp_tpc_lastpost` (`grp_tpc_lastpost`)
-) ENGINE=InnoDB AUTO_INCREMENT=406529 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

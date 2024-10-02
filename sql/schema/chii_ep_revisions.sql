@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -31,7 +30,7 @@ CREATE TABLE `chii_ep_revisions` (
   `rev_edit_summary` varchar(200) NOT NULL,
   PRIMARY KEY (`ep_rev_id`),
   KEY `rev_sid` (`rev_sid`,`rev_creator`)
-) ENGINE=MyISAM AUTO_INCREMENT=69338 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

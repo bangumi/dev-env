@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -31,7 +30,7 @@ CREATE TABLE `chii_robot_personality` (
   `rbt_psn_dateline` int(10) unsigned NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`rbt_psn_id`),
   KEY `rbt_psn_ban` (`rbt_psn_ban`)
-) ENGINE=MyISAM AUTO_INCREMENT=1405 DEFAULT CHARSET=utf8 COMMENT='伪春菜人格';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='伪春菜人格';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

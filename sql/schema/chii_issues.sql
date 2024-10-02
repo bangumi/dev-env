@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -34,7 +33,7 @@ CREATE TABLE `chii_issues` (
   PRIMARY KEY (`isu_id`),
   KEY `isu_type` (`isu_type`,`isu_main_id`,`isu_creator`,`isu_operator`,`isu_status`),
   KEY `isu_value` (`isu_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=28174 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

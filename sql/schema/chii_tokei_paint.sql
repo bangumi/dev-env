@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -35,7 +34,7 @@ CREATE TABLE `chii_tokei_paint` (
   PRIMARY KEY (`tp_id`),
   KEY `tp_uid` (`tp_uid`,`tp_hour`),
   KEY `tp_related_tpc` (`tp_related_tpc`)
-) ENGINE=MyISAM AUTO_INCREMENT=2505 DEFAULT CHARSET=utf8 COMMENT='Tokei Paints';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Tokei Paints';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

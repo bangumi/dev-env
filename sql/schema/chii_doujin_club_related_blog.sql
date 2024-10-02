@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -30,7 +29,7 @@ CREATE TABLE `chii_doujin_club_related_blog` (
   PRIMARY KEY (`crb_id`),
   KEY `crb_club_id` (`crb_club_id`,`crb_entry_id`),
   KEY `crb_entry_id` (`crb_entry_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8167 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

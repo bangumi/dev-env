@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
--- Host: 192.168.201.71    Database: bangumi
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.16.04.1-log
 
@@ -32,7 +31,7 @@ CREATE TABLE `chii_subject_related_blog` (
   PRIMARY KEY (`srb_id`),
   KEY `srb_uid` (`srb_uid`,`srb_subject_id`,`srb_entry_id`),
   KEY `subject_related` (`srb_subject_id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=227151 DEFAULT CHARSET=utf8 COMMENT='条目关联日志';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='条目关联日志';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
