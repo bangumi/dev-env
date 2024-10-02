@@ -72,7 +72,7 @@ jobs:
 
 
   build:
-    needs: [test,test-each-file]
+    needs: [ test,test-each-file ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -86,8 +86,9 @@ jobs:
           mysqldump \
             -h 127.0.0.1 -u root -psecret \
             --databases bangumi \
-            --column-statistics=0 \
             --skip-dump-date \
+            --order-by-primary \
+            --replace \
             --no-create-db \
             --hex-blob \
             --extended-insert=FALSE | sed '/USE `bangumi`;/d' > ./dist/dist.sql
