@@ -100,7 +100,7 @@ jobs:
       - run: cp -r micro-services dist
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v5
         if: github.event_name == 'push'
         with:
           publish_dir: ./dist/
