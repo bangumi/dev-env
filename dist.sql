@@ -35,7 +35,7 @@ CREATE TABLE `chii_app_collects` (
   PRIMARY KEY (`app_clt_id`),
   KEY `amb_app_id` (`app_clt_app_id`,`app_clt_uid`),
   KEY `app_clt_uid` (`app_clt_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=253456 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `chii_apps` (
   KEY `app_type` (`app_type`,`app_creator`),
   KEY `app_ban` (`app_ban`),
   KEY `app_status` (`app_status`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3312 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `chii_blog_comments` (
   KEY `blg_cmt_eid` (`blg_pst_mid`),
   KEY `blg_cmt_uid` (`blg_pst_uid`),
   KEY `blg_pst_related` (`blg_pst_related`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=282215 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +147,7 @@ CREATE TABLE `chii_blog_entry` (
   KEY `entry_public` (`entry_public`),
   KEY `entry_dateline` (`entry_dateline`),
   KEY `entry_uid` (`entry_uid`,`entry_public`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=344842 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `chii_blog_photo` (
   `photo_dateline` int(10) unsigned NOT NULL,
   PRIMARY KEY (`photo_id`),
   KEY `photo_eid` (`photo_eid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=97893 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,7 +219,7 @@ CREATE TABLE `chii_characters` (
   KEY `crt_ban` (`crt_ban`),
   KEY `crt_collects` (`crt_collects`),
   KEY `crt_comment` (`crt_comment`)
-) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=165172 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -723,7 +723,7 @@ CREATE TABLE `chii_crt_comments` (
   KEY `cmt_crt_id` (`crt_pst_mid`),
   KEY `crt_pst_related` (`crt_pst_related`),
   KEY `crt_pst_uid` (`crt_pst_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=308945 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1562,7 +1562,7 @@ CREATE TABLE `chii_ep_comments` (
   KEY `ep_cmt_crt_id` (`ep_pst_mid`),
   KEY `ep_pst_related` (`ep_pst_related`),
   KEY `ep_pst_uid` (`ep_pst_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1569875 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1644702 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3331,7 +3331,7 @@ CREATE TABLE `chii_gadgets` (
   `gdt_lasttouch` int(10) NOT NULL,
   PRIMARY KEY (`gdt_id`),
   KEY `gdt_app_id` (`gdt_app_id`,`gdt_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1610 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3392,7 +3392,7 @@ CREATE TABLE `chii_group_posts` (
   KEY `pss_topic_id` (`grp_pst_mid`),
   KEY `grp_pst_related` (`grp_pst_related`),
   KEY `grp_pst_uid` (`grp_pst_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2288734 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2909633 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3442,7 +3442,7 @@ CREATE TABLE `chii_group_topics` (
   KEY `grp_tpc_display` (`grp_tpc_display`),
   KEY `grp_tpc_uid` (`grp_tpc_uid`),
   KEY `grp_tpc_lastpost` (`grp_tpc_lastpost`)
-) ENGINE=InnoDB AUTO_INCREMENT=379822 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=406529 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4163,7 +4163,7 @@ CREATE TABLE `chii_members` (
   PRIMARY KEY (`uid`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=617230 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=920208 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4361,7 +4361,7 @@ CREATE TABLE `chii_oauth_access_tokens` (
   UNIQUE KEY `access_token` (`access_token`) USING BTREE,
   KEY `type` (`type`),
   KEY `user_expires` (`user_id`,`expires`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2493153 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4612,7 +4612,7 @@ CREATE TABLE `chii_person_collects` (
   KEY `prsn_clt_cat` (`prsn_clt_cat`,`prsn_clt_mid`),
   KEY `prsn_clt_uid` (`prsn_clt_uid`),
   KEY `prsn_clt_mid` (`prsn_clt_mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='人物收藏';
+) ENGINE=InnoDB AUTO_INCREMENT=2052648 DEFAULT CHARSET=utf8 COMMENT='人物收藏';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5679,7 +5679,7 @@ CREATE TABLE `chii_persons` (
   KEY `prsn_lock` (`prsn_lock`),
   KEY `prsn_ban` (`prsn_ban`),
   KEY `prsn_actor` (`prsn_actor`)
-) ENGINE=InnoDB AUTO_INCREMENT=63986 DEFAULT CHARSET=utf8mb4 COMMENT='（现实）人物表';
+) ENGINE=InnoDB AUTO_INCREMENT=68523 DEFAULT CHARSET=utf8mb4 COMMENT='（现实）人物表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5946,7 +5946,7 @@ CREATE TABLE `chii_rev_history` (
   KEY `rev_crt_id` (`rev_type`,`rev_mid`),
   KEY `rev_crt_creator` (`rev_creator`),
   KEY `rev_id` (`rev_id`,`rev_type`,`rev_creator`)
-) ENGINE=InnoDB AUTO_INCREMENT=1439147 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2120177 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8141,7 +8141,7 @@ CREATE TABLE `chii_rev_text` (
   `rev_text_id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
   `rev_text` mediumblob NOT NULL,
   PRIMARY KEY (`rev_text_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=690890 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1067421 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8536,7 +8536,7 @@ CREATE TABLE `chii_subject_fields` (
   KEY `field_year_mon` (`field_year`,`field_mon`),
   KEY `field_year` (`field_year`),
   KEY `query_date` (`field_sid`,`field_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=406605 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=516363 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8683,7 +8683,7 @@ CREATE TABLE `chii_subject_interests` (
   KEY `user_collect_latest` (`interest_subject_type`,`interest_type`,`interest_uid`,`interest_private`),
   KEY `interest_type_2` (`interest_type`,`interest_uid`),
   KEY `interest_uid_2` (`interest_uid`,`interest_private`,`interest_lasttouch`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33805614 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9688,7 +9688,7 @@ CREATE TABLE `chii_subject_revisions` (
   KEY `rev_type` (`rev_type`),
   KEY `rev_dateline` (`rev_dateline`),
   KEY `rev_creator` (`rev_creator`,`rev_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=726036 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1425403 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9903,7 +9903,7 @@ CREATE TABLE `chii_subjects` (
   KEY `order_by_name` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`,`subject_name`) USING BTREE,
   KEY `browser` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`) USING BTREE,
   KEY `subject_nsfw` (`subject_nsfw`)
-) ENGINE=InnoDB AUTO_INCREMENT=406605 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=516363 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10030,7 +10030,7 @@ CREATE TABLE `chii_subjects_240921` (
   KEY `order_by_name` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`,`subject_name`) USING BTREE,
   KEY `browser` (`subject_ban`,`subject_type_id`,`subject_series`,`subject_platform`) USING BTREE,
   KEY `subject_nsfw` (`subject_nsfw`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=514316 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10145,7 +10145,7 @@ CREATE TABLE `chii_tag_neue_index` (
   KEY `tag_cat` (`tag_cat`,`tag_type`),
   KEY `tag_results` (`tag_cat`,`tag_type`,`tag_results`),
   KEY `tag_query` (`tag_name`,`tag_cat`,`tag_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=416338 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10213,7 +10213,7 @@ CREATE TABLE `chii_timeline` (
   KEY `tml_batch` (`tml_batch`),
   KEY `query_tml_cat` (`tml_uid`,`tml_cat`),
   KEY `tml_cat_date` (`tml_uid`,`tml_cat`,`tml_dateline`)
-) ENGINE=InnoDB AUTO_INCREMENT=29006094 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=45553754 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10350,7 +10350,7 @@ CREATE TABLE `chii_timeline_comments` (
   KEY `cmt_tml_id` (`tml_pst_mid`),
   KEY `tml_pst_related` (`tml_pst_related`),
   KEY `tml_pst_uid` (`tml_pst_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=161778 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10421,6 +10421,8 @@ CREATE TABLE `chii_usergroup` (
 
 LOCK TABLES `chii_usergroup` WRITE;
 /*!40000 ALTER TABLE `chii_usergroup` DISABLE KEYS */;
+INSERT INTO `chii_usergroup` VALUES (10,'普通用户','a:14:{s:9:\"user_list\";s:1:\"1\";s:17:\"manage_user_group\";s:1:\"1\";s:11:\"manage_user\";s:1:\"1\";s:19:\"doujin_subject_lock\";s:1:\"1\";s:12:\"subject_edit\";s:1:\"1\";s:12:\"subject_lock\";s:1:\"1\";s:15:\"subject_refresh\";s:1:\"1\";s:15:\"subject_related\";s:1:\"1\";s:10:\"mono_merge\";s:1:\"1\";s:10:\"mono_erase\";s:1:\"1\";s:7:\"ep_edit\";s:1:\"1\";s:7:\"ep_move\";s:1:\"1\";s:6:\"report\";s:1:\"1\";s:9:\"app_erase\";s:1:\"1\";}',1304011366);
+INSERT INTO `chii_usergroup` VALUES (11,'wiki人','a:15:{s:9:\"user_list\";s:1:\"1\";s:17:\"manage_user_group\";s:1:\"1\";s:11:\"manage_user\";s:1:\"1\";s:19:\"doujin_subject_lock\";s:1:\"1\";s:12:\"subject_edit\";s:1:\"1\";s:12:\"subject_lock\";s:1:\"1\";s:15:\"subject_refresh\";s:1:\"1\";s:15:\"subject_related\";s:1:\"1\";s:10:\"mono_merge\";s:1:\"1\";s:10:\"mono_erase\";s:1:\"1\";s:7:\"ep_edit\";s:1:\"1\";s:7:\"ep_move\";s:1:\"1\";s:6:\"report\";s:1:\"1\";s:9:\"app_erase\";s:1:\"1\";s:19:\"subject_cover_erase\";s:1:\"1\";}',1304011366);
 /*!40000 ALTER TABLE `chii_usergroup` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
