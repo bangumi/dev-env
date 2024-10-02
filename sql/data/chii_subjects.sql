@@ -1,655 +1,1762 @@
-INSERT INTO
-  `chii_subjects` (`subject_id`, `subject_type_id`, `subject_name`, `subject_name_cn`, `subject_uid`, `subject_creator`, `subject_dateline`, `subject_image`, `subject_platform`, `field_infobox`, `field_summary`, `field_5`, `field_volumes`, `field_eps`, `subject_wish`, `subject_collect`, `subject_doing`, `subject_on_hold`, `subject_dropped`, `subject_series`, `subject_series_entry`, `subject_idx_cn`, `subject_airtime`, `subject_nsfw`, `subject_ban`)
-VALUES
-  (1, 1, '第一次的親密接觸', '第一次的亲密接触', '9789861733432', 2, 1216020688, 'c4/ca/1_EcYzQ.jpg', 1002, '{{Infobox animanga/Novel\r\n|中文名= 第一次的亲密接触\r\n|别名={\r\n}\r\n|出版社= 紅色文化、知识出版社\r\n|价格= NT$160\r\n|连载杂志= \r\n|发售日= 1998-09-25\r\n|册数= \r\n|页数= 188\r\n|话数= \r\n|ISBN= 9577086705\r\n|其他= \r\n|作者= 蔡智恒\r\n}}', '　　風靡華人世界的網戀小說經典，暢銷紀錄超過百萬冊！\r\n　　有最初的《第一次的親密接觸》，才有今日網路文學。\r\n　　蔡智恆的最新作品《暖暖》，提升你的戀愛幸福溫度。\r\n　　紀念版收錄蔡智恆醞釀十年，最溫柔的純愛萬語宣言。\r\n　　PH值小於7的微酸心情，讓十年後的痞子蔡告訴你。\r\n　　一場最美麗的網路解逅，當痞子蔡遇見輕舞飛揚……\r\n　　蔡智恆最真實的情感原點\r\n　　痞子蔡與輕舞飛揚一起記錄的甜蜜日子\r\n　　一則發生在成大校園的純愛故事，網路上一再被轉載的熱門小說。', '　　蔡智恆\r\n　　BBS的ID為jht，網路上的暱稱是痞子蔡。\r\n　　1969年生於台灣嘉義縣，成功大學水利工程博士。\r\n　　1998年於BBS發表第一部小說《第一次的親密接觸》，造成全球華文地區的痞子蔡熱潮。\r\n　　自此以後，左腦創作小說，右腦書寫學術論文，獨樹一格。\r\n　　現任教於立德管理學院。', 0, 0, 13, 105, 1, 3, 3, 0, 0, 'd', 0, 0, 0),
-  (2, 3, '坟场', '', '', 2, 1216021625, '9b/e7/59392_05W7s.jpg', 0, '|出版社= カゲキヤ出版\n|价格= ¥330\n|连载杂志= カゲキヤコミック\n|发售日= 2017-07-20\n|页数= 32\n|作者= 松波留美 赤髭\n}}', '可能由以下原因导致条目合并至此处：\r\n【三次元】非欧美剧，非日剧，非华语剧\r\n【动画】同人视频；网友自制视频(游戏实况·攻略·解说，MAD/MV等)\r\n【书籍】同人本，与ACG无关的书籍等\r\n【音乐】BD/DVD条目，尚未发行CD版本；与ACG或剧集无关的音乐条目\r\n【游戏】已存在包含某平台游戏的条目等\r\n【其他】个人自创条目；无法查询来源的未知条目\r\n\r\n如您有意见请到WIKI小组 (http://bangumi.tv/group/wiki) 讨论，谢谢！', '', 0, 0, 109, 531, 48, 18, 19, 0, 0, 'f', 0, 0, 2),
-  (3, 2, 'スカイ・クロラ', '空中杀手', 'tt1056437', 2, 1216022271, 'ec/cb/3_SRc8z.jpg', 3, '{{Infobox animanga/Movie\r\n|中文名=空中杀手\r\n|导演=押井守\r\n|编剧=伊藤ちひろ / 伊藤千寻\r\n|上映年度=2008-09-03\r\n|片长= \r\n|原作=森 博嗣\r\n|官方网站=http://wwws.warnerbros.co.jp/skycrawlers/\r\n|企画=\r\n|脚本=\r\n|分镜=\r\n|演出=\r\n|人物设定=\r\n|作画监督=\r\n|机械设定=\r\n|音乐=\r\n|其他= \r\n|Copyright= \r\n}}', '战斗机飞行员函南优一（cv:加濑亮）来到基地报道，等待他的是全新的生活环境与熟悉的飞行战斗。在这里，函南优一遇到了各式各样的战友，与不苟言笑的长官草薙水素（cv:菊地凛子）。函南优一获得了一架新战斗机，但是，基地里的战友们都对战斗机的前任驾驶员缄默不语。于是函南优一开始留意相关的消息，他渐渐知道，前任驾驶员已经去世，而事件本身与草薙水素有莫大的关系。随着调查的深入，函南优一逐渐发现惊人的真相，而他每天与敌人的战斗，似乎也隐藏着他不知道的意义。 ', '', 0, 0, 0, 18, 2, 0, 0, 0, 0, 'k', 0, 0, 1),
-  (4, 4, 'メタルスラッグ7', '合金弹头7', '', 2, 1216022721, 'a8/7f/4_cMMK5.jpg', 5, '{{Infobox Game\r\n|中文名= 合金弹头7\r\n|别名={\r\n[Metal Slug 7]\r\n}\r\n|平台= NDS\r\n|游戏类型= ACT\r\n|游戏引擎= \r\n|游玩人数= 1人\r\n|发行日期= 2008-07-17\r\n|售价= 5040円\r\n|website= \r\n|开发= SNKプレイモア\r\n|发行= SNKプレイモア\r\n}}', '　　以细腻的画风、搞笑的动作和刺激的战斗被人们所熟知的“合金弹头系列”在NDS 平台推出正统续作！虽然本系列的前几部作品最早都是作为街机游戏而推出的，不过这一次的“7”不但先推出NDS版，而且是独占！日前SNK playmore宣布了这款游戏，目前发售日定为2008年3月。据称，本作中将搭载任务模式，在关卡中不断完成教官所下达的任务，提升军衔。\r\n　　游戏依然保持了系列一贯的风格，战斗的场面也没有因为是掌机游戏而进行削减，游戏依然是射击、跳跃和手雷三个按键，虽然是NDS游戏，不过本作却并不对应触摸屏，游戏的画面显示在上屏幕，而下屏幕则用来显示地图。在TGS 2007（Tokyo Game Show）大会上SNK放出了《合金弹头7》的试玩版。这代产品沿袭了前代风格，战斗的对象似乎也没有多大变化，没有分支路线，不过游戏性和关卡设计却不比前几代差，关卡数也有7关，另外还增加了一种武器。', 'a:1:{i:0;s:1:"5";}', 0, 0, 21, 197, 6, 5, 4, 0, 0, 'h', 0, 0, 0),
-  (5, 4, 'Call of Duty 4', '使命召唤 4: 现代战争', '', 4, 1216024610, 'e4/da/5_wUARf.jpg', 4, '', '由Infinity Ward制作、Activision 发行的第一人称射击游戏《使命召唤 4(Call of Duty 4：Modern Warfare)》，跳脱二次世界大战战场，将前线拉回到现代战争中。\r\n\r\n\r\n游戏特点：\r\n\r\n*紧张激烈的游戏场景，次世代画面效果，跌宕起伏的单人游戏剧情\r\n*玩家将扮演美国海军陆战队以及英国皇家特种空勤团和士兵进行游戏\r\n*连线游戏引入经验及成就设定，可玩性较之前代大为提高', 'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}', 0, 0, 1, 36, 1, 3, 0, 0, 0, 's', 0, 0, 1),
-  (
-    6,
-    4,
-    'Team Fortress 2',
-    '军团要塞2',
-    '',
-    4,
-    1216025173,
-    '16/79/6_gC3iJ.jpg',
-    0,
-    '{{Infobox Game\r\n|中文名= 军团要塞2\r\n|别名={\r\n[絕地要塞2]\r\n}\r\n|平台={\r\n[Xbox 360]\r\n[PS3]\r\n[PC]\r\n}\r\n|游戏类型= FPS\r\n|游戏引擎= Source 引擎\r\n|游玩人数= 多人\r\n|发行日期= 2007年10月10日\r\n|售价= 免費\r\n|website= \r\n|游戏开发商= Valve Corporation\r\n|游戏出版商= Valve Corporation\r\n|发行商= Electronic Arts (retail) , Steam (online)\r\n|游戏设计师= John Cook , Robin Walker\r\n|官方网站= http://teamfortress.com/\r\n}}',
-    '　　《军团要塞2》（Team Fortress 2，简称TF2）是由维尔福软件公司开发的一个团队作战型在线多人第一人称射击游戏。该游戏是维尔福先前《军团要塞》（Team Fortress Classic）的续作，于2007年10月10日以橙盒（The Orange Box）三合一方式在Windows和Xbox 360平台上首次发行。PlayStation 3版紧接着在2007年11月22日发行。TF2后来在2008年4月9日在Windows上发行单行版。TF2在线下载版是由Steam负责，而零售版则由美国艺电发行。该游戏的开发是由罗宾·沃克（Ribin Walker）及约翰·库克（John Cook）所领导，他们两位是1996年给雷神之锤使用的军团要塞模组原始设计师。\r\n　　TF2开发计划早在1998年就已发布，采用维尔福的GoldSrc引擎，然而自那时起便经历了种种的设计概念变化。在1999年公开的截图显示，该游戏外观脱离其前代TF设计转而追求更真实更军事化的游戏元素；然而设计在其9年开发期间不断的变化。最终成品采用了深受J. C. 莱安德克（Joseph Christian Leyendecker）、迪恩·康沃尔（Dean Cornwell）及诺曼·洛克威尔（Norman Rockwell）艺术影响的卡通视觉效果，并由Source引擎所支持。游戏本身围绕在由9种个性独立鲜明职业组成的两组人马，于谍对谍的场景下进行种种模式的战斗。\r\n　　由于有6年游戏开发信息付之阙如或无显著进展，导致该游戏一度被贴上雾件的标签。且还是Wired News年度雾件名单里的常客，与其他业界耻辱并列成受取笑的对象。随着该游戏的发行，TF2就其游戏图形、平衡性、喜剧幽默、与专为多人游戏设计的完整人物个性等特色而受到诸多好评及奖项。',
-    'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}',
-    0,
-    0,
-    20,
-    203,
-    25,
-    14,
-    12,
-    0,
-    0,
-    'j',
-    0,
-    0,
-    0
-  ),
-  (7, 4, 'Unreal Tournament 3', '虚幻竞技场3', '', 4, 1216026819, '8f/14/7_gQPtW.jpg', 0, '{{Infobox Game\r\n|中文名= 虚幻竞技场3\n|平台={\n[Mac OS]\n[xbox360]\n[windows]\n[PS3]\n}\n|游戏类型= FPS\n|发行日期= 2007年11月19日\n}}', '　　《虚幻竞技场3》（Unreal Tournament 3，UT3）是由Epic Games所开发的第一人称射击游戏，是继虚幻II之后的新一代虚幻游戏，由Midway Games于2007年11月19日发行PC Windows版本，PS3版则在2007年12月10日发行，Mac OS X与XBox 360的版本则将在2008年发售。\r\n　　《虚幻竞技场3》是浴血战场系列的第四套游戏，也是虚幻系列的第八套，《虚幻竞技场》（UT99）使用虚幻引擎（Unreal Engine 1.0），而《虚幻竞技场2003》（UT2003）及《虚幻竞技场2004》（UT2004）使用虚幻引擎2（Unreal Engine 2.0），本游戏则使用虚幻引擎3（Unreal Engine 3.0），因为UT2004大量地重复使用UT2003的内容与架构，所以UT3应该被归为本系列的第三代游戏。', 'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}', 0, 0, 4, 63, 0, 1, 4, 0, 0, 'x', 0, 0, 0),
-  (
-    8,
-    2,
-    'コードギアス 反逆のルルーシュR2',
-    'Code Geass 反叛的鲁路修R2',
-    '',
-    4916,
-    1216030250,
-    'c9/f0/8_wK0z3.jpg',
-    1,
-    '{{Infobox animanga/TVAnime\r\n|中文名= Code Geass 反叛的鲁路修R2\r\n|别名={\r\n[叛逆的鲁路修R2]\r\n[Code Geass: Hangyaku no Lelouch R2]\r\n[叛逆的勒鲁什R2]\r\n[叛逆的鲁鲁修R2]\r\n[コードギアス 反逆のルルーシュR2]\r\n[Code Geass: Lelouch of the Rebellion R2]\r\n[叛逆的勒路什R2]\r\n}\r\n|话数= 25\r\n|放送开始= 2008年4月6日\r\n|放送星期= \r\n|官方网站= http://www.geass.jp/r2/\r\n|播放电视台= 每日放送\r\n|其他电视台= \r\n|播放结束= 2008年9月28日\r\n|其他= \r\n|Copyright= （C）2006 SUNRISE inc./MBS\r\n|导演= 谷口悟朗\r\n|系列构成= 大河内一楼\r\n|人物原案= CLAMP\r\n|人物设定= 木村貴宏\r\n|美术监督= 菱沼由典\r\n|色彩设计= 岩沢れい子\r\n|摄影监督= 大矢創太\r\n|音响监督= 浦上靖夫、井澤基\r\n|音乐= 中川幸太郎、黒石ひとみ\r\n|音乐制作= AUDIO PLANNING U\r\n|动画制作= サンライズ\r\n}}',
-    '　　“东京决战”一年后，布里塔尼亚少年鲁路修在11区（原日本国）过着平凡的学生生活。但是，鲁路修与弟弟罗洛的一次出行，遇到了黑色骑士团的余党。在与少女C.C再次结成契约之后，尘封的记忆摆在了鲁路修的面前。\r\n　　身为帝国王子的鲁路修，为了建立人人平等的世界、让妹妹娜娜丽幸福的世界，而使用GEASS，令人绝对服从的力量，带领黑色骑士团向帝国宣战。带上假面化名ZERO的他，却在一年前的“东京决战”中被好友朱雀击败，被帝国皇帝抹去了记忆。\r\n　　现在，恢复记忆的鲁路修不仅要面对帝国的强大军事力量，更要面对虚假的弟弟罗洛、失踪的妹妹娜娜丽、不知敌友的中华联盟、内部出现分歧的黑色骑士团。面对内忧外患，鲁路修走上了GEASS之力的诅咒——孤独的王之路。 ',
-    '',
-    0,
-    25,
-    622,
-    13216,
-    147,
-    224,
-    115,
-    0,
-    0,
-    'c',
-    0,
-    0,
-    0
-  ),
-  (9, 4, 'リズム天国ゴールド', '节奏天国 金', '', 2, 1216038051, '45/c4/9_ppLN8.jpg', 5, '{{Infobox Game\r\n|中文名= 节奏天国 金\r\n|别名={\r\n}\r\n|平台= NDS\r\n|游戏类型= MUG\r\n|游戏引擎= \r\n|游玩人数= 1\r\n|发行日期= 2008-07-31\r\n|售价= 3800日元\r\n|website= http://www.nintendo.co.jp/ds/ylzj/\r\n|游戏开发商= \r\n|发行商= \r\n|游戏设计师= つんく♂\r\n}}', 'GBA人气音乐游戏《节奏天国》的续作，收录多彩迷你游戏约50种。前作《节奏天国》采用按键操作，登陆NDS的续作将采用触控笔操作。 ', 'a:1:{i:0;s:1:"5";}', 0, 0, 32, 335, 36, 22, 13, 0, 0, 'j', 0, 0, 0),
-  (10, 1, 'Your Eyes Only ちぃフォトグラフィクス', '', '4063346706', 1, 1216038761, 'd3/d9/10_mXv4D.jpg', 1003, '{{Infobox animanga/Book\r\n|中文名= \r\n|别名={\r\n}\r\n|出版社= 講談社\r\n|价格= \r\n|其他出版社= \r\n|连载杂志= \r\n|发售日= 2003-01\r\n|页数= \r\n|ISBN= 9784063346701\r\n|其他= \r\n|作者= CLAMP\r\n}}', 'ちぃのベストショット満載！！\r\nファン待望の『ちょびっツ』原画集\r\n\r\n『ちょびっツ』連載開始から2年。\r\nヤンマガはもとより、グッズやCD、DVD等に描きおろされたイラストの中から、フォトジェニックなちぃを集めて一冊の原画集にします！\r\nちぃのかわいさがぎっしりつまった画集、買い逃し厳禁だ！', '', 0, 0, 13, 41, 0, 0, 1, 0, 0, 'y', 0, 0, 0),
-  (11, 1, 'ちょびっツの「ツ」の字 - Chobits Fan Book', '', '4063346692', 1, 1216039102, '65/12/11_bsxG3.jpg', 1003, '{{Infobox animanga/Book\r\n|中文名= \r\n|别名={\r\n[Chobits动画资料集]\r\n[人形电脑天使心 动画资料集]\r\n}\r\n|出版社= 講談社\r\n|价格= \r\n|其他出版社= \r\n|连载杂志= \r\n|发售日= 2003-03\r\n|页数= 138\r\n|ISBN= 4063346692\r\n|其他= \r\n|作者= CLAMP\r\n}}', '原作版 ちょびっツ ファンブック\r\n全88章からなる＜ちぃ＞と＜本須和＞の物語。\r\nその軌跡と魅力を徹底検証！！\r\n\r\nCLAMPの画集未収録イラスト、気鋭のクリエーター10名による競作イラスト、関係者インタビュー、作品論、公式グッズカタログほか 必見コンテンツ満載！！\r\n\r\n特別付録 原作版トレーディングカード×2枚', '', 0, 0, 10, 22, 0, 0, 0, 0, 497, 'c', 0, 0, 0),
-  (
-    12,
-    2,
-    'ちょびっツ',
-    '人形电脑天使心',
-    'tt0326672',
-    1,
-    1216040256,
-    'c2/0a/12_aDoa8.jpg',
-    1,
-    '{{Infobox animanga/TVAnime\r\n|中文名= 人形电脑天使心\r\n|别名={\r\n[en|Chobits]\r\n}\r\n|话数= 27\r\n|放送开始= 2002年4月2日\r\n|放送星期= 星期二\r\n|官方网站= http://www.tbs.co.jp/chobits\r\n|播放电视台= 日本TBS\r\n|其他电视台= \r\n|播放结束= 2002年9月24日\r\n|其他= \r\n|Copyright= \r\n|原作= CLAMP\r\n|导演= 浅香守生\r\n|人物设定= 阿部恒\r\n|音响监督= 三間雅文\r\n|音乐= 高浪敬太郎\r\n|动画制作= MADHOUSE\r\n|录音调整= 内田誠\r\n|音效= 小山健二\r\n|录音助手= 鳥羽瀬縁\r\n|音响助手= 三井友和\r\n|文艺= 浦畑達彦\r\n|设定制作= 加茂靖子\r\n|制片人= 源生哲雄、関戸雄一、小野達矢\r\n|制片协力= パイオニアLDC、ムービック\r\n|製作= TBS、ちょびっツ製作委員会\r\n|副导演= 田中洋之（除13）、井上英紀（仅13）\r\n}}',
-    '在不久的将来,电子技术飞速发展,电脑成为人们生活中不可缺少的一部分.主角的名字是本须和秀树,是个19岁的少年,由于考试失败,来到东京上补习班,过着贫穷潦倒的生活……\r\n到达东京的第一天,他很幸运的在垃圾堆捡到一个人型电脑,一直以来秀树都非常渴望拥有个人电脑.当他抱着她带返公寓后,却不知如何开机,在意想不到的地方找到开关并开启后,故事就此展开\r\n本须和秀树捡到了人型计算机〔唧〕。虽然不晓得她到底是不是〔Chobits〕，但她的身上似乎藏有极大的秘密。看到秀树为了钱而烦恼，唧出去找打工，没想到却找到了危险的工作！为了让秀树开心，唧开始到色情小屋打工。但她在遭到过度激烈的强迫要求之后失控。让周遭计算机因此而强制停摆。\r\n另一方面，秀树发现好友新保与补习班的清水老师有着不可告人的关系……',
-    '',
-    0,
-    27,
-    1159,
-    4534,
-    215,
-    463,
-    136,
-    0,
-    0,
-    'r',
-    0,
-    0,
-    0
-  ),
-  (
-    13,
-    4,
-    'CLANNAD',
-    '',
-    '',
-    1,
-    1216043239,
-    'c5/1c/13_tQxwM.jpg',
-    0,
-    '{{Infobox Game\r\n|中文名= \r\n|别名={\r\n[小镇家族]\r\n[クラナド]\r\n}\r\n|平台={\r\n[PC]\r\n[PS2]\r\n[PSP]\r\n[Xbox 360]\r\n[PS3]\r\n[Nintendo Switch]\r\n[PSV]\r\n[PS4]\r\n}\r\n|游戏类型= 恋爱ADV\r\n|游戏引擎= RealLive(PC)\r\n|游玩人数= 1\r\n|发行日期= 2004年4月28日(PC)\r\n|售价={\r\n[7,500円(税別)(PC）]\r\n[7,560円(税込)(PS2)]\r\n[6,800円(税別)(PCフルボイス)]\r\n[6,090円(税込)(PSP)]\r\n[6,720円(税込)(Xbox360)]\r\n[5,800円(税別)(PCメモリアルエディション)]\r\n[¥ 133(Steam - CLANNAD HD Edition)]\r\n}\r\n|website={\r\n[PC: http://key.visualarts.gr.jp/product/clannad/]\r\n[PS2: http://www.gunghoworks.jp/game/clannad]\r\n[PSP: http://www.prot.co.jp/psp/clannad]\r\n[Xbox360: http://www.prot.co.jp/xbox/clannad]\r\n}\r\n|其他版本={\r\n[2006年2月23日(PS2)]\r\n[2008年2月29日(PCフルボイス)]\r\n[2008年5月29日(PSP)]\r\n[2008年8月28日(Xbox360)]\r\n[2010年5月28日(PCメモリアルエディション)]\r\n[2015年11月24日(Steam - CLANNAD HD Edition)]\r\n}\r\n|游戏开发商= Key\r\n|发行= Key/ビジュアルアーツ(PC)、ガンホー・ワークス(PS2)、プロトタイプ(360/PSP/PS3)、Sekai Project(Steam)\r\n|剧本= 麻枝准(共通 / 古河渚 / 坂上智代 / 伊吹風子 / 宮沢有紀寧一部 / 相楽美佐枝 / 幸村俊夫 / AFTER STORY 担当)、魁( 藤林杏 / 藤林椋 / 宮沢有紀寧一部 / 柊勝平 担当)、涼元悠一(一ノ瀬ことみ 担当)、丘野塔也(春原兄妹 担当)\r\n}}',
-    '季節は春、楽しく等身大で過ごす学園での日常から物語は始まり、やがてストーリーはヒロインたちとの恋愛に発展していきます。\r\n深遠な世界観を背景に語られるのはひとつの町に住む人々それぞれの思い、その先にある「生きる」ということ。\r\nその一方で、人々の思いを包み込むように存在する町そのものを幻想的なイメージで描き出していきます。\r\n-\r\n\r\n《CLANNAD》为2004年key社所发行的文字冒险游戏（AVG），和key社以往游戏不同的是，这款是以全年龄版PC的形式发行。CLANNAD在凯尔特语中代表的是“家族”。正如其名，这款游戏的核心价值及在描写各类的家族温暖，是个感动人心的落泪游戏。\r\n',
-    'a:3:{i:0;s:1:"9";i:1;s:1:"7";i:2;s:1:"6";}',
-    0,
-    0,
-    1103,
-    4027,
-    469,
-    409,
-    109,
-    0,
-    0,
-    'c',
-    0,
-    0,
-    0
-  ),
-  (
-    14,
-    4,
-    'Metal Gear Solid 4 Guns of the Patriots',
-    '潜龙谍影4 爱国者之枪',
-    '',
-    2,
-    1216043502,
-    'aa/b3/14_FlCod.jpg',
-    8,
-    '{{Infobox Game\r\n|中文名= 潜龙谍影4 爱国者之枪\r\n|别名={\r\n[メタルギアソリッド4 ガンズ・オブ・ザ・パトリオット]\r\n[潛龍諜影4 愛國者之槍]\r\n[合金装备4 爱国者之枪]\r\n}\r\n|平台= PS3\r\n|游戏类型= ACT\r\n|游戏引擎= \r\n|游玩人数= 1\r\n|发行日期= 2008年6月12日\r\n|售价= 8,800日元（日版）、99.99美元（美版）\r\n|website= http://www.konami.jp/mgs4/jp/\r\n|开发= KOJIMA PRODUCTION\r\n|发行= KONAMI\r\n|游戏设计师= 小岛秀夫\r\n}}',
-    '2014年，在「大貝殼事件」（Metal Gear Solid 2裡面的鑽油平台事件）之後5年，武裝介入異國油田的約束開始放緩，刺激私人軍事公司Private Military Companies（PMCs）為了商業目的去進行代理戰爭，使得戰爭成為世界上的一種嶄新經濟體系。當時世界上存在著五大PMCs，分別是Praying Mantis/禱念螳螂（英國）、оцелотовая хватка/山貓鉤爪（俄羅斯）、Werewolf/狼人軍團（美國）、 Pieuvre Armement/武裝章魚（法國）、以及Raven Sword/渡鴉之劍（美國），但事實上這五大PMC背後的母公司是液體山貓所擁有的「世外方舟」（Outer Haven）。將奈米機械植入士兵體內後則對於加強士兵的管理、戰鬥能力、以及忠誠作用顯著，戰場上使用的士兵奈米機械管理系統稱為「愛國者之子」（Sons of the Patriots：SOP）。液體山貓欲利用破壞SOP引發起一場武裝破壞，且「世外方舟」已經積聚了可與美國政府匹敵的力量，世界即將落入危機，於是故事在羅伊坎貝爾請求老蛇進入中東抹殺液體山貓展開了序幕……遊戲任務在五個地方進行：中東，南美，東歐，夏德莫榭斯島，以及戰艦「Outer Haven」。　\r\n\r\n    第一章：液體的太陽/ACT.1：Liquid Sun\r\n    第二章：固體的太陽/ACT.2：Solid Sun\r\n    第三章：第三的太陽/ACT.3：Third Sun\r\n    第四章：雙子的太陽/ACT.4：Twins Sun\r\n    第五章：老雄的太陽/ACT.5：Old Sun\r\n    第六章：赤裸的太陽/ACT.6：Naked Sun\r\n    尾聲：赤裸的原罪/Epilogue：Naked Sin',
-    'a:1:{i:0;s:1:"8";}',
-    0,
-    0,
-    161,
-    261,
-    33,
-    14,
-    8,
-    0,
-    0,
-    'q',
-    0,
-    0,
-    0
-  ),
-  (15, 3, 'Chronicle', '', '', 1, 1216086051, '9b/f3/15_g5Apf.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|发售日期= 2001-12-30\r\n|价格= \r\n|播放时长= \r\n|录音= \r\n|碟片数量= 2\r\n|艺术家= Sound Horizon\r\n}}', '2001年12月,这张CD在ComicMarket61上以同人音乐《CIRCLE》 发表.\r\n全曲无演唱.以朴素的音符首次传递出Chronicle的理念.\r\n\r\n由于年代久远的关系,这张CD早已绝版,现在可以找到应该是重制版本(也很难找…)', '', 0, 0, 28, 388, 10, 3, 0, 0, 0, 'c', 0, 0, 0),
-  (16, 3, 'Thanatos', '', '', 1, 1216086168, 'c7/4d/16_iseKJ.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|艺术家= Sound Horizon\r\n|发售日期= 2002-08-11\r\n|价格= \r\n|播放时长= \r\n|制作人= \r\n|发行方= \r\n|录音= \r\n|碟片数量= 1\r\n}}', '2002年8月, 在ComicMarket62上首发, Aramary作为主唱首次参加.\r\n是SH的第一张演唱专辑.', '', 0, 0, 25, 392, 10, 1, 0, 0, 0, 't', 0, 1, 0),
-  (17, 3, 'Lost', '', '', 1, 1216086284, '70/ef/17_fJRn9.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|艺术家= Sound Horizon\r\n|发售日期= 2002-12-30\r\n|价格= \r\n|播放时长= \r\n|制作人= \r\n|发行方= \r\n|录音= \r\n|碟片数量= 1\r\n}}', '2002年 12月, 在ComicMarket63上首发。男性演唱、旁白Jimang首次参加.\r\n\r\n这张CD中不乏脍炙人口的名篇,其中第3首"恋人を射ち堕とした日"最为乐迷们津津乐道.\r\n而且全曲通过各种 寓言 和 故事 的引用,紧扣主题"忘レモノハ在リマセンカ"(有忘记了的东西吗?),耐人寻味,发人深思,实在是一张精彩的作品.', '', 0, 0, 56, 558, 21, 3, 0, 0, 0, 'l', 0, 0, 0),
-  (18, 3, 'Pico Magic', '', '', 1, 1216086445, '6f/49/18_SdSDy.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|艺术家= Sound Horizon\r\n|发售日期= 2003-05-04\r\n|价格= \r\n|播放时长= \r\n|制作人= \r\n|发行方= \r\n|录音= \r\n|碟片数量= 1\r\n}}', '在Lost裏面以44號隱藏bonus track出場的PicoMari成爲了這張pleasure CD『Pico Magic』的主人公。其實Pico本來是指以前紅白機的那種三和弦的音樂，當時在Lost裏面Revo領主將“壊れたマリオネット”這首歌製作成爲了 pico版，所以取歌名中的マリ（mari）二字合成PicoMari一曲。之後就變成了SoundHorizon中的謎樣少女，也是Aramary的 108人格中的一個奇妙電波少女（笑）。在這張專輯中有著名的PicoMari召喚“ぴこ魔神☆（Pico魔神）”的咒文，以逆再生（即倒著播放）的形式出現在bonus track中。一時間在fans中掀起了嘗試召喚ぴこ魔神☆的熱潮（笑，可是那個track做得很詭異，fans用了很久才討論出正確的咒文，召喚ぴこ魔神☆也不是那麽簡單的事情呢~^_^）\r\n另外值得一提的是“Ark [Pico Magic Ver.]”在這張專輯中第一次露面了。被稱爲Elysion中最完美的這首Ark，從這張專輯開始就在每張專輯中以不同的編曲和長度出現，最終在樂園幻想物語組曲中達到完美版本。\r\n總體來説這張CD就是以前的一些歌曲的remake版本（除了PicoMari的兩首歌+一首隱藏bonus track+Ark是新曲以外）。\r\n封面疑似PicoMari，不過PicoMari的fans們也有認爲PicoMari另有形象的。', '', 0, 0, 13, 231, 6, 1, 0, 0, 0, 'p', 0, 0, 0),
-  (19, 3, 'Pico Magic Reloaded', '', '', 1, 1216086593, '1f/0e/19_GVzJ9.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|艺术家= Sound Horizon\r\n|发售日期= 2003-08-17\r\n|价格= \r\n|播放时长= \r\n|制作人= \r\n|发行方= \r\n|录音= \r\n|碟片数量= 1\r\n}}', '2nd pleasure CD，『Pico Magic Reloaded』。\r\n在這張CD中，Revo領主發表了著名的“牢籠三部曲”：由基於同一旋律的三首歌曲“屋根裏の少女（閣樓中的少女）”、“檻の中の遊戯（牢籠中的遊戲）”和“檻の中の花（牢籠中的花）”組成。這三首連續的曲子講述了同一位神經錯亂的女人悲劇而恐怖的殺人舞臺劇……\r\n另外，這張專輯中也出現了“Ark [Reloaded Ver.]” 後來在LIVE時被改編成超人氣的“Jimang的世界[side:→J]”的名曲“澪音の世界”也是在這張專輯中登場的。\r\n封面上倒在前面的是Ark中的主人公Soror（妹），其他二人為Lost子和Thanatos子。', '', 0, 0, 13, 248, 4, 1, 0, 0, 0, 'p', 0, 0, 0),
-  (20, 3, 'Chronicle 2nd', '', '', 1, 1216086747, '98/f1/20_H2vb0.jpg', 0, '{{Infobox Album\r\n|中文名= \r\n|别名={\r\n}\r\n|版本特性= \r\n|发售日期= 2004-03-19\r\n|价格= \r\n|播放时长= 71 min\r\n|录音= \r\n|碟片数量= 1\r\n|Type= 专辑\r\n|艺术家= Sound Horizon\r\n|作曲= Revo\r\n|Discs= \r\n}}', '2003年11月,应希望「Chronicle」再次贩卖的呼声，「Chronicle 2nd」的制作发表.\r\n12月 ,在ComicMarket65上，「Chronicle 2nd」试听盘发布.\r\n直到2004年3月, 1st Story Renewal CD「Chronicle 2nd」终于正式发布.\r\n\r\n这张CD是作为SH首张CD 〈Chronicle〉的重制完整版,通过Aramary,霜月はるか, Jimang, Hazeri*,Yasrow*的声音,补完了当年CD没有声乐的空白,用唱词和旁白描述了SH音乐世界第一道地平线的故事,完整将苍红歌姬,蔷薇骑士团,诗人Ballad等等人物再现.作为SH音乐世界首个故事的完整版,这张CD具有非同一般的价值.', '', 0, 0, 65, 572, 21, 9, 3, 0, 0, 'c', 0, 0, 0);
+insert into bangumi.chii_subjects (subject_id, subject_type_id, subject_name, subject_name_cn, subject_uid, subject_creator, subject_dateline, subject_image, subject_platform, field_infobox, field_summary, field_5, field_volumes, field_eps, subject_wish, subject_collect, subject_doing, subject_on_hold, subject_dropped, subject_series, subject_series_entry, subject_idx_cn, subject_airtime, subject_nsfw, subject_ban)
+values  (1, 1, '第一次的親密接觸', '第一次的亲密接触', '9789861733432', 2, 1216020688, 'c4/ca/1_EcYzQ.jpg', 1002, '{{Infobox animanga/Novel
+|中文名= 第一次的亲密接触
+|别名={
+}
+|出版社= 紅色文化、知识出版社
+|价格= NT$160
+|连载杂志= 
+|发售日= 1998-09-25
+|册数= 
+|页数= 188
+|话数= 
+|ISBN= 9577086705
+|其他= 
+|作者= 蔡智恒
+}}', '　　風靡華人世界的網戀小說經典，暢銷紀錄超過百萬冊！
+　　有最初的《第一次的親密接觸》，才有今日網路文學。
+　　蔡智恆的最新作品《暖暖》，提升你的戀愛幸福溫度。
+　　紀念版收錄蔡智恆醞釀十年，最溫柔的純愛萬語宣言。
+　　PH值小於7的微酸心情，讓十年後的痞子蔡告訴你。
+　　一場最美麗的網路解逅，當痞子蔡遇見輕舞飛揚……
+　　蔡智恆最真實的情感原點
+　　痞子蔡與輕舞飛揚一起記錄的甜蜜日子
+　　一則發生在成大校園的純愛故事，網路上一再被轉載的熱門小說。', '　　蔡智恆
+　　BBS的ID為jht，網路上的暱稱是痞子蔡。
+　　1969年生於台灣嘉義縣，成功大學水利工程博士。
+　　1998年於BBS發表第一部小說《第一次的親密接觸》，造成全球華文地區的痞子蔡熱潮。
+　　自此以後，左腦創作小說，右腦書寫學術論文，獨樹一格。
+　　現任教於立德管理學院。', 0, 0, 13, 105, 1, 3, 3, 0, 0, 'd', 0, 0, 0),
+        (2, 3, '坟场', '', '', 2, 1216021625, '9b/e7/59392_05W7s.jpg', 0, '|出版社= カゲキヤ出版
+|价格= ¥330
+|连载杂志= カゲキヤコミック
+|发售日= 2017-07-20
+|页数= 32
+|作者= 松波留美 赤髭
+}}', '可能由以下原因导致条目合并至此处：
+【三次元】非欧美剧，非日剧，非华语剧
+【动画】同人视频；网友自制视频(游戏实况·攻略·解说，MAD/MV等)
+【书籍】同人本，与ACG无关的书籍等
+【音乐】BD/DVD条目，尚未发行CD版本；与ACG或剧集无关的音乐条目
+【游戏】已存在包含某平台游戏的条目等
+【其他】个人自创条目；无法查询来源的未知条目
 
-INSERT INTO
-  `chii_subjects` (`subject_id`, `subject_type_id`, `subject_name`, `subject_name_cn`, `subject_uid`, `subject_creator`, `subject_dateline`, `subject_image`, `subject_platform`, `field_infobox`, `field_summary`, `field_5`, `field_volumes`, `field_eps`, `subject_wish`, `subject_collect`, `subject_doing`, `subject_on_hold`, `subject_dropped`, `subject_series`, `subject_series_entry`, `subject_idx_cn`, `subject_airtime`, `subject_nsfw`, `subject_ban`)
-VALUES
-  (2703, 6, 'Criminal Minds (Season 5)', '犯罪心理 第五季', '', 271, 1253955999, '22/0c/2703_9QZB9.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪心理 第五季\r\n|别名={\r\n}\r\n|集数= 23\r\n|放送星期= 3\r\n|开始= 2009年9月23日\r\n|结束= \r\n|类型= 悬疑 / 惊悚 / 犯罪\r\n|国家/地区= 美国\r\n|语言= \r\n|每集长= \r\n|频道= \r\n|电视网= \r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= \r\n|tv_com_id= \r\n}}', '隶属FBI的犯罪行为分析小组（BAU）迎来亮相CBS荧屏的第5个年头。这个由7名精英高级探员组成的团队，继续辗转全国各地，为棘手的真实案例提供出色的犯罪心理侧写及行为分析。\r\n\r\n上季末，Hotch在加拿大边境处理完流浪者连环被害案件后，疲惫地回到家中，身后突然出现早藏匿于此的神秘蒙面黑衣人——The Reaper，生命受到威胁......\r\n\r\n本季首集，BAU成员被召集受理一起连环谋杀急诊室医生的案件的同时，意识到组长Hotch的离奇失踪。BAU成员将如何应对\"The Reaper\"这个在被他们缉拿归案后越狱的连环杀手？Hotch的命运将会如何？ ', '', 0, 23, 23, 157, 15, 6, 6, 0, 0, 'f', 0, 0, 0),
-  (
-    9169,
-    6,
-    'Criminal Minds (Season 6)',
-    '犯罪心理 第六季',
-    '',
-    7694,
-    1286158419,
-    '39/01/9169_nxjlr.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 犯罪心理 第六季\r\n|别名={\r\n}\r\n|集数= 24\r\n|放送星期= \r\n|开始= 2010-09-22\r\n|结束= \r\n|类型= 犯罪 心理\r\n|国家/地区= 美国\r\n|语言= \r\n|每集长= \r\n|频道= \r\n|电视网= \r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= \r\n|tv_com_id= \r\n|导演= Charles Haid / Chris Long\r\n|主演= Joe Mantegna / Thomas Gibson / Shemar Moore\r\n}}',
-    '　　CRIMINAL MINDS revolves around an elite team of FBI profilers who analyze the country\'s most twisted criminal minds, anticipating their next moves b­efore they strike again. The Behavioral Analysis Unit\'s most prominent agent is David Rossi (Joe Mantegna), a founding member of the BAU, who returns to help the team solve new cases, while pursuing some unfinished business of his own. The team is led by Special Agent Aaron Hotchner (Thomas Gibson), a family man who is able to gain people\'s trust and unlock their secrets. Also on the team are Emily Prentiss (Paget Brewster), the daughter of high-powered diplomats who recently joined the team and must prove her worth to Hotchner; Special Agent Derek Morgan (Shemar Moore), an expert on obsessional crimes; Special Agent Dr. Spencer Reid (Matthew Gray Gubler), a classically misunderstood genius whose social IQ is as low as his intellectual IQ is high; Jennifer \"JJ\" Jareau (A.J. Cook), a confident young agent who acts as the unit liaison for the team, and Penelope Garcia (Kirsten Vangsness), a computer wizard who helps research the cases. Each member brings his or her own area of expertise to the table as they pinpoint predators\' motivations and identify their emotional triggers in the attempt to stop them.　',
-    '',
-    0,
-    24,
-    18,
-    121,
-    22,
-    8,
-    6,
-    0,
-    0,
-    'f',
-    0,
-    0,
-    0
-  ),
-  (22357, 6, 'CSI: Crime Scene Investigation Season 1', '犯罪现场调查 第一季', '', 23438, 1313998065, 'b0/ba/25080_N3qrl.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪现场调查 第一季\r\n|别名={\r\n[CSI: Las Vegas Season 1]\r\n[犯罪现场调查: 拉斯维加斯 第一季]\r\n}\r\n|集数= 23\r\n|放送星期= \r\n|开始= October 6, 2000\r\n|结束= May 17, 2001\r\n|类型= 剧情 / 悬疑 / 惊悚 / 犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 45分钟\r\n|频道= \r\n|电视网= \r\n|电视台= 哥伦比亚广播公司（CBS）\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= CSI犯罪现场(台) 第一季\r\n|港澳名称= 灭罪鉴证科(港) 第一季\r\n|马新名称= \r\n|官方网站= \r\n|imdb_id=  tt0247082\r\n|tv_com_id= \r\n}}', '　　“CSI”全称“犯罪现场调查小组”，是一群刑侦专业人士，通过犯罪现场的指纹、毛发、血迹、弹壳、脚印、纤维、碎屑、尸体特征等客观实物，用最先进、高科技的手段进行材料分析，在“一切用证据说话”的基础上合理推理，最终锁定凶手。本片故事发生在纸醉金迷的赌城拉斯维加斯，因此涉及许 多赌场风云和内华达州的广袤沙漠。CSI小组成员包括：赌场大佬女儿出身的凯瑟琳·韦罗斯（玛格·海根勃格 Marg Helgenberger 饰）、曾经沉迷赌博的黑人华瑞克·布朗（盖瑞·杜尔登 Gary Dourdan 饰）、性格憨厚的尼克·斯托克斯（乔治·艾德斯 George Edes 饰）、摇滚青年范儿的DNA鉴识人员葛瑞格·桑德斯（Eric Szmanda 饰）等，在经验老道的吉尔·葛瑞森（威廉·彼得森William Petersen 饰）带领下，挥拳向赌城所有黑暗。', '', 0, 23, 32, 82, 11, 14, 5, 0, 0, 'f', 0, 0, 0),
-  (23426, 6, 'Criminal Minds (season 7)', '犯罪心理 第七季', '', 14432, 1316703834, '45/40/23426_99Kqz.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪心理 第七季\r\n|别名={\r\n}\r\n|集数= 24\r\n|放送星期= 周四\r\n|开始= 2011-09-21\r\n|结束= \r\n|类型= 犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 42min\r\n|频道= \r\n|电视网= CBS\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= \r\n|tv_com_id= \r\n}}', 'The seventh season of Criminal Minds will premiere on CBS in the United States on September 21, 2011', '', 0, 24, 17, 97, 23, 2, 3, 0, 0, 'f', 0, 0, 0),
-  (49798, 6, 'Criminal Minds (Season 8)', '犯罪心理 第八季', '', 6027, 1348716409, 'ef/85/49798_9g2X2.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪心理 第八季\r\n|别名={\r\n}\r\n|集数= 24\r\n|放送星期= 3\r\n|开始= 2012-09-26\r\n|结束= \r\n|类型= \r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= \r\n|频道= \r\n|电视网= \r\n|电视台= CBS\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= \r\n|tv_com_id= \r\n}}', '', '', 0, 24, 13, 84, 10, 3, 4, 0, 0, 'f', 0, 0, 0),
-  (
-    84399,
-    6,
-    'Criminal Minds (Season 9)',
-    '犯罪心理 第九季',
-    '',
-    16938,
-    1380240144,
-    '85/3f/84399_y0J0e.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 犯罪心理 第九季\r\n|别名={\r\n}\r\n|集数= 24\r\n|放送星期= 星期三\r\n|开始= 2013年9月25日\r\n|结束= \r\n|类型= 剧情，悬疑，犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 42分钟\r\n|频道= \r\n|电视网= \r\n|电视台= CBS\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= \r\n|tv_com_id= \r\n}}',
-    '　　Since Strauss\' death, Hotch has been doing double duty. He has been asked to fill her position permanently - the only member of the team who he has told being Rossi - which he is seriously considering, if only to provide more time to spend with Jack, and to prevent an outsider from putting an unwanted administrative eye on the team. He will have time to contemplate this potential move when the team travels to Glendale, Arizona on their latest case. Two single, young women in individual cases were found in parks, each raped, shot through the heart, and placed in a praying/begging position postmortem. A third victim is found by the time they reach Glendale and a fourth shortly thereafter. Beyond the third victim being married, albeit separated from her husband, the team finds other similarities, namely that the victims were forced to eat human flesh, all from the head. The team believes that there is one single human head being used, that belonging to whoever the unsub\'s first victim ...',
-    '',
-    0,
-    24,
-    8,
-    57,
-    12,
-    3,
-    1,
-    0,
-    0,
-    'f',
-    0,
-    0,
-    0
-  ),
-  (
-    104833,
-    6,
-    'Criminal Minds (Season 10)',
-    '犯罪心理 第十季',
-    '',
-    30635,
-    1401075725,
-    '35/eb/104833_CAd6k.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 犯罪心理 第十季\r\n|别名={\r\n}\r\n|集数= 23\r\n|放送星期= 星期三\r\n|开始= 2014年10月1日\r\n|结束= \r\n|类型= 罪案\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= \r\n|频道= \r\n|电视网= \r\n|电视台= CBS\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt3822370\r\n|tv_com_id= \r\n|导演= Glenn Kershaw / Thomas Gibson / Matthew Gray Gubler / Joe Mantegna / Larry Teng / Rob Bailey / Jesse Warn\r\n|编剧= Janine Sherman Barrois / Jeff Davis / Breen Frazier / Erica Messer / Virgil Williams / Kimberly A. Harrison\r\n|主演= Joe Mantegna / Shemar Moore / Matthew Gray Gubler / A.J. Cook / Kirsten Vangsness / Jennifer Love Hewitt / Thomas Gibson / Kerr Smith / Lily Mariye / Daryl Crittenden / Al Vicente / Emily Dykes / Eric Frentzel / Katie Hilliard / Hailey Sole\r\n}}',
-    'On March 13, 2014, CBS renewed Criminal Minds for a tenth season.',
-    '',
-    0,
-    23,
-    1,
-    47,
-    9,
-    2,
-    3,
-    0,
-    0,
-    'f',
-    0,
-    0,
-    0
-  ),
-  (148228, 6, 'Criminal Minds (Season 11)', '犯罪心理  第11季', '', 7409, 1444189610, '72/8c/148228_O5mS0.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪心理  第11季\r\n|别名={\r\n}\r\n|集数= 22\r\n|放送星期= 星期三\r\n|开始= 2015年9月30日\r\n|结束= \r\n|类型= 罪案\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 42分钟\r\n|频道= \r\n|电视网= \r\n|电视台= CBS\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= 美国\r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= http://www.cbs.com/shows/criminal_minds/\r\n|imdb_id= tt4705588\r\n|tv_com_id= \r\n}}', '《犯罪心理》第十一季正式续订。讲述了美国联邦调查局总部下属的行为分析科部门（简称“BAU”）中，行为分析师们剖析最棘手的案件，分析凶手的心理和作案特征，并在他们再次施暴前预测出他们的下一步行动，协助当地警察捉拿凶手。', '', 0, 22, 3, 36, 7, 3, 1, 0, 0, 'f', 0, 0, 0),
-  (184017, 2, '沙盒', 'Bangumi Wiki 动画测试用沙盘', '', 6497, 1464502353, '', 1, '{{Infobox animanga/TVAnime\r\n|中文名= Bangumi Wiki 动画测试用沙盘\r\n|别名={\r\n[WIki Sandbox ]\r\n}\r\n|话数= 233\r\n|放送开始= 1582-10-14\r\n|放送星期= \r\n|官方网站= https://bgm.tv/wiki\r\n|播放电视台= Bangumi\r\n|其他电视台= \r\n|播放结束= \r\n|其他= \r\n|Copyright= Bangumi\r\n}}', '测试用沙盘，可随意编辑该条目（如果重命名标题及修改说明，记得还原）。\r\n请勿删除/合并。\r\n', '', 0, 233, 2, 9, 0, 1, 2, 0, 0, 'b', 0, 0, 0),
-  (194118, 6, 'Criminal Minds Season 12', '犯罪心理 第12季', '', 7409, 1475230253, '5f/65/194118_5c9H0.jpg', 2, '{{Infobox real/Television\r\n|中文名= 犯罪心理 第12季\r\n|别名={\r\n}\r\n|集数=  22\r\n|放送星期= 星期三\r\n|开始= 2016-09-28\r\n|结束= \r\n|类型= 剧情 / 悬疑 / 犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 42分钟\r\n|频道= \r\n|电视网= \r\n|电视台= CBS\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt5787340\r\n|tv_com_id= \r\n}}', 'CBS正式宣布续订《犯罪心理》第12季。', '', 0, 22, 1, 27, 2, 0, 1, 0, 0, 'f', 0, 0, 0),
-  (
-    208783,
-    6,
-    'Stranger Things Season 2',
-    '怪奇物语 第二季',
-    '',
-    63167,
-    1486754219,
-    'c7/0d/208783_0J0TH.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 怪奇物语 第二季\r\n|别名={\r\n[Montauk]\r\n}\r\n|导演= Matt Duffer / Ross Duffer / 肖恩·利维 / Andrew Stanton / 丽贝卡·托马斯\r\n|编剧= Matt Duffer / Ross Duffer\r\n|音乐= Kyle Dixon / Michael Stein\r\n|执行制片人= Matt Duffer\r\n|摄影= Tim Ives / David Franco\r\n|剪辑= Kevin D. Ross\r\n|主演= Winona Ryder / David Harbour / Finn Wolfhard / Millie Bobby Brown / Gaten Matarazzo / Caleb McLaughlin / Noah Schnapp / Sadie Sink / Natalia Dyer / Charlie Heaton / Joe Keery / Dacre Montgomery / Cara Buono / Sean Astin / Paul Reiser\r\n|配角= 切尔西·塔尔玛琪 / 乔·克里斯特 / 莉内娅·贝特尔森 / 艾米·西米茨 / 威尔·切斯 / 罗布·摩根 / 普莉雅·弗格森 / 约翰·雷诺兹 / 布伦特·吉尔曼 / 安妮斯顿·普莱斯 / 婷斯莉·普莱斯 / 詹姆斯·兰德里·赫伯特 / 托马斯·图尔 / 兰德尔·P·海文斯 / 卡西迪斯劳特 / 盖奇·劳森 / 苏珊·沙尔霍布·拉金\r\n|集数= 9\r\n|放送星期= 星期五\r\n|开始= 2017-10-27\r\n|结束= 2017-10-27\r\n|类型= 剧情 / 恐怖 / 奇幻\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 50分钟\r\n|频道= \r\n|电视网= NETFLIX\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt6020684\r\n|tv_com_id= \r\n}}',
-    '　　《怪奇物语》第 2 季：故事发生在 1984 年，印第安纳州霍金斯镇的居民们还没有从恐怖的魔王和秘密的霍金斯实验室中缓过劲来。威尔·拜尔斯已从颠倒世界中被救了出来，但是一个更庞大、更邪恶的怪物仍威胁着那些活下来的人们。',
-    '',
-    0,
-    9,
-    13,
-    178,
-    10,
-    5,
-    4,
-    0,
-    0,
-    'g',
-    0,
-    0,
-    0
-  ),
-  (
-    277229,
-    6,
-    'The Batman',
-    '蝙蝠侠',
-    '',
-    344362,
-    1552267443,
-    'ab/00/277229_dnIYn.jpg',
-    0,
-    '{{Infobox real/Television\r\n|中文名= 蝙蝠侠\r\n|别名={\r\n[新蝙蝠侠]\r\n}\r\n|导演= 马特·里夫斯\r\n|编剧= 马特·里夫斯 / 彼得·克莱格 / 比尔·芬格 / 鲍勃·凯恩\r\n|集数= 1\r\n|放送星期= \r\n|开始= 2022-03-01(韩国) / 2022-03-04(美国) / 2022-03-18(中国大陆) / 2022-04-19(HBO max)\r\n|结束= \r\n|类型= 动作 / 悬疑 / 犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|片长= 175分钟\r\n|频道= \r\n|电视网= HBO max\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 韩国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt1877830\r\n|tv_com_id= \r\n|配角= 佐伊·克罗维兹 / 保罗·达诺 / Colin Farrell / 杰弗里·怀特 / Andy Serkis / John Turturro / 彼得·萨斯加德 / 巴里·基奥恩 / 杰米·劳森 / 吉尔·佩雷斯-亚伯拉罕 / 彼得·麦克唐纳德 / 康·奥尼尔 / 亚历克斯·费恩斯 / 鲁伯特·彭利-琼斯 / 科莎·恩格勒 / 杰宁·哈瑞妮 / 卢克·罗伯茨 / 斯特拉·斯托克尔 / 桑德拉·迪金森 / 杰克·班尼特 / 约瑟夫·巴德拉玛 / 詹姆斯·伊莱斯 / 小利莫尔·马雷特 / 斯图尔特·亚历山大 / 马库斯·奥尼卢德 / 埃琳娜·沙雷 / 托德·博伊斯 / 道格拉斯·罗素 / 查尔斯·卡维尔 / 马克斯·卡维尔 / 马克·基林 / 洛娜·布朗 / 埃利奥特·沃伦 / 小田部阿基 / 布隆森·韦伯 / 阿瑟·李 / 派瑞 格拉斯普 / 娜塔丽·阿明 / 何塞‧帕尔马 / 玛吉·巴基尔 / 露丝·霍洛克斯 / 贝恩·科拉科 / 丹尼尔·厄根 / 雷切尔·汉德肖 / 爵克·哈迪\r\n}}',
-    '　　布鲁斯·韦恩（罗伯特·帕丁森 饰）化身蝙蝠侠于哥谭市行侠仗义两年后，罪犯皆闻风丧胆，他也因此深入接触到哥谭市的阴暗面。他潜行于哥谭市腐败的政要名流关系网中，身边仅有的几个值得信赖的盟友——管家阿尔弗雷德·潘尼沃斯（安迪·瑟金斯 饰）与詹姆斯·戈登警长（杰弗里·怀特 饰）。这位独行的“义警侠探”在哥谭市民心中已成为“复仇”二字最当仁不让的代名词。',
-    '',
-    0,
-    1,
-    17,
-    128,
-    2,
-    2,
-    1,
-    0,
-    0,
-    '',
-    0,
-    0,
-    0
-  ),
-  (
-    311103,
-    6,
-    'The Boys Season 3',
-    '黑袍纠察队 第三季',
-    '',
-    344362,
-    1595572879,
-    '57/5d/311103_1eWHr.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 黑袍纠察队 第三季\r\n|别名={\r\n[男孩帮]\r\n[英雄克星]\r\n}\r\n|原作= Garth Ennis &amp; Darick Robertson\r\n|导演= 菲利浦·斯格里西亚\r\n|编剧= 艾力克·克莱普科 / 加思·恩尼斯 / 达里克·罗伯逊\r\n|集数= 8\r\n|放送星期= 五\r\n|开始= 2022-06-03\r\n|结束= 2022-07-08\r\n|类型= 动作 / 科幻 / 犯罪\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 60分钟\r\n|频道= \r\n|电视网= prime video\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt12312450\r\n|tv_com_id= \r\n|主演= Karl Urban / Jack Quaid / 安东尼·斯塔尔 / 艾琳·莫里亚蒂 / 多米妮克·麦克艾丽戈特 / 杰西·厄舍 / 拉兹·阿隆索 / 切斯·克劳福 / 托默·卡蓬 / 福原·凯伦 / 内森·米切尔 / 蔻碧·米纳菲 / 克劳迪娅·多米特 / 詹森·阿克斯\r\n|配角= Simon Pegg / 阿雅·卡什 / Giancarlo Esposito / P·J·伯恩 / 卡梅伦·克罗维蒂 / 迈尔斯·加斯顿·维拉努瓦 / 马修·爱迪生 / 弗朗西丝·特纳 / 凯蒂·布赖尔 / 莱拉·罗宾斯 / 吉姆·比弗 / 凯尔·麦克 / 卢卡·奥利尔 / 妮卡·埃利奥特 / 查理兹·塞隆 / 劳瑞·侯登 / Sean Patrick Flanery / 凯蒂娅·温特 / 尼克·维切斯勒 / 克莉丝汀·布丝 / Jack Doolan / 莎拉·斯维尔 / Nia Roam / 玛雅·米沙里维克 / 贾斯汀·戴维斯 / 伊莱莎·帕斯特 / Caitlin Pasquet\r\n}}',
-    '　　讲述的是一群自发形成的“纠察队”成员为阻止道貌岸然的腐败“超级英雄”滥用超能力祸害世界，与沃特国际公司旗下的邪恶超能力者展开殊死搏斗的故事。',
-    '',
-    0,
-    8,
-    22,
-    115,
-    34,
-    2,
-    2,
-    0,
-    0,
-    'h',
-    0,
-    0,
-    0
-  ),
-  (
-    329285,
-    2,
-    'RPG不動産',
-    'RPG不动产',
-    '',
-    229195,
-    1614342436,
-    'f2/8f/329285_4MYAA.jpg',
-    1,
-    '{{Infobox animanga/TVAnime\r\n|中文名= RPG不动产\r\n|别名={\r\n[英文名1|RPG Real Estate]\r\n[英文名2|Rent, Plan, Guide for You]\r\n}\r\n|话数= 12\r\n|放送开始= 2022年4月6日\r\n|放送星期= 星期三\r\n|官方网站= https://rpg-rs.jp\r\n|播放电视台= AT-X / BS日テレ\r\n|其他电视台= TOKYO MX / テレビ愛知 / KBS京都 / サンテレビ\r\n|播放结束= \r\n|其他= \r\n|Copyright= ©険持ちよ・芳文社／『RPG不動産』製作委員会\r\n|原作= 険持ちよ（まんがタイムきららキャラット／芳文社）\r\n|导演= 越田知明\r\n|人物设定= 谷口元浩\r\n|主题歌演出= 風色琴音（CV：井上ほの花）、ファー（CV：木野日菜）、ルフリア（CV：川井田夏海）、ラキラ（CV：石見舞菜香）/ まねきケチャ\r\n|主题歌作词= ミズノゲンキ / 古谷完\r\n|主题歌作曲= 設楽哲也 / 下田晃太郎\r\n|主题歌编曲= 設楽哲也 / 下田晃太郎\r\n|企画= 菊池剛、工藤大丈、孝壽尚志\r\n|执行制片人= 田中翔、小林宏之、石黒竜、北條真、山崎明日香、久保田暁、篠崎文彦\r\n|制片人= 根本侑果、竹ノ内千恵、舩津彩奈、鎌田肇、谷口博康、深谷成輝、丸山創、有水宗治郎；制作プロデューサー：中村陽介\r\n|製作= 『RPG不動産』製作委員会（KADOKAWA、芳文社、動画工房、日本コロムビア、AT-X、BS日本、角川メディアハウス）\r\n|OP・ED 分镜= 金子俊太朗 / 越田知明\r\n}}',
-    '魔王被打倒，世界恢复得和平之后15年。\r\n风色琴音为了寻找新居来到了RPG不动产，其实那里就是琴音的工作地点！同事是自由调皮的弗雅，对工作严格认真的僧侣露芙莉娅，外表可爱、内心坚强的战士拉琪拉。\r\n琴音与3个人合力，友好愉快地解决了前来找房子的奇怪客人们的难题，并提供了新的住所。\r\n寻找重要的房子请交给RPG不动产！不管是在水里，还是在云上，还是在什么地方，都会找到喜欢的好房子给你看。\r\n异世界幻想剧，开幕！',
-    '',
-    0,
-    12,
-    271,
-    695,
-    433,
-    109,
-    255,
-    0,
-    0,
-    'r',
-    0,
-    0,
-    0
-  ),
-  (333707, 2, 'Love, Death &amp; Robots Volume 3', '爱、死亡 &amp; 机器人 第三季', '', 344362, 1618844197, 'ef/a9/333707_XoOYR.jpg', 5, '{{Infobox animanga/TVAnime\r\n|中文名= 爱、死亡 &amp; 机器人 第三季\r\n|别名={\r\n[LOVE DEATH + ROBOTS]\r\n[爱 x 死 x 机器人(台)]\r\n[爱 · 死 · 机械人(港)]\r\n}\r\n|导演= Patrick Osborne、David Fincher、Emily Dean、Robert Bisi、Andy Lyon、Jennifer Yuh、Tim Miller、Carlos Stevens、Jerome Chen、Alberto Mielgo\r\n|编剧= John Scalzi、Andrew Kevin Walker、Neal Asher、Philip Gelatt、Michael Swanwick、Robert Bisi、Andy Lyon、Jeff Fowler、Justin Coates、Tim Miller、Bruce Sterling、Joe Abercrombie、Alan Mah Baxter、Alberto Mielgo\r\n|话数= 9\r\n|放送开始= 2022年5月20日\r\n|放送星期= 星期五\r\n|官方网站= \r\n|播放电视网= NETFLIX\r\n|其他电视台= \r\n|播放结束= 2022年5月20日\r\n|其他= \r\n|Copyright= \r\n|IMDb= tt20192958\r\n}}', '　　艾美奖获奖动画选集《爱、死亡 & 机器人》第三部回归，由蒂姆·米勒（《死侍》《终结者：黑暗命运》）和大卫·芬奇（《心灵猎人》《曼克》）担任监制。恐怖、想象力和美在新剧集中完美融合，从揭示古老的邪恶力量到喜剧般的末日，剧集以标志性的巧思和创造性的视觉效果，为观众带来令人震惊的奇幻、恐怖和科幻短篇故事。', '', 0, 9, 168, 1144, 73, 13, 10, 0, 0, 'a', 0, 0, 0),
-  (347656, 6, 'The Orville Season3', '奥维尔号 第三季', '', 287622, 1629753846, '6d/d9/347656_5Sk6o.jpg', 2, '{{Infobox real/Television\r\n|中文名= 奥维尔号 第三季\r\n|别名={\r\n}\r\n|集数= 11\r\n|放送星期= \r\n|开始= 2022-06-02\r\n|结束= 2022-08-11\r\n|类型= 喜剧 / 科幻 / 冒险\r\n|国家/地区= 美国\r\n|语言= \r\n|每集长= \r\n|频道= \r\n|电视网= Hulu\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt5691552\r\n|tv_com_id= 328487\r\n}}', '', '', 0, 11, 1, 0, 4, 0, 0, 0, 0, 'a', 0, 0, 0),
-  (348542, 6, 'Star Trek: Strange New Worlds', '星际迷航：奇异新世界', '', 287622, 1630825231, '00/a3/348542_0Y544.jpg', 2, '{{Infobox real/Television\r\n|中文名= 星际迷航：奇异新世界\r\n|别名={\r\n}\r\n|集数= 10\r\n|放送星期= Thursday\r\n|开始= 2022-05-05\r\n|结束= \r\n|类型= \r\n|国家/地区= \r\n|语言= \r\n|每集长= \r\n|频道= \r\n|电视网= \r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= https://www.paramountplus.com/shows/star-trek-strange-new-worlds/\r\n|imdb_id= tt12327578\r\n|tv_com_id= \r\n}}', '主要讲述克里斯托弗 派克任舰长时企业号的故事。\r\nA prequel to Star Trek: The Original Series, the show will follow the crew of the USS Enterprise under Captain Christopher Pike.', '', 0, 10, 1, 5, 4, 0, 0, 0, 0, 'x', 0, 0, 0),
-  (
-    355474,
-    6,
-    'Dopesick',
-    '成瘾剂量',
-    '',
-    405461,
-    1635937838,
-    'ea/f8/355474_YhxFh.jpg',
-    2,
-    '{{Infobox real/Television\r\n|中文名= 成瘾剂量\r\n|别名={\r\n}\r\n|集数= 8\r\n|放送星期= Wednesday\r\n|开始= 2021-10-13\r\n|结束= \r\n|类型= 剧情\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 60分钟\r\n|频道= \r\n|电视网= hulu\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= 美国\r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= 毒瘾\r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt9174558\r\n|tv_com_id= \r\n|MPAA评级= TV-MA\r\n|导演= 巴瑞·莱文森\r\n|编剧= Beth Macy / 丹尼·斯特朗\r\n|主演= 迈克尔·基顿 / 彼得·萨斯加德 / 威尔·保尔特 / 约翰·胡热那克 / 凯特琳·德弗 / 罗莎里奥·道森 / 迈克尔·斯图巴 / 威尔·切斯 / 杰克·麦克道曼 / 菲莉帕·苏 / 伊恩·安特曼 / R.基斯·哈里斯 / 杰米·雷·纽曼 / 瑞贝卡·薇索基 / 皮特·布里斯 / 肖恩·卡拉汉 / 米根·费伊 / 斯宾塞·加雷特 / 尼古拉斯·罗根 / 凯特琳·梅纳 / 安东尼·雷诺兹 / 凯西·福特·亚历山大 / 肯尼·阿方索 / 赛琳娜·安杜兹 / 克利欧佩特拉·科尔曼 / Arischa Conner / Andrea Frankle / Lawrence Arancio / Scott Charles\r\n}}',
-    'The series takes viewers to the epicenter of America\'s struggle with opioid addiction, from the boardrooms of Purdue Pharma, to a distressed Virginia mining community, to the hallways of the DEA.',
-    '',
-    0,
-    8,
-    17,
-    21,
-    5,
-    1,
-    1,
-    0,
-    0,
-    'c',
-    0,
-    0,
-    0
-  ),
-  (360909, 6, 'Obi-Wan Kenobi', '星球大战外传：欧比旺', '', 287622, 1638615707, '5c/df/360909_i3s7H.jpg', 2, '{{Infobox real/Television\r\n|中文名= 星球大战外传：欧比旺\r\n|别名={\r\n[欧比王]\r\n[欧比王·肯诺比]\r\n[欧比旺·克诺比]\r\n}\r\n|集数= 6\r\n|放送星期= 星期三\r\n|开始= 2022-05-27\r\n|结束= 2022-06-22\r\n|类型= 动作/科幻/冒险\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= \r\n|频道= \r\n|电视网= Disney+\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= https://www.starwars.com/series/obi-wan-kenobi\r\n|imdb_id= tt8466564\r\n|tv_com_id= \r\n|导演= Deborah Chow\r\n|编剧= Joby Harold、Stuart Beattie、Hossein Amini、Hannah Friedman、Andrew Stanton\r\n|配角= Sung Kang、Moses Ingram、Kumail Nanjiani、Indira Varma、Rupert Friend、Simone Kessell、Grant Feely、Rya Kihlstedt\r\n|音乐= Natalie Holt\r\n}}', '《欧比旺·克诺比》是一部美国太空歌剧网络迷你剧，改编自《星球大战》系列中的同名角色，该剧的故事发生在《星球大战前传3：西斯的复仇》10年后，讲述欧比旺的隐居生活，以及他暗中保护卢克长大的故事。', '', 0, 6, 6, 29, 9, 2, 4, 0, 0, 'x', 0, 0, 0),
-  (365400, 6, '元彼の遺言状', '前男友的遗书', '', 250298, 1641891360, 'fe/4b/365400_kkdcC.jpg', 1, '{{Infobox real/Television\r\n|中文名= 前男友的遗书\r\n|别名={\r\n[My Ex-Boyfriend\'s Last Will]\r\n}\r\n|集数= 11\r\n|放送星期= 月曜日\r\n|开始= 2022-04-11\r\n|结束= 2022-06-20\r\n|类型= \r\n|国家/地区= 日本\r\n|语言= 日本语\r\n|每集长= \r\n|频道= 月曜21時枠連続ドラマ\r\n|电视网= \r\n|电视台= フジテレビ\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= https://www.fujitv.co.jp/motokare/\r\n|imdb_id= \r\n|wiki= https://ja.wikipedia.org/wiki/%E5%85%83%E5%BD%BC%E3%81%AE%E9%81%BA%E8%A8%80%E7%8A%B6\r\n|原作= 新川帆立『元彼の遺言状』『剣持麗子のワンナイト推理』\r\n|编剧= 杉原憲明、小谷暢亮、中園勇也\r\n|导演= 鈴木雅之、澤田鎌作、西岡和宏\r\n|制片人= 金城綾香、宮﨑暖\r\n|主演= 綾瀬はるか\r\n|配角= 大泉洋、生田斗真、関水渚、森カンナ、笛木優子、要潤、野間口徹、佐戸井けん太、笹野高史、萬田久子、浅野和之\r\n|音乐= 川井憲次\r\n}}', '', '', 0, 11, 8, 32, 24, 0, 3, 0, 0, 'q', 0, 0, 0),
-  (366192, 2, 'The Boys: Diabolical', '黑袍纠察队：劣迹', '', 344362, 1642604565, '14/cd/366192_LuIv2.jpg', 5, '{{Infobox animanga/TVAnime\r\n|中文名= 黑袍纠察队：劣迹\r\n|别名={\r\n}\r\n|话数= 8\r\n|放送开始= 2022-03-04\r\n|放送星期= 星期五\r\n|官方网站= \r\n|播放电视台= \r\n|其他电视台= \r\n|播放结束= 2022-03-04\r\n|其他= \r\n|Copyright= \r\n|原作= Garth Ennis &amp; Darick Robertson\r\n|播放电视网= prime video\r\n|脚本= 奥卡菲娜 / 加思·恩尼斯 / 艾略特·格拉泽 / 伊拉纳·格雷泽 / 埃文·戈德堡 / Seth Rogen / Simon Racioppa / Justin Roiland / Ben Bayouth / 安迪·萨姆伯格 / 爱莎·泰勒\r\n|IMDb= tt16350094\r\n}}', '　　衍生诗选类动画剧《劣迹》，讲述《黑袍纠察队》世界中还不为人知的故事。', '', 0, 8, 13, 54, 2, 1, 5, 0, 0, 'h', 0, 0, 0),
-  (
-    366253,
-    2,
-    'エスタブライフ グレイトエスケープ',
-    'Estab Life Great Escape',
-    '',
-    487601,
-    1642681531,
-    '5f/e2/366253_9Q1aR.jpg',
-    1,
-    '{{Infobox animanga/TVAnime\r\n|中文名= Estab Life Great Escape\r\n|别名={\r\n[ESTABLISHMENT IN LIFE GREAT ESCAPE]\r\n}\r\n|话数= 12\r\n|放送开始= 2022年4月6日\r\n|放送星期= 星期三\r\n|官方网站= https://establife.tokyo/\r\n|播放电视台= フジテレビ「＋Ultra」\r\n|其他电视台= 関西テレビ / 東海テレビ / 北海道文化放送 / テレビ西日本 / BSフジ\r\n|播放结束= 2022年4月12日（FOD）\r\n|其他= 2022年3月1日（FOD）先行配信\r\n|Copyright= ©SSF/エスタブライフ製作委員会\r\n|原案= 谷口悟朗\r\n|创意统括= 谷口悟朗\r\n|原作= SSF\r\n|导演= 橋本裕之\r\n|系列构成= 賀東招二\r\n|脚本= 賀東招二、茗荷屋甚六（木村航）\r\n|人物原案= コザキユースケ\r\n|概念艺术= 富安健一郎(INEI)\r\n|音乐= 藤澤慶昌\r\n|企画= スロウカーブ\r\n|制片人= スロウカーブ\r\n|动画制作= ポリゴン・ピクチュアズ\r\n|主题歌演出= めいちゃん、GOOD ON THE REEL\r\n|CG 导演= 坂間健太、関水大樹、上本雅之\r\n|美术监督= 高橋佐知、島村大輔\r\n|色彩设计= 野地弘納\r\n|人物设定= 舛田裕美、次要：長沼範裕\r\n}}',
-    '「生きるのがツライ？ なら逃げちゃえばいいんですよ」\r\nずっと先の未来。人間はそれまでの姿形だけでなく、獣人・サイボーグ・魔族など多様な姿を持つようになった。東京の街は、AIが管理する高い壁に囲まれた数多の地域「クラスタ」となり、自由な行き来をやめ、それぞれが独自の文化・常識を育んだ。人々は、自らが生まれたクラスタの常識を基準に幸せな人生を送る。\r\n\r\nしかし、なかには自らのクラスタに適応できない者も現れる──。\r\nそうした人々を、別のクラスタへと「逃がす」ことを生業にする者たちがいる。\r\n「逃げたい人」たちから依頼を受け、あらゆる方法を駆使してAIの裏をかき、本来は不可能であるクラスタ間の移動を成し遂げる者たち──「逃がし屋」。\r\n\r\n逃げて、逃げて、逃げまくる！！\r\n逃げたい人をお手伝いする、5人の逃がし屋たちの物語──！',
-    '',
-    0,
-    12,
-    385,
-    774,
-    384,
-    58,
-    71,
-    0,
-    0,
-    'e',
-    0,
-    0,
-    0
-  ),
-  (372487, 6, 'The Guardians of Justice Season 1', '正义守护者 第一季', '', 104848, 1646146976, '8f/ff/372487_hYhQX.jpg', 2, '{{Infobox real/Television\r\n|中文名= 正义守护者 第一季\r\n|别名={\r\n[The Guardians of Justice (Will Save You!) Season 1]\r\n}\r\n|集数= 7\r\n|放送星期= \r\n|开始= 2022-03-01\r\n|结束= \r\n|类型= \r\n|国家/地区= 美国\r\n|语言= \r\n|每集长= \r\n|频道= \r\n|电视网= Netflix\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= https://www.netflix.com/title/80141172\r\n|imdb_id= tt16549788\r\n|tv_com_id= \r\n}}', 'When their seemingly fearless leader self-destructs, a team of troubled superheroes must confront festering evil in the world — and in themselves.', '', 0, 7, 1, 3, 0, 0, 0, 0, 0, 'z', 0, 0, 0),
-  (375024, 6, 'Severance', '人生切割术', '', 268549, 1647690372, '09/29/375024_V19r1.jpg', 2, '{{Infobox real/Television\r\n|中文名= 人生切割术\r\n|别名={\r\n[离职]\r\n}\r\n|集数= 9\r\n|放送星期= \r\n|开始= 2022-02-18\r\n|结束= \r\n|类型= 剧情\r\n|国家/地区= 美国\r\n|语言= 英语\r\n|每集长= 60分钟\r\n|频道= \r\n|电视网= \r\n|电视台= Apple TV+\r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt11280740\r\n|tv_com_id= \r\n}}', '本剧是一部职场惊悚剧，故事发生在希望将工作与生活的平衡提升至新水平的Lumen公司，一名有着黑暗过往的员工马克(斯科特饰)试图让自己重新振作起来。沃肯将饰演Lumen公司光学和设计部主管。剧集由丹·埃里克森撰写剧本，共 9 集。', '', 0, 9, 14, 44, 7, 0, 1, 0, 0, 'r', 0, 0, 0),
-  (378890, 6, '风起陇西', '风起陇西', '', 287622, 1650620387, '89/11/378890_DSLqF.jpg', 3, '{{Infobox real/Television\r\n|中文名= 风起陇西\r\n|别名={\r\n}\r\n|集数= 24\r\n|放送星期= \r\n|开始= 2022-04-27\r\n|结束= \r\n|类型= 悬疑 / 历史 / 古装\r\n|国家/地区= 中国大陆\r\n|语言= 汉语普通话\r\n|每集长= \r\n|频道= \r\n|电视网= 爱奇艺\r\n|电视台= \r\n|视频制式= \r\n|音频制式= \r\n|首播国家= \r\n|首播地区= \r\n|台湾名称= \r\n|港澳名称= \r\n|马新名称= \r\n|官方网站= \r\n|imdb_id= tt14521046\r\n|tv_com_id= \r\n|原著= 马伯庸\r\n}}', '讲述在天下三分、烽火四起、英雄辈出的时代，两个不被乱世聚焦的“小人物”——陈恭与荀诩，在惊心动魄的谍战中爆发出夺目光辉，于历史之外谱写出一段英雄传奇。', '', 0, 24, 2, 11, 3, 2, 0, 0, 0, 'f', 0, 0, 0);
+如您有意见请到WIKI小组 (http://bangumi.tv/group/wiki) 讨论，谢谢！', '', 0, 0, 109, 531, 48, 18, 19, 0, 0, 'f', 0, 0, 2),
+        (3, 2, 'スカイ・クロラ', '空中杀手', 'tt1056437', 2, 1216022271, 'ec/cb/3_SRc8z.jpg', 3, '{{Infobox animanga/Movie
+|中文名=空中杀手
+|导演=押井守
+|编剧=伊藤ちひろ / 伊藤千寻
+|上映年度=2008-09-03
+|片长= 
+|原作=森 博嗣
+|官方网站=http://wwws.warnerbros.co.jp/skycrawlers/
+|企画=
+|脚本=
+|分镜=
+|演出=
+|人物设定=
+|作画监督=
+|机械设定=
+|音乐=
+|其他= 
+|Copyright= 
+}}', '战斗机飞行员函南优一（cv:加濑亮）来到基地报道，等待他的是全新的生活环境与熟悉的飞行战斗。在这里，函南优一遇到了各式各样的战友，与不苟言笑的长官草薙水素（cv:菊地凛子）。函南优一获得了一架新战斗机，但是，基地里的战友们都对战斗机的前任驾驶员缄默不语。于是函南优一开始留意相关的消息，他渐渐知道，前任驾驶员已经去世，而事件本身与草薙水素有莫大的关系。随着调查的深入，函南优一逐渐发现惊人的真相，而他每天与敌人的战斗，似乎也隐藏着他不知道的意义。 ', '', 0, 0, 0, 18, 2, 0, 0, 0, 0, 'k', 0, 0, 1),
+        (4, 4, 'メタルスラッグ7', '合金弹头7', '', 2, 1216022721, 'a8/7f/4_cMMK5.jpg', 5, '{{Infobox Game
+|中文名= 合金弹头7
+|别名={
+[Metal Slug 7]
+}
+|平台= NDS
+|游戏类型= ACT
+|游戏引擎= 
+|游玩人数= 1人
+|发行日期= 2008-07-17
+|售价= 5040円
+|website= 
+|开发= SNKプレイモア
+|发行= SNKプレイモア
+}}', '　　以细腻的画风、搞笑的动作和刺激的战斗被人们所熟知的“合金弹头系列”在NDS 平台推出正统续作！虽然本系列的前几部作品最早都是作为街机游戏而推出的，不过这一次的“7”不但先推出NDS版，而且是独占！日前SNK playmore宣布了这款游戏，目前发售日定为2008年3月。据称，本作中将搭载任务模式，在关卡中不断完成教官所下达的任务，提升军衔。
+　　游戏依然保持了系列一贯的风格，战斗的场面也没有因为是掌机游戏而进行削减，游戏依然是射击、跳跃和手雷三个按键，虽然是NDS游戏，不过本作却并不对应触摸屏，游戏的画面显示在上屏幕，而下屏幕则用来显示地图。在TGS 2007（Tokyo Game Show）大会上SNK放出了《合金弹头7》的试玩版。这代产品沿袭了前代风格，战斗的对象似乎也没有多大变化，没有分支路线，不过游戏性和关卡设计却不比前几代差，关卡数也有7关，另外还增加了一种武器。', 'a:1:{i:0;s:1:"5";}', 0, 0, 21, 197, 6, 5, 4, 0, 0, 'h', 0, 0, 0),
+        (5, 4, 'Call of Duty 4', '使命召唤 4: 现代战争', '', 4, 1216024610, 'e4/da/5_wUARf.jpg', 4, '', '由Infinity Ward制作、Activision 发行的第一人称射击游戏《使命召唤 4(Call of Duty 4：Modern Warfare)》，跳脱二次世界大战战场，将前线拉回到现代战争中。
 
-INSERT INTO
-  `chii_subject_fields` (`field_sid`, `field_tid`, `field_tags`, `field_rate_1`, `field_rate_2`, `field_rate_3`, `field_rate_4`, `field_rate_5`, `field_rate_6`, `field_rate_7`, `field_rate_8`, `field_rate_9`, `field_rate_10`, `field_airtime`, `field_rank`, `field_year`, `field_mon`, `field_week_day`, `field_date`, `field_redirect`)
-VALUES
-  (
-    2703,
-    6,
-    'a:25:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"44\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"36\";}i:2;a:2:{s:8:\"tag_name\";s:3:\"BAU\";s:6:\"result\";s:2:\"10\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"心理\";s:6:\"result\";s:1:\"9\";}i:4;a:2:{s:8:\"tag_name\";s:7:\"profile\";s:6:\"result\";s:1:\"8\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"犯罪\";s:6:\"result\";s:1:\"7\";}i:6;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"4\";}i:7;a:2:{s:8:\"tag_name\";s:9:\"小博士\";s:6:\"result\";s:1:\"4\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"2009\";s:6:\"result\";s:1:\"4\";}i:9;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"3\";}i:10;a:2:{s:8:\"tag_name\";s:15:\"连环杀人案\";s:6:\"result\";s:1:\"3\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"serial\";s:6:\"result\";s:1:\"2\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:1:\"2\";}i:13;a:2:{s:8:\"tag_name\";s:6:\"killer\";s:6:\"result\";s:1:\"2\";}i:14;a:2:{s:8:\"tag_name\";s:4:\"Reid\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:12:\"ThomasGibson\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:10:\"ShemarMore\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:8:\"TVPLAY-E\";s:6:\"result\";s:1:\"1\";}i:18;a:2:{s:8:\"tag_name\";s:17:\"MatthewGreyGubler\";s:6:\"result\";s:1:\"1\";}i:19;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:20;a:2:{s:8:\"tag_name\";s:6:\"推理\";s:6:\"result\";s:1:\"1\";}i:21;a:2:{s:8:\"tag_name\";s:15:\"各种欢（？\";s:6:\"result\";s:1:\"1\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}i:23;a:2:{s:8:\"tag_name\";s:6:\"悬疑\";s:6:\"result\";s:1:\"1\";}i:24;a:2:{s:8:\"tag_name\";s:3:\"MGG\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    1,
-    0,
-    0,
-    0,
-    4,
-    22,
-    49,
-    33,
-    14,
-    3,
-    173,
-    2009,
-    9,
-    3,
-    '2009-09-23',
-    0
-  ),
-  (
-    9169,
-    6,
-    'a:23:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"42\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"21\";}i:2;a:2:{s:8:\"tag_name\";s:11:\"JJ快回来\";s:6:\"result\";s:1:\"8\";}i:3;a:2:{s:8:\"tag_name\";s:12:\"连环杀人\";s:6:\"result\";s:1:\"6\";}i:4;a:2:{s:8:\"tag_name\";s:3:\"BAU\";s:6:\"result\";s:1:\"6\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"profile\";s:6:\"result\";s:1:\"6\";}i:6;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"3\";}i:7;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"3\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:1:\"3\";}i:9;a:2:{s:8:\"tag_name\";s:6:\"serial\";s:6:\"result\";s:1:\"2\";}i:10;a:2:{s:8:\"tag_name\";s:4:\"2010\";s:6:\"result\";s:1:\"2\";}i:11;a:2:{s:8:\"tag_name\";s:3:\"MGG\";s:6:\"result\";s:1:\"2\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"killer\";s:6:\"result\";s:1:\"2\";}i:13;a:2:{s:8:\"tag_name\";s:4:\"Reid\";s:6:\"result\";s:1:\"1\";}i:14;a:2:{s:8:\"tag_name\";s:17:\"MatthewGreyGubler\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:10:\"ShemarMore\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:12:\"ThomasGibson\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"悬疑\";s:6:\"result\";s:1:\"1\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"推理\";s:6:\"result\";s:1:\"1\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"犯罪\";s:6:\"result\";s:1:\"1\";}i:20;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:21;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"心理\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    0,
-    0,
-    1,
-    5,
-    22,
-    38,
-    30,
-    6,
-    0,
-    255,
-    2010,
-    9,
-    3,
-    '2010-09-22',
-    0
-  ),
-  (22357, 6, 'a:10:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"26\";}i:1;a:2:{s:8:\"tag_name\";s:15:\"CSI犯罪现场\";s:6:\"result\";s:1:\"8\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"CSI本店\";s:6:\"result\";s:1:\"4\";}i:3;a:2:{s:8:\"tag_name\";s:4:\"2000\";s:6:\"result\";s:1:\"3\";}i:4;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"3\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:1:\"3\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"犯罪\";s:6:\"result\";s:1:\"3\";}i:7;a:2:{s:8:\"tag_name\";s:6:\"美劇\";s:6:\"result\";s:1:\"2\";}i:8;a:2:{s:8:\"tag_name\";s:3:\"CSI\";s:6:\"result\";s:1:\"1\";}i:9;a:2:{s:8:\"tag_name\";s:9:\"第一季\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 0, 11, 33, 14, 5, 0, 225, 2000, 0, 2, '0000-00-00', 0),
-  (
-    23426,
-    6,
-    'a:20:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"32\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"19\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:2:\"11\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"心理\";s:6:\"result\";s:1:\"9\";}i:4;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"6\";}i:5;a:2:{s:8:\"tag_name\";s:4:\"2011\";s:6:\"result\";s:1:\"4\";}i:6;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"3\";}i:7;a:2:{s:8:\"tag_name\";s:3:\"BAU\";s:6:\"result\";s:1:\"3\";}i:8;a:2:{s:8:\"tag_name\";s:9:\"小博士\";s:6:\"result\";s:1:\"3\";}i:9;a:2:{s:8:\"tag_name\";s:4:\"Reid\";s:6:\"result\";s:1:\"2\";}i:10;a:2:{s:8:\"tag_name\";s:15:\"不要冬歇啊\";s:6:\"result\";s:1:\"2\";}i:11;a:2:{s:8:\"tag_name\";s:3:\"MGG\";s:6:\"result\";s:1:\"2\";}i:12;a:2:{s:8:\"tag_name\";s:17:\"MatthewGreyGubler\";s:6:\"result\";s:1:\"1\";}i:13;a:2:{s:8:\"tag_name\";s:10:\"ShemarMore\";s:6:\"result\";s:1:\"1\";}i:14;a:2:{s:8:\"tag_name\";s:12:\"ThomasGibson\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:7:\"2011-10\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}i:18;a:2:{s:8:\"tag_name\";s:8:\"TVPLAY-E\";s:6:\"result\";s:1:\"1\";}i:19;a:2:{s:8:\"tag_name\";s:3:\"！\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    0,
-    1,
-    0,
-    4,
-    17,
-    35,
-    13,
-    7,
-    0,
-    344,
-    2011,
-    9,
-    3,
-    '2011-09-21',
-    0
-  ),
-  (
-    49798,
-    6,
-    'a:18:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"27\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"21\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:2:\"10\";}i:3;a:2:{s:8:\"tag_name\";s:3:\"BAU\";s:6:\"result\";s:1:\"7\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"推理\";s:6:\"result\";s:1:\"5\";}i:5;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"4\";}i:6;a:2:{s:8:\"tag_name\";s:4:\"2012\";s:6:\"result\";s:1:\"4\";}i:7;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"3\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"Reid\";s:6:\"result\";s:1:\"3\";}i:9;a:2:{s:8:\"tag_name\";s:2:\"CM\";s:6:\"result\";s:1:\"2\";}i:10;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"2\";}i:11;a:2:{s:8:\"tag_name\";s:17:\"MatthewGreyGubler\";s:6:\"result\";s:1:\"1\";}i:12;a:2:{s:8:\"tag_name\";s:10:\"ShemarMore\";s:6:\"result\";s:1:\"1\";}i:13;a:2:{s:8:\"tag_name\";s:12:\"ThomasGibson\";s:6:\"result\";s:1:\"1\";}i:14;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:2:\"US\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:7:\"profile\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    0,
-    0,
-    0,
-    5,
-    13,
-    25,
-    11,
-    3,
-    3,
-    430,
-    2012,
-    9,
-    3,
-    '2012-09-26',
-    0
-  ),
-  (84399, 6, 'a:11:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"20\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"12\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"推理\";s:6:\"result\";s:1:\"7\";}i:3;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"6\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:1:\"5\";}i:5;a:2:{s:8:\"tag_name\";s:3:\"BAU\";s:6:\"result\";s:1:\"3\";}i:6;a:2:{s:8:\"tag_name\";s:7:\"profile\";s:6:\"result\";s:1:\"2\";}i:7;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"1\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"2013\";s:6:\"result\";s:1:\"1\";}i:9;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:10;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 1, 2, 9, 18, 2, 3, 0, 604, 2013, 9, 3, '2013-09-25', 0),
-  (104833, 6, 'a:10:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"17\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:2:\"11\";}i:2;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"4\";}i:3;a:2:{s:8:\"tag_name\";s:2:\"CM\";s:6:\"result\";s:1:\"3\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"罪案\";s:6:\"result\";s:1:\"3\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"profile\";s:6:\"result\";s:1:\"2\";}i:6;a:2:{s:8:\"tag_name\";s:13:\"criminalminds\";s:6:\"result\";s:1:\"1\";}i:7;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"1\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"2014\";s:6:\"result\";s:1:\"1\";}i:9;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 4, 13, 6, 2, 3, 0, 813, 2014, 10, 3, '2014-10-01', 0),
-  (148228, 6, 'a:7:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"13\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:1:\"7\";}i:2;a:2:{s:8:\"tag_name\";s:4:\"2016\";s:6:\"result\";s:1:\"3\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"美劇\";s:6:\"result\";s:1:\"2\";}i:4;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"1\";}i:5;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:6;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 4, 9, 6, 2, 2, 0, 840, 2015, 9, 3, '2015-09-30', 0),
-  (184017, 2, 'a:9:{i:0;a:2:{s:8:\"tag_name\";s:9:\"测试用\";s:6:\"result\";s:1:\"2\";}i:1;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:1:\"2\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"沙盒\";s:6:\"result\";s:1:\"2\";}i:3;a:2:{s:8:\"tag_name\";s:4:\"WIki\";s:6:\"result\";s:1:\"1\";}i:4;a:2:{s:8:\"tag_name\";s:15:\"神作！！！\";s:6:\"result\";s:1:\"1\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"Bangumi\";s:6:\"result\";s:1:\"1\";}i:6;a:2:{s:8:\"tag_name\";s:3:\"OVA\";s:6:\"result\";s:1:\"1\";}i:7;a:2:{s:8:\"tag_name\";s:4:\"TEST\";s:6:\"result\";s:1:\"1\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"短片\";s:6:\"result\";s:1:\"1\";}}', 1, 1, 0, 0, 0, 1, 1, 0, 0, 3, 0, 0, 0000, 10, 4, '1582-10-14', 0),
-  (194118, 6, 'a:6:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"7\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"犯罪心理\";s:6:\"result\";s:1:\"3\";}i:2;a:2:{s:8:\"tag_name\";s:4:\"2016\";s:6:\"result\";s:1:\"2\";}i:3;a:2:{s:8:\"tag_name\";s:24:\"Reid!!!!!!!!!!!!!!!!!!!!\";s:6:\"result\";s:1:\"1\";}i:4;a:2:{s:8:\"tag_name\";s:3:\"ABC\";s:6:\"result\";s:1:\"1\";}i:5;a:2:{s:8:\"tag_name\";s:3:\"CBS\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 1, 5, 4, 3, 0, 0, 0, 0, 2016, 9, 3, '2016-09-28', 0),
-  (
-    208783,
-    6,
-    'a:25:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"45\";}i:1;a:2:{s:8:\"tag_name\";s:7:\"Netflix\";s:6:\"result\";s:2:\"29\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:2:\"17\";}i:3;a:2:{s:8:\"tag_name\";s:4:\"2017\";s:6:\"result\";s:2:\"16\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"惊悚\";s:6:\"result\";s:2:\"15\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"悬疑\";s:6:\"result\";s:1:\"9\";}i:6;a:2:{s:8:\"tag_name\";s:9:\"超能力\";s:6:\"result\";s:1:\"7\";}i:7;a:2:{s:8:\"tag_name\";s:9:\"电视剧\";s:6:\"result\";s:1:\"5\";}i:8;a:2:{s:8:\"tag_name\";s:12:\"2017年10月\";s:6:\"result\";s:1:\"5\";}i:9;a:2:{s:8:\"tag_name\";s:12:\"怪奇物语\";s:6:\"result\";s:1:\"4\";}i:10;a:2:{s:8:\"tag_name\";s:9:\"TV-Series\";s:6:\"result\";s:1:\"2\";}i:11;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"1\";}i:12;a:2:{s:8:\"tag_name\";s:12:\"恐怖猎奇\";s:6:\"result\";s:1:\"1\";}i:13;a:2:{s:8:\"tag_name\";s:6:\"剧集\";s:6:\"result\";s:1:\"1\";}i:14;a:2:{s:8:\"tag_name\";s:8:\"19.02.18\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:14:\"StrangerThings\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:6:\"六星\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"剧情\";s:6:\"result\";s:1:\"1\";}i:18;a:2:{s:8:\"tag_name\";s:5:\"Drama\";s:6:\"result\";s:1:\"1\";}i:19;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"1\";}i:20;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}i:21;a:2:{s:8:\"tag_name\";s:6:\"恐怖\";s:6:\"result\";s:1:\"1\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"美国\";s:6:\"result\";s:1:\"1\";}i:23;a:2:{s:8:\"tag_name\";s:9:\"第二季\";s:6:\"result\";s:1:\"1\";}i:24;a:2:{s:8:\"tag_name\";s:4:\"2016\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    0,
-    0,
-    8,
-    15,
-    41,
-    49,
-    3,
-    2,
-    0,
-    1151,
-    2017,
-    10,
-    5,
-    '2017-10-27',
-    0
-  ),
-  (
-    277229,
-    6,
-    'a:17:{i:0;a:2:{s:8:\"tag_name\";s:2:\"DC\";s:6:\"result\";s:2:\"36\";}i:1;a:2:{s:8:\"tag_name\";s:6:\"电影\";s:6:\"result\";s:2:\"31\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"蝙蝠侠\";s:6:\"result\";s:2:\"24\";}i:3;a:2:{s:8:\"tag_name\";s:12:\"超级英雄\";s:6:\"result\";s:2:\"18\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"悬疑\";s:6:\"result\";s:2:\"11\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"氛围\";s:6:\"result\";s:1:\"8\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"7\";}i:7;a:2:{s:8:\"tag_name\";s:12:\"国内上映\";s:6:\"result\";s:1:\"6\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"6\";}i:9;a:2:{s:8:\"tag_name\";s:9:\"三次元\";s:6:\"result\";s:1:\"5\";}i:10;a:2:{s:8:\"tag_name\";s:8:\"DC电影\";s:6:\"result\";s:1:\"4\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"映画\";s:6:\"result\";s:1:\"4\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"恐怖\";s:6:\"result\";s:1:\"3\";}i:13;a:2:{s:8:\"tag_name\";s:3:\"酷\";s:6:\"result\";s:1:\"3\";}i:14;a:2:{s:8:\"tag_name\";s:6:\"美国\";s:6:\"result\";s:1:\"2\";}i:15;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:6:\"六星\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    1,
-    2,
-    6,
-    19,
-    41,
-    29,
-    9,
-    3,
-    0,
-    1296,
-    2022,
-    3,
-    2,
-    '2022-03-01',
-    0
-  ),
-  (311103, 6, 'a:11:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"24\";}i:1;a:2:{s:8:\"tag_name\";s:9:\"反超英\";s:6:\"result\";s:2:\"13\";}i:2;a:2:{s:8:\"tag_name\";s:7:\"2022年\";s:6:\"result\";s:2:\"12\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"Amazon\";s:6:\"result\";s:2:\"10\";}i:4;a:2:{s:8:\"tag_name\";s:15:\"黑袍纠察队\";s:6:\"result\";s:1:\"8\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"血腥\";s:6:\"result\";s:1:\"4\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:1:\"3\";}i:7;a:2:{s:8:\"tag_name\";s:6:\"漫改\";s:6:\"result\";s:1:\"3\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"爽片\";s:6:\"result\";s:1:\"3\";}i:9;a:2:{s:8:\"tag_name\";s:6:\"犯罪\";s:6:\"result\";s:1:\"3\";}i:10;a:2:{s:8:\"tag_name\";s:12:\"官方中文\";s:6:\"result\";s:1:\"2\";}}', 1, 0, 0, 3, 1, 17, 25, 35, 7, 8, 0, 934, 2022, 6, 5, '2022-06-03', 0),
-  (
-    329285,
-    2,
-    'a:30:{i:0;a:2:{s:8:\"tag_name\";s:9:\"芳文社\";s:6:\"result\";s:3:\"283\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"动画工房\";s:6:\"result\";s:3:\"257\";}i:2;a:2:{s:8:\"tag_name\";s:11:\"2022年4月\";s:6:\"result\";s:3:\"209\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"百合\";s:6:\"result\";s:3:\"181\";}i:4;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"142\";}i:5;a:2:{s:8:\"tag_name\";s:9:\"漫画改\";s:6:\"result\";s:3:\"127\";}i:6;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:2:\"91\";}i:7;a:2:{s:8:\"tag_name\";s:6:\"日常\";s:6:\"result\";s:2:\"87\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"漫改\";s:6:\"result\";s:2:\"74\";}i:9;a:2:{s:8:\"tag_name\";s:9:\"异世界\";s:6:\"result\";s:2:\"47\";}i:10;a:2:{s:8:\"tag_name\";s:3:\"萌\";s:6:\"result\";s:2:\"39\";}i:11;a:2:{s:8:\"tag_name\";s:12:\"越田知明\";s:6:\"result\";s:2:\"27\";}i:12;a:2:{s:8:\"tag_name\";s:9:\"轻百合\";s:6:\"result\";s:2:\"25\";}i:13;a:2:{s:8:\"tag_name\";s:12:\"中村能子\";s:6:\"result\";s:2:\"14\";}i:14;a:2:{s:8:\"tag_name\";s:12:\"動画工房\";s:6:\"result\";s:2:\"11\";}i:15;a:2:{s:8:\"tag_name\";s:27:\"まんがタイムきらら\";s:6:\"result\";s:1:\"9\";}i:16;a:2:{s:8:\"tag_name\";s:12:\"木野日菜\";s:6:\"result\";s:1:\"7\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"奇幻\";s:6:\"result\";s:1:\"7\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"萝莉\";s:6:\"result\";s:1:\"5\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"搞笑\";s:6:\"result\";s:1:\"4\";}i:20;a:2:{s:8:\"tag_name\";s:9:\"きらら\";s:6:\"result\";s:1:\"4\";}i:21;a:2:{s:8:\"tag_name\";s:7:\"2022年\";s:6:\"result\";s:1:\"3\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"动画\";s:6:\"result\";s:1:\"3\";}i:23;a:2:{s:8:\"tag_name\";s:12:\"日本动画\";s:6:\"result\";s:1:\"3\";}i:24;a:2:{s:8:\"tag_name\";s:6:\"废萌\";s:6:\"result\";s:1:\"2\";}i:25;a:2:{s:8:\"tag_name\";s:12:\"漫画改编\";s:6:\"result\";s:1:\"2\";}i:26;a:2:{s:8:\"tag_name\";s:15:\"石見舞菜香\";s:6:\"result\";s:1:\"2\";}i:27;a:2:{s:8:\"tag_name\";s:6:\"欢乐\";s:6:\"result\";s:1:\"2\";}i:28;a:2:{s:8:\"tag_name\";s:6:\"日本\";s:6:\"result\";s:1:\"2\";}i:29;a:2:{s:8:\"tag_name\";s:3:\"TVA\";s:6:\"result\";s:1:\"2\";}}',
-    1,
-    8,
-    16,
-    82,
-    169,
-    220,
-    111,
-    24,
-    6,
-    12,
-    0,
-    6501,
-    2022,
-    4,
-    3,
-    '2022-04-06',
-    0
-  ),
-  (
-    333707,
-    2,
-    'a:30:{i:0;a:2:{s:8:\"tag_name\";s:7:\"Netflix\";s:6:\"result\";s:3:\"238\";}i:1;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:3:\"178\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:3:\"168\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:3:\"160\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:3:\"139\";}i:5;a:2:{s:8:\"tag_name\";s:6:\"短片\";s:6:\"result\";s:3:\"118\";}i:6;a:2:{s:8:\"tag_name\";s:3:\"WEB\";s:6:\"result\";s:2:\"86\";}i:7;a:2:{s:8:\"tag_name\";s:22:\"爱、死亡&机器人\";s:6:\"result\";s:2:\"64\";}i:8;a:2:{s:8:\"tag_name\";s:9:\"短片集\";s:6:\"result\";s:2:\"63\";}i:9;a:2:{s:8:\"tag_name\";s:11:\"2022年4月\";s:6:\"result\";s:2:\"26\";}i:10;a:2:{s:8:\"tag_name\";s:6:\"美国\";s:6:\"result\";s:2:\"23\";}i:11;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:2:\"20\";}i:12;a:2:{s:8:\"tag_name\";s:6:\"动画\";s:6:\"result\";s:2:\"14\";}i:13;a:2:{s:8:\"tag_name\";s:17:\"2022年05月20日\";s:6:\"result\";s:2:\"10\";}i:14;a:2:{s:8:\"tag_name\";s:11:\"2022年5月\";s:6:\"result\";s:1:\"7\";}i:15;a:2:{s:8:\"tag_name\";s:6:\"猎奇\";s:6:\"result\";s:1:\"7\";}i:16;a:2:{s:8:\"tag_name\";s:6:\"奇幻\";s:6:\"result\";s:1:\"5\";}i:17;a:2:{s:8:\"tag_name\";s:7:\"2022年\";s:6:\"result\";s:1:\"3\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"战斗\";s:6:\"result\";s:1:\"3\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"续作\";s:6:\"result\";s:1:\"3\";}i:20;a:2:{s:8:\"tag_name\";s:6:\"血腥\";s:6:\"result\";s:1:\"3\";}i:21;a:2:{s:8:\"tag_name\";s:6:\"恋爱\";s:6:\"result\";s:1:\"2\";}i:22;a:2:{s:8:\"tag_name\";s:5:\"2020s\";s:6:\"result\";s:1:\"2\";}i:23;a:2:{s:8:\"tag_name\";s:7:\"Fincher\";s:6:\"result\";s:1:\"1\";}i:24;a:2:{s:8:\"tag_name\";s:6:\"惊悚\";s:6:\"result\";s:1:\"1\";}i:25;a:2:{s:8:\"tag_name\";s:12:\"恐怖猎奇\";s:6:\"result\";s:1:\"1\";}i:26;a:2:{s:8:\"tag_name\";s:23:\"爱、死亡&_机器人\";s:6:\"result\";s:1:\"1\";}i:27;a:2:{s:8:\"tag_name\";s:10:\"Short_film\";s:6:\"result\";s:1:\"1\";}i:28;a:2:{s:8:\"tag_name\";s:7:\"a.Anime\";s:6:\"result\";s:1:\"1\";}i:29;a:2:{s:8:\"tag_name\";s:35:\"j.值得且只值得看一遍(3星)\";s:6:\"result\";s:1:\"1\";}}',
-    2,
-    1,
-    3,
-    13,
-    26,
-    176,
-    351,
-    210,
-    39,
-    19,
-    0,
-    2210,
-    2022,
-    5,
-    5,
-    '2022-05-20',
-    0
-  ),
-  (347656, 6, 'a:1:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2022, 6, 4, '2022-06-02', 0),
-  (348542, 6, '', 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2022, 5, 4, '2022-05-05', 0),
-  (355474, 6, 'a:9:{i:0;a:2:{s:8:\"tag_name\";s:4:\"2021\";s:6:\"result\";s:1:\"4\";}i:1;a:2:{s:8:\"tag_name\";s:6:\"美国\";s:6:\"result\";s:1:\"4\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"3\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"剧集\";s:6:\"result\";s:1:\"2\";}i:4;a:2:{s:8:\"tag_name\";s:4:\"Hulu\";s:6:\"result\";s:1:\"2\";}i:5;a:2:{s:8:\"tag_name\";s:9:\"电视剧\";s:6:\"result\";s:1:\"2\";}i:6;a:2:{s:8:\"tag_name\";s:9:\"现象级\";s:6:\"result\";s:1:\"1\";}i:7;a:2:{s:8:\"tag_name\";s:12:\"关联现实\";s:6:\"result\";s:1:\"1\";}i:8;a:2:{s:8:\"tag_name\";s:9:\"限定剧\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 0, 4, 5, 5, 0, 0, 0, 2021, 10, 3, '2021-10-13', 0),
-  (360909, 6, 'a:8:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"6\";}i:1;a:2:{s:8:\"tag_name\";s:12:\"星球大战\";s:6:\"result\";s:1:\"6\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:1:\"3\";}i:3;a:2:{s:8:\"tag_name\";s:9:\"高地王\";s:6:\"result\";s:1:\"2\";}i:4;a:2:{s:8:\"tag_name\";s:18:\"星球大战系列\";s:6:\"result\";s:1:\"2\";}i:5;a:2:{s:8:\"tag_name\";s:7:\"Disney+\";s:6:\"result\";s:1:\"2\";}i:6;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"2\";}i:7;a:2:{s:8:\"tag_name\";s:9:\"电视剧\";s:6:\"result\";s:1:\"1\";}}', 1, 2, 1, 8, 4, 5, 4, 2, 0, 0, 0, 2323, 2022, 5, 5, '2022-05-27', 0),
-  (365400, 6, 'a:12:{i:0;a:2:{s:8:\"tag_name\";s:6:\"日剧\";s:6:\"result\";s:2:\"15\";}i:1;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"9\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"ドラマ\";s:6:\"result\";s:1:\"7\";}i:3;a:2:{s:8:\"tag_name\";s:15:\"フジテレビ\";s:6:\"result\";s:1:\"5\";}i:4;a:2:{s:8:\"tag_name\";s:15:\"綾瀬はるか\";s:6:\"result\";s:1:\"3\";}i:5;a:2:{s:8:\"tag_name\";s:9:\"绫濑遥\";s:6:\"result\";s:1:\"3\";}i:6;a:2:{s:8:\"tag_name\";s:7:\"2022春\";s:6:\"result\";s:1:\"3\";}i:7;a:2:{s:8:\"tag_name\";s:11:\"2022年4月\";s:6:\"result\";s:1:\"2\";}i:8;a:2:{s:8:\"tag_name\";s:3:\"春\";s:6:\"result\";s:1:\"2\";}i:9;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"2\";}i:10;a:2:{s:8:\"tag_name\";s:14:\"「日劇」´\";s:6:\"result\";s:1:\"1\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"推理\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 11, 10, 4, 0, 0, 0, 1543, 2022, 4, 1, '2022-04-11', 0),
-  (
-    366192,
-    2,
-    'a:27:{i:0;a:2:{s:8:\"tag_name\";s:6:\"短片\";s:6:\"result\";s:1:\"8\";}i:1;a:2:{s:8:\"tag_name\";s:15:\"黑袍纠察队\";s:6:\"result\";s:1:\"8\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"7\";}i:3;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"6\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:1:\"5\";}i:5;a:2:{s:8:\"tag_name\";s:12:\"多种画风\";s:6:\"result\";s:1:\"5\";}i:6;a:2:{s:8:\"tag_name\";s:12:\"黑色幽默\";s:6:\"result\";s:1:\"5\";}i:7;a:2:{s:8:\"tag_name\";s:6:\"动画\";s:6:\"result\";s:1:\"3\";}i:8;a:2:{s:8:\"tag_name\";s:6:\"动作\";s:6:\"result\";s:1:\"3\";}i:9;a:2:{s:8:\"tag_name\";s:12:\"恶心可能\";s:6:\"result\";s:1:\"2\";}i:10;a:2:{s:8:\"tag_name\";s:6:\"残酷\";s:6:\"result\";s:1:\"1\";}i:11;a:2:{s:8:\"tag_name\";s:5:\"2020s\";s:6:\"result\";s:1:\"1\";}i:12;a:2:{s:8:\"tag_name\";s:9:\"祖国人\";s:6:\"result\";s:1:\"1\";}i:13;a:2:{s:8:\"tag_name\";s:6:\"好笑\";s:6:\"result\";s:1:\"1\";}i:14;a:2:{s:8:\"tag_name\";s:3:\"部\";s:6:\"result\";s:1:\"1\";}i:15;a:2:{s:8:\"tag_name\";s:2:\"20\";s:6:\"result\";s:1:\"1\";}i:16;a:2:{s:8:\"tag_name\";s:12:\"美国动画\";s:6:\"result\";s:1:\"1\";}i:17;a:2:{s:8:\"tag_name\";s:6:\"冒险\";s:6:\"result\";s:1:\"1\";}i:18;a:2:{s:8:\"tag_name\";s:6:\"战斗\";s:6:\"result\";s:1:\"1\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:1:\"1\";}i:20;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"1\";}i:21;a:2:{s:8:\"tag_name\";s:6:\"猎奇\";s:6:\"result\";s:1:\"1\";}i:22;a:2:{s:8:\"tag_name\";s:6:\"剧情\";s:6:\"result\";s:1:\"1\";}i:23;a:2:{s:8:\"tag_name\";s:3:\"WEB\";s:6:\"result\";s:1:\"1\";}i:24;a:2:{s:8:\"tag_name\";s:3:\"HTF\";s:6:\"result\";s:1:\"1\";}i:25;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:1:\"1\";}i:26;a:2:{s:8:\"tag_name\";s:6:\"滑稽\";s:6:\"result\";s:1:\"1\";}}',
-    0,
-    0,
-    1,
-    0,
-    2,
-    13,
-    9,
-    6,
-    1,
-    1,
-    0,
-    0,
-    2022,
-    3,
-    5,
-    '2022-03-04',
-    0
-  ),
-  (
-    366253,
-    2,
-    'a:30:{i:0;a:2:{s:8:\"tag_name\";s:6:\"原创\";s:6:\"result\";s:3:\"259\";}i:1;a:2:{s:8:\"tag_name\";s:11:\"2022年4月\";s:6:\"result\";s:3:\"199\";}i:2;a:2:{s:8:\"tag_name\";s:15:\"PolygonPictures\";s:6:\"result\";s:3:\"182\";}i:3;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:3:\"142\";}i:4;a:2:{s:8:\"tag_name\";s:12:\"谷口悟朗\";s:6:\"result\";s:3:\"135\";}i:5;a:2:{s:8:\"tag_name\";s:2:\"3D\";s:6:\"result\";s:3:\"128\";}i:6;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:3:\"119\";}i:7;a:2:{s:8:\"tag_name\";s:6:\"百合\";s:6:\"result\";s:3:\"110\";}i:8;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:2:\"89\";}i:9;a:2:{s:8:\"tag_name\";s:6:\"搞笑\";s:6:\"result\";s:2:\"65\";}i:10;a:2:{s:8:\"tag_name\";s:12:\"橋本裕之\";s:6:\"result\";s:2:\"51\";}i:11;a:2:{s:8:\"tag_name\";s:12:\"賀東招二\";s:6:\"result\";s:2:\"38\";}i:12;a:2:{s:8:\"tag_name\";s:3:\"润\";s:6:\"result\";s:2:\"33\";}i:13;a:2:{s:8:\"tag_name\";s:2:\"SF\";s:6:\"result\";s:2:\"22\";}i:14;a:2:{s:8:\"tag_name\";s:6:\"战斗\";s:6:\"result\";s:2:\"12\";}i:15;a:2:{s:8:\"tag_name\";s:7:\"2022年\";s:6:\"result\";s:2:\"10\";}i:16;a:2:{s:8:\"tag_name\";s:12:\"桥本裕之\";s:6:\"result\";s:1:\"5\";}i:17;a:2:{s:8:\"tag_name\";s:15:\"嶺内ともみ\";s:6:\"result\";s:1:\"4\";}i:18;a:2:{s:8:\"tag_name\";s:33:\"ポリゴン・ピクチュアズ\";s:6:\"result\";s:1:\"3\";}i:19;a:2:{s:8:\"tag_name\";s:6:\"润学\";s:6:\"result\";s:1:\"3\";}i:20;a:2:{s:8:\"tag_name\";s:3:\"TVA\";s:6:\"result\";s:1:\"3\";}i:21;a:2:{s:8:\"tag_name\";s:6:\"动画\";s:6:\"result\";s:1:\"3\";}i:22;a:2:{s:8:\"tag_name\";s:9:\"轻百合\";s:6:\"result\";s:1:\"3\";}i:23;a:2:{s:8:\"tag_name\";s:3:\"乐\";s:6:\"result\";s:1:\"3\";}i:24;a:2:{s:8:\"tag_name\";s:12:\"藤澤慶昌\";s:6:\"result\";s:1:\"2\";}i:25;a:2:{s:8:\"tag_name\";s:4:\"7分\";s:6:\"result\";s:1:\"2\";}i:26;a:2:{s:8:\"tag_name\";s:6:\"日本\";s:6:\"result\";s:1:\"2\";}i:27;a:2:{s:8:\"tag_name\";s:5:\"22春\";s:6:\"result\";s:1:\"2\";}i:28;a:2:{s:8:\"tag_name\";s:6:\"冒险\";s:6:\"result\";s:1:\"2\";}i:29;a:2:{s:8:\"tag_name\";s:16:\"Polygon_Pictures\";s:6:\"result\";s:1:\"2\";}}',
-    3,
-    3,
-    1,
-    6,
-    24,
-    103,
-    337,
-    214,
-    26,
-    16,
-    0,
-    1921,
-    2022,
-    4,
-    3,
-    '2022-04-06',
-    0
-  ),
-  (372487, 6, 'a:4:{i:0;a:2:{s:8:\"tag_name\";s:6:\"超英\";s:6:\"result\";s:1:\"1\";}i:1;a:2:{s:8:\"tag_name\";s:7:\"Netflix\";s:6:\"result\";s:1:\"1\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"动画\";s:6:\"result\";s:1:\"1\";}i:3;a:2:{s:8:\"tag_name\";s:6:\"欧美\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2022, 3, 2, '2022-03-01', 0),
-  (375024, 6, 'a:12:{i:0;a:2:{s:8:\"tag_name\";s:6:\"美剧\";s:6:\"result\";s:2:\"16\";}i:1;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:2:\"11\";}i:2;a:2:{s:8:\"tag_name\";s:6:\"科幻\";s:6:\"result\";s:1:\"7\";}i:3;a:2:{s:8:\"tag_name\";s:2:\"TV\";s:6:\"result\";s:1:\"4\";}i:4;a:2:{s:8:\"tag_name\";s:6:\"悬疑\";s:6:\"result\";s:1:\"3\";}i:5;a:2:{s:8:\"tag_name\";s:9:\"电视剧\";s:6:\"result\";s:1:\"2\";}i:6;a:2:{s:8:\"tag_name\";s:9:\"Apple_TV+\";s:6:\"result\";s:1:\"2\";}i:7;a:2:{s:8:\"tag_name\";s:15:\"人生切割术\";s:6:\"result\";s:1:\"1\";}i:8;a:2:{s:8:\"tag_name\";s:7:\"2022年\";s:6:\"result\";s:1:\"1\";}i:9;a:2:{s:8:\"tag_name\";s:6:\"剧集\";s:6:\"result\";s:1:\"1\";}i:10;a:2:{s:8:\"tag_name\";s:5:\"apple\";s:6:\"result\";s:1:\"1\";}i:11;a:2:{s:8:\"tag_name\";s:6:\"美国\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 1, 2, 8, 17, 1, 1, 0, 762, 2022, 2, 5, '2022-02-18', 0),
-  (378890, 6, 'a:4:{i:0;a:2:{s:8:\"tag_name\";s:6:\"国产\";s:6:\"result\";s:1:\"2\";}i:1;a:2:{s:8:\"tag_name\";s:4:\"2022\";s:6:\"result\";s:1:\"1\";}i:2;a:2:{s:8:\"tag_name\";s:9:\"国产剧\";s:6:\"result\";s:1:\"1\";}i:3;a:2:{s:8:\"tag_name\";s:9:\"电视剧\";s:6:\"result\";s:1:\"1\";}}', 0, 0, 0, 0, 1, 1, 5, 1, 1, 0, 0, 0, 2022, 4, 3, '2022-04-27', 0);
+
+游戏特点：
+
+*紧张激烈的游戏场景，次世代画面效果，跌宕起伏的单人游戏剧情
+*玩家将扮演美国海军陆战队以及英国皇家特种空勤团和士兵进行游戏
+*连线游戏引入经验及成就设定，可玩性较之前代大为提高', 'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}', 0, 0, 1, 36, 1, 3, 0, 0, 0, 's', 0, 0, 1),
+        (6, 4, 'Team Fortress 2', '军团要塞2', '', 4, 1216025173, '16/79/6_gC3iJ.jpg', 0, '{{Infobox Game
+|中文名= 军团要塞2
+|别名={
+[絕地要塞2]
+}
+|平台={
+[Xbox 360]
+[PS3]
+[PC]
+}
+|游戏类型= FPS
+|游戏引擎= Source 引擎
+|游玩人数= 多人
+|发行日期= 2007年10月10日
+|售价= 免費
+|website= 
+|游戏开发商= Valve Corporation
+|游戏出版商= Valve Corporation
+|发行商= Electronic Arts (retail) , Steam (online)
+|游戏设计师= John Cook , Robin Walker
+|官方网站= http://teamfortress.com/
+}}', '　　《军团要塞2》（Team Fortress 2，简称TF2）是由维尔福软件公司开发的一个团队作战型在线多人第一人称射击游戏。该游戏是维尔福先前《军团要塞》（Team Fortress Classic）的续作，于2007年10月10日以橙盒（The Orange Box）三合一方式在Windows和Xbox 360平台上首次发行。PlayStation 3版紧接着在2007年11月22日发行。TF2后来在2008年4月9日在Windows上发行单行版。TF2在线下载版是由Steam负责，而零售版则由美国艺电发行。该游戏的开发是由罗宾·沃克（Ribin Walker）及约翰·库克（John Cook）所领导，他们两位是1996年给雷神之锤使用的军团要塞模组原始设计师。
+　　TF2开发计划早在1998年就已发布，采用维尔福的GoldSrc引擎，然而自那时起便经历了种种的设计概念变化。在1999年公开的截图显示，该游戏外观脱离其前代TF设计转而追求更真实更军事化的游戏元素；然而设计在其9年开发期间不断的变化。最终成品采用了深受J. C. 莱安德克（Joseph Christian Leyendecker）、迪恩·康沃尔（Dean Cornwell）及诺曼·洛克威尔（Norman Rockwell）艺术影响的卡通视觉效果，并由Source引擎所支持。游戏本身围绕在由9种个性独立鲜明职业组成的两组人马，于谍对谍的场景下进行种种模式的战斗。
+　　由于有6年游戏开发信息付之阙如或无显著进展，导致该游戏一度被贴上雾件的标签。且还是Wired News年度雾件名单里的常客，与其他业界耻辱并列成受取笑的对象。随着该游戏的发行，TF2就其游戏图形、平衡性、喜剧幽默、与专为多人游戏设计的完整人物个性等特色而受到诸多好评及奖项。', 'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}', 0, 0, 20, 203, 25, 14, 12, 0, 0, 'j', 0, 0, 0),
+        (7, 4, 'Unreal Tournament 3', '虚幻竞技场3', '', 4, 1216026819, '8f/14/7_gQPtW.jpg', 0, '{{Infobox Game
+|中文名= 虚幻竞技场3
+|平台={
+[Mac OS]
+[xbox360]
+[windows]
+[PS3]
+}
+|游戏类型= FPS
+|发行日期= 2007年11月19日
+}}', '　　《虚幻竞技场3》（Unreal Tournament 3，UT3）是由Epic Games所开发的第一人称射击游戏，是继虚幻II之后的新一代虚幻游戏，由Midway Games于2007年11月19日发行PC Windows版本，PS3版则在2007年12月10日发行，Mac OS X与XBox 360的版本则将在2008年发售。
+　　《虚幻竞技场3》是浴血战场系列的第四套游戏，也是虚幻系列的第八套，《虚幻竞技场》（UT99）使用虚幻引擎（Unreal Engine 1.0），而《虚幻竞技场2003》（UT2003）及《虚幻竞技场2004》（UT2004）使用虚幻引擎2（Unreal Engine 2.0），本游戏则使用虚幻引擎3（Unreal Engine 3.0），因为UT2004大量地重复使用UT2003的内容与架构，所以UT3应该被归为本系列的第三代游戏。', 'a:3:{i:0;s:1:"4";i:1;s:1:"8";i:2;s:1:"9";}', 0, 0, 4, 63, 0, 1, 4, 0, 0, 'x', 0, 0, 0),
+        (8, 2, 'コードギアス 反逆のルルーシュR2', 'Code Geass 反叛的鲁路修R2', '', 4916, 1216030250, 'c9/f0/8_wK0z3.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= Code Geass 反叛的鲁路修R2
+|别名={
+[叛逆的鲁路修R2]
+[Code Geass: Hangyaku no Lelouch R2]
+[叛逆的勒鲁什R2]
+[叛逆的鲁鲁修R2]
+[コードギアス 反逆のルルーシュR2]
+[Code Geass: Lelouch of the Rebellion R2]
+[叛逆的勒路什R2]
+}
+|话数= 25
+|放送开始= 2008年4月6日
+|放送星期= 
+|官方网站= http://www.geass.jp/r2/
+|播放电视台= 每日放送
+|其他电视台= 
+|播放结束= 2008年9月28日
+|其他= 
+|Copyright= （C）2006 SUNRISE inc./MBS
+|导演= 谷口悟朗
+|系列构成= 大河内一楼
+|人物原案= CLAMP
+|人物设定= 木村貴宏
+|美术监督= 菱沼由典
+|色彩设计= 岩沢れい子
+|摄影监督= 大矢創太
+|音响监督= 浦上靖夫、井澤基
+|音乐= 中川幸太郎、黒石ひとみ
+|音乐制作= AUDIO PLANNING U
+|动画制作= サンライズ
+}}', '　　“东京决战”一年后，布里塔尼亚少年鲁路修在11区（原日本国）过着平凡的学生生活。但是，鲁路修与弟弟罗洛的一次出行，遇到了黑色骑士团的余党。在与少女C.C再次结成契约之后，尘封的记忆摆在了鲁路修的面前。
+　　身为帝国王子的鲁路修，为了建立人人平等的世界、让妹妹娜娜丽幸福的世界，而使用GEASS，令人绝对服从的力量，带领黑色骑士团向帝国宣战。带上假面化名ZERO的他，却在一年前的“东京决战”中被好友朱雀击败，被帝国皇帝抹去了记忆。
+　　现在，恢复记忆的鲁路修不仅要面对帝国的强大军事力量，更要面对虚假的弟弟罗洛、失踪的妹妹娜娜丽、不知敌友的中华联盟、内部出现分歧的黑色骑士团。面对内忧外患，鲁路修走上了GEASS之力的诅咒——孤独的王之路。 ', '', 0, 25, 622, 13216, 147, 224, 115, 0, 0, 'c', 0, 0, 0),
+        (9, 4, 'リズム天国ゴールド', '节奏天国 金', '', 2, 1216038051, '45/c4/9_ppLN8.jpg', 5, '{{Infobox Game
+|中文名= 节奏天国 金
+|别名={
+}
+|平台= NDS
+|游戏类型= MUG
+|游戏引擎= 
+|游玩人数= 1
+|发行日期= 2008-07-31
+|售价= 3800日元
+|website= http://www.nintendo.co.jp/ds/ylzj/
+|游戏开发商= 
+|发行商= 
+|游戏设计师= つんく♂
+}}', 'GBA人气音乐游戏《节奏天国》的续作，收录多彩迷你游戏约50种。前作《节奏天国》采用按键操作，登陆NDS的续作将采用触控笔操作。 ', 'a:1:{i:0;s:1:"5";}', 0, 0, 32, 335, 36, 22, 13, 0, 0, 'j', 0, 0, 0),
+        (10, 1, 'Your Eyes Only ちぃフォトグラフィクス', '', '4063346706', 1, 1216038761, 'd3/d9/10_mXv4D.jpg', 1003, '{{Infobox animanga/Book
+|中文名= 
+|别名={
+}
+|出版社= 講談社
+|价格= 
+|其他出版社= 
+|连载杂志= 
+|发售日= 2003-01
+|页数= 
+|ISBN= 9784063346701
+|其他= 
+|作者= CLAMP
+}}', 'ちぃのベストショット満載！！
+ファン待望の『ちょびっツ』原画集
+
+『ちょびっツ』連載開始から2年。
+ヤンマガはもとより、グッズやCD、DVD等に描きおろされたイラストの中から、フォトジェニックなちぃを集めて一冊の原画集にします！
+ちぃのかわいさがぎっしりつまった画集、買い逃し厳禁だ！', '', 0, 0, 13, 41, 0, 0, 1, 0, 0, 'y', 0, 0, 0),
+        (11, 1, 'ちょびっツの「ツ」の字 - Chobits Fan Book', '', '4063346692', 1, 1216039102, '65/12/11_bsxG3.jpg', 1003, '{{Infobox animanga/Book
+|中文名= 
+|别名={
+[Chobits动画资料集]
+[人形电脑天使心 动画资料集]
+}
+|出版社= 講談社
+|价格= 
+|其他出版社= 
+|连载杂志= 
+|发售日= 2003-03
+|页数= 138
+|ISBN= 4063346692
+|其他= 
+|作者= CLAMP
+}}', '原作版 ちょびっツ ファンブック
+全88章からなる＜ちぃ＞と＜本須和＞の物語。
+その軌跡と魅力を徹底検証！！
+
+CLAMPの画集未収録イラスト、気鋭のクリエーター10名による競作イラスト、関係者インタビュー、作品論、公式グッズカタログほか 必見コンテンツ満載！！
+
+特別付録 原作版トレーディングカード×2枚', '', 0, 0, 10, 22, 0, 0, 0, 0, 497, 'c', 0, 0, 0),
+        (12, 2, 'ちょびっツ', '人形电脑天使心', 'tt0326672', 1, 1216040256, 'c2/0a/12_aDoa8.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 人形电脑天使心
+|别名={
+[en|Chobits]
+}
+|话数= 27
+|放送开始= 2002年4月2日
+|放送星期= 星期二
+|官方网站= http://www.tbs.co.jp/chobits
+|播放电视台= 日本TBS
+|其他电视台= 
+|播放结束= 2002年9月24日
+|其他= 
+|Copyright= 
+|原作= CLAMP
+|导演= 浅香守生
+|人物设定= 阿部恒
+|音响监督= 三間雅文
+|音乐= 高浪敬太郎
+|动画制作= MADHOUSE
+|录音调整= 内田誠
+|音效= 小山健二
+|录音助手= 鳥羽瀬縁
+|音响助手= 三井友和
+|文艺= 浦畑達彦
+|设定制作= 加茂靖子
+|制片人= 源生哲雄、関戸雄一、小野達矢
+|制片协力= パイオニアLDC、ムービック
+|製作= TBS、ちょびっツ製作委員会
+|副导演= 田中洋之（除13）、井上英紀（仅13）
+}}', '在不久的将来,电子技术飞速发展,电脑成为人们生活中不可缺少的一部分.主角的名字是本须和秀树,是个19岁的少年,由于考试失败,来到东京上补习班,过着贫穷潦倒的生活……
+到达东京的第一天,他很幸运的在垃圾堆捡到一个人型电脑,一直以来秀树都非常渴望拥有个人电脑.当他抱着她带返公寓后,却不知如何开机,在意想不到的地方找到开关并开启后,故事就此展开
+本须和秀树捡到了人型计算机〔唧〕。虽然不晓得她到底是不是〔Chobits〕，但她的身上似乎藏有极大的秘密。看到秀树为了钱而烦恼，唧出去找打工，没想到却找到了危险的工作！为了让秀树开心，唧开始到色情小屋打工。但她在遭到过度激烈的强迫要求之后失控。让周遭计算机因此而强制停摆。
+另一方面，秀树发现好友新保与补习班的清水老师有着不可告人的关系……', '', 0, 27, 1159, 4534, 215, 463, 136, 0, 0, 'r', 0, 0, 0),
+        (13, 4, 'CLANNAD', '', '', 1, 1216043239, 'c5/1c/13_tQxwM.jpg', 0, '{{Infobox Game
+|中文名= 
+|别名={
+[小镇家族]
+[クラナド]
+}
+|平台={
+[PC]
+[PS2]
+[PSP]
+[Xbox 360]
+[PS3]
+[Nintendo Switch]
+[PSV]
+[PS4]
+}
+|游戏类型= 恋爱ADV
+|游戏引擎= RealLive(PC)
+|游玩人数= 1
+|发行日期= 2004年4月28日(PC)
+|售价={
+[7,500円(税別)(PC）]
+[7,560円(税込)(PS2)]
+[6,800円(税別)(PCフルボイス)]
+[6,090円(税込)(PSP)]
+[6,720円(税込)(Xbox360)]
+[5,800円(税別)(PCメモリアルエディション)]
+[¥ 133(Steam - CLANNAD HD Edition)]
+}
+|website={
+[PC: http://key.visualarts.gr.jp/product/clannad/]
+[PS2: http://www.gunghoworks.jp/game/clannad]
+[PSP: http://www.prot.co.jp/psp/clannad]
+[Xbox360: http://www.prot.co.jp/xbox/clannad]
+}
+|其他版本={
+[2006年2月23日(PS2)]
+[2008年2月29日(PCフルボイス)]
+[2008年5月29日(PSP)]
+[2008年8月28日(Xbox360)]
+[2010年5月28日(PCメモリアルエディション)]
+[2015年11月24日(Steam - CLANNAD HD Edition)]
+}
+|游戏开发商= Key
+|发行= Key/ビジュアルアーツ(PC)、ガンホー・ワークス(PS2)、プロトタイプ(360/PSP/PS3)、Sekai Project(Steam)
+|剧本= 麻枝准(共通 / 古河渚 / 坂上智代 / 伊吹風子 / 宮沢有紀寧一部 / 相楽美佐枝 / 幸村俊夫 / AFTER STORY 担当)、魁( 藤林杏 / 藤林椋 / 宮沢有紀寧一部 / 柊勝平 担当)、涼元悠一(一ノ瀬ことみ 担当)、丘野塔也(春原兄妹 担当)
+}}', '季節は春、楽しく等身大で過ごす学園での日常から物語は始まり、やがてストーリーはヒロインたちとの恋愛に発展していきます。
+深遠な世界観を背景に語られるのはひとつの町に住む人々それぞれの思い、その先にある「生きる」ということ。
+その一方で、人々の思いを包み込むように存在する町そのものを幻想的なイメージで描き出していきます。
+-
+
+《CLANNAD》为2004年key社所发行的文字冒险游戏（AVG），和key社以往游戏不同的是，这款是以全年龄版PC的形式发行。CLANNAD在凯尔特语中代表的是“家族”。正如其名，这款游戏的核心价值及在描写各类的家族温暖，是个感动人心的落泪游戏。
+', 'a:3:{i:0;s:1:"9";i:1;s:1:"7";i:2;s:1:"6";}', 0, 0, 1103, 4027, 469, 409, 109, 0, 0, 'c', 0, 0, 0),
+        (14, 4, 'Metal Gear Solid 4 Guns of the Patriots', '潜龙谍影4 爱国者之枪', '', 2, 1216043502, 'aa/b3/14_FlCod.jpg', 8, '{{Infobox Game
+|中文名= 潜龙谍影4 爱国者之枪
+|别名={
+[メタルギアソリッド4 ガンズ・オブ・ザ・パトリオット]
+[潛龍諜影4 愛國者之槍]
+[合金装备4 爱国者之枪]
+}
+|平台= PS3
+|游戏类型= ACT
+|游戏引擎= 
+|游玩人数= 1
+|发行日期= 2008年6月12日
+|售价= 8,800日元（日版）、99.99美元（美版）
+|website= http://www.konami.jp/mgs4/jp/
+|开发= KOJIMA PRODUCTION
+|发行= KONAMI
+|游戏设计师= 小岛秀夫
+}}', '2014年，在「大貝殼事件」（Metal Gear Solid 2裡面的鑽油平台事件）之後5年，武裝介入異國油田的約束開始放緩，刺激私人軍事公司Private Military Companies（PMCs）為了商業目的去進行代理戰爭，使得戰爭成為世界上的一種嶄新經濟體系。當時世界上存在著五大PMCs，分別是Praying Mantis/禱念螳螂（英國）、оцелотовая хватка/山貓鉤爪（俄羅斯）、Werewolf/狼人軍團（美國）、 Pieuvre Armement/武裝章魚（法國）、以及Raven Sword/渡鴉之劍（美國），但事實上這五大PMC背後的母公司是液體山貓所擁有的「世外方舟」（Outer Haven）。將奈米機械植入士兵體內後則對於加強士兵的管理、戰鬥能力、以及忠誠作用顯著，戰場上使用的士兵奈米機械管理系統稱為「愛國者之子」（Sons of the Patriots：SOP）。液體山貓欲利用破壞SOP引發起一場武裝破壞，且「世外方舟」已經積聚了可與美國政府匹敵的力量，世界即將落入危機，於是故事在羅伊坎貝爾請求老蛇進入中東抹殺液體山貓展開了序幕……遊戲任務在五個地方進行：中東，南美，東歐，夏德莫榭斯島，以及戰艦「Outer Haven」。　
+
+    第一章：液體的太陽/ACT.1：Liquid Sun
+    第二章：固體的太陽/ACT.2：Solid Sun
+    第三章：第三的太陽/ACT.3：Third Sun
+    第四章：雙子的太陽/ACT.4：Twins Sun
+    第五章：老雄的太陽/ACT.5：Old Sun
+    第六章：赤裸的太陽/ACT.6：Naked Sun
+    尾聲：赤裸的原罪/Epilogue：Naked Sin', 'a:1:{i:0;s:1:"8";}', 0, 0, 161, 261, 33, 14, 8, 0, 0, 'q', 0, 0, 0),
+        (15, 3, 'Chronicle', '', '', 1, 1216086051, '9b/f3/15_g5Apf.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|发售日期= 2001-12-30
+|价格= 
+|播放时长= 
+|录音= 
+|碟片数量= 2
+|艺术家= Sound Horizon
+}}', '2001年12月,这张CD在ComicMarket61上以同人音乐《CIRCLE》 发表.
+全曲无演唱.以朴素的音符首次传递出Chronicle的理念.
+
+由于年代久远的关系,这张CD早已绝版,现在可以找到应该是重制版本(也很难找…)', '', 0, 0, 28, 388, 10, 3, 0, 0, 0, 'c', 0, 0, 0),
+        (16, 3, 'Thanatos', '', '', 1, 1216086168, 'c7/4d/16_iseKJ.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|艺术家= Sound Horizon
+|发售日期= 2002-08-11
+|价格= 
+|播放时长= 
+|制作人= 
+|发行方= 
+|录音= 
+|碟片数量= 1
+}}', '2002年8月, 在ComicMarket62上首发, Aramary作为主唱首次参加.
+是SH的第一张演唱专辑.', '', 0, 0, 25, 392, 10, 1, 0, 0, 0, 't', 0, 1, 0),
+        (17, 3, 'Lost', '', '', 1, 1216086284, '70/ef/17_fJRn9.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|艺术家= Sound Horizon
+|发售日期= 2002-12-30
+|价格= 
+|播放时长= 
+|制作人= 
+|发行方= 
+|录音= 
+|碟片数量= 1
+}}', '2002年 12月, 在ComicMarket63上首发。男性演唱、旁白Jimang首次参加.
+
+这张CD中不乏脍炙人口的名篇,其中第3首"恋人を射ち堕とした日"最为乐迷们津津乐道.
+而且全曲通过各种 寓言 和 故事 的引用,紧扣主题"忘レモノハ在リマセンカ"(有忘记了的东西吗?),耐人寻味,发人深思,实在是一张精彩的作品.', '', 0, 0, 56, 558, 21, 3, 0, 0, 0, 'l', 0, 0, 0),
+        (18, 3, 'Pico Magic', '', '', 1, 1216086445, '6f/49/18_SdSDy.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|艺术家= Sound Horizon
+|发售日期= 2003-05-04
+|价格= 
+|播放时长= 
+|制作人= 
+|发行方= 
+|录音= 
+|碟片数量= 1
+}}', '在Lost裏面以44號隱藏bonus track出場的PicoMari成爲了這張pleasure CD『Pico Magic』的主人公。其實Pico本來是指以前紅白機的那種三和弦的音樂，當時在Lost裏面Revo領主將“壊れたマリオネット”這首歌製作成爲了 pico版，所以取歌名中的マリ（mari）二字合成PicoMari一曲。之後就變成了SoundHorizon中的謎樣少女，也是Aramary的 108人格中的一個奇妙電波少女（笑）。在這張專輯中有著名的PicoMari召喚“ぴこ魔神☆（Pico魔神）”的咒文，以逆再生（即倒著播放）的形式出現在bonus track中。一時間在fans中掀起了嘗試召喚ぴこ魔神☆的熱潮（笑，可是那個track做得很詭異，fans用了很久才討論出正確的咒文，召喚ぴこ魔神☆也不是那麽簡單的事情呢~^_^）
+另外值得一提的是“Ark [Pico Magic Ver.]”在這張專輯中第一次露面了。被稱爲Elysion中最完美的這首Ark，從這張專輯開始就在每張專輯中以不同的編曲和長度出現，最終在樂園幻想物語組曲中達到完美版本。
+總體來説這張CD就是以前的一些歌曲的remake版本（除了PicoMari的兩首歌+一首隱藏bonus track+Ark是新曲以外）。
+封面疑似PicoMari，不過PicoMari的fans們也有認爲PicoMari另有形象的。', '', 0, 0, 13, 231, 6, 1, 0, 0, 0, 'p', 0, 0, 0),
+        (19, 3, 'Pico Magic Reloaded', '', '', 1, 1216086593, '1f/0e/19_GVzJ9.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|艺术家= Sound Horizon
+|发售日期= 2003-08-17
+|价格= 
+|播放时长= 
+|制作人= 
+|发行方= 
+|录音= 
+|碟片数量= 1
+}}', '2nd pleasure CD，『Pico Magic Reloaded』。
+在這張CD中，Revo領主發表了著名的“牢籠三部曲”：由基於同一旋律的三首歌曲“屋根裏の少女（閣樓中的少女）”、“檻の中の遊戯（牢籠中的遊戲）”和“檻の中の花（牢籠中的花）”組成。這三首連續的曲子講述了同一位神經錯亂的女人悲劇而恐怖的殺人舞臺劇……
+另外，這張專輯中也出現了“Ark [Reloaded Ver.]” 後來在LIVE時被改編成超人氣的“Jimang的世界[side:→J]”的名曲“澪音の世界”也是在這張專輯中登場的。
+封面上倒在前面的是Ark中的主人公Soror（妹），其他二人為Lost子和Thanatos子。', '', 0, 0, 13, 248, 4, 1, 0, 0, 0, 'p', 0, 0, 0),
+        (20, 3, 'Chronicle 2nd', '', '', 1, 1216086747, '98/f1/20_H2vb0.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+}
+|版本特性= 
+|发售日期= 2004-03-19
+|价格= 
+|播放时长= 71 min
+|录音= 
+|碟片数量= 1
+|Type= 专辑
+|艺术家= Sound Horizon
+|作曲= Revo
+|Discs= 
+}}', '2003年11月,应希望「Chronicle」再次贩卖的呼声，「Chronicle 2nd」的制作发表.
+12月 ,在ComicMarket65上，「Chronicle 2nd」试听盘发布.
+直到2004年3月, 1st Story Renewal CD「Chronicle 2nd」终于正式发布.
+
+这张CD是作为SH首张CD 〈Chronicle〉的重制完整版,通过Aramary,霜月はるか, Jimang, Hazeri*,Yasrow*的声音,补完了当年CD没有声乐的空白,用唱词和旁白描述了SH音乐世界第一道地平线的故事,完整将苍红歌姬,蔷薇骑士团,诗人Ballad等等人物再现.作为SH音乐世界首个故事的完整版,这张CD具有非同一般的价值.', '', 0, 0, 65, 572, 21, 9, 3, 0, 0, 'c', 0, 0, 0),
+        (253, 2, 'カウボーイビバップ', '星际牛仔', 'tt0213338', 85, 1217549729, 'c2/4c/253_t3XWb.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 星际牛仔
+|别名={
+[Cowboy Bebop]
+[宇宙牛仔]
+[赏金猎人]
+[太空牛仔]
+[恶男杰特]
+}
+|话数= 26
+|放送开始= 1998年10月23日
+|放送星期= 星期五
+|官方网站= http://www.cowboybebop.org/；http://www.cowboy-bebop.net/index.html
+|播放电视台= WOWOW、テレビ東京
+|其他电视台= 
+|播放结束= 1999年4月23日
+|其他= 
+|Copyright= 
+|原作= 矢立肇
+|导演= 渡辺信一郎
+|脚本= 渡辺信一郎、稲荷昭彦、横手美智子、信本敬子、村井さだゆき、佐藤大、山口亮太
+|分镜= 渡辺信一郎、本郷みつる、飯田馬之介、都留稔幸、山内重保、森邦宏、赤根和樹、佐藤順一、武井良幸、山口祐司、佐藤育郎、岡村天斎
+|演出= 山田弘和、森邦宏、武井良幸、佐藤育郎
+|音乐= シートベルツ、菅野よう子
+|人物设定= 川元利浩
+|分镜构图= 入江泰浩
+|系列构成= 信本敬子
+|作画监督= しんぼたくろう、中田栄治、本橋秀之、菅野宏紀、逢坂浩司、小森高博、竹内浩志、川元利浩、後藤雅巳
+|机械设定= 山根公利
+|摄影监督= 大神洋一
+|原画= 逢坂浩司、中田栄治、後藤雅巳、小森高博、杉浦幸次、中村豊、伊藤嘉之、斎藤恒徳、鴨川浩、伊藤岳史、横山彰利、星和伸、大塚健、宮田忠明、吉田徹、川元利浩、菅野宏紀、橋本誠一、富岡隆司、井上英紀、岡真里子、津野田勝敏、入江泰浩、佐藤千春、高橋しんや、伊東伸高、高山朋浩
+|主题歌编曲= 菅野よう子
+|主题歌作曲= 菅野よう子
+|企画= サンライズ
+|制作管理= 鳥羽聡
+|设定= 鳥羽聡、河森正治、佐藤大
+|音响监督= 小林克良
+|特效= 長谷川敏生
+|制片人= 南雅彦
+|制作助手= BONES
+|动画制作= サンライズ
+|テレビ東京版={
+[1998年4月3日 - 1998年6月26日]
+[全12话+总集篇]
+}
+}}', '       2021年，随着超光速航行技术的实现，人类得以在太阳系范围内方便的自由移动，但是由于设计上的失误，这种技术引发了月球的爆炸，无数的月球碎片被吸引向地球，造成了空前绝后的大灾难。存活下来的人类逃离地球，并开始在太阳系各地建立家园。由于这次灾难，国家、政府等权利机构都极为不稳定、治安问题也成为了一个难题。为了在人力资源不足的情况下抓捕罪犯，有些组织开始允许个人抓捕通缉的罪犯并换取奖金，“赏金猎人”这个职业也就由此诞生了。
+
+       史派克（Spike）和杰特（Jet）是驾驶飞船Bebop号在宇宙中以捉拿逃犯获取奖金为生的赏金猎人。两人在星际间的旅程中，结识了身负巨债、嗜财如命的美女菲（Faye）和电脑神童艾德（Ed），并收养了拥有高智商的数据狗爱因（Ein）。从此，四人一狗游荡在广阔之宇宙之中，在自己与他人的生活中经历著种种悲欢离合，也寻找著各自的过去。', '', 0, 26, 4270, 11261, 1454, 697, 114, 0, 0, 'x', 0, 0, 0),
+        (265, 2, '新世紀エヴァンゲリオン', '新世纪福音战士', '0923811', 189, 1217557797, 'e5/69/265_Z5Uou.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 新世纪福音战士
+|别名={
+[New Century Evangelion]
+[新世纪天鹰战士]
+[2000天鹰战士]
+[EVA]
+[天鹰战士]
+[Neon Genesis Evangelion]
+[罗马字|Shin Seiki Evangerion]
+}
+|话数= 26
+|放送开始= 1995年10月4日
+|放送星期= 
+|官方网站= 
+|播放电视台= 
+|其他电视台= 
+|播放结束= 1996年3月27日
+|其他= 
+|Copyright= 
+|原作= GAINAX
+|导演= 庵野秀明
+|脚本= 山口宏、榎戸洋司、磯光雄、樋口真嗣、庵野秀明、薩川昭夫
+|分镜= 小黒晃、摩砂雪、庵野秀明、鶴巻和哉、樋口真嗣、岡村天斎、佐藤順一、杉山慶一、石堂宏之、加賀剛
+|演出= 水島精二、大塚雅彦、摩砂雪、増尾昭一、大原実、鶴巻和哉、岡村天斎、杉山慶一、渡邊哲哉、安藤健、高村彰、石堂宏之、加賀剛、羽生尚靖
+|音乐= 鷺巣詩郎
+|人物设定= 貞本義行
+|美术监督= 加藤浩
+|作画监督= 貞本義行、鈴木俊二、摩砂雪、鶴巻和哉、吉成曜、河口俊夫、長谷川眞也、黄瀬和哉、重田智、本田雄、湖川友謙
+|机械设定= 山下いくと、庵野秀明
+|摄影监督= 黑田洋一
+|原画= 後藤圭二、古川尚也、福岡英典、高村和宏、今石洋之、橋本敬史、横山彰利、増尾昭一、松本憲生、長谷川眞也、岡村天斎、摩砂雪、庵野秀明、吉成曜、磯光雄、村木靖、本田雄、平松禎史、鶴巻和哉、吉田健一、中村豊、中山勝一、神戸洋行、永島明子、砂田茂樹、芳尾英明、小野田和由、もといぎひろあき、渡部英雄、湖川友謙、守岡英行、今掛勇、高岡希一
+|动画检查= 村田康人
+|背景美术= スタジオ美峰、加藤浩、串田達也、竹田悠介、太田大、佐藤勝、井芹達朗
+|色彩指定= 高星晴美
+|主题歌编曲= 大森俊之
+|主题歌作曲= Bart Howard、佐藤英敏
+|主题歌作词= Bart Howard、及川眠子
+|主题歌演出= Claire、高橋洋子
+|设定= 摩砂雪、今掛勇
+|音响监督= 田中英行
+|音响= オーディオ タナカ
+|补间动画= 金﨑貴臣、芳垣祐介、今石洋之、高村和宏、高橋タクロヲ
+|制片人= 小林教子、杉山豊
+|制作= テレビ東京、NAS
+|动画制作= GAINAX、タツノコプロ
+|副导演= 摩砂雪、鶴巻和哉
+|企画= GAINAX、Project Eva.
+}}', '　　2000年，一个科学探险队在南极洲针对被称作“第一使徒”亚当的“光之巨人”进行探险。在对其进行接触实验时，“光之巨人”自毁，从而发生了“第二次冲击”，进而导致世界大战。最后，人类人口减半，地轴偏转、气候改变。根据对“第二次冲击”的调查，联合国在日本箱根成立人工进化研究所（即 GEHIRN）从事EVA（指机器人）的发展研究，后GEHIRN利用在人工进化研究所下方发现的巨大空洞建造了总部。
+　　另一方面，联合国下属秘密组织SEELE为了使人类进化，开始实行人类补完计划，就是将所有人的灵魂汇集在一起，通过中和每个人的AT力场，使每个人回归LCL之海。
+　　2004年，EVA初号机进行启动试验时发生事故，碇真嗣的母亲碇唯消失，碇源渡开始执行“碇源渡版本的人类补完计划”。2010年，GEHIRN被改建成NERV。
+　　2015年开始，根据SEELE人类补完计划剧本的安排，一种巨型人形生物“使徒”开始在日本登陆，并向NERV总部进攻，NERV组织EVA消灭使徒。在NERV与使徒作战的同时，碇源渡秘密地执行它自己的计划。随着时间推移，碇源渡的计划逐渐被SEELE发现，NERV与SEELE产生了矛盾并不断恶化。
+Director''s Cut版本的第21～24集由剧场版《Death》篇剪辑而成，收录在20周年纪念版的蓝光中。', '', 0, 26, 1794, 21175, 824, 527, 148, 0, 0, 'x', 0, 0, 0),
+        (495, 1, '×××HOLiC', '×××HOLiC', '', 1, 1217657840, '35/05/495_Ovvsp.jpg', 1001, '{{Infobox animanga/Manga
+|中文名= ×××HOLiC
+|别名={
+[次元魔女]
+[XXXHOLIC]
+[xxxHOLiC]
+[沉迷女儿香]
+[×××HOLiC·笼]
+[xxxholic笼]
+[四月一日灵异事件簿]
+[四月一日奇妙事件薄]
+}
+|出版社={
+[jp|講談社]
+[tw|東立]
+}
+|价格= 
+|其他出版社= 
+|连载杂志={
+[週刊ヤングマガジン（2003年 - 2010年）]
+[別冊少年マガジン（2010年 - 2011年）]
+}
+|发售日= 
+|册数= 19
+|页数= 
+|话数= 213
+|ISBN= 
+|其他= 
+|开始= 2003年13号(週刊ヤングマガジン)
+|结束= 2011年3月号(別冊少年マガジン)
+}}', '      四月一日君尋進入了別名為次元魔女並自稱為壹原侑子所擁有的能夠實現任何願望的店。侑子說只要四月一日能付出對等的代價，就可以幫助四月一日實現－「可以讓你看不見妖怪，而且，讓妖怪不受你的血所吸引」的願望。因此四月一日答應侑子的條件，侑子便讓四月一日在其店中打工作為代價，直到時數足以實現願望。
+
+      “這世上有許多不可思議的事，不管是再古怪、再稀奇的事，一旦沒有人、一旦沒有人看見、一旦與人無關的話，就只不過是現象，瞬間即逝的事...，只有，人類...才是這世上最神秘又不可思議的生物────”
+
+      “世界上有許多不可思議的事，那家店也是其中之一。那裏是能夠實現願望的店，自行停止時間的店主繼承，經手秘密委託的地點。那家店確實存在，可是不對所有生物開放。有緣時，只有有緣的生物能夠...得知、造訪、見到閉門不出的店主。”', 'CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。', 19, 213, 159, 477, 82, 44, 15, 1, 0, '', 0, 0, 0),
+        (497, 1, 'ちょびっツ', '人形电脑天使心', '', 1, 1217658146, '73/80/497_7mGTv.jpg', 1001, '{{Infobox animanga/Manga
+|中文名= 人形电脑天使心
+|别名={
+[en|Chobits]
+}
+|出版社= 講談社、台灣東販、天下出版
+|价格= 
+|其他出版社= 
+|连载杂志= 週刊ヤングマガジン
+|发售日= 
+|册数= 8
+|页数= 
+|话数= 88
+|ISBN= 
+|其他= 
+|作者= CLAMP
+|开始= 2000年第43号
+|结束= 2002年第48号
+}}', '　　故事講述重考生本須和秀樹，身無分文隻身來到東京卻想擁有一部價格昂貴的人形電腦。
+　　於東京，人形電腦是非常普及的家電。
+　　他心想「如果可在垃圾堆中撿到一部便好了」，卻如他所願在東京的一晚撿到一部人形電腦……
+
+　　本作从2000年9月至2002年10月间于日本讲谈社《周刊Young Magazine》连载。共88话。单行本全8卷。
+　　作品的特征之一，就是并未出现CLAMP作品中有着象征性存在的“东京铁塔”。本作与《天使领域》存在人物关联。', 'CLAMP是日本漫画家组合，是个著名和多产的漫画家团体。作品有：华丽风格的《圣传》、《东京巴比伦》、《X》、《魔法骑士雷阿斯》；清新风格的《Wish》、《少女情怀总是诗》、《喜欢，所以喜欢》《CLOVER》、《小鸠》；童真风格的《百变小樱》、《ANGELIC LAYER 天使领域》；奇幻风格的《迷幻药局》；可爱风格的《Chobits》；少年风格的《xxxHOLiC》、《TSUBASA翼》等。', 8, 88, 107, 520, 18, 19, 7, 1, 0, 'r', 0, 0, 0),
+        (499, 1, '文学少女', '文学少女', '', 1, 1217658999, '3c/f1/499_QyAUf.jpg', 1002, '{{Infobox animanga/Novel
+|中文名= 文学少女
+|别名={
+[Book Girl]
+}
+|出版社= エンターブレイン、尖端出版，人民文学出版社，上海文艺出版社
+|价格= 
+|连载杂志= FB Online（短篇部分）
+|发售日= 
+|册数= 16
+|页数= 
+|话数= 
+|ISBN= 
+|其他= 
+|作者= 野村美月
+|插图= 竹岡美穂
+|开始= 2006-04-28
+|结束= 2011-04-30
+}}', '《文学少女》系列小说，长篇每卷皆以一部实际存在的经典小说为主线文本，推动剧情前进。故事围绕圣条学园文艺社社长天野远子和社员井上心叶的事件与解谜。小说基本上以井上心叶的第一人称进行，但不时穿插“第二某人”的第一人称口白心境（粗体字），是故事黑幕的重要提示。', '野村美月是日本轻小说作家，福冈县出生，东洋大学文学部毕业，2001年出道成为作家。
+受《清秀佳人》、《小妇人》等少女小说影响颇深，写作主题偏向粉红色的青春喜剧。2006年，野村美月欲摆脱昔日风格，以能表现严肃、温馨又哀伤的气氛为目标，创作以文学名著贯穿全局的《文学少女》系列，获得之前未有的高度评价。
+
+竹冈美穗（7月1日 - ）是日本的插画家。东京出身。 第九回コバルトイラスト大赏得奖后，以插画家的身分出道。 小说家竹冈叶月的姊姊。', 16, 0, 753, 2282, 500, 166, 54, 1, 0, 'w', 0, 0, 0),
+        (2585, 2, 'とある科学の超電磁砲', '某科学的超电磁炮', '', 2627, 1252804850, '36/e7/2585_pn2eP.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 某科学的超电磁炮
+|别名={
+[科学超电磁炮]
+[科学的超电磁炮]
+[en|Toaru Kagaku no Railgun]
+}
+|话数= 24
+|放送开始= 2009年10月2日
+|放送星期= 星期五
+|官方网站= http://toaru-project.com/railgun/
+|播放电视台= TOKYO MX
+|其他电视台= テレ玉 / チバテレビ /  MBS  /  tvk  /  AT-X  /  CBC
+|播放结束= 2010年3月19日
+|其他= 
+|Copyright= ©鎌池和馬／冬川基／アスキー・メディアワークス／PROJECT-RAILGUN
+|原作= 鎌池和馬＋冬川基（電撃コミックス／アスキー・メディアワークス刊）
+|导演= 長井龍雪
+|人物原案= はいむらきよたか(灰村キヨタカ)
+|人物设定= 田中雄一
+|系列构成= 水上清資
+|美术监督= 黒田友範
+|色彩设计= 安藤智美
+|摄影监督= 福世晋吾
+|剪辑= 西山茂（REAL-T）
+|音响监督= 明田川仁
+|音乐= I''ve sound ／井内舞子
+|动画制作= J.C.STAFF
+|製作= PROJECT-RAILGUN(ジェネオン・ユニバーサル・エンタテイメント[NBCユニバーサル・エンターテイメント]、アスキー・メディアワークス、J.C.STAFF、AT-X、ムービック)
+|企画= 川村明廣、鈴木一智、阿部倫久、三上康博、太布尚弘
+|制片人= 中山信宏、峯健司、三木一馬、藤田敏、金庭こず恵；动画制片人：柏田真一郎；川瀬浩平、松倉友二、梅澤淳（制片）
+}}', '故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力分为LV0至LV5。
+
+主角御坂美琴是学园都市中仅七位LV5（超能力者）的其中一人，排行第三。她是拥有操纵电击能力的“电击使”，站在电击能力的顶峰，因而被称为“超电磁炮”。
+
+本作不但通过美琴的视角来描绘学园都市的平常而不平凡的日常生活，也叙述了学园都市秘密进行非人道性质的实验，从而使大家对于本作及本篇《魔法禁书目录》的背景（世界观）的认识也慢慢变得清楚。', '', 0, 24, 727, 15012, 563, 539, 312, 0, 0, 'm', 0, 0, 0),
+        (2703, 6, 'Criminal Minds (Season 5)', '犯罪心理 第五季', '', 271, 1253955999, '22/0c/2703_9QZB9.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第五季
+|别名={
+}
+|集数= 23
+|放送星期= 3
+|开始= 2009年9月23日
+|结束= 
+|类型= 悬疑 / 惊悚 / 犯罪
+|国家/地区= 美国
+|语言= 
+|每集长= 
+|频道= 
+|电视网= 
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= 
+|tv_com_id= 
+}}', '隶属FBI的犯罪行为分析小组（BAU）迎来亮相CBS荧屏的第5个年头。这个由7名精英高级探员组成的团队，继续辗转全国各地，为棘手的真实案例提供出色的犯罪心理侧写及行为分析。
+
+上季末，Hotch在加拿大边境处理完流浪者连环被害案件后，疲惫地回到家中，身后突然出现早藏匿于此的神秘蒙面黑衣人——The Reaper，生命受到威胁......
+
+本季首集，BAU成员被召集受理一起连环谋杀急诊室医生的案件的同时，意识到组长Hotch的离奇失踪。BAU成员将如何应对"The Reaper"这个在被他们缉拿归案后越狱的连环杀手？Hotch的命运将会如何？ ', '', 0, 23, 23, 157, 15, 6, 6, 0, 0, 'f', 0, 0, 0),
+        (4828, 4, 'マブラヴ オルタネイティヴ', 'Muv-Luv Alternative', '', 9069, 1272430193, 'de/3f/4828_81B8A.jpg', 0, '{{Infobox Game
+|中文名= Muv-Luv Alternative
+|别名={
+}
+|平台={
+[PC]
+[Xbox 360]
+[PS3、PSV]
+}
+|游戏类型= ADV あいとゆうきのおとぎばなし
+|游戏引擎= rUGP / AGES
+|游玩人数= 1人
+|发行日期= 2006-02-24(PC DVD版)
+|售价= PC DVD/CD ROM版：9240円(税込)
+|website= https://muvluv.com/alternative/
+|游戏开发商= âge
+|发行= âge(PC)、5pb.(Xbox 360、PS3、PSV)、aNCHOR Inc.(Steam)
+|其他发行日期={
+[2006-09-22(PC全年龄版)]
+[2011-10-27(Xbox 360)]
+[2012-06-29(Win7)]
+[2012-10-25(PS3)、2016-01-21(PSV)、2017-09-19(Steam)]
+}
+|企划/原作= 吉宗鋼紀(吉田博彦)
+|导演= 吉宗鋼紀(吉田博彦)
+|人物设定= Bou、バカ王子ペルシャ(杉原正教)、吉宗鋼紀(吉田博彦)、プロパガンダ通・シン(高田一廣)；　客座人物设定：秋月亮(あきづきりょう)、かわぎしけいたろう(wagi)、黒木雅弘、憂姫はぐれ
+|原画= Bou、バカ王子ペルシャ(杉原正教)、吉宗鋼紀(吉田博彦)、プロパガンダ通・シン(高田一廣)；　Q版原画：八雲剣豪；　EVENT原画：チマ/timaQ、三石無双
+|剧本= 吉宗鋼紀(吉田博彦)、鬼畜人タムー(タシロハヤト)、松永北斗
+|程序= 號滋樹(五反田成高)、熊也恭生[插件程序]
+|视觉效果= 號滋樹(五反田成高)、鬼畜人タムー(タシロハヤト)
+|演出= 號滋樹(五反田成高)、鬼畜人タムー(タシロハヤト)、吉宗鋼紀(吉田博彦)、宮元橡雨
+|图像总监= バカ王子ペルシャ(杉原正教)
+|机械设定= 仁Niθ(ニトロプラス)、吉宗鋼紀(吉田博彦)、三石無双、吉成鋼、星乃秀輝
+|美术设定= 吉宗鋼紀(吉田博彦)、三石無双
+|背景= 三石無双、永倉佳子
+|背景角色= 高田一廣、新野たけし、春日牧彦
+|3DCG= 奥山東京、御隈源氏、號滋樹(五反田成高)
+|人物着色= バカ王子ペルシャ(杉原正教)、高田一廣、なだえみ、秋咲鏡、ばんろっほ、武内よしみ、氷山あずき、ある・あじふ(Al Azif)、大田優一、春日牧彦、永倉佳子、新野たけし
+|音乐制作= 株式会社Lantis
+|音响制作= 井上俊次
+|动画制作= st.シルバー、有限会社スタック；　片头动画：Rainbow-Motion-Graphics(PC全年龄版)、綺羅、バカ王子ペルシャ(杉原正教)
+|宣传= 齊藤K、岩田悠奈、京大瑛
+|操作指南设计= 川元暮蔵(川崎圭介)
+|主题歌作词= 影山ヒロノブ(PC OP「未来への咆哮」)、江幡育子(ED)
+|主题歌作曲= 影山ヒロノブ(PC OP「未来への咆哮」)、SAGE KOIZUMI(ED)
+|主题歌演出= JAM Project(影山ヒロノブ、遠藤正明、北谷洋、福山芳樹)(「未来への咆哮」)、栗林みな実(Minami)(ED)
+|插入歌演出= 影山ヒロノブ(「翼」)、遠藤正明(「Carry on」)
+|其他版本片头曲= 影山ヒロノブ(PC全年龄版OP「Name〜君の名は〜」作词、作曲)、JAM Project(「Name〜君の名は〜」、Xbox 360 OP「Metamorphose」演出)、GRANRODEO(PS3、PSV、Steam OP「0-GRAVITY」演出)、谷山紀章(「0-GRAVITY」作词)、飯塚昌明(「0-GRAVITY」作曲、奥井雅美(「Metamorphose」作词)、北谷洋(「Metamorphose」作曲)
+|协力= Sekai Project、Good Smile Company、エンターブレイン、Circus、サンライズミュージック、st.シルバー
+|PS3/Xbox 360官网= http://5pb.jp/games/muvluv/alternative/
+|PSV官网= http://5pb.jp/games/muvluv/psv/
+}}', '本作是该公司于2003年所推出的作品Muv-Luv（マブラヴ）的续篇。
+
+“Muv-Luv”整部作品主体共分为三个篇章，分别是EXTRA、UNLIMITED和ALTERNATIVE；由于游戏制作上的时间问题，âge决定先发售包含EXTRA&UNLIMITED的Muv-Luv，而第三部分ALTERNATIVE（即本作Alternative）则于日后制作完成再行推出。
+
+而本作品的故事舞台一如âge的不成文惯例设定在柊町，这也使得本作和âge首部作品《你所在的季节（君がいた季節）》和成名作《你所期望的永远（君が望む永遠）》处于同一时空，而彼此有联系。
+
+
+2001 年10月22日，身为普通高中生的男主角・白银武一觉醒来，发现自己进入了一个平行世界。在这个平行世界里，地球人数十年来都与带有敌意的外星生命体“BETA”苦战着；而他就置身于因此而荒废的柊町（主角家乡，位于日本横滨）。在这个一切都改变了的世界重新出发的武加入了联合国军，并参与了对抗BETA的最后手段，拯救人类的“ALTERNATIVE4” 计划。为此他成为联合国军卫士（巨大人型兵器“战术机”的驾驶员）并和伙伴们一起努力。但到了12月24日，人类放弃了最后的奋斗而启动了放弃地球的“ALTERNATIVE5” 计划。（到此为止是前作“Muv-Luv”UNLIMITED篇的剧情）
+
+而在此三年后，睡醒时发现再次置身于自家卧室的武，以为自己已经回到“原来的世界”，然而户外的景象却和三年前相同。日历上的日期是2001年10 月22日。武发现自己经过时间跳跃又一次来到了充满战乱的平行世界，而在此，他决定以唯一知道这个世界的未来的人类的身分，为了完成“ALTERNATIVE4”计划而再次敲开联合国军横滨基地的大门。再次被编入207实验部队的武，带着3年之间的军事经验和未来的记忆，以及不输给伙伴们的觉悟，再次迎向挑战。
+
+时间只剩下两个月左右。究竟武是否能达到目的，人类又是否能战胜BETA呢……？', '', 0, 0, 1288, 1945, 158, 99, 34, 0, 0, 'm', 0, 0, 0),
+        (6049, 2, '新世紀エヴァンゲリオン劇場版 Air/まごころを、君に', '新世纪福音战士剧场版 Air/真心为你', '', 1, 1275743813, 'fe/45/6049_tbM7S.jpg', 3, '{{Infobox animanga/Movie
+|中文名= 新世纪福音战士剧场版 Air/真心为你
+|别名={
+[新世紀エヴァンゲリオン劇場版 THE END OF EVANGELION]
+[NEON GENESSI EVANGELION Air/まごこるを、君に]
+}
+|上映年度= 1997年7月19日
+|片长= 
+|官方网站= 
+|其他= 
+|Copyright= 
+|话数= 2
+}}', '　　神秘的EVA零号机驾驶员绫波丽，在与碇元度约定之时，来到了NERV底层中央教条的红色水池边。她的命运似乎就将在此结束。
+　　在危急时刻，葛城美里不但要完成加持良治交待的对“第二次浩劫”真相以及“人类补完计划”的探查工作，还要保护碇真嗣与明日香，以及防备SEELE 对初号机与二号机的物理接触。
+　　出于对碇元度的憎恨，赤木律子接受了SEELE引爆MAGI的提案，她能否成功？长期与SEELE共事的碇元度、冬月耕造、碇唯，为了防止人类“最终的悲剧”，而酝酿了的“人类补完计划”能否实现？尽在《新世纪福音战士》电影版第2部中解答。', '', 0, 2, 941, 12536, 74, 102, 44, 0, 0, 'x', 0, 0, 0),
+        (9169, 6, 'Criminal Minds (Season 6)', '犯罪心理 第六季', '', 7694, 1286158419, '39/01/9169_nxjlr.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第六季
+|别名={
+}
+|集数= 24
+|放送星期= 
+|开始= 2010-09-22
+|结束= 
+|类型= 犯罪 心理
+|国家/地区= 美国
+|语言= 
+|每集长= 
+|频道= 
+|电视网= 
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= 
+|tv_com_id= 
+|导演= Charles Haid / Chris Long
+|主演= Joe Mantegna / Thomas Gibson / Shemar Moore
+}}', '　　CRIMINAL MINDS revolves around an elite team of FBI profilers who analyze the country''s most twisted criminal minds, anticipating their next moves b­efore they strike again. The Behavioral Analysis Unit''s most prominent agent is David Rossi (Joe Mantegna), a founding member of the BAU, who returns to help the team solve new cases, while pursuing some unfinished business of his own. The team is led by Special Agent Aaron Hotchner (Thomas Gibson), a family man who is able to gain people''s trust and unlock their secrets. Also on the team are Emily Prentiss (Paget Brewster), the daughter of high-powered diplomats who recently joined the team and must prove her worth to Hotchner; Special Agent Derek Morgan (Shemar Moore), an expert on obsessional crimes; Special Agent Dr. Spencer Reid (Matthew Gray Gubler), a classically misunderstood genius whose social IQ is as low as his intellectual IQ is high; Jennifer "JJ" Jareau (A.J. Cook), a confident young agent who acts as the unit liaison for the team, and Penelope Garcia (Kirsten Vangsness), a computer wizard who helps research the cases. Each member brings his or her own area of expertise to the table as they pinpoint predators'' motivations and identify their emotional triggers in the attempt to stop them.　', '', 0, 24, 18, 121, 22, 8, 6, 0, 0, 'f', 0, 0, 0),
+        (11197, 4, '花と乙女に祝福を', '花与乙女的祝福', '', 14459, 1295974388, 'ec/47/11197_0dY0L.jpg', 4, '{{Infobox Game
+|中文名= 花与乙女的祝福
+|别名={
+}
+|平台= PC
+|游戏类型= 女装学園AVG
+|游戏引擎= 
+|游玩人数= 1
+|发行日期= 2009-05-29
+|售价= 税前：8,800日元
+|website= http://www.ensemble-game.com/01.hanaotome/top.html
+|开发= ensemble
+|原画= 武藤此史、igul
+|剧本= じんべい、籐太
+|音乐= ミリオンバンブー
+|主题歌作曲= 笹原ノブスケ（ミリオンバンブー）
+|主题歌演出= 片霧烈火
+}}', '代替体弱多病的妹妹，主人公彰穿上女装到贵族女校去读书。
+决心掩饰着原本身份，平稳得在这所有悠久传统的教会女学院里生活，直到妹妹回来。
+然而，事情并非彰所想的能平平安安过上学园生活，不知为何他被学园第一的超级大小姐一眼看上，成了席卷整个学园的欢乐闹剧的中心！
+彰究竟能不能平安无事地当好妹妹的替身呢！？', '', 0, 0, 121, 529, 20, 35, 21, 0, 0, 'h', 0, 0, 0),
+        (22357, 6, 'CSI: Crime Scene Investigation Season 1', '犯罪现场调查 第一季', '', 23438, 1313998065, 'b0/ba/25080_N3qrl.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪现场调查 第一季
+|别名={
+[CSI: Las Vegas Season 1]
+[犯罪现场调查: 拉斯维加斯 第一季]
+}
+|集数= 23
+|放送星期= 
+|开始= October 6, 2000
+|结束= May 17, 2001
+|类型= 剧情 / 悬疑 / 惊悚 / 犯罪
+|国家/地区= 美国
+|语言= 英语
+|每集长= 45分钟
+|频道= 
+|电视网= 
+|电视台= 哥伦比亚广播公司（CBS）
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= CSI犯罪现场(台) 第一季
+|港澳名称= 灭罪鉴证科(港) 第一季
+|马新名称= 
+|官方网站= 
+|imdb_id=  tt0247082
+|tv_com_id= 
+}}', '　　“CSI”全称“犯罪现场调查小组”，是一群刑侦专业人士，通过犯罪现场的指纹、毛发、血迹、弹壳、脚印、纤维、碎屑、尸体特征等客观实物，用最先进、高科技的手段进行材料分析，在“一切用证据说话”的基础上合理推理，最终锁定凶手。本片故事发生在纸醉金迷的赌城拉斯维加斯，因此涉及许 多赌场风云和内华达州的广袤沙漠。CSI小组成员包括：赌场大佬女儿出身的凯瑟琳·韦罗斯（玛格·海根勃格 Marg Helgenberger 饰）、曾经沉迷赌博的黑人华瑞克·布朗（盖瑞·杜尔登 Gary Dourdan 饰）、性格憨厚的尼克·斯托克斯（乔治·艾德斯 George Edes 饰）、摇滚青年范儿的DNA鉴识人员葛瑞格·桑德斯（Eric Szmanda 饰）等，在经验老道的吉尔·葛瑞森（威廉·彼得森William Petersen 饰）带领下，挥拳向赌城所有黑暗。', '', 0, 23, 32, 82, 11, 14, 5, 0, 0, 'f', 0, 0, 0),
+        (23426, 6, 'Criminal Minds (season 7)', '犯罪心理 第七季', '', 14432, 1316703834, '45/40/23426_99Kqz.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第七季
+|别名={
+}
+|集数= 24
+|放送星期= 周四
+|开始= 2011-09-21
+|结束= 
+|类型= 犯罪
+|国家/地区= 美国
+|语言= 英语
+|每集长= 42min
+|频道= 
+|电视网= CBS
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= 
+|tv_com_id= 
+}}', 'The seventh season of Criminal Minds will premiere on CBS in the United States on September 21, 2011', '', 0, 24, 17, 97, 23, 2, 3, 0, 0, 'f', 0, 0, 0),
+        (49798, 6, 'Criminal Minds (Season 8)', '犯罪心理 第八季', '', 6027, 1348716409, 'ef/85/49798_9g2X2.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第八季
+|别名={
+}
+|集数= 24
+|放送星期= 3
+|开始= 2012-09-26
+|结束= 
+|类型= 
+|国家/地区= 美国
+|语言= 英语
+|每集长= 
+|频道= 
+|电视网= 
+|电视台= CBS
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= 
+|tv_com_id= 
+}}', '', '', 0, 24, 13, 84, 10, 3, 4, 0, 0, 'f', 0, 0, 0),
+        (61178, 1, 'NOT LIVES-ノットライヴス-', 'NOT LIVES', '', 14382, 1357905026, 'bb/ee/61178_LESGE.jpg', 1001, '{{Infobox animanga/Manga
+|中文名= NOT LIVES
+|别名={
+}
+|出版社= アスキー・メディアワークス
+|价格= 
+|其他出版社= 
+|连载杂志= 月刊コミック電撃大王
+|发售日= 
+|册数= 10
+|页数= 
+|话数= 54
+|ISBN= 
+|其他= 
+|官网= http://daioh.dengeki.com/contents/notlives/
+|开始= 2011年8月号
+|作者= 烏丸渡
+|连载结束= 2016年12月号
+}}', '电脑部的三神茂的梦想是，制作谁也没有体验过的，谁都会深深沉迷其中的究极的游戏。身为宅男的他入部以后的所有兴趣与经历仍然放在游戏上。然而某日，他却得到了一张叫做“NOT ALIVE”的神奇的游戏光盘，于是，与未知的游戏的那次邂逅将改变少年的世界？', '', 10, 54, 45, 86, 32, 12, 12, 1, 0, 'n', 0, 0, 0),
+        (69253, 2, 'LINE TOWN', '连我小镇', '', 3464, 1365010833, 'ca/5e/69253_RBkQp.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 连我小镇
+|别名={
+[ライン・タウン]
+}
+|话数= 50
+|放送开始= 2013年4月3日
+|放送星期= 星期三
+|官方网站= http://line-anime.net/linetown/index.html
+|播放电视台= TV Tokyo
+|其他电视台= BSジャパン, テレビ北海道, テレビ愛知,テレビ大阪, テレビせとうち, TVQ九州放送
+|播放结束= 
+|其他= 
+|Copyright= 
+}}', '从2013年4月开始播放的『LINE TOWN』和之前1月播放的泡面番不同，是由新的监督和制作公司完成，但出场角色没变。泡面番受众是成人，『LINE TOWN』主要是面向儿童。声优则仍是原班人马。
+
+LINE APP贴图中熟悉的人物：穆恩、可妮、布朗、詹姆斯、杰西卡、萨莉。这些快乐的伙伴们住的地方就是LINE TOWN 。LINE TOWN 里上演着有笑有泪又温暖人心的故事。', '', 0, 50, 40, 35, 54, 40, 67, 0, 0, 'l', 0, 0, 0),
+        (84399, 6, 'Criminal Minds (Season 9)', '犯罪心理 第九季', '', 16938, 1380240144, '85/3f/84399_y0J0e.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第九季
+|别名={
+}
+|集数= 24
+|放送星期= 星期三
+|开始= 2013年9月25日
+|结束= 
+|类型= 剧情，悬疑，犯罪
+|国家/地区= 美国
+|语言= 英语
+|每集长= 42分钟
+|频道= 
+|电视网= 
+|电视台= CBS
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= 
+|tv_com_id= 
+}}', '　　Since Strauss'' death, Hotch has been doing double duty. He has been asked to fill her position permanently - the only member of the team who he has told being Rossi - which he is seriously considering, if only to provide more time to spend with Jack, and to prevent an outsider from putting an unwanted administrative eye on the team. He will have time to contemplate this potential move when the team travels to Glendale, Arizona on their latest case. Two single, young women in individual cases were found in parks, each raped, shot through the heart, and placed in a praying/begging position postmortem. A third victim is found by the time they reach Glendale and a fourth shortly thereafter. Beyond the third victim being married, albeit separated from her husband, the team finds other similarities, namely that the victims were forced to eat human flesh, all from the head. The team believes that there is one single human head being used, that belonging to whoever the unsub''s first victim ...', '', 0, 24, 8, 57, 12, 3, 1, 0, 0, 'f', 0, 0, 0),
+        (104833, 6, 'Criminal Minds (Season 10)', '犯罪心理 第十季', '', 30635, 1401075725, '35/eb/104833_CAd6k.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第十季
+|别名={
+}
+|集数= 23
+|放送星期= 星期三
+|开始= 2014年10月1日
+|结束= 
+|类型= 罪案
+|国家/地区= 美国
+|语言= 英语
+|每集长= 
+|频道= 
+|电视网= 
+|电视台= CBS
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt3822370
+|tv_com_id= 
+|导演= Glenn Kershaw / Thomas Gibson / Matthew Gray Gubler / Joe Mantegna / Larry Teng / Rob Bailey / Jesse Warn
+|编剧= Janine Sherman Barrois / Jeff Davis / Breen Frazier / Erica Messer / Virgil Williams / Kimberly A. Harrison
+|主演= Joe Mantegna / Shemar Moore / Matthew Gray Gubler / A.J. Cook / Kirsten Vangsness / Jennifer Love Hewitt / Thomas Gibson / Kerr Smith / Lily Mariye / Daryl Crittenden / Al Vicente / Emily Dykes / Eric Frentzel / Katie Hilliard / Hailey Sole
+}}', 'On March 13, 2014, CBS renewed Criminal Minds for a tenth season.', '', 0, 23, 1, 47, 9, 2, 3, 0, 0, 'f', 0, 0, 0),
+        (116461, 2, '食戟のソーマ', '食戟之灵', '', 63167, 1414497848, '96/99/116461_zl6M2.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 食戟之灵
+|别名={
+[Shokugeki no Souma]
+}
+|话数= 24
+|放送开始= 2015年4月3日
+|放送星期= 星期五
+|官方网站= http://shokugekinosoma.com/
+|播放电视台= MBS
+|其他电视台= TBS / CBC / BS-TBS
+|播放结束= 2015年9月25日
+|其他= 
+|Copyright= 
+}}', '《食戟之灵》描述男主角幸平创真梦想在国中毕业後能够继承父亲经营的幸平餐馆，却在父亲指示下来到东京都内的料理名校远月学园中就读。料理技术高超的创真，却在插班考试中被拥有神之舌的少女薙切绘里奈评为不及格!?在学园长帮助下，创真依然成功入学，并立誓要让绘里奈认同他所作的料理。', '', 0, 24, 501, 6601, 552, 314, 279, 0, 0, 's', 0, 0, 0),
+        (117777, 2, '映画 聲の形', '声之形', '', 63167, 1416199516, '7c/b9/117777_4Ku7z.jpg', 3, '{{Infobox animanga/Movie
+|中文名= 声之形
+|别名={
+[the shape of voice]
+[A Silent Voice]
+}
+|上映年度= 2016年9月17日
+|片长= 129分钟
+|官方网站= http://koenokatachi-movie.com/
+|其他= 
+|Copyright= ©大今良時・講談社／映画聲の形製作委員会
+|原作= 大今良時（講談社コミックス刊）
+|导演= 山田尚子
+|脚本= 吉田玲子
+|人物设定= 西屋太志
+|总作画监督= 西屋太志
+|分镜= 山田尚子、木上益治、山村卓也
+|演出= 小川太一、河浪栄作、山村卓也、北之原孝將、石立太一
+|设定= 秋竹斉一
+|作画监督= 門脇未来、丸木宣明、明見裕子、植野千世子、角田有希、岡村公平、池田和美、西屋太志
+|总作画= 北之原孝将、石立太一、佐藤達也
+|美术监督= 篠原睦雄
+|3D美术= 鵜ノ口穣二
+|色彩设计= 石田奈央美
+|色彩指定= 石田奈央美、宮田佳奈
+|特效= 三浦理奈
+|摄影监督= 高尾一也
+|3D导演= 冨板紀宏
+|音响监督= 鶴岡陽太
+|音乐= 牛尾憲輔
+|音乐制作= ポニーキャニオン
+|录音= 名倉靖
+|音效= 倉橋裕宗
+|剪辑= 重村建吾
+|手语监修= 越智大輔
+|手语协调= 南瑠霞、蓮子都、中嶋元美
+|手语模型= 樺沢環（きいろぐみ）、黒田清一郎、樋口珠音（きいろぐみ）
+|发音模型= 優希
+|设定管理= 栗原一樹
+|制作管理= 高島龍平
+|制片人= 大橋永晴、中村伸一、植月幹夫、飯塚寿雄、立石謙介
+|取材协力= 大垣市、大垣フィルムコミッション、大垣市商店街振興組合連合会、東海旅客鉄道株式会社、岐阜フィルムコミッション、養老公園養老鉄道株式会社、駒込中学高等学校、ナガシマスパーランド、ニコン
+|协作= Acecook・シーメンス・シグニア補聴器・SoftBank
+|协力= 全日本ろうあ連盟、東京都聴覚障害者連盟、手話あいらんど
+|制作助手= アニメーションDo
+|动画制作= 京都アニメーション
+|製作= 映画聲の形製作委員会（京都アニメーション、ポニーキャニオン、ABCアニメーション、クオラス・松竹、講談社）
+|配给= 松竹
+|话数= 1
+}}', '　　无比厌恶“无聊”的少年，石田将也。
+　　小学时期是个孩子王的他，对转校而来的少女西宫硝子产生了兴趣。
+　　在她到来后，少年无聊的日子得到了解放。
+　　然而，以硝子身上的某件事为契机，将也被周围孤立了起来。
+　　而后经过了五年的时间，两人在不同的高中各自成长。
+　　机缘巧合之下，紧紧封闭自己内心的将也再次见到了硝子。
+　　这是一个少年，试图接受少女、周围的人们，并接受自己的故事。', '', 0, 1, 859, 8284, 53, 107, 81, 0, 0, 's', 0, 0, 0),
+        (148228, 6, 'Criminal Minds (Season 11)', '犯罪心理  第11季', '', 7409, 1444189610, '72/8c/148228_O5mS0.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理  第11季
+|别名={
+}
+|集数= 22
+|放送星期= 星期三
+|开始= 2015年9月30日
+|结束= 
+|类型= 罪案
+|国家/地区= 美国
+|语言= 英语
+|每集长= 42分钟
+|频道= 
+|电视网= 
+|电视台= CBS
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 美国
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= http://www.cbs.com/shows/criminal_minds/
+|imdb_id= tt4705588
+|tv_com_id= 
+}}', '《犯罪心理》第十一季正式续订。讲述了美国联邦调查局总部下属的行为分析科部门（简称“BAU”）中，行为分析师们剖析最棘手的案件，分析凶手的心理和作案特征，并在他们再次施暴前预测出他们的下一步行动，协助当地警察捉拿凶手。', '', 0, 22, 3, 36, 7, 3, 1, 0, 0, 'f', 0, 0, 0),
+        (184017, 2, '沙盒', 'Bangumi Wiki 动画测试用沙盘', '', 6497, 1464502353, '', 1, '{{Infobox animanga/TVAnime
+|中文名= Bangumi Wiki 动画测试用沙盘
+|别名={
+[WIki Sandbox ]
+}
+|话数= 233
+|放送开始= 1582-10-14
+|放送星期= 
+|官方网站= https://bgm.tv/wiki
+|播放电视台= Bangumi
+|其他电视台= 
+|播放结束= 
+|其他= 
+|Copyright= Bangumi
+}}', '测试用沙盘，可随意编辑该条目（如果重命名标题及修改说明，记得还原）。
+请勿删除/合并。
+', '', 0, 233, 2, 9, 0, 1, 2, 0, 0, 'b', 0, 0, 0),
+        (194118, 6, 'Criminal Minds Season 12', '犯罪心理 第12季', '', 7409, 1475230253, '5f/65/194118_5c9H0.jpg', 2, '{{Infobox real/Television
+|中文名= 犯罪心理 第12季
+|别名={
+}
+|集数=  22
+|放送星期= 星期三
+|开始= 2016-09-28
+|结束= 
+|类型= 剧情 / 悬疑 / 犯罪
+|国家/地区= 美国
+|语言= 英语
+|每集长= 42分钟
+|频道= 
+|电视网= 
+|电视台= CBS
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt5787340
+|tv_com_id= 
+}}', 'CBS正式宣布续订《犯罪心理》第12季。', '', 0, 22, 1, 27, 2, 0, 1, 0, 0, 'f', 0, 0, 0),
+        (208783, 6, 'Stranger Things Season 2', '怪奇物语 第二季', '', 63167, 1486754219, 'c7/0d/208783_0J0TH.jpg', 2, '{{Infobox real/Television
+|中文名= 怪奇物语 第二季
+|别名={
+[Montauk]
+}
+|导演= Matt Duffer / Ross Duffer / 肖恩·利维 / Andrew Stanton / 丽贝卡·托马斯
+|编剧= Matt Duffer / Ross Duffer
+|音乐= Kyle Dixon / Michael Stein
+|执行制片人= Matt Duffer
+|摄影= Tim Ives / David Franco
+|剪辑= Kevin D. Ross
+|主演= Winona Ryder / David Harbour / Finn Wolfhard / Millie Bobby Brown / Gaten Matarazzo / Caleb McLaughlin / Noah Schnapp / Sadie Sink / Natalia Dyer / Charlie Heaton / Joe Keery / Dacre Montgomery / Cara Buono / Sean Astin / Paul Reiser
+|配角= 切尔西·塔尔玛琪 / 乔·克里斯特 / 莉内娅·贝特尔森 / 艾米·西米茨 / 威尔·切斯 / 罗布·摩根 / 普莉雅·弗格森 / 约翰·雷诺兹 / 布伦特·吉尔曼 / 安妮斯顿·普莱斯 / 婷斯莉·普莱斯 / 詹姆斯·兰德里·赫伯特 / 托马斯·图尔 / 兰德尔·P·海文斯 / 卡西迪斯劳特 / 盖奇·劳森 / 苏珊·沙尔霍布·拉金
+|集数= 9
+|放送星期= 星期五
+|开始= 2017-10-27
+|结束= 2017-10-27
+|类型= 剧情 / 恐怖 / 奇幻
+|国家/地区= 美国
+|语言= 英语
+|每集长= 50分钟
+|频道= 
+|电视网= NETFLIX
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt6020684
+|tv_com_id= 
+}}', '　　《怪奇物语》第 2 季：故事发生在 1984 年，印第安纳州霍金斯镇的居民们还没有从恐怖的魔王和秘密的霍金斯实验室中缓过劲来。威尔·拜尔斯已从颠倒世界中被救了出来，但是一个更庞大、更邪恶的怪物仍威胁着那些活下来的人们。', '', 0, 9, 13, 178, 10, 5, 4, 0, 0, 'g', 0, 0, 0),
+        (211567, 2, '3月のライオン 第2シリーズ', '3月的狮子 第二季', '', 63167, 1489848627, '5c/49/211567_pGm5Q.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 3月的狮子 第二季
+|别名={
+[三月的狮子 第二季]
+[三月的狮子 2期]
+}
+|话数= 22
+|放送开始= 2017年10月14日
+|放送星期= 星期六
+|官方网站= http://3lion-anime.com
+|播放电视台= NHK総合
+|其他电视台= 
+|播放结束= 2018年3月31日
+|其他= 
+|Copyright= © 羽海野チカ・白泉社／「3月のライオン」アニメ製作委員会
+|原作= 羽海野チカ（白泉社 ヤングアニマル連載）
+|导演= 新房昭之
+|人物设定= 杉山延寛
+|系列构成= 新房昭之、東冨耶子
+|作画监督= 杉山延寛、潮月一也
+|製作= 「3月のライオン」アニメ製作委員会
+}}', '这是有关各式各样的人们取回什么的温馨故事，同时也是有关斗争的故事。主人公桐山零，幼时因为意外事故失去了家人，是一个背负着沉重的孤独的17岁将棋棋士。独自居住在东京旧市镇桐山零遇见了明里、日向、桃三姐妹，少年桐山零因此发生了改变。', '', 0, 22, 2191, 5823, 566, 303, 78, 0, 0, '3', 0, 0, 0),
+        (220445, 2, '22/7', '', '', 68717, 1500714151, 'a3/e3/220445_33Hg2.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 
+|别名={
+}
+|话数= 12
+|放送开始= 2020年1月11日
+|放送星期= 
+|官方网站= https://227anime.com/
+|播放电视台= 
+|其他电视台= 
+|播放结束= 
+|其他= 
+|Copyright= ©ANIME 22/7
+|导演= 阿保孝雄
+|人物原案= カントク／岸田メル／QP:flapper（小原トメ太 さくら小春）／黒星紅白／こやまひろかず（TYPE-MOON）／田中将賀／細居美恵子／堀口悠紀子／深崎暮人／渡辺明夫、堀口悠紀子（动画初步人物设定）／宮島礼吏（人物设定原案）
+|人物设定= まじろ（动画影像人物设定）
+|总作画监督= まじろ、田村里美、髙田晃
+|作画监督= 渡部崇、木村麻亜紗、田川裕子、齋藤千惠、凌空凛、高瀨さやか、田中みどり
+}}', '泷川美羽突然收到来自演艺事务所“G.I.P”的一封信。信上说被选为某个新项目的成员。她半信半疑地去了信上的地方，被命运引导一样地聚集了，包含美羽在内的的8个少女们。“你们将作为偶像组合正式出道”——被自称是合田的男子指引着，出现在她们眼前的是地下的绝密设施和神秘的“墙壁”。美羽8人向着光与暗交织的命运舞台迈进……就这样前所未有的新偶像诞生。', '', 0, 12, 423, 1254, 240, 165, 376, 0, 0, '2', 0, 0, 0),
+        (226750, 2, 'ソードアート・オンライン オルタナティブ ガンゲイル・オンライン', '刀剑神域外传 Gun Gale Online', '', 207398, 1506823251, '29/40/226750_3fW9q.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 刀剑神域外传 Gun Gale Online
+|别名={
+[Sword Art Online Alternative: Gun Gale Online]
+[刀剑神域外传GGO]
+}
+|话数= 12
+|放送开始= 2018年4月7日
+|放送星期= 星期六
+|官方网站= http://gungale-online.net/
+|播放电视台= TOKYO MX
+|其他电视台= BS11 / とちぎテレビ / 群馬テレビ / MBS / テレビ愛知 / 中華電信MOD / bbTV
+|播放结束= 2018年6月30日
+|其他= 
+|Copyright= © 2017 時雨沢恵一／KADOKAWA アスキー・メディアワークス／GGO Project
+|监修= 川原礫
+|製作= GGO Project（Aniplex、KADOKAWA アスキー・メディアワークス、バンダイナムコエンターテインメント、ジェンコ、ストレートエッジ、EGG FIRM）
+|原作= 時雨沢恵一
+|导演= 迫井政行
+|人物设定= 小堺能夫
+}}', '在枪与钢铁的世界“Gun Gale Online”享受着单人游戏的女性玩家·莲。喜欢可爱事物的她，全身清一色的粉红色装备，不断累积游戏经验，并逐渐增强实力。之后，由于某件事而对于PK（玩家狩猎）觉醒了兴趣的莲沉迷于PK中，并终于到达被人称作“粉红恶魔”的地步。
+这样的莲，与神秘的美女玩家·Pitohui相遇，并和她意气相投。莲按照她所说的，参加了小队作战活动“特攻强袭”。 ', '', 0, 12, 511, 3466, 355, 292, 267, 0, 0, 'd', 0, 0, 0),
+        (261729, 1, '恋はつづくよどこまでも (6)', '', '', 303664, 1537641009, '10/7b/261729_42OHO.jpg', 1001, '{{Infobox animanga/Manga
+|中文名= 
+|别名={
+}
+|出版社= 小学館
+|价格= ￥ 463
+|其他出版社= 
+|连载杂志= 
+|发售日= 2018-10-10
+|册数= 
+|页数= 192
+|话数= 
+|ISBN= 4098702401
+|其他= 
+|ISBN-13= 978-4098702404
+|作者= 円城寺 マキ
+}}', 'ラブラブな二人に離ればなれの危機到来!?
+
+勇者と魔王、相思相愛の超ラブラブモード突入!
+…と思ったのに最大の試練、到来!?
+
+呼吸器科で働く医師・浬とナース・七瀬。
+お互いの気持ちを確かめ合い、
+恋人らしくなってきた二人。
+幸せな時間を満喫中だけど、
+浬の姉・流子が失踪してしまって一大事!
+さらに、呼吸器科に赴任してきた新しい医師が
+新たな波乱を呼んで…!?
+円城寺マキが贈る、最強で最高のラブコメ第6巻!
+
+【編集担当からのおすすめ情報】
+フィナーレまであと少し!
+最後まで七瀬と浬の凸凹カップルをお楽しみください♪', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 'l', 0, 0, 0),
+        (277229, 6, 'The Batman', '蝙蝠侠', '', 344362, 1552267443, 'ab/00/277229_dnIYn.jpg', 0, '{{Infobox real/Television
+|中文名= 蝙蝠侠
+|别名={
+[新蝙蝠侠]
+}
+|导演= 马特·里夫斯
+|编剧= 马特·里夫斯 / 彼得·克莱格 / 比尔·芬格 / 鲍勃·凯恩
+|集数= 1
+|放送星期= 
+|开始= 2022-03-01(韩国) / 2022-03-04(美国) / 2022-03-18(中国大陆) / 2022-04-19(HBO max)
+|结束= 
+|类型= 动作 / 悬疑 / 犯罪
+|国家/地区= 美国
+|语言= 英语
+|片长= 175分钟
+|频道= 
+|电视网= HBO max
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 韩国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt1877830
+|tv_com_id= 
+|配角= 佐伊·克罗维兹 / 保罗·达诺 / Colin Farrell / 杰弗里·怀特 / Andy Serkis / John Turturro / 彼得·萨斯加德 / 巴里·基奥恩 / 杰米·劳森 / 吉尔·佩雷斯-亚伯拉罕 / 彼得·麦克唐纳德 / 康·奥尼尔 / 亚历克斯·费恩斯 / 鲁伯特·彭利-琼斯 / 科莎·恩格勒 / 杰宁·哈瑞妮 / 卢克·罗伯茨 / 斯特拉·斯托克尔 / 桑德拉·迪金森 / 杰克·班尼特 / 约瑟夫·巴德拉玛 / 詹姆斯·伊莱斯 / 小利莫尔·马雷特 / 斯图尔特·亚历山大 / 马库斯·奥尼卢德 / 埃琳娜·沙雷 / 托德·博伊斯 / 道格拉斯·罗素 / 查尔斯·卡维尔 / 马克斯·卡维尔 / 马克·基林 / 洛娜·布朗 / 埃利奥特·沃伦 / 小田部阿基 / 布隆森·韦伯 / 阿瑟·李 / 派瑞 格拉斯普 / 娜塔丽·阿明 / 何塞‧帕尔马 / 玛吉·巴基尔 / 露丝·霍洛克斯 / 贝恩·科拉科 / 丹尼尔·厄根 / 雷切尔·汉德肖 / 爵克·哈迪
+}}', '　　布鲁斯·韦恩（罗伯特·帕丁森 饰）化身蝙蝠侠于哥谭市行侠仗义两年后，罪犯皆闻风丧胆，他也因此深入接触到哥谭市的阴暗面。他潜行于哥谭市腐败的政要名流关系网中，身边仅有的几个值得信赖的盟友——管家阿尔弗雷德·潘尼沃斯（安迪·瑟金斯 饰）与詹姆斯·戈登警长（杰弗里·怀特 饰）。这位独行的“义警侠探”在哥谭市民心中已成为“复仇”二字最当仁不让的代名词。', '', 0, 1, 17, 128, 2, 2, 1, 0, 0, '', 0, 0, 0),
+        (277554, 2, '無職転生 ～異世界行ったら本気だす～', '无职转生 ～在异世界认真地活下去～', '', 207398, 1552625104, '8b/00/277554_z999u.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 无职转生 ～在异世界认真地活下去～
+|别名={
+[无职转生 ～到了异世界就拿出真本事～]
+[英语|Jobless Reincarnation ~I Will Seriously Try If I Go to Another World~]
+[罗马字|Mushoku Tensei ~Isekai Ittara Honki Dasu~]
+}
+|话数= 11
+|放送开始= 2021年1月10日
+|放送星期= 星期日
+|官方网站= https://mushokutensei.jp
+|播放电视台= TOKYO MX
+|其他电视台= サンテレビ / KBS京都 / BS11
+|播放结束= 
+|其他= 
+|Copyright= ©理不尽な孫の手/MFブックス/「無職転生」製作委員会
+|原作= 理不尽な孫の手
+|导演= 岡本学
+|人物设定= 杉山和隆；副人物设定：齊藤佳子
+|作画监督= 山崎絵美
+|製作= 「無職転生」製作委員会（博報堂DYミュージック&amp;ピクチャーズ、東宝、KADOKAWA、フロンティアワークス、日本BS放送、グリー、EGG FIRM）
+|企画= 山崎史紀、大田圭二、青柳昌行、辻政英、太田勝士、宿輪浩介、大澤信博
+|总制片= 山崎史紀、大澤信博
+|制片人= 山中隆弘、小野田壮吉、 森井巧、今井遼介、大和田智之、大須賀翔、畠山拓郎
+|imdb_id= tt13293602
+}}', '“我要在这个异世界拿出真本事！”
+34岁童贞且无职的家里蹲男子，在父母的葬礼当天被赶出家门后，在路上被一辆卡车所撞死。意识清醒后，他发现自己居然作为一个刚出生的婴儿转生到了剑与魔法的异世界！像废物一样活过了前世的男子，发誓要作为少年·鲁迪乌斯在异世界以认真的态度好好活下去！
+等待着鲁迪乌斯的是，与娇小魔术师、有着精灵长耳又很男孩子气的美少女、凶暴的傲娇大小姐以及其他性格各异的人们之间的邂逅，当然也还有残酷的冒险与战斗。
+新的人生就要开始了！“人生重来型”幻想冒险谭，在此开幕！', '', 0, 11, 781, 6943, 1569, 269, 355, 0, 0, 'w', 0, 0, 0),
+        (298767, 1, 'モボモガ', '摩登男女', '', 128390, 1579904798, '3d/1a/298767_lyc5V.jpg', 1002, '{{Infobox animanga/Novel
+|中文名= 摩登男女
+|别名={
+}
+|出版社= 京都アニメーション
+|价格= 
+|连载杂志= 
+|发售日= 
+|册数= 1
+|页数= 
+|话数= 
+|ISBN= 978-4-910052-03-8
+|其他= 
+|作者= 結城弘
+|插图= しらび
+|网站= http://www.kyotoanimation.co.jp/books/mobomoga/
+}}', 'KAエスマ文庫リレー2020　連続刊行第１弾！
+
+『二十世紀電氣目録』の結城弘最新作。
+
+人の時間を盗んだり、その時間を使って過去に戻ったりできる“貸時計”。
+そんな都市伝説のような時計を使って、大正時代から女の子がやってきた。
+過去に戻るため東奔西走する少女に、振り回される今時無気力少年。
+元気溌剌大正娘とものぐさ現代少年のちぐはぐ青春ハートフルラブコメディ。
+
+スマホ、新幹線、そしてミニスカ。未来は異世界だ――。
+
+※KAエスマ文庫リレー2020の対象作品です。
+　帯についた応募券を集めて、新刊5作品の短編集をもらおう！', '', 1, 0, 26, 26, 5, 4, 1, 0, 0, 'm', 0, 0, 0),
+        (311103, 6, 'The Boys Season 3', '黑袍纠察队 第三季', '', 344362, 1595572879, '57/5d/311103_1eWHr.jpg', 2, '{{Infobox real/Television
+|中文名= 黑袍纠察队 第三季
+|别名={
+[男孩帮]
+[英雄克星]
+}
+|原作= Garth Ennis &amp; Darick Robertson
+|导演= 菲利浦·斯格里西亚
+|编剧= 艾力克·克莱普科 / 加思·恩尼斯 / 达里克·罗伯逊
+|集数= 8
+|放送星期= 五
+|开始= 2022-06-03
+|结束= 2022-07-08
+|类型= 动作 / 科幻 / 犯罪
+|国家/地区= 美国
+|语言= 英语
+|每集长= 60分钟
+|频道= 
+|电视网= prime video
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt12312450
+|tv_com_id= 
+|主演= Karl Urban / Jack Quaid / 安东尼·斯塔尔 / 艾琳·莫里亚蒂 / 多米妮克·麦克艾丽戈特 / 杰西·厄舍 / 拉兹·阿隆索 / 切斯·克劳福 / 托默·卡蓬 / 福原·凯伦 / 内森·米切尔 / 蔻碧·米纳菲 / 克劳迪娅·多米特 / 詹森·阿克斯
+|配角= Simon Pegg / 阿雅·卡什 / Giancarlo Esposito / P·J·伯恩 / 卡梅伦·克罗维蒂 / 迈尔斯·加斯顿·维拉努瓦 / 马修·爱迪生 / 弗朗西丝·特纳 / 凯蒂·布赖尔 / 莱拉·罗宾斯 / 吉姆·比弗 / 凯尔·麦克 / 卢卡·奥利尔 / 妮卡·埃利奥特 / 查理兹·塞隆 / 劳瑞·侯登 / Sean Patrick Flanery / 凯蒂娅·温特 / 尼克·维切斯勒 / 克莉丝汀·布丝 / Jack Doolan / 莎拉·斯维尔 / Nia Roam / 玛雅·米沙里维克 / 贾斯汀·戴维斯 / 伊莱莎·帕斯特 / Caitlin Pasquet
+}}', '　　讲述的是一群自发形成的“纠察队”成员为阻止道貌岸然的腐败“超级英雄”滥用超能力祸害世界，与沃特国际公司旗下的邪恶超能力者展开殊死搏斗的故事。', '', 0, 8, 22, 115, 34, 2, 2, 0, 0, 'h', 0, 0, 0),
+        (315957, 3, '原神-风与牧歌之城 City of Winds and Idylls', '风与牧歌之城', '', 8202, 1601273894, 'db/c8/315957_8hX0e.jpg', 0, '{{Infobox Album
+|中文名= 风与牧歌之城
+|别名={
+[《原神》公测纪念OST-蒙德篇]
+}
+|版本特性= Digital
+|发售日期= 2020-09-28
+|价格= 
+|播放时长= 
+|录音= 
+|碟片数量= 3
+|厂牌= miHoYo
+|作曲= 陈致逸
+|艺术家= 陈致逸
+}}', '《原神》公测纪念OST-蒙德篇专辑《风与牧歌之城 City of Winds and Idylls》正式上线，专辑分为《风与牧歌之城 City of Winds and Idylls》、《蒲公英的国度 the Horizon of Dandelion》与《蒙德战记 Saga of the West Wind》3张分碟，共收录63首由陈致逸@HOYO-MiX为《原神》蒙德地区创作的原声音乐。', '', 0, 0, 2, 91, 9, 0, 5, 0, 0, 'f', 0, 0, 0),
+        (329285, 2, 'RPG不動産', 'RPG不动产', '', 229195, 1614342436, 'f2/8f/329285_4MYAA.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= RPG不动产
+|别名={
+[英文名1|RPG Real Estate]
+[英文名2|Rent, Plan, Guide for You]
+}
+|话数= 12
+|放送开始= 2022年4月6日
+|放送星期= 星期三
+|官方网站= https://rpg-rs.jp
+|播放电视台= AT-X / BS日テレ
+|其他电视台= TOKYO MX / テレビ愛知 / KBS京都 / サンテレビ
+|播放结束= 
+|其他= 
+|Copyright= ©険持ちよ・芳文社／『RPG不動産』製作委員会
+|原作= 険持ちよ（まんがタイムきららキャラット／芳文社）
+|导演= 越田知明
+|人物设定= 谷口元浩
+|主题歌演出= 風色琴音（CV：井上ほの花）、ファー（CV：木野日菜）、ルフリア（CV：川井田夏海）、ラキラ（CV：石見舞菜香）/ まねきケチャ
+|主题歌作词= ミズノゲンキ / 古谷完
+|主题歌作曲= 設楽哲也 / 下田晃太郎
+|主题歌编曲= 設楽哲也 / 下田晃太郎
+|企画= 菊池剛、工藤大丈、孝壽尚志
+|执行制片人= 田中翔、小林宏之、石黒竜、北條真、山崎明日香、久保田暁、篠崎文彦
+|制片人= 根本侑果、竹ノ内千恵、舩津彩奈、鎌田肇、谷口博康、深谷成輝、丸山創、有水宗治郎；制作プロデューサー：中村陽介
+|製作= 『RPG不動産』製作委員会（KADOKAWA、芳文社、動画工房、日本コロムビア、AT-X、BS日本、角川メディアハウス）
+|OP・ED 分镜= 金子俊太朗 / 越田知明
+}}', '魔王被打倒，世界恢复得和平之后15年。
+风色琴音为了寻找新居来到了RPG不动产，其实那里就是琴音的工作地点！同事是自由调皮的弗雅，对工作严格认真的僧侣露芙莉娅，外表可爱、内心坚强的战士拉琪拉。
+琴音与3个人合力，友好愉快地解决了前来找房子的奇怪客人们的难题，并提供了新的住所。
+寻找重要的房子请交给RPG不动产！不管是在水里，还是在云上，还是在什么地方，都会找到喜欢的好房子给你看。
+异世界幻想剧，开幕！', '', 0, 12, 271, 695, 433, 109, 255, 0, 0, 'r', 0, 0, 0),
+        (333707, 2, 'Love, Death &amp; Robots Volume 3', '爱、死亡 &amp; 机器人 第三季', '', 344362, 1618844197, 'ef/a9/333707_XoOYR.jpg', 5, '{{Infobox animanga/TVAnime
+|中文名= 爱、死亡 &amp; 机器人 第三季
+|别名={
+[LOVE DEATH + ROBOTS]
+[爱 x 死 x 机器人(台)]
+[爱 · 死 · 机械人(港)]
+}
+|导演= Patrick Osborne、David Fincher、Emily Dean、Robert Bisi、Andy Lyon、Jennifer Yuh、Tim Miller、Carlos Stevens、Jerome Chen、Alberto Mielgo
+|编剧= John Scalzi、Andrew Kevin Walker、Neal Asher、Philip Gelatt、Michael Swanwick、Robert Bisi、Andy Lyon、Jeff Fowler、Justin Coates、Tim Miller、Bruce Sterling、Joe Abercrombie、Alan Mah Baxter、Alberto Mielgo
+|话数= 9
+|放送开始= 2022年5月20日
+|放送星期= 星期五
+|官方网站= 
+|播放电视网= NETFLIX
+|其他电视台= 
+|播放结束= 2022年5月20日
+|其他= 
+|Copyright= 
+|IMDb= tt20192958
+}}', '　　艾美奖获奖动画选集《爱、死亡 & 机器人》第三部回归，由蒂姆·米勒（《死侍》《终结者：黑暗命运》）和大卫·芬奇（《心灵猎人》《曼克》）担任监制。恐怖、想象力和美在新剧集中完美融合，从揭示古老的邪恶力量到喜剧般的末日，剧集以标志性的巧思和创造性的视觉效果，为观众带来令人震惊的奇幻、恐怖和科幻短篇故事。', '', 0, 9, 168, 1144, 73, 13, 10, 0, 0, 'a', 0, 0, 0),
+        (347656, 6, 'The Orville Season3', '奥维尔号 第三季', '', 287622, 1629753846, '6d/d9/347656_5Sk6o.jpg', 2, '{{Infobox real/Television
+|中文名= 奥维尔号 第三季
+|别名={
+}
+|集数= 11
+|放送星期= 
+|开始= 2022-06-02
+|结束= 2022-08-11
+|类型= 喜剧 / 科幻 / 冒险
+|国家/地区= 美国
+|语言= 
+|每集长= 
+|频道= 
+|电视网= Hulu
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt5691552
+|tv_com_id= 328487
+}}', '', '', 0, 11, 1, 0, 4, 0, 0, 0, 0, 'a', 0, 0, 0),
+        (348542, 6, 'Star Trek: Strange New Worlds', '星际迷航：奇异新世界', '', 287622, 1630825231, '00/a3/348542_0Y544.jpg', 2, '{{Infobox real/Television
+|中文名= 星际迷航：奇异新世界
+|别名={
+}
+|集数= 10
+|放送星期= Thursday
+|开始= 2022-05-05
+|结束= 
+|类型= 
+|国家/地区= 
+|语言= 
+|每集长= 
+|频道= 
+|电视网= 
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= https://www.paramountplus.com/shows/star-trek-strange-new-worlds/
+|imdb_id= tt12327578
+|tv_com_id= 
+}}', '主要讲述克里斯托弗 派克任舰长时企业号的故事。
+A prequel to Star Trek: The Original Series, the show will follow the crew of the USS Enterprise under Captain Christopher Pike.', '', 0, 10, 1, 5, 4, 0, 0, 0, 0, 'x', 0, 0, 0),
+        (355474, 6, 'Dopesick', '成瘾剂量', '', 405461, 1635937838, 'ea/f8/355474_YhxFh.jpg', 2, '{{Infobox real/Television
+|中文名= 成瘾剂量
+|别名={
+}
+|集数= 8
+|放送星期= Wednesday
+|开始= 2021-10-13
+|结束= 
+|类型= 剧情
+|国家/地区= 美国
+|语言= 英语
+|每集长= 60分钟
+|频道= 
+|电视网= hulu
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 美国
+|首播地区= 
+|台湾名称= 
+|港澳名称= 毒瘾
+|马新名称= 
+|官方网站= 
+|imdb_id= tt9174558
+|tv_com_id= 
+|MPAA评级= TV-MA
+|导演= 巴瑞·莱文森
+|编剧= Beth Macy / 丹尼·斯特朗
+|主演= 迈克尔·基顿 / 彼得·萨斯加德 / 威尔·保尔特 / 约翰·胡热那克 / 凯特琳·德弗 / 罗莎里奥·道森 / 迈克尔·斯图巴 / 威尔·切斯 / 杰克·麦克道曼 / 菲莉帕·苏 / 伊恩·安特曼 / R.基斯·哈里斯 / 杰米·雷·纽曼 / 瑞贝卡·薇索基 / 皮特·布里斯 / 肖恩·卡拉汉 / 米根·费伊 / 斯宾塞·加雷特 / 尼古拉斯·罗根 / 凯特琳·梅纳 / 安东尼·雷诺兹 / 凯西·福特·亚历山大 / 肯尼·阿方索 / 赛琳娜·安杜兹 / 克利欧佩特拉·科尔曼 / Arischa Conner / Andrea Frankle / Lawrence Arancio / Scott Charles
+}}', 'The series takes viewers to the epicenter of America''s struggle with opioid addiction, from the boardrooms of Purdue Pharma, to a distressed Virginia mining community, to the hallways of the DEA.', '', 0, 8, 17, 21, 5, 1, 1, 0, 0, 'c', 0, 0, 0),
+        (360909, 6, 'Obi-Wan Kenobi', '星球大战外传：欧比旺', '', 287622, 1638615707, '5c/df/360909_i3s7H.jpg', 2, '{{Infobox real/Television
+|中文名= 星球大战外传：欧比旺
+|别名={
+[欧比王]
+[欧比王·肯诺比]
+[欧比旺·克诺比]
+}
+|集数= 6
+|放送星期= 星期三
+|开始= 2022-05-27
+|结束= 2022-06-22
+|类型= 动作/科幻/冒险
+|国家/地区= 美国
+|语言= 英语
+|每集长= 
+|频道= 
+|电视网= Disney+
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= https://www.starwars.com/series/obi-wan-kenobi
+|imdb_id= tt8466564
+|tv_com_id= 
+|导演= Deborah Chow
+|编剧= Joby Harold、Stuart Beattie、Hossein Amini、Hannah Friedman、Andrew Stanton
+|配角= Sung Kang、Moses Ingram、Kumail Nanjiani、Indira Varma、Rupert Friend、Simone Kessell、Grant Feely、Rya Kihlstedt
+|音乐= Natalie Holt
+}}', '《欧比旺·克诺比》是一部美国太空歌剧网络迷你剧，改编自《星球大战》系列中的同名角色，该剧的故事发生在《星球大战前传3：西斯的复仇》10年后，讲述欧比旺的隐居生活，以及他暗中保护卢克长大的故事。', '', 0, 6, 6, 29, 9, 2, 4, 0, 0, 'x', 0, 0, 0),
+        (363612, 2, '沙盒', '沙盒', '', 287622, 1640456969, '82/15/363612_6uauA.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= 沙盒
+|别名={
+}
+|话数= 7
+|放送开始= 0000-10-06
+|放送星期= 
+|官方网站= 
+|播放电视台= 
+|其他电视台= 
+|播放结束= 
+|其他= 
+|Copyright= 
+|平台={
+[Xbox Series S]
+[Xbox Series X]
+[Xbox Series X/S]
+[PC]
+[Xbox Series X|S]
+}
+}}', '本条目是一个沙盒，可以用于尝试bgm功能。
+
+普通维基人可以随意编辑条目信息以及相关关联查看编辑效果，但是请不要删除沙盒说明并且不要关联非沙盒条目/人物/角色。
+
+https://bgm.tv/group/topic/366812#post_1923517', '', 0, 7, 0, 7, 1, 1, 0, 0, 0, 's', 0, 1, 0),
+        (365400, 6, '元彼の遺言状', '前男友的遗书', '', 250298, 1641891360, 'fe/4b/365400_kkdcC.jpg', 1, '{{Infobox real/Television
+|中文名= 前男友的遗书
+|别名={
+[My Ex-Boyfriend''s Last Will]
+}
+|集数= 11
+|放送星期= 月曜日
+|开始= 2022-04-11
+|结束= 2022-06-20
+|类型= 
+|国家/地区= 日本
+|语言= 日本语
+|每集长= 
+|频道= 月曜21時枠連続ドラマ
+|电视网= 
+|电视台= フジテレビ
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= https://www.fujitv.co.jp/motokare/
+|imdb_id= 
+|wiki= https://ja.wikipedia.org/wiki/%E5%85%83%E5%BD%BC%E3%81%AE%E9%81%BA%E8%A8%80%E7%8A%B6
+|原作= 新川帆立『元彼の遺言状』『剣持麗子のワンナイト推理』
+|编剧= 杉原憲明、小谷暢亮、中園勇也
+|导演= 鈴木雅之、澤田鎌作、西岡和宏
+|制片人= 金城綾香、宮﨑暖
+|主演= 綾瀬はるか
+|配角= 大泉洋、生田斗真、関水渚、森カンナ、笛木優子、要潤、野間口徹、佐戸井けん太、笹野高史、萬田久子、浅野和之
+|音乐= 川井憲次
+}}', '', '', 0, 11, 8, 32, 24, 0, 3, 0, 0, 'q', 0, 0, 0),
+        (366192, 2, 'The Boys: Diabolical', '黑袍纠察队：劣迹', '', 344362, 1642604565, '14/cd/366192_LuIv2.jpg', 5, '{{Infobox animanga/TVAnime
+|中文名= 黑袍纠察队：劣迹
+|别名={
+}
+|话数= 8
+|放送开始= 2022-03-04
+|放送星期= 星期五
+|官方网站= 
+|播放电视台= 
+|其他电视台= 
+|播放结束= 2022-03-04
+|其他= 
+|Copyright= 
+|原作= Garth Ennis &amp; Darick Robertson
+|播放电视网= prime video
+|脚本= 奥卡菲娜 / 加思·恩尼斯 / 艾略特·格拉泽 / 伊拉纳·格雷泽 / 埃文·戈德堡 / Seth Rogen / Simon Racioppa / Justin Roiland / Ben Bayouth / 安迪·萨姆伯格 / 爱莎·泰勒
+|IMDb= tt16350094
+}}', '　　衍生诗选类动画剧《劣迹》，讲述《黑袍纠察队》世界中还不为人知的故事。', '', 0, 8, 13, 54, 2, 1, 5, 0, 0, 'h', 0, 0, 0),
+        (366253, 2, 'エスタブライフ グレイトエスケープ', 'Estab Life Great Escape', '', 487601, 1642681531, '5f/e2/366253_9Q1aR.jpg', 1, '{{Infobox animanga/TVAnime
+|中文名= Estab Life Great Escape
+|别名={
+[ESTABLISHMENT IN LIFE GREAT ESCAPE]
+}
+|话数= 12
+|放送开始= 2022年4月6日
+|放送星期= 星期三
+|官方网站= https://establife.tokyo/
+|播放电视台= フジテレビ「＋Ultra」
+|其他电视台= 関西テレビ / 東海テレビ / 北海道文化放送 / テレビ西日本 / BSフジ
+|播放结束= 2022年4月12日（FOD）
+|其他= 2022年3月1日（FOD）先行配信
+|Copyright= ©SSF/エスタブライフ製作委員会
+|原案= 谷口悟朗
+|创意统括= 谷口悟朗
+|原作= SSF
+|导演= 橋本裕之
+|系列构成= 賀東招二
+|脚本= 賀東招二、茗荷屋甚六（木村航）
+|人物原案= コザキユースケ
+|概念艺术= 富安健一郎(INEI)
+|音乐= 藤澤慶昌
+|企画= スロウカーブ
+|制片人= スロウカーブ
+|动画制作= ポリゴン・ピクチュアズ
+|主题歌演出= めいちゃん、GOOD ON THE REEL
+|CG 导演= 坂間健太、関水大樹、上本雅之
+|美术监督= 高橋佐知、島村大輔
+|色彩设计= 野地弘納
+|人物设定= 舛田裕美、次要：長沼範裕
+}}', '「生きるのがツライ？ なら逃げちゃえばいいんですよ」
+ずっと先の未来。人間はそれまでの姿形だけでなく、獣人・サイボーグ・魔族など多様な姿を持つようになった。東京の街は、AIが管理する高い壁に囲まれた数多の地域「クラスタ」となり、自由な行き来をやめ、それぞれが独自の文化・常識を育んだ。人々は、自らが生まれたクラスタの常識を基準に幸せな人生を送る。
+
+しかし、なかには自らのクラスタに適応できない者も現れる──。
+そうした人々を、別のクラスタへと「逃がす」ことを生業にする者たちがいる。
+「逃げたい人」たちから依頼を受け、あらゆる方法を駆使してAIの裏をかき、本来は不可能であるクラスタ間の移動を成し遂げる者たち──「逃がし屋」。
+
+逃げて、逃げて、逃げまくる！！
+逃げたい人をお手伝いする、5人の逃がし屋たちの物語──！', '', 0, 12, 385, 774, 384, 58, 71, 0, 0, 'e', 0, 0, 0),
+        (372487, 6, 'The Guardians of Justice Season 1', '正义守护者 第一季', '', 104848, 1646146976, '8f/ff/372487_hYhQX.jpg', 2, '{{Infobox real/Television
+|中文名= 正义守护者 第一季
+|别名={
+[The Guardians of Justice (Will Save You!) Season 1]
+}
+|集数= 7
+|放送星期= 
+|开始= 2022-03-01
+|结束= 
+|类型= 
+|国家/地区= 美国
+|语言= 
+|每集长= 
+|频道= 
+|电视网= Netflix
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= https://www.netflix.com/title/80141172
+|imdb_id= tt16549788
+|tv_com_id= 
+}}', 'When their seemingly fearless leader self-destructs, a team of troubled superheroes must confront festering evil in the world — and in themselves.', '', 0, 7, 1, 3, 0, 0, 0, 0, 0, 'z', 0, 0, 0),
+        (375024, 6, 'Severance', '人生切割术', '', 268549, 1647690372, '09/29/375024_V19r1.jpg', 2, '{{Infobox real/Television
+|中文名= 人生切割术
+|别名={
+[离职]
+}
+|集数= 9
+|放送星期= 
+|开始= 2022-02-18
+|结束= 
+|类型= 剧情
+|国家/地区= 美国
+|语言= 英语
+|每集长= 60分钟
+|频道= 
+|电视网= 
+|电视台= Apple TV+
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt11280740
+|tv_com_id= 
+}}', '本剧是一部职场惊悚剧，故事发生在希望将工作与生活的平衡提升至新水平的Lumen公司，一名有着黑暗过往的员工马克(斯科特饰)试图让自己重新振作起来。沃肯将饰演Lumen公司光学和设计部主管。剧集由丹·埃里克森撰写剧本，共 9 集。', '', 0, 9, 14, 44, 7, 0, 1, 0, 0, 'r', 0, 0, 0),
+        (378890, 6, '风起陇西', '风起陇西', '', 287622, 1650620387, '89/11/378890_DSLqF.jpg', 3, '{{Infobox real/Television
+|中文名= 风起陇西
+|别名={
+}
+|集数= 24
+|放送星期= 
+|开始= 2022-04-27
+|结束= 
+|类型= 悬疑 / 历史 / 古装
+|国家/地区= 中国大陆
+|语言= 汉语普通话
+|每集长= 
+|频道= 
+|电视网= 爱奇艺
+|电视台= 
+|视频制式= 
+|音频制式= 
+|首播国家= 
+|首播地区= 
+|台湾名称= 
+|港澳名称= 
+|马新名称= 
+|官方网站= 
+|imdb_id= tt14521046
+|tv_com_id= 
+|原著= 马伯庸
+}}', '讲述在天下三分、烽火四起、英雄辈出的时代，两个不被乱世聚焦的“小人物”——陈恭与荀诩，在惊心动魄的谍战中爆发出夺目光辉，于历史之外谱写出一段英雄传奇。', '', 0, 24, 2, 11, 3, 2, 0, 0, 0, 'f', 0, 0, 0),
+        (406604, 3, '結束バンド', '', '', 366797, 1667139245, '2b/03/406604_iYYvi.jpg', 0, '{{Infobox Album
+|中文名= 
+|别名={
+[TVアニメ『ぼっち・ざ・ろっく！』結束バンドフルアルバム]
+}
+|版本特性= Album, CD + BD
+|发售日期= 2022-12-28
+|价格= 期間生産限定盤 ￥4,070
+|播放时长= 
+|录音= 
+|碟片数量= 2
+|艺术家= 結束バンド[後藤ひとり(CV. 青山吉能)、伊地知虹夏(CV. 鈴代紗弓)、山田リョウ(CV. 水野朔)、喜多郁代(CV. 長谷川育美)]
+|作词= 樋口愛(ヒグチアイ)、谷口鮪、ZAQ、中嶋イッキュウ、音羽-otoha-、北澤ゆうほ、後藤正文
+|作曲= 音羽-otoha-、永井正道、谷口鮪、吉岡大地、塚田耕平、草野華余子、中嶋イッキュウ、北澤ゆうほ、内藤英雅、後藤正文
+|编曲= 三井律郎、akkin
+}}', 'TVアニメ『ぼっち・ざ・ろっく！』の劇中バンド「結束バンド」による、OP・ED・劇中曲、
+アルバム新録曲などを含めた全14曲収録のフルアルバム。', '', 0, 0, 41, 289, 66, 4, 1, 0, 0, '', 0, 0, 0);
