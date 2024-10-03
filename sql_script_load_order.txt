@@ -112,6 +112,8 @@ sql/schema/chii_timeline_comments.sql
 sql/schema/chii_tokei_paint.sql
 sql/schema/chii_usergroup.sql
 
+sql/data/chii_tag_neue_index.sql
+sql/data/chii_tag_neue_list.sql
 sql/data/chii_apps.sql
 sql/data/chii_characters.sql
 sql/data/chii_crt_cast_index.sql
