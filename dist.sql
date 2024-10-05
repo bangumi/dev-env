@@ -1572,9 +1572,9 @@ CREATE TABLE `chii_ep_comments` (
 
 LOCK TABLES `chii_ep_comments` WRITE;
 /*!40000 ALTER TABLE `chii_ep_comments` DISABLE KEYS */;
-INSERT INTO `chii_ep_comments` VALUES (1034989,1075440,600046,0,1640462712,'sandbox',0);
-INSERT INTO `chii_ep_comments` VALUES (1569792,1075440,448570,0,1719389390,'这是一条测试内容',0);
-INSERT INTO `chii_ep_comments` VALUES (1569874,1075440,448570,0,1719399020,'(bgm40)(bgm41)(bgm41)(bgm41)(bgm41)',0);
+INSERT INTO `chii_ep_comments` VALUES (1034989,1075440,382951,0,1640462712,'sandbox',0);
+INSERT INTO `chii_ep_comments` VALUES (1569792,1075440,382951,0,1719389390,'这是一条测试内容',0);
+INSERT INTO `chii_ep_comments` VALUES (1569874,1075440,382951,0,1719399020,'(bgm40)(bgm41)(bgm41)(bgm41)(bgm41)',0);
 /*!40000 ALTER TABLE `chii_ep_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
