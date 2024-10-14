@@ -102,8 +102,6 @@ sql/schema/chii_subject_relations.sql
 sql/schema/chii_subject_relations_bak_240803.sql
 sql/schema/chii_subject_revisions.sql
 sql/schema/chii_subject_topics.sql
-sql/schema/chii_tag_index.sql
-sql/schema/chii_tag_list.sql
 sql/schema/chii_tag_neue_fields.sql
 sql/schema/chii_tag_neue_index.sql
 sql/schema/chii_tag_neue_list.sql
