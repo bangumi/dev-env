@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.39, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
