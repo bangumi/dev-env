@@ -151,3 +151,5 @@ sql/data/chii_subject_revisions.sql
 sql/data/chii_subject_topics.sql
 sql/data/chii_timeline.sql
 sql/data/chii_usergroup.sql
+sql/data/chii_blog_entry.sql
+sql/data/chii_subject_related_blog.sql
