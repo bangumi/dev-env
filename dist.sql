@@ -104,7 +104,7 @@ CREATE TABLE `chii_blog_comments` (
   KEY `blg_cmt_eid` (`blg_pst_mid`),
   KEY `blg_cmt_uid` (`blg_pst_uid`),
   KEY `blg_pst_related` (`blg_pst_related`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=286810 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,6 +114,35 @@ CREATE TABLE `chii_blog_comments` (
 
 LOCK TABLES `chii_blog_comments` WRITE;
 /*!40000 ALTER TABLE `chii_blog_comments` DISABLE KEYS */;
+INSERT INTO `chii_blog_comments` VALUES (125852,311629,697857,0,1658119009,'[u]test[/u]\r\n[img]https://lain.bgm.tv/pic/photo/l/b5/a3/697857_gpG9g.jpg[/img]');
+INSERT INTO `chii_blog_comments` VALUES (125870,311639,287622,0,1658141787,'qwe');
+INSERT INTO `chii_blog_comments` VALUES (125871,311639,287622,0,1658141789,'a');
+INSERT INTO `chii_blog_comments` VALUES (125872,311639,287622,0,1658141790,'45625');
+INSERT INTO `chii_blog_comments` VALUES (125873,311639,287622,0,1658141793,'sdgfsdf');
+INSERT INTO `chii_blog_comments` VALUES (125874,311639,287622,0,1658141794,'sadf4q');
+INSERT INTO `chii_blog_comments` VALUES (147923,319484,287622,0,1680072373,'u');
+INSERT INTO `chii_blog_comments` VALUES (150917,311629,697857,0,1683098815,'[user=wtmsb]1ra[/user]');
+INSERT INTO `chii_blog_comments` VALUES (150919,311629,697857,0,1683098854,'[user=wtmsb]1ra[/user]');
+INSERT INTO `chii_blog_comments` VALUES (257723,338196,669060,0,1714909802,'除了第一个和最后一个都打不开');
+INSERT INTO `chii_blog_comments` VALUES (257724,338196,233345,257723,1714910068,'虽然这些目录大部分都是有注册时间限制的，但我这边测试了应该没啥问题啊，再试试？');
+INSERT INTO `chii_blog_comments` VALUES (257731,338196,669060,0,1714912398,'应该不是注册时间的问题 还是打不开');
+INSERT INTO `chii_blog_comments` VALUES (257732,338196,669060,257731,1714912475,'22年的号不会不行吧');
+INSERT INTO `chii_blog_comments` VALUES (257733,338196,233345,257731,1714912742,'[quote][b]ka2usa[/b] 说: 22年的号不会不行吧[/quote]\r\n把地址换成bangumi.tv试试，估计你在bgm.tv这个域名上没有登陆');
+INSERT INTO `chii_blog_comments` VALUES (257756,338196,669060,257731,1714929818,'[quote][b]隔壁的王某某[/b] 说: 把地址换成bangumi.tv试试，估计你在bgm.tv这个域名上没有登陆[/quote]\n原来如此 我是用chii.in登的');
+INSERT INTO `chii_blog_comments` VALUES (276258,311629,600046,0,1722650397,'test');
+INSERT INTO `chii_blog_comments` VALUES (276260,311629,600046,0,1722650978,'test');
+INSERT INTO `chii_blog_comments` VALUES (276261,311629,600046,0,1722651038,'test');
+INSERT INTO `chii_blog_comments` VALUES (276262,311629,600046,0,1722651073,'test');
+INSERT INTO `chii_blog_comments` VALUES (276264,311629,600046,0,1722651205,'test');
+INSERT INTO `chii_blog_comments` VALUES (276266,311629,600046,0,1722651302,'test');
+INSERT INTO `chii_blog_comments` VALUES (276267,311629,600046,0,1722651412,'test');
+INSERT INTO `chii_blog_comments` VALUES (276268,311629,600046,0,1722651588,'assdfasdf');
+INSERT INTO `chii_blog_comments` VALUES (276269,311629,600046,0,1722651689,'test');
+INSERT INTO `chii_blog_comments` VALUES (276271,311629,600046,0,1722652237,'test');
+INSERT INTO `chii_blog_comments` VALUES (276272,311629,600046,0,1722652477,'test');
+INSERT INTO `chii_blog_comments` VALUES (278418,319486,287622,0,1724513422,'?');
+INSERT INTO `chii_blog_comments` VALUES (286808,311629,697857,276258,1730959866,'test');
+INSERT INTO `chii_blog_comments` VALUES (286809,311629,600046,276258,1730959903,'[quote][b]1ra的小号[/b] 说: test[/quote]\ntest');
 /*!40000 ALTER TABLE `chii_blog_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
