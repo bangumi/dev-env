@@ -147,7 +147,7 @@ CREATE TABLE `chii_blog_entry` (
   KEY `entry_public` (`entry_public`),
   KEY `entry_dateline` (`entry_dateline`),
   KEY `entry_uid` (`entry_uid`,`entry_public`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=345912 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,6 +157,12 @@ CREATE TABLE `chii_blog_entry` (
 
 LOCK TABLES `chii_blog_entry` WRITE;
 /*!40000 ALTER TABLE `chii_blog_entry` DISABLE KEYS */;
+INSERT INTO `chii_blog_entry` VALUES (311629,1,697857,'测试用','b5/a3/697857_FokBb.jpg','[url=https://lain.bgm.tv/pic/photo/l/b5/a3/697857_gpG9g.jpg][b][size=25]发表新日志[/size][/b][/url]\r\n[quote]在 Bangumi 发表日志，你可以使用 Tag 为自己的文章分类。你甚至可以通过日志为 Bangumi 的会员提供新闻，只需要在 Tag 中添加 (可直接点击以下标签) :[/quote]\r\n[code]在 Bangumi 发表日志，你可以为日志添加关联条目，这样你的日志就会作为关联条目的评论出现在条目页面中。每篇日志最多可以添加5个关联条目。[/code]\r\n(bgm38)\r\n[img]https://p.sda1.dev/4/c949ffa04e19035274ed179833de3d4b/genre.png[/img]\r\n[img]https://p.sda1.dev/4/d5b07bc69f24b96e9a90f9b4873ef063/company.png[/img]','游戏 三次元 动画 书籍 音乐 ',0,16,1658118734,1730959903,0,0,0,1,0);
+INSERT INTO `chii_blog_entry` VALUES (319484,1,287622,'试试','','试试','动画 ',0,1,1680065731,1680072373,0,0,0,1,1);
+INSERT INTO `chii_blog_entry` VALUES (319486,1,287622,'[2023-06-05] 相关条目数据更新','','感谢 @ klion 提供数据，相关条目数据进行了一次更新。\r\n\r\n\r\n[img]https://s3.bgm38.com/images/Snipaste_2023-06-05_16-33-39.jpg[/img]\r\n\r\n','动画 ',0,1,1680065928,1724513422,0,0,0,1,0);
+INSERT INTO `chii_blog_entry` VALUES (338196,1,233345,'【自用】bangumi排行榜全分类','07/a5/233345_00pPg.jpg','[url=https://bgm.tv/index/44847]全年代日本动画佳作榜1[/url] [url=https://bgm.tv/index/44863]2[/url] [url=https://bgm.tv/index/44864]3[/url] [url=https://bgm.tv/index/44865]4[/url] [url=https://bgm.tv/index/44866]5[/url] [url=https://bgm.tv/index/52747]6[/url]\r\n[url=https://bgm.tv/index/52566]人数不足[/url]\r\n[url=https://bgm.tv/index/40305]非日本动画[/url]\r\n[url=https://bgm.tv/index/35503]里番[/url]\r\n[url=https://bgm.tv/index/58846]无条目/合并条目[/url]\r\n[url=https://bgm.tv/index/58847]总集篇[/url]','动画 ',0,6,1714909548,1714929818,0,0,0,1,1);
+INSERT INTO `chii_blog_entry` VALUES (340047,1,878799,'简单说几句我给此片评好评的原因','','当我第一次知道朱元璋要我评分这部明朝老片的时候，其实我是拒绝的！因为我觉得……呀……你不能叫我评、我马上评，第一，我要看一下，我又不想说……我没看这部片以后说了一堆好评，那评分duang~啊！很高！很好！很有人气！结果观众看完之后一定骂我，根本不值这个评分！这证明上面那个评分是刷的……我说先要给我看一下。后来我看完也知道他们这部片是受朱元璋亲自指导的，而且没有那种垃圾无脑剧情的。那……看了一个月……一个月下来之后呢……起码我看的很喜欢。现在呢……每天还在看……我还给了秦始皇看！来！来！来！大家都试试看！那我就跟朱元璋讲“评分的时候就评！评完之后，这个分就是我评的分，就不要刷，再刷好评上去，刷到没有就是这样子！我要给观众看到，我看完之后就是这个评分，你们看完以后，也是这个评分！','动画 ',0,0,1719098823,1720289218,0,0,0,1,1);
+INSERT INTO `chii_blog_entry` VALUES (345911,1,233345,'【存档】世界主流动画评分网站','','大部分是从之前那个99个评分网站文章中筛选出的还能使用的网站(\r\n\r\n定义：网站中动画板块为主要部分，包含自有评分系统，且网站至少有点活跃用户的网站。如world-art.ru（俄文）,filmarks.com（日文）等包含动画板块但官方并不将其视为首要功能的网站不包含在其中。\r\n\r\nmyanimelist.net（英文）\r\nanilist.co（英文）\r\nanidb.net（英文）\r\nanimenewsnetwork.com（英文）\r\nanime-planet.com（英文）\r\nkitsu.io（英文）\r\nlivechart.me（英文）\r\nbangumi.tv（中文）\r\nanikore.jp（日文）\r\nanisearch.de（德文）\r\nproxer.me（德文）\r\nanimeunity.to（意文）\r\nanimeclick.it（意文）\r\nv5.voiranime.com（法文）\r\nadkami.com（法文）\r\nshinden.pl（波兰文）\r\nanimezone.pl（波兰文）','',0,0,1730117574,1730117574,0,0,0,1,1);
 /*!40000 ALTER TABLE `chii_blog_entry` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -9364,7 +9370,7 @@ CREATE TABLE `chii_subject_related_blog` (
   PRIMARY KEY (`srb_id`),
   KEY `srb_uid` (`srb_uid`,`srb_subject_id`,`srb_entry_id`),
   KEY `subject_related` (`srb_subject_id`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='条目关联日志';
+) ENGINE=MyISAM AUTO_INCREMENT=230594 DEFAULT CHARSET=utf8 COMMENT='条目关联日志';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9374,6 +9380,18 @@ CREATE TABLE `chii_subject_related_blog` (
 
 LOCK TABLES `chii_subject_related_blog` WRITE;
 /*!40000 ALTER TABLE `chii_subject_related_blog` DISABLE KEYS */;
+INSERT INTO `chii_subject_related_blog` VALUES (144903,287622,184017,311620,0,0,0,1658085110);
+INSERT INTO `chii_subject_related_blog` VALUES (144918,697857,184017,311629,0,0,0,1658119330);
+INSERT INTO `chii_subject_related_blog` VALUES (144937,287622,184017,311637,0,0,0,1658141731);
+INSERT INTO `chii_subject_related_blog` VALUES (144938,287622,184017,311638,0,0,0,1658141760);
+INSERT INTO `chii_subject_related_blog` VALUES (144939,287622,184017,311639,0,0,0,1658141782);
+INSERT INTO `chii_subject_related_blog` VALUES (157375,679558,184017,315707,0,0,0,1671844100);
+INSERT INTO `chii_subject_related_blog` VALUES (157376,679558,184017,315708,0,0,0,1671844176);
+INSERT INTO `chii_subject_related_blog` VALUES (168120,287622,184017,319484,0,0,0,1680065731);
+INSERT INTO `chii_subject_related_blog` VALUES (174104,287622,184017,319486,0,0,0,1685954209);
+INSERT INTO `chii_subject_related_blog` VALUES (212172,233345,184017,338196,0,0,0,1718016081);
+INSERT INTO `chii_subject_related_blog` VALUES (213421,878799,184017,340047,0,0,0,1719098897);
+INSERT INTO `chii_subject_related_blog` VALUES (230593,233345,184017,345911,0,0,0,1730118414);
 /*!40000 ALTER TABLE `chii_subject_related_blog` ENABLE KEYS */;
 UNLOCK TABLES;
 
