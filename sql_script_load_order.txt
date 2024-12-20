@@ -118,6 +118,7 @@ sql/data/chii_characters.sql
 sql/data/chii_crt_cast_index.sql
 sql/data/chii_crt_subject_index.sql
 sql/data/chii_episodes.sql
+sql/data/chii_episodes2.sql
 sql/data/chii_ep_comments.sql
 sql/data/chii_ep_revisions.sql
 sql/data/chii_ep_status.sql
@@ -143,7 +144,9 @@ sql/data/chii_person_fields.sql
 sql/data/chii_rev_history.sql
 sql/data/chii_rev_text.sql
 sql/data/chii_subjects.sql
+sql/data/chii_subjects2.sql
 sql/data/chii_subject_fields.sql
+sql/data/chii_subject_fields2.sql
 sql/data/chii_subject_interests.sql
 sql/data/chii_subject_posts.sql
 sql/data/chii_subject_relations.sql
