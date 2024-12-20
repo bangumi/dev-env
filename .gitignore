@@ -5,5 +5,4 @@
 public/
 /node_modules/
 /mq/.env
-/mq/data/
 micro-services/data/
