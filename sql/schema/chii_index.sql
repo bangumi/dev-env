@@ -28,6 +28,7 @@ CREATE TABLE `chii_index` (
   `idx_subject_total` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '内含条目总数',
   `idx_collects` mediumint(8) NOT NULL DEFAULT '0' COMMENT '收藏数',
   `idx_stats` mediumtext NOT NULL,
+  `idx_award` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `idx_dateline` int(10) NOT NULL COMMENT '创建时间',
   `idx_lasttouch` int(10) unsigned NOT NULL,
   `idx_uid` mediumint(8) NOT NULL COMMENT '创建人UID',
@@ -36,7 +37,8 @@ CREATE TABLE `chii_index` (
   KEY `idx_ban` (`idx_ban`),
   KEY `idx_type` (`idx_type`),
   KEY `idx_uid` (`idx_uid`),
-  KEY `idx_collects` (`idx_collects`)
+  KEY `idx_collects` (`idx_collects`),
+  KEY `idx_award` (`idx_award`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
