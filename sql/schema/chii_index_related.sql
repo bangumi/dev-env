@@ -26,6 +26,7 @@ CREATE TABLE `chii_index_related` (
   `idx_rlt_type` smallint(6) unsigned NOT NULL COMMENT '关联条目类型',
   `idx_rlt_sid` mediumint(8) unsigned NOT NULL COMMENT '关联条目ID',
   `idx_rlt_order` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `idx_rlt_award` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `idx_rlt_comment` mediumtext NOT NULL,
   `idx_rlt_dateline` int(10) unsigned NOT NULL,
   `idx_rlt_ban` tinyint(1) unsigned NOT NULL DEFAULT '0',
@@ -35,7 +36,8 @@ CREATE TABLE `chii_index_related` (
   KEY `idx_rlt_sid_2` (`idx_rlt_sid`),
   KEY `idx_rlt_cat` (`idx_rlt_cat`),
   KEY `idx_order` (`idx_rlt_rid`,`idx_rlt_cat`,`idx_rlt_order`,`idx_rlt_sid`) USING BTREE,
-  KEY `idx_rlt_ban` (`idx_rlt_ban`)
+  KEY `idx_rlt_ban` (`idx_rlt_ban`),
+  ADD KEY `idx_rlt_award` (`idx_rlt_award`(250))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='目录关联表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
