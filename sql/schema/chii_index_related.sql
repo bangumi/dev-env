@@ -37,7 +37,7 @@ CREATE TABLE `chii_index_related` (
   KEY `idx_rlt_cat` (`idx_rlt_cat`),
   KEY `idx_order` (`idx_rlt_rid`,`idx_rlt_cat`,`idx_rlt_order`,`idx_rlt_sid`) USING BTREE,
   KEY `idx_rlt_ban` (`idx_rlt_ban`),
-  ADD KEY `idx_rlt_award` (`idx_rlt_award`(250))
+  KEY `idx_rlt_award` (`idx_rlt_award`(250))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='目录关联表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
