@@ -37,7 +37,7 @@ CREATE TABLE `chii_index` (
   KEY `idx_ban` (`idx_ban`),
   KEY `idx_type` (`idx_type`),
   KEY `idx_uid` (`idx_uid`),
-  KEY `idx_collects` (`idx_collects`)
+  KEY `idx_collects` (`idx_collects`),
   KEY `idx_award` (`idx_award`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
