@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
@@ -3561,6 +3561,7 @@ CREATE TABLE `chii_index` (
   `idx_subject_total` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '内含条目总数',
   `idx_collects` mediumint(8) NOT NULL DEFAULT '0' COMMENT '收藏数',
   `idx_stats` mediumtext NOT NULL,
+  `idx_award` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `idx_dateline` int(10) NOT NULL COMMENT '创建时间',
   `idx_lasttouch` int(10) unsigned NOT NULL,
   `idx_uid` mediumint(8) NOT NULL COMMENT '创建人UID',
@@ -3569,7 +3570,8 @@ CREATE TABLE `chii_index` (
   KEY `idx_ban` (`idx_ban`),
   KEY `idx_type` (`idx_type`),
   KEY `idx_uid` (`idx_uid`),
-  KEY `idx_collects` (`idx_collects`)
+  KEY `idx_collects` (`idx_collects`),
+  KEY `idx_award` (`idx_award`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15466 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3580,8 +3582,8 @@ CREATE TABLE `chii_index` (
 
 LOCK TABLES `chii_index` WRITE;
 /*!40000 ALTER TABLE `chii_index` DISABLE KEYS */;
-INSERT INTO `chii_index` VALUES (15045,0,'日本动画最高收视率TOP100','[url]http://www.tudou.com/programs/view/W6eIoxnHs6g/[/url]\n有美国动画混入，所以准确的说是在日本播放的动画最高收视率（而且是关东地区的\n基本大部分是70年代的，那个年代娱乐贫乏优势真大',8,101,96,'a:1:{i:2;s:3:\"101\";}',1352366596,1356922367,14127,0);
-INSERT INTO `chii_index` VALUES (15465,0,'このマンガを読め! / 这本漫画必读！ 2005-2015历年top10','「[url=http://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%82%AC%E3%82%92%E8%AA%AD%E3%82%81!]このマンガを読め![/url]」はフリースタイルから発行されている年刊の漫画ガイド本である。2004年12月発行開始。現在は独立した刊行物でなく、同社の季刊誌『フリースタイル』の特集記事となっている。',4,106,296,'a:1:{i:1;s:3:\"106\";}',1365008969,1422016824,110525,0);
+INSERT INTO `chii_index` VALUES (15045,0,'日本动画最高收视率TOP100','[url]http://www.tudou.com/programs/view/W6eIoxnHs6g/[/url]\n有美国动画混入，所以准确的说是在日本播放的动画最高收视率（而且是关东地区的\n基本大部分是70年代的，那个年代娱乐贫乏优势真大',8,101,96,'a:1:{i:2;s:3:\"101\";}',0,1352366596,1356922367,14127,0);
+INSERT INTO `chii_index` VALUES (15465,0,'このマンガを読め! / 这本漫画必读！ 2005-2015历年top10','「[url=http://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%82%AC%E3%82%92%E8%AA%AD%E3%82%81!]このマンガを読め![/url]」はフリースタイルから発行されている年刊の漫画ガイド本である。2004年12月発行開始。現在は独立した刊行物でなく、同社の季刊誌『フリースタイル』の特集記事となっている。',4,106,296,'a:1:{i:1;s:3:\"106\";}',0,1365008969,1422016824,110525,0);
 /*!40000 ALTER TABLE `chii_index` ENABLE KEYS */;
 UNLOCK TABLES;
 
