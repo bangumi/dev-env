@@ -3393,6 +3393,7 @@ CREATE TABLE `chii_group_members` (
   `gmb_uid` mediumint(8) NOT NULL DEFAULT '0',
   `gmb_gid` smallint(6) NOT NULL DEFAULT '0',
   `gmb_moderator` tinyint(1) NOT NULL DEFAULT '0',
+  `gmb_ban` tinyint(1) unsigned NOT NULL,
   `gmb_dateline` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`gmb_uid`,`gmb_gid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -3405,9 +3406,9 @@ CREATE TABLE `chii_group_members` (
 
 LOCK TABLES `chii_group_members` WRITE;
 /*!40000 ALTER TABLE `chii_group_members` DISABLE KEYS */;
-INSERT INTO `chii_group_members` VALUES (287622,4215,1,1531631310);
-INSERT INTO `chii_group_members` VALUES (382951,4215,0,1640499538);
-INSERT INTO `chii_group_members` VALUES (427613,4215,0,1531631570);
+INSERT INTO `chii_group_members` VALUES (287622,4215,1,0,1531631310);
+INSERT INTO `chii_group_members` VALUES (382951,4215,0,0,1640499538);
+INSERT INTO `chii_group_members` VALUES (427613,4215,0,0,1531631570);
 /*!40000 ALTER TABLE `chii_group_members` ENABLE KEYS */;
 UNLOCK TABLES;
 
