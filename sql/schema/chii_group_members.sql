@@ -23,6 +23,7 @@ CREATE TABLE `chii_group_members` (
   `gmb_uid` mediumint(8) NOT NULL DEFAULT '0',
   `gmb_gid` smallint(6) NOT NULL DEFAULT '0',
   `gmb_moderator` tinyint(1) NOT NULL DEFAULT '0',
+  `gmb_ban` tinyint(1) UNSIGNED NOT NULL,
   `gmb_dateline` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`gmb_uid`,`gmb_gid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
