@@ -1,20 +1,4 @@
 services:
-  ms-timeline:
-    image: ghcr.io/bangumi/ms-timeline:master
-    container_name: ms-timeline
-    ports:
-      - "5001:5001"
-    environment:
-      - MYSQL_DB=bangumi
-      - MYSQL_HOST=mysql
-      - MYSQL_USER=user
-      - MYSQL_PASS=password
-      - GRPC_PORT=5001
-    expose:
-      - 5001
-    networks:
-      - internal
-
   imaginary:
     image: h2non/imaginary
     init: true
