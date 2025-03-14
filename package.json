@@ -1,9 +1,0 @@
-{
-  "packageManager": "yarn@4.7.0",
-  "scripts": {
-    "format": "prettier -w ."
-  },
-  "dependencies": {
-    "prettier": "^3.5.3"
-  }
-}
