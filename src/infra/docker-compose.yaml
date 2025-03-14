@@ -68,6 +68,5 @@ services:
     environment:
       KAFKA_BROKERS: "kafka:9092"
 
-
 networks:
   internal:

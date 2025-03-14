@@ -28,7 +28,6 @@ services:
     ports:
       - "6379:6379"
 
-
   kafka:
     container_name: "chii-base-kafka"
     image: "bitnami/kafka:3.8"

@@ -28,7 +28,6 @@ docker compose up -d
 如果你不在运行 docker compose 的机器上进行开发（也就是说不使用`localhost`或者`127.0.0.1`来链接到数据库），
 设置 `CHII_HOST` 环境变量来解决 kafka 的 `KAFKA_ADVERTISED_LISTENERS` 问题
 
-
 ## 更新
 
 ```shell

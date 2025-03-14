@@ -13,4 +13,3 @@ services:
       MYSQL_DATABASE: bangumi
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-
