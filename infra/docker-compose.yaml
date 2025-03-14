@@ -1,8 +1,24 @@
-networks:
-  bangumi-dev:
-    name: bangumi-dev
-
 services:
+  imaginary:
+    image: h2non/imaginary
+    init: true
+    ports:
+      - "9000:9000"
+
+  meilisearch:
+    container_name: "chii-base-meilisearch"
+    image: "getmeili/meilisearch:v1.10.1"
+    command:
+      - meilisearch
+      - --master-key
+      - BOxvL-Zkwfnfe6cG-hfqCsP4LR0aQOnssytKDa4_zD0
+    environment:
+      MEILI_LOG_LEVEL: "WARN"
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./data/meilisearch/:/meili_data/
+
   debezium:
     image: debezium/server:2.7.3.Final
     container_name: debezium
@@ -25,7 +41,7 @@ services:
       #      "debezium.sink.redis.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       #      "debezium.sink.redis.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
-      "debezium.source.database.hostname": "host.docker.internal"
+      "debezium.source.database.hostname": "mysql"
       "debezium.source.database.port": "3306"
       "debezium.source.database.server.id": "5"
       "debezium.source.database.user": "root"
@@ -43,9 +59,6 @@ services:
       "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
       "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
 
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
   kafka-ui:
     image: docker.redpanda.com/redpandadata/console:latest
     networks:
@@ -54,3 +67,6 @@ services:
       - "29093:8080"
     environment:
       KAFKA_BROKERS: "kafka:9092"
+
+networks:
+  internal:
