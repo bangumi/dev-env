@@ -60,7 +60,6 @@ services:
 
       KAFKA_CFG_LOG_RETENTION_BYTES: "1073741824" # 1 GiB
       KAFKA_CFG_LOG_RETENTION_HOURS: "72"
-      KAFKA_CFG_COMPRESSION_TYPE: "zstd"
 
     healthcheck:
       test: kafka-topics.sh --list --bootstrap-server localhost:9092 || exit 1
