@@ -41,7 +41,7 @@ services:
       #      "debezium.sink.redis.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       #      "debezium.sink.redis.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
-      "debezium.source.database.hostname": "host.docker.internal"
+      "debezium.source.database.hostname": "mysql"
       "debezium.source.database.port": "3306"
       "debezium.source.database.server.id": "5"
       "debezium.source.database.user": "root"
@@ -58,9 +58,6 @@ services:
       "debezium.source.topic.prefix": "debezium.chii"
       "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
       "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
-
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   kafka-ui:
     image: docker.redpanda.com/redpandadata/console:latest
