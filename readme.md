@@ -6,12 +6,6 @@
 
 mysql 容器的内置数据位于 [./sql](sql) 文件夹内，
 
-## 启动开发环境
-
-如果你需要修改内置数据，请查看 [master 分支](https://github.com/bangumi/dev-env/tree/master)
-
-Pull Request 也请向 master 分支提交。
-
 ## QuickStart
 
 ```bash
