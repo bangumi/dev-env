@@ -1,8 +1,24 @@
-networks:
-  bangumi-dev:
-    name: bangumi-dev
-
 services:
+  imaginary:
+    image: h2non/imaginary
+    init: true
+    ports:
+      - "9000:9000"
+
+  meilisearch:
+    container_name: "chii-base-meilisearch"
+    image: "getmeili/meilisearch:v1.10.1"
+    command:
+      - meilisearch
+      - --master-key
+      - BOxvL-Zkwfnfe6cG-hfqCsP4LR0aQOnssytKDa4_zD0
+    environment:
+      MEILI_LOG_LEVEL: "WARN"
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./data/meilisearch/:/meili_data/
+
   debezium:
     image: debezium/server:2.7.3.Final
     container_name: debezium
@@ -54,3 +70,7 @@ services:
       - "29093:8080"
     environment:
       KAFKA_BROKERS: "kafka:9092"
+
+
+networks:
+  internal:
