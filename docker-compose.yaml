@@ -47,13 +47,14 @@ services:
       # Use the external addresses to connect to the Redpanda brokers
       # from outside the Docker network.
       - --advertise-kafka-addr internal://redpanda:9092,external://${CHII_HOST:-localhost}:19092
-      - --rpc-addr redpanda:33145
+      - --rpc-addr 0.0.0.0:33145
       - --advertise-rpc-addr redpanda:33145
       - --set redpanda.log_cleanup_policy=delete
       - --set redpanda.retention_bytes=1073741824
       - --set redpanda.log_retention_ms=604800000
       - --set redpanda.log_segment_ms=86400000
     expose:
+      - 33145
       - 9092
     ports:
       - "19092:19092"
