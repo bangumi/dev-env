@@ -1,0 +1,17 @@
+redpanda:
+  # Data directory where all the files will be stored.
+  # This directory MUST reside on an ext4 or xfs partition.
+  data_directory: "/var/lib/redpanda/data"
+
+  # Admin server includes metrics, and cluster management
+  admin:
+    address: "0.0.0.0"
+    port: 9644
+
+  # Skips most of the checks performed at startup (i.e. memory, xfs)
+  # not recomended for production use
+  developer_mode: true
+
+  retention_bytes: 1073741824
+  log_retention_ms: 604800000
+  log_segment_ms: 86400000
