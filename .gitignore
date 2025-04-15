@@ -6,3 +6,6 @@ public/
 /node_modules/
 /mq/.env
 micro-services/data/
+
+.env
+/infra/data/
