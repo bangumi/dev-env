@@ -49,7 +49,7 @@ services:
       - --advertise-kafka-addr internal://redpanda:9092,external://${CHII_HOST:-localhost}:19092
       - --rpc-addr redpanda:33145
       - --advertise-rpc-addr redpanda:33145
-      - --config-file=/config/redpanda/redpanda.yaml
+      - --redpanda-cfg /config/redpanda/redpanda.yaml
     expose:
       - 9092
     ports:
