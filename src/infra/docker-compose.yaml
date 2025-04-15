@@ -20,7 +20,7 @@ services:
       - ./data/meilisearch/:/meili_data/
 
   debezium:
-    image: debezium/server:2.7.3.Final
+    image: quay.io/debezium/server:3.1.0.Final
     container_name: debezium
     networks:
       - bangumi-dev
@@ -28,18 +28,23 @@ services:
     volumes:
       - ./data/debezium:/debezium/data
     environment:
+      "quarkus.log.console.json": "false"
       "quarkus.log.level": "WARN"
+
+      "debezium.format.key.schemas.enable": "false"
+      "debezium.format.value.schemas.enable": "false"
 
       "debezium.sink.type": "kafka"
       "debezium.sink.kafka.producer.bootstrap.servers": "redpanda:9092"
       "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.sink.kafka.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
 
-      "debezium.format.key.schemas.enable": "false"
-      "debezium.format.value.schemas.enable": "false"
+      "debezium.source.offset.storage": "org.apache.kafka.connect.storage.FileOffsetBackingStore"
+      "debezium.source.offset.storage.file.filename": "/debezium/data/offsets.dat"
+      "debezium.source.topic.prefix": "debezium.chii"
+      "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
+      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "redpanda:9092"
 
-      #      "debezium.sink.redis.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
-      #      "debezium.sink.redis.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
       "debezium.source.database.hostname": "mysql"
       "debezium.source.database.port": "3306"
@@ -51,13 +56,6 @@ services:
       "debezium.source.database.include.list": "bangumi"
       "debezium.source.snapshot.mode": "initial"
       "debezium.source.snapshot.locking.mode": "none"
-      "quarkus.log.console.json": "false"
-
-      "debezium.source.offset.storage.file.filename": "/debezium/data/offsets.dat"
-
-      "debezium.source.topic.prefix": "debezium.chii"
-      "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
-      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "redpanda:9092"
 
   kafka-ui:
     image: docker.redpanda.com/redpandadata/console:latest
