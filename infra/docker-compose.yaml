@@ -31,7 +31,7 @@ services:
       "quarkus.log.level": "WARN"
 
       "debezium.sink.type": "kafka"
-      "debezium.sink.kafka.producer.bootstrap.servers": "kafka:9092"
+      "debezium.sink.kafka.producer.bootstrap.servers": "redpanda:9092"
       "debezium.sink.kafka.producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer"
       "debezium.sink.kafka.producer.value.serializer": "org.apache.kafka.common.serialization.StringSerializer"
 
@@ -57,7 +57,7 @@ services:
 
       "debezium.source.topic.prefix": "debezium.chii"
       "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
-      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "kafka:9092"
+      "debezium.source.schema.history.internal.kafka.bootstrap.servers": "redpanda:9092"
 
   kafka-ui:
     image: docker.redpanda.com/redpandadata/console:latest
@@ -66,7 +66,9 @@ services:
     ports:
       - "29093:8080"
     environment:
-      KAFKA_BROKERS: "kafka:9092"
+      KAFKA_BROKERS: "redpanda:9092"
 
 networks:
-  internal:
+  bangumi-dev:
+    name: bangumi-dev
+    external: true
