@@ -49,7 +49,10 @@ services:
       - --advertise-kafka-addr internal://redpanda:9092,external://${CHII_HOST:-localhost}:19092
       - --rpc-addr redpanda:33145
       - --advertise-rpc-addr redpanda:33145
-      - --redpanda-cfg /config/redpanda/redpanda.yaml
+      - --set redpanda.log_cleanup_policy=delete
+      - --set redpand.retention_bytes=1073741824
+      - --set redpand.log_retention_ms=604800000
+      - --set redpand.log_segment_ms=86400000
     expose:
       - 9092
     ports:
@@ -57,7 +60,6 @@ services:
       - "9644:9644"
     volumes:
       - ./data/redpanda/:/var/lib/redpanda/data
-      - ./etc/:/config/redpanda/
     healthcheck:
       test:
         - "CMD-SHELL"
