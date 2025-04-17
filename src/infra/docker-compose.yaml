@@ -45,6 +45,8 @@ services:
       "debezium.source.schema.history.internal.kafka.topic": "debezium.history"
       "debezium.source.schema.history.internal.kafka.bootstrap.servers": "redpanda:9092"
 
+      "debezium.source.table.exclude.list": 'bangumi\.chii_(.*_comments|group_posts|index_comments|index_related|crt_subject_index|groups|memberfields|magi_members|magi_questions|os_web_sessions|rev_history|subject_alias|person_cs_index|subject_relations|person_collgroupsects|person_alias|network_services|ep_revisions|eden|eden_members|group_members|issues|person_alias|person_fields|ep_status|person_collects|index_collects|person_cs_index|notify_field|.*_posts|memberfields|app_collects|blog_photo|apps|subject_related_blog|tag_neue_index|tag_neue_list|subject_imgs|oauth_clients|settings|failedlogins|magi_answered|subject_alias|sessions|searchindex|tag_neue_list|tag_neue_index|oauth_refresh_tokens|oauth_access_tokens|crt_cast_index|gadgets|oauth_authorization_codes|likes|magi_members|regips|rev_text|ep_comments)'
+
       "debezium.source.connector.class": "io.debezium.connector.mysql.MySqlConnector"
       "debezium.source.database.hostname": "mysql"
       "debezium.source.database.port": "3306"
