@@ -5,6 +5,12 @@ services:
     ports:
       - "3306:3306"
     command: --sql-mode="" --log-bin=/var/lib/mysql/binlog
+    ulimits:
+      # Fix memory leak issue on some systems when LimitCORE=infinity (containerd)
+      # https://github.com/docker-library/mysql/issues/873#issuecomment-1909948195
+      nofile:
+        soft: 1024
+        hard: 1024
     networks:
       - bangumi-dev
     restart: unless-stopped
