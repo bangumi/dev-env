@@ -75,6 +75,7 @@ sql/schema/chii_person_alias.sql
 sql/schema/chii_person_collects.sql
 sql/schema/chii_person_cs_index.sql
 sql/schema/chii_person_fields.sql
+sql/schema/chii_person_relations.sql
 sql/schema/chii_person_relationship.sql
 sql/schema/chii_pms.sql
 sql/schema/chii_prsn_comments.sql
