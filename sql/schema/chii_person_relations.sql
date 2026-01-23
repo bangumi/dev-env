@@ -12,25 +12,29 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 --
--- Table structure for table `chii_crt_cast_index`
+-- Table structure for table `chii_person_relations`
 --
 
-DROP TABLE IF EXISTS `chii_crt_cast_index`;
+DROP TABLE IF EXISTS `chii_person_relations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chii_crt_cast_index` (
-  `rlt_type` mediumint(8) UNSIGNED NOT NULL,
-  `crt_id` mediumint(9) UNSIGNED NOT NULL,
-  `prsn_id` mediumint(9) UNSIGNED NOT NULL,
-  `subject_id` mediumint(9) UNSIGNED NOT NULL,
-  `subject_type_id` tinyint(3) UNSIGNED NOT NULL COMMENT '根据人物归类查询角色，动画，书籍，游戏',
-  `summary` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '幼年，男乱马，女乱马，变身形态，少女形态。。',
-  PRIMARY KEY (`crt_id`,`prsn_id`,`subject_id`),
-  KEY `prsn_id` (`prsn_id`),
-  KEY `subject_id` (`subject_id`),
-  KEY `subject_type_id` (`subject_type_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `chii_person_relations` (
+  `rlt_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `prsn_type` enum('prsn','crt') NOT NULL,
+  `prsn_id` mediumint(8) UNSIGNED NOT NULL,
+  `rlt_prsn_type` enum('prsn','crt') NOT NULL,
+  `rlt_prsn_id` int(10) UNSIGNED NOT NULL,
+  `rlt_type` int(10) UNSIGNED NOT NULL COMMENT '关联类型',
+  `rlt_spoiler` tinyint(3) UNSIGNED NOT NULL,
+  `rlt_ended` tinyint(3) UNSIGNED NOT NULL,
+  `rlt_vice_versa` tinyint(3) UNSIGNED NOT NULL,
+  `rlt_comment` text NOT NULL,
+  PRIMARY KEY (`rlt_id`),
+  UNIQUE KEY `prsn_type` (`prsn_type`,`prsn_id`,`rlt_prsn_type`,`rlt_prsn_id`,`rlt_type`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
