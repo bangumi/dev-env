@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.44, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.45, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: bangumi
 -- ------------------------------------------------------
@@ -752,6 +752,7 @@ CREATE TABLE `chii_crt_comments` (
   `crt_pst_mid` mediumint(8) unsigned NOT NULL COMMENT '关联人物ID',
   `crt_pst_uid` mediumint(8) unsigned NOT NULL,
   `crt_pst_related` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `crt_pst_related_photo` mediumint(8) unsigned NOT NULL,
   `crt_pst_dateline` int(10) unsigned NOT NULL,
   `crt_pst_content` mediumtext CHARACTER SET utf8 NOT NULL,
   `crt_pst_state` tinyint(1) unsigned NOT NULL,
@@ -6223,6 +6224,7 @@ CREATE TABLE `chii_prsn_comments` (
   `prsn_pst_mid` mediumint(8) unsigned NOT NULL COMMENT '关联人物ID',
   `prsn_pst_uid` mediumint(8) unsigned NOT NULL,
   `prsn_pst_related` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `prsn_pst_related_photo` mediumint(8) unsigned NOT NULL,
   `prsn_pst_dateline` int(10) unsigned NOT NULL,
   `prsn_pst_content` mediumtext NOT NULL,
   `prsn_pst_state` tinyint(1) unsigned NOT NULL,
@@ -9133,6 +9135,43 @@ INSERT INTO `chii_subject_interests` VALUES (27,382951,9,4,0,5,0,'','',0,0,0,0,0
 INSERT INTO `chii_subject_interests` VALUES (28,382951,10,1,0,4,0,'','',0,0,0,0,0,1639569433,0,'','',1639569433,0);
 INSERT INTO `chii_subject_interests` VALUES (29,382951,20,3,0,3,0,'','',0,0,0,1639569656,0,0,0,'','',1639569656,0);
 /*!40000 ALTER TABLE `chii_subject_interests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `chii_subject_photos`
+--
+
+DROP TABLE IF EXISTS `chii_subject_photos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `chii_subject_photos` (
+  `sbj_photo_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `sbj_photo_type` tinyint(3) unsigned NOT NULL,
+  `sbj_photo_mid` mediumint(8) unsigned NOT NULL,
+  `sbj_photo_uid` mediumint(8) unsigned NOT NULL,
+  `sbj_photo_target` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_title` varchar(1024) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_comment` mediumtext CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_tags` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_spoiler` tinyint(3) unsigned NOT NULL,
+  `sbj_photo_dateline` int(10) unsigned NOT NULL,
+  `sbj_photo_lasttouch` int(10) unsigned NOT NULL,
+  `sbj_photo_lastpost` int(10) unsigned NOT NULL,
+  `sbj_photo_ban` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`sbj_photo_id`),
+  KEY `sbj_photo_uid` (`sbj_photo_uid`),
+  KEY `sbj_photo_mid` (`sbj_photo_type`,`sbj_photo_mid`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chii_subject_photos`
+--
+-- ORDER BY:  `sbj_photo_id`
+
+LOCK TABLES `chii_subject_photos` WRITE;
+/*!40000 ALTER TABLE `chii_subject_photos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chii_subject_photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
