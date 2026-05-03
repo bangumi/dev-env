@@ -90,6 +90,7 @@ EXPECTED_TABLES = {
     "chii_rev_text",
     "chii_subject_alias",
     "chii_subject_imgs",
+    "chii_subject_photos",
     "chii_subject_fields",
     "chii_subject_interests",
     "chii_subject_posts",

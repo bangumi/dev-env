@@ -24,6 +24,7 @@ CREATE TABLE `chii_prsn_comments` (
   `prsn_pst_mid` mediumint(8) unsigned NOT NULL COMMENT '关联人物ID',
   `prsn_pst_uid` mediumint(8) unsigned NOT NULL,
   `prsn_pst_related` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `prsn_pst_related_photo` mediumint(8) unsigned NOT NULL,
   `prsn_pst_dateline` int(10) unsigned NOT NULL,
   `prsn_pst_content` mediumtext NOT NULL,
   `prsn_pst_state` tinyint(1) unsigned NOT NULL,

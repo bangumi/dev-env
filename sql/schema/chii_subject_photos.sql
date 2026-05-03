@@ -13,26 +13,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `chii_crt_comments`
+-- Table structure for table `chii_subject_photos`
 --
 
-DROP TABLE IF EXISTS `chii_crt_comments`;
+DROP TABLE IF EXISTS `chii_subject_photos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chii_crt_comments` (
-  `crt_pst_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `crt_pst_mid` mediumint(8) unsigned NOT NULL COMMENT '关联人物ID',
-  `crt_pst_uid` mediumint(8) unsigned NOT NULL,
-  `crt_pst_related` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `crt_pst_related_photo` mediumint(8) unsigned NOT NULL,
-  `crt_pst_dateline` int(10) unsigned NOT NULL,
-  `crt_pst_content` mediumtext CHARACTER SET utf8 NOT NULL,
-  `crt_pst_state` tinyint(1) unsigned NOT NULL,
-  PRIMARY KEY (`crt_pst_id`),
-  KEY `cmt_crt_id` (`crt_pst_mid`),
-  KEY `crt_pst_related` (`crt_pst_related`),
-  KEY `crt_pst_uid` (`crt_pst_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `chii_subject_photos` (
+  `sbj_photo_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `sbj_photo_type` tinyint(3) unsigned NOT NULL,
+  `sbj_photo_mid` mediumint(8) unsigned NOT NULL,
+  `sbj_photo_uid` mediumint(8) unsigned NOT NULL,
+  `sbj_photo_target` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_title` varchar(1024) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_comment` mediumtext CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_tags` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `sbj_photo_spoiler` tinyint(3) unsigned NOT NULL,
+  `sbj_photo_dateline` int(10) unsigned NOT NULL,
+  `sbj_photo_lasttouch` int(10) unsigned NOT NULL,
+  `sbj_photo_lastpost` int(10) unsigned NOT NULL,
+  `sbj_photo_ban` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`sbj_photo_id`),
+  KEY `sbj_photo_uid` (`sbj_photo_uid`),
+  KEY `sbj_photo_mid` (`sbj_photo_type`,`sbj_photo_mid`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
