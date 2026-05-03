@@ -94,6 +94,7 @@ sql/schema/chii_subjects_240921.sql
 sql/schema/chii_subject_alias.sql
 sql/schema/chii_subject_fields.sql
 sql/schema/chii_subject_imgs.sql
+sql/schema/chii_subject_photos.sql
 sql/schema/chii_subject_interests.sql
 sql/schema/chii_subject_posts.sql
 sql/schema/chii_subject_rec.sql
