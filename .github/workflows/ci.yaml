@@ -51,5 +51,6 @@ jobs:
         if: github.event_name == 'push'
         with:
           publish_dir: ./dist/
+          force_orphan: true
           commit_message: deploy ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
